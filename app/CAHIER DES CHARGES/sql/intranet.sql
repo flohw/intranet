@@ -2,6 +2,9 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
+DROP SCHEMA IF EXISTS `intranet` ;
+CREATE SCHEMA IF NOT EXISTS `intranet` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `intranet` ;
 
 -- -----------------------------------------------------
 -- Table `intranet`.`departements`
@@ -10,9 +13,9 @@ DROP TABLE IF EXISTS `intranet`.`departements` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`departements` (
   `id` INT NOT NULL ,
-  `nom` VARCHAR(45) NOT NULL ,
+  `nom` VARCHAR(60) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
-  `slug` VARCHAR(45) NOT NULL ,
+  `slug` VARCHAR(60) NOT NULL ,
   `abreviation` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `nom_UNIQUE` (`nom` ASC) ,
@@ -42,29 +45,17 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
   `id` INT NOT NULL ,
   `nom` VARCHAR(45) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
-  `semestres_id` INT NOT NULL ,
-  `cours_id` INT NOT NULL ,
+  `semestre_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `nom_UNIQUE` (`nom` ASC) ,
-  INDEX `fk_groupes_semestres1` (`semestres_id` ASC) ,
+  INDEX `fk_groupes_semestres1` (`semestre_id` ASC) ,
   CONSTRAINT `fk_groupes_semestres1`
-    FOREIGN KEY (`semestres_id` )
+    FOREIGN KEY (`semestre_id` )
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB, 
 COMMENT = 'classes (A1, A2, B1, B2…)' ;
-
-
--- -----------------------------------------------------
--- Table `intranet`.`professeurs`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `intranet`.`professeurs` ;
-
-CREATE  TABLE IF NOT EXISTS `intranet`.`professeurs` (
-  `id` INT NOT NULL ,
-  PRIMARY KEY (`id`) )
-ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -90,18 +81,18 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`modules` (
   `description` TEXT NOT NULL ,
   `coefficient` INT NOT NULL ,
   `volume_horaire` INT NOT NULL ,
-  `id_libelle_modules` INT NOT NULL ,
-  `semestres_id` INT NOT NULL ,
+  `libelle_module_id` INT NOT NULL ,
+  `semestre_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_modules_libelle_modules1` (`id_libelle_modules` ASC) ,
-  INDEX `fk_modules_semestres1` (`semestres_id` ASC) ,
+  INDEX `fk_modules_libelle_modules1` (`libelle_module_id` ASC) ,
+  INDEX `fk_modules_semestres1` (`semestre_id` ASC) ,
   CONSTRAINT `fk_modules_libelle_modules1`
-    FOREIGN KEY (`id_libelle_modules` )
+    FOREIGN KEY (`libelle_module_id` )
     REFERENCES `intranet`.`libelle_modules` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_modules_semestres1`
-    FOREIGN KEY (`semestres_id` )
+    FOREIGN KEY (`semestre_id` )
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -118,12 +109,12 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`type_modules` (
   `id` INT NOT NULL ,
   `nom` VARCHAR(45) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
-  `id_departement` INT NOT NULL ,
+  `departement_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `nom_UNIQUE` (`nom` ASC) ,
-  INDEX `fk_type_modules_departements` (`id_departement` ASC) ,
+  INDEX `fk_type_modules_departements` (`departement_id` ASC) ,
   CONSTRAINT `fk_type_modules_departements`
-    FOREIGN KEY (`id_departement` )
+    FOREIGN KEY (`departement_id` )
     REFERENCES `intranet`.`departements` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -151,8 +142,8 @@ DROP TABLE IF EXISTS `intranet`.`personnes` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`personnes` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(45) NOT NULL ,
-  `prenom` VARCHAR(45) NOT NULL ,
+  `nom` VARCHAR(80) NOT NULL ,
+  `prenom` VARCHAR(80) NOT NULL ,
   `adresse` TEXT NOT NULL ,
   `date_naissance` DATETIME NULL ,
   `telephone` VARCHAR(10) NOT NULL ,
@@ -217,20 +208,20 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`modules_type_modules` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`modules_type_modules` (
-  `id_module` INT NOT NULL ,
-  `id_type_module` INT NOT NULL ,
   `id` INT NOT NULL ,
+  `module_id` INT NOT NULL ,
+  `type_module_id` INT NOT NULL ,
   `cours_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_modules_has_type_modules_type_modules1` (`id_type_module` ASC) ,
-  INDEX `fk_modules_has_type_modules_modules1` (`id_module` ASC) ,
+  INDEX `fk_modules_has_type_modules_type_modules1` (`type_module_id` ASC) ,
+  INDEX `fk_modules_has_type_modules_modules1` (`module_id` ASC) ,
   CONSTRAINT `fk_modules_has_type_modules_modules1`
-    FOREIGN KEY (`id_module` )
+    FOREIGN KEY (`module_id` )
     REFERENCES `intranet`.`modules` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_modules_has_type_modules_type_modules1`
-    FOREIGN KEY (`id_type_module` )
+    FOREIGN KEY (`type_module_id` )
     REFERENCES `intranet`.`type_modules` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -244,7 +235,8 @@ DROP TABLE IF EXISTS `intranet`.`dossiers` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`dossiers` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` INT NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
+  `slug` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -257,18 +249,19 @@ DROP TABLE IF EXISTS `intranet`.`documents` ;
 CREATE  TABLE IF NOT EXISTS `intranet`.`documents` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(45) NOT NULL ,
+  `slug` VARCHAR(45) NOT NULL ,
   `personne_id` INT NOT NULL ,
-  `dossiers_id` INT NOT NULL ,
+  `dossier_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_documents_professeurs1` (`personne_id` ASC) ,
-  INDEX `fk_documents_dossiers1` (`dossiers_id` ASC) ,
+  INDEX `fk_documents_dossiers1` (`dossier_id` ASC) ,
   CONSTRAINT `fk_documents_professeurs1`
     FOREIGN KEY (`personne_id` )
     REFERENCES `intranet`.`personnes` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_documents_dossiers1`
-    FOREIGN KEY (`dossiers_id` )
+    FOREIGN KEY (`dossier_id` )
     REFERENCES `intranet`.`dossiers` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -285,12 +278,12 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`messages` (
   `titre` VARCHAR(80) NOT NULL ,
   `date_envoi` DATETIME NOT NULL ,
   `fichier` VARCHAR(100) NOT NULL ,
-  `personnes_id` INT NOT NULL COMMENT 'expéditeur' ,
+  `personne_id` INT NOT NULL COMMENT 'expéditeur' ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `fichier_UNIQUE` (`fichier` ASC) ,
-  INDEX `fk_messages_personnes1` (`personnes_id` ASC) ,
+  INDEX `fk_messages_personnes1` (`personne_id` ASC) ,
   CONSTRAINT `fk_messages_personnes1`
-    FOREIGN KEY (`personnes_id` )
+    FOREIGN KEY (`personne_id` )
     REFERENCES `intranet`.`personnes` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -304,19 +297,19 @@ DROP TABLE IF EXISTS `intranet`.`messages_personnes` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`messages_personnes` (
   `id` VARCHAR(45) NOT NULL ,
-  `messages_id` INT NOT NULL ,
-  `personnes_id` INT NOT NULL ,
+  `message_id` INT NOT NULL ,
+  `personne_id` INT NOT NULL ,
   `lu` TINYINT(1)  NOT NULL DEFAULT false ,
-  INDEX `fk_messages_has_personnes_personnes1` (`personnes_id` ASC) ,
-  INDEX `fk_messages_has_personnes_messages1` (`messages_id` ASC) ,
+  INDEX `fk_messages_has_personnes_personnes1` (`personne_id` ASC) ,
+  INDEX `fk_messages_has_personnes_messages1` (`message_id` ASC) ,
   PRIMARY KEY (`id`) ,
   CONSTRAINT `fk_messages_has_personnes_messages1`
-    FOREIGN KEY (`messages_id` )
+    FOREIGN KEY (`message_id` )
     REFERENCES `intranet`.`messages` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_messages_has_personnes_personnes1`
-    FOREIGN KEY (`personnes_id` )
+    FOREIGN KEY (`personne_id` )
     REFERENCES `intranet`.`personnes` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -332,7 +325,7 @@ DROP TABLE IF EXISTS `intranet`.`abscences` ;
 CREATE  TABLE IF NOT EXISTS `intranet`.`abscences` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `date` DATETIME NOT NULL ,
-  `justification` VARCHAR(255) NULL ,
+  `justification` VARCHAR(255) NOT NULL ,
   `personne_id` INT(255) NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_abscences_personnes1` (`personne_id` ASC) ,
@@ -366,11 +359,11 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`evenements` (
   `titre` VARCHAR(255) NOT NULL ,
   `date_debut` DATETIME NOT NULL ,
   `date_fin` DATETIME NOT NULL ,
-  `type_evenements_id` INT NOT NULL ,
+  `type_evenement_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `fk_evenements_type_evenements1` (`type_evenements_id` ASC) ,
+  INDEX `fk_evenements_type_evenements1` (`type_evenement_id` ASC) ,
   CONSTRAINT `fk_evenements_type_evenements1`
-    FOREIGN KEY (`type_evenements_id` )
+    FOREIGN KEY (`type_evenement_id` )
     REFERENCES `intranet`.`type_evenements` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
