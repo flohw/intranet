@@ -1,7 +1,19 @@
-.span16{
-	text-align:left;
-	margin-left:2%;
+.clear{
+	clear:both;
 }
-.span3{
-	vertical-align:bottom;
+.hero-unit{
+	margin-top: 20px;
+}
+.hero-unit img {
+	float:left;
+	margin-right:10px;
+}
+.container{
+	padding-top:60px;
+}
+form.recherche .recherche{
+	margin:0;
+}
+form.recherche .text{
+	padding:0;
 }

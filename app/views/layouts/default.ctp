@@ -3,17 +3,21 @@
   <head>
     <title><?php echo $this->title; ?></title>
     <?php echo $this->Html->charset(); ?>
-    <link rel="stylesheet/less" href="<?php echo $this->Html->url("/css/bootstrap.less"); ?>">
-    <link rel="stylesheet/less" href="<?php echo $this->Html->url("/css/style.css"); ?>">
+    <?php echo $this->Html->css('bootstrap.css'); ?>
+    <?php echo $this->Html->css('style.css'); ?>
   </head>
     <body>
 
       <?php 
-      echo $this->element("topBarUserLambda");
+      if ($this->Session->read('Auth.Personne.id'))
+        echo $this->element("topBarEleve");
+      else
+        echo $this->element("topBarUserLambda");
 
       ?>
            
       <div class="container">
+      <?php echo $this->Session->flash('auth'); ?>
         <?php echo $content_for_layout; ?>
       </div> 
       <div class="footer">
@@ -26,7 +30,6 @@
         </div>
       </div> 
 
-      <?php echo $this->Html->script("less"); ?>
       <?php echo $this->Html->script("jquery"); ?>
       <?php echo $this->Html->script("menu"); ?>
       <?php echo $this->Html->script("bootstrap-modal"); ?>
