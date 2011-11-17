@@ -2,6 +2,11 @@
 class PersonnesController extends AppController
 {
 	var $name = "Personnes";
+	
+	function beforeFilter() {
+		parent::beforeFilter();
+	}
+	
 	function connexion() {
 	}
 	

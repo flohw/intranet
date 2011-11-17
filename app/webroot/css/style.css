@@ -17,3 +17,28 @@ form.recherche .recherche{
 form.recherche .text{
 	padding:0;
 }
+
+#signin {
+	min-width: 250px;
+}
+#signin input {
+	margin: 10px;
+}
+#signin .inputs-list label { float: left; cursor: pointer; }
+#signin .inputs-list input {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+#signin .inputs-list span {
+	color: white;
+}
+#signin .btn {
+	float: right;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.menu.active {
+	color: white;
+	background: rgba(255, 255, 255, 0.05);
+}

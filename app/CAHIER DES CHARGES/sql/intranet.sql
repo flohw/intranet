@@ -12,11 +12,11 @@ USE `intranet` ;
 DROP TABLE IF EXISTS `intranet`.`departements` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`departements` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(60) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
   `slug` VARCHAR(60) NOT NULL ,
-  `abreviation` VARCHAR(45) NOT NULL ,
+  `abreviation` VARCHAR(45) NOT NULL COMMENT 'cj, info, tech2co' ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `nom_UNIQUE` (`nom` ASC) ,
   UNIQUE INDEX `slug_UNIQUE` (`slug` ASC) ,
@@ -30,8 +30,8 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`semestres` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`semestres` (
-  `id` INT NOT NULL ,
-  `nom` VARCHAR(5) NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `nom` VARCHAR(20) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -42,7 +42,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`groupes` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(45) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
   `semestre_id` INT NOT NULL ,
@@ -64,7 +64,7 @@ COMMENT = 'classes (A1, A2, B1, B2…)' ;
 DROP TABLE IF EXISTS `intranet`.`libelle_modules` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`libelle_modules` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(70) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
@@ -76,7 +76,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`modules` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`modules` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `abreviation` VARCHAR(45) NOT NULL ,
   `description` TEXT NOT NULL ,
   `coefficient` INT NOT NULL ,
@@ -106,7 +106,7 @@ COMMENT = 'AP1, AP2, ASR-4, ...' ;
 DROP TABLE IF EXISTS `intranet`.`type_modules` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`type_modules` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(45) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
   `departement_id` INT NOT NULL ,
@@ -128,7 +128,7 @@ COMMENT = 'Td, Tp, cours magistral, partiel' ;
 DROP TABLE IF EXISTS `intranet`.`statuts` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`statuts` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB, 
@@ -183,7 +183,7 @@ COMMENT = 'celle la' ;
 DROP TABLE IF EXISTS `intranet`.`modules_personnes` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`modules_personnes` (
-  `id` VARCHAR(45) NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `module_id` INT NOT NULL ,
   `personne_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
@@ -208,7 +208,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`modules_type_modules` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`modules_type_modules` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `module_id` INT NOT NULL ,
   `type_module_id` INT NOT NULL ,
   `cours_id` INT NOT NULL ,
@@ -296,7 +296,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`messages_personnes` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`messages_personnes` (
-  `id` VARCHAR(45) NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `message_id` INT NOT NULL ,
   `personne_id` INT NOT NULL ,
   `lu` TINYINT(1)  NOT NULL DEFAULT false ,
@@ -355,7 +355,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`evenements` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`evenements` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `titre` VARCHAR(255) NOT NULL ,
   `date_debut` DATETIME NOT NULL ,
   `date_fin` DATETIME NOT NULL ,
