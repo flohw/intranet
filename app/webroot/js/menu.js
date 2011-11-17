@@ -1,12 +1,15 @@
 jQuery(function($){
 
 	$(".menu").mouseover(function(){
+		$('.menu-dropdown').slideUp();
+		$('.menu').removeClass('active');
 		$(this).parent().find('.menu-dropdown').stop(true, true).slideDown();
 		$(this).addClass('active');
-	});
-	$('.menu-dropdown').mouseout(function(){
-		$(this).slideUp();
-		$(this).parent().find('.active').removeClass('active');
+	}).mouseleave(function(){
+		$('.menu-dropdown').mouseleave(function(){
+			$(this).slideUp();
+			$(this).parent().find('.active').removeClass('active');
+		});
 	});
 	
 	$('.menu').click(function(){

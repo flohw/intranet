@@ -34,10 +34,14 @@
                 		<li><?php echo $this->Html->link('...', array('controller' => 'etudes', 'action' => 'emplois')); ?></li>
                 	</ul>
                 </li>
+<!--
+
                 <li><?php echo $this->Form->create('Recherche', array ('controller' => 'personnes', 'action' => 'rechercher'), array('class' => 'recherche')); ?>
                         <?php echo $this->Form->input('recherche', array('class' => 'recherche', 'placeholder' => 'Recherche', 'label' => false)); ?>
                         <?php echo $this->Form->end(); ?>
                 </li>
+-->
+
             </ul>
             <ul class="nav secondary-nav">
                 <li>
