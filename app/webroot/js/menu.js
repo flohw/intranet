@@ -1,11 +1,12 @@
 jQuery(function($){
 
 	$(".menu").mouseover(function(){
-		$(this).next('.menu-dropdown').slideDown('fast');
+		$(this).parent().find('.menu-dropdown').stop(true, true).slideDown();
+		$(this).addClass('active');
 	});
-	
 	$('.menu-dropdown').mouseout(function(){
-		$(this).stop().slideUp('slow');
+		$(this).slideUp();
+		$(this).parent().find('.active').removeClass('active');
 	});
 	
 	$('.menu').click(function(){
