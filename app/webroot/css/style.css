@@ -11,11 +11,8 @@
 .container{
 	padding-top:60px;
 }
-form.recherche .recherche{
-	margin:0;
-}
-form.recherche .text{
-	padding:0;
+form .recherche {
+	margin-left: 15px;
 }
 
 #signin {
@@ -41,4 +38,11 @@ form.recherche .text{
 .menu.active {
 	color: white;
 	background: rgba(255, 255, 255, 0.05);
+}
+
+.clearfix span {
+	margin-left: 13px;
+	margin-bottom: 5px;
+	font-size: 11px;
+	display: block;
 }

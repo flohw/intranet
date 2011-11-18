@@ -131,8 +131,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`statuts` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`) )
-ENGINE = InnoDB, 
-COMMENT = 'Auteur => peut créer/modifier dans les dossiers où il a les ' /* comment truncated */ ;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

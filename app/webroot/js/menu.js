@@ -1,23 +1,17 @@
 jQuery(function($){
 
-	$(".menu").mouseover(function(){
+	$("a.menu").mouseenter(function(){
 		$('.menu-dropdown').slideUp();
-		$('.menu').removeClass('active');
-		$(this).parent().find('.menu-dropdown').stop(true, true).slideDown();
-		$(this).addClass('active');
-	}).mouseleave(function(){
-		$('.menu-dropdown').mouseleave(function(){
-			$(this).slideUp();
-			$(this).parent().find('.active').removeClass('active');
+		$('.active').removeClass('active');
+		$(this).parent().find('.menu-dropdown').stop(true, true).slideDown('slow', function(){
+			$(this).find('input[type="text"]').focus();
 		});
+		$(this).addClass('active');
 	});
-	
-	$('.menu').click(function(){
-		if ($(this).hasClass('active'))
-			$(this).removeClass('active');
-		else
-			$(this).addClass('active');
-		$(this).next('.dropdown-menu').toggle();
+	$('li.menu').mouseleave(function(){
+		$(this).find('.menu-dropdown').slideUp();
+		$(this).find('.active').removeClass('active');
+
 	});
 	
 	// Pour les tableau triable	

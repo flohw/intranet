@@ -8,15 +8,17 @@
                 <li><?php echo $this->Html->link("Contact", array('controller' => 'pages', 'action' => 'display', 'contact')); ?></li>
             </ul>
             <ul class="nav secondary-nav">
-            <li>
+            <li class="menu">
             	<a href="#" class="menu">Se connecter</a>
-            	<div id="signin" class="dropdown-menu">
+            	<div id="signin" class="menu-dropdown menu">
 					<?php echo $this->Form->create('Personne', array ('controller' => 'personnes', 'action' => 'connexion')); ?>
 					<div class="clearfix">
-						<?php echo $this->Form->text('login', array('placeholder' => 'Login', 'label' => false)); ?>
+						<span>Login</span>
+						<?php echo $this->Form->text('login', array('label' => false)); ?>
 					</div>
 					<div class="clearfix">
-					<?php echo $this->Form->password('mot_de_passe', array('placeholder' => 'Password', 'label' => false)); ?>
+						<span>Mot de passe</span>
+						<?php echo $this->Form->password('mot_de_passe', array('label' => false)); ?>
 					</div>
 					<ul class="inputs-list">
 						<li>
