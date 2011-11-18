@@ -20,6 +20,12 @@ class AppController extends Controller
 			else
 				$this->Auth->allow("*");
 		}
+		if ($this->Auth->user('id'))
+		{
+			$this->layout = 'eleve';
+			if (low($this->action) == 'display' AND $this->params['pass'][0] == 'home')
+				$this->redirect(array('controller' => 'pages', 'action' => 'display', 'personnes_home'));
+		}
 	}
 }
 

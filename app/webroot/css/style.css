@@ -1,48 +1,32 @@
-.clear{
-	clear:both;
+.clear { clear:both; }
+.hero-unit { margin-top: 20px; }
+.hero-unit img { float:left; margin-right:10px; }
+.container { padding-top:60px; }
+#container { margin-top:60px; }
+#accordeon h3
+{
+	cursor: pointer;
+	background: #FFF;
+	border: 1px solid black;
+	border-bottom: 0;
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-o-border-radius: 5px 5px 0 0;
+	-webki-border-radius: 5px 5px 0 0;
 }
-.hero-unit{
-	margin-top: 20px;
+#accordeon div
+{
+	border: 1px solid black;
+	border-top: 0;
+	border-radius: 0 0 5px 5px;
+	margin-bottom: 5px;
 }
-.hero-unit img {
-	float:left;
-	margin-right:10px;
-}
-.container{
-	padding-top:60px;
-}
-form .recherche {
-	margin-left: 15px;
-}
-
-#signin {
-	min-width: 250px;
-}
-#signin input {
-	margin: 10px;
-}
+form .recherche { margin-left: 15px; }
+#signin { min-width: 250px; }
+#signin input { margin: 10px; }
 #signin .inputs-list label { float: left; cursor: pointer; }
-#signin .inputs-list input {
-	margin-left: 0px;
-	margin-right: 10px;
-}
-#signin .inputs-list span {
-	color: white;
-}
-#signin .btn {
-	float: right;
-	margin-bottom: 5px;
-	margin-right: 5px;
-}
-
-.menu.active {
-	color: white;
-	background: rgba(255, 255, 255, 0.05);
-}
-
-.clearfix span {
-	margin-left: 13px;
-	margin-bottom: 5px;
-	font-size: 11px;
-	display: block;
-}
+#signin .inputs-list input { margin-left: 0px; margin-right: 10px; }
+#signin .inputs-list span { color: white; }
+#signin .btn { float: right; margin-bottom: 5px; margin-right: 5px; }
+.menu.active { color: white; background: rgba(255, 255, 255, 0.05); }
+.clearfix span { margin-left: 13px; margin-bottom: 5px; font-size: 11px; display: block; }

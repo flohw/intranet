@@ -8,15 +8,13 @@
   </head>
     <body>
 
-      <?php 
-        echo $this->element("topBarUserLambda");
-
-      ?>
+      <?php echo $this->element("topBarEleve"); ?>
            
-      <div class="container">
+      <div class="container-fluid" id="container">
       <?php echo $this->Session->flash('auth'); ?>
       <?php echo $this->Session->flash(); ?>
-        <?php echo $content_for_layout; ?>
+      <?php echo $this->element('sidebar'); ?>
+        <div class="content"><?php echo $content_for_layout; ?></div>
       </div> 
       <div class="footer">
         <div class="container">
@@ -29,6 +27,7 @@
       </div> 
 
       <?php echo $this->Html->script("jquery"); ?>
+      <?php echo $this->Html->script("jquery-ui"); ?>
       <?php echo $this->Html->script("menu"); ?>
       <?php echo $this->Html->script("bootstrap-modal"); ?>
       <?php echo $this->Html->script("alerts-elements"); ?>

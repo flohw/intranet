@@ -1,10 +1,12 @@
 <?php $this->title = "Intranet du département Informatique" ?>
 	<div class="page-header">
 		<h2>Bienvenue sur votre Intranet</h2>
-		<?php echo $this->Html->image("header.png", array("alt" => "Bonjour")); ?>
 	</div>
 	<div class="row">
-                <div class="span5">
+		<div class="span16"><?php echo $this->Html->image("header.png", array("alt" => "Bonjour")); ?></div>
+	</div>
+	<div class="row">
+         <div class="span5">
                     <h2>Title 1</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua.</p>

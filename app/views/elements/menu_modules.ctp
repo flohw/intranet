@@ -1,6 +1,6 @@
 <?php
 
-	$semestres = $this->requestAction('/semestres/getSemestres');
+	$semestres = $this->requestAction(array('controller' => 'semestres', 'action' => 'getSemestres'));
 	foreach ($semestres as $semestre):
 		$semestre = current($semestre);
 		echo '<li>';

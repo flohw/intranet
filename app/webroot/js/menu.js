@@ -13,7 +13,11 @@ jQuery(function($){
 		$(this).find('.active').removeClass('active');
 
 	});
-	
+	// Sidebar
+	$("#accordeon").accordion({
+			autoHeight: false,
+			navigation: false
+	});
 	// Pour les tableau triable	
 	$("table#sortTableExample").tablesorter({ sortList: [[1,0]] });
 

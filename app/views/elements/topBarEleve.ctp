@@ -1,7 +1,7 @@
 <div class="topbar">
     <div class="fill">
         <div class="container-fluid">
-            <h3><?php echo $this->Html->link("Acceuil",  array('controller' => 'pages', 'action' => 'display', 'home')); ?></h3>
+            <h3><?php echo $this->Html->link("Acceuil",  array('controller' => 'pages', 'action' => 'display', 'personnes_home')); ?></h3>
             <ul>
                 <li class="menu">
                 	<a href="#" class="menu">Modules</a>
@@ -44,7 +44,7 @@
 
             </ul>
             <ul class="nav secondary-nav">
-                <li>
+                <li class="menu">
                     <a href="#" class="menu">Mon Profil</a>
                     <ul class="menu-dropdown">
                         <li><?php echo $this->Html->link("Emploi du Temps", array('controller' => 'pages', 'action' => 'display', 'emploiDutemps')); ?></li>
