@@ -14,6 +14,10 @@ class Departement extends AppModel {
 				'rule' => array('maxlength', 60),
 				'message' => 'Le nom du département est trop long (60 caractères)',
 			),
+			'isunique' => array(
+				'rule' => array('isunique'),
+				'message' => 'Ce nom de département existe déjà',
+			),
 		),
 		'nb_max_eleves' => array(
 			'numeric' => array(

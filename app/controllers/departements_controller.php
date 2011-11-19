@@ -3,35 +3,37 @@ class DepartementsController extends AppController
 {
 
 	var $name = 'Departements';
+	
+	public function beforeFilter() { parent::beforeFilter(); }
 
-
-	function index() {
-		$resul_rech = $this->Departement->find('all');
-		$this->set('departements',$resul_rech);
+	function index()
+	{
+		$d['departements'] = $this->Departement->find('all');
+		$this->set($d);
 	}
 
-
-	function nouveau() {
-		if(isset($this->data))
+	function editer($id = null)
+	{
+		if (isset($this->data))
 		{
-			echo '<script>alert(\'hello\')</script>';
 			$this->Departement->set($this->data);
 			if ($this->Departement->validates())
 			{
 				$this->Departement->save();
-				$this->Session->setFlash("Departement sauvegardé !");
-				$this->redirect(array('action' => 'nouveau'));
+				$this->Session->setFlash('Département sauvegardé !', 'message', array('class' => 'success'));
+				$this->redirect(array('action' => 'editer'));
 			}
 			else
-				$this->Session->setFlash("Le departement est incorrect");
+				$this->Session->setFlash('Le département est incorrect', 'message');
 		}
+		else
+		{
+			$this->data = $this->Departement->find('first', array('recursive' => -1, 'conditions' => array('id' => $id)));
+		}
+		
 		$d['departements'] = $this->Departement->find('list');
+		$d['action'] = (is_null($id)) ? 'ajouter' : 'editer';
 		$this->set($d);
-	}
-
-	function modifier($id =null) {
-		$resul_rech = $this->Departement->find('list');
-		$this->set('departements',$resul_rech);
 	}
 }
 

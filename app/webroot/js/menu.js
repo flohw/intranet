@@ -2,7 +2,7 @@ jQuery(function($){
 
 	$("a.menu").mouseenter(function(){
 		$('.menu-dropdown').slideUp();
-		$('.active').removeClass('active');
+		$('.topbar .active').removeClass('active');
 		$(this).parent().find('.menu-dropdown').stop(true, true).slideDown('slow', function(){
 			$(this).find('input[type="text"]').focus();
 		});
@@ -11,13 +11,13 @@ jQuery(function($){
 	$('li.menu').mouseleave(function(){
 		$(this).find('.menu-dropdown').slideUp();
 		$(this).find('.active').removeClass('active');
-
 	});
 	// Sidebar
-	$("#accordeon").accordion({
+	$('#accordeon').accordion({
 			autoHeight: false,
-			navigation: false
+			navigation: true
 	});
+	$('#accordeon h3').click(function(){ $('#accordeon h3').removeClass('active'); $(this).addClass('active'); });
 	// Pour les tableau triable	
 	$("table#sortTableExample").tablesorter({ sortList: [[1,0]] });
 

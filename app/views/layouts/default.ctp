@@ -14,8 +14,10 @@
       ?>
            
       <div class="container">
-      <?php echo $this->Session->flash('auth'); ?>
-      <?php echo $this->Session->flash(); ?>
+      	<div id="messages">
+      		<?php echo $this->Session->flash('auth'); ?>
+	      	<?php echo $this->Session->flash(); ?>
+      	</div>
         <?php echo $content_for_layout; ?>
       </div> 
       <div class="footer">
@@ -29,6 +31,7 @@
       </div> 
 
       <?php echo $this->Html->script("jquery"); ?>
+      <?php echo $this->Html->script("jquery-ui"); ?>
       <?php echo $this->Html->script("menu"); ?>
       <?php echo $this->Html->script("bootstrap-modal"); ?>
       <?php echo $this->Html->script("alerts-elements"); ?>

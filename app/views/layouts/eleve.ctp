@@ -11,13 +11,15 @@
       <?php echo $this->element("topBarEleve"); ?>
            
       <div class="container-fluid" id="container">
-      <?php echo $this->Session->flash('auth'); ?>
-      <?php echo $this->Session->flash(); ?>
+      <div id="messages">
+	      <?php echo $this->Session->flash('auth'); ?>
+	      <?php echo $this->Session->flash(); ?>
+      </div>
       <?php echo $this->element('sidebar'); ?>
         <div class="content"><?php echo $content_for_layout; ?></div>
       </div> 
       <div class="footer">
-        <div class="container">
+        <div class="container-fluid">
           <p class="pull-right"><a href="#">Haut de page</a></p>
           <p>
             Design par PJ, Marie, Flohw, Alexandra, Aurélie et Do'
