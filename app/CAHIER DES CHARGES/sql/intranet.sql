@@ -47,7 +47,6 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
   `nb_max_eleves` INT NOT NULL ,
   `semestre_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `nom_UNIQUE` (`nom` ASC) ,
   INDEX `fk_groupes_semestres1` (`semestre_id` ASC) ,
   CONSTRAINT `fk_groupes_semestres1`
     FOREIGN KEY (`semestre_id` )
@@ -401,14 +400,60 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
+-- Data for table `intranet`.`departements`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `intranet`;
+INSERT INTO `intranet`.`departements` (`id`, `nom`, `nb_max_eleves`, `slug`, `abreviation`) VALUES (1, 'Informatique', 300, 'informatique', 'info');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `intranet`.`semestres`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `intranet`;
+INSERT INTO `intranet`.`semestres` (`id`, `nom`) VALUES (1, 'Semestre 1');
+INSERT INTO `intranet`.`semestres` (`id`, `nom`) VALUES (2, 'Semestre 2');
+INSERT INTO `intranet`.`semestres` (`id`, `nom`) VALUES (3, 'Semestre 3');
+INSERT INTO `intranet`.`semestres` (`id`, `nom`) VALUES (4, 'Semestre 4');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `intranet`.`groupes`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `intranet`;
+INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (1, 'A1', 15, 1);
+INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (2, 'A2', 15, 1);
+INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (3, 'A1', 15, 2);
+INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (4, 'A2', 15, 2);
+INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (5, 'Professeurs', 100, 1);
+INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (6, 'Administrateurs', 100, 1);
+
+COMMIT;
+
+-- -----------------------------------------------------
 -- Data for table `intranet`.`statuts`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `intranet`;
 INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (1, 'Lecteur');
-INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (10, 'Auteur');
-INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (20, 'Modérateur');
+INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (10, 'Eleve');
+INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (20, 'Professeur');
 INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (30, 'Administrateur');
+
+COMMIT;
+
+-- -----------------------------------------------------
+-- Data for table `intranet`.`personnes`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `intranet`;
+INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`) VALUES (1, 'eleve', 'eleve', 'eleve', '2010-11-12', '0404040404', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve');
+INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`) VALUES (2, 'professeur', 'professeur', 'professeur', '2009-11-12', '0505050505', 'prof@prof.pro', 20, 1, 5, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof');
+INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`) VALUES (3, 'administrateur', 'administrateur', 'administrateur', '2008-11-12', '0101010101', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin');
 
 COMMIT;
 
