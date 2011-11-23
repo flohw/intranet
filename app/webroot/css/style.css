@@ -60,10 +60,10 @@ form .recherche { margin-left: 15px; }
 .map { width:950px; height:626px; }
 .map .overlay { width:950px; height:626px; }
 .map img { position: absolute; top: 0; left: 0; z-index: 2; }
-#mapSS { background: url(/img/map/mapSS.png) left top no-repeat; position: relative; }
-#mapSS .overlay { background: url(/img/map/mapSS.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
-#mapRDC { background: url(/img/map/mapRDC.png) left top no-repeat; position: relative; }
-#mapRDC .overlay { background: url(/img/map/mapRDC.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
+#mapSS { background: url(../img/map/mapSS.png) left top no-repeat; position: relative; }
+#mapSS .overlay { background: url(../img/map/mapSS.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
+#mapRDC { background: url(../img/map/mapRDC.png) left top no-repeat; position: relative; }
+#mapRDC .overlay { background: url(../img/map/mapRDC.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
 
 .map .tooltip {
 	position: fixed;
