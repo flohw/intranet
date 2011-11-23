@@ -3,47 +3,30 @@
 .hero-unit img { float:left; margin-right:10px; }
 .container { padding-top:60px; }
 #container { margin-top:60px; }
-#accordeon h3.active:hover
-{
-	background: #FFFFFF;
-	color: rgba(235, 143, 0, 0.75);
-	border: 1px solid #FBD850;
-	border-bottom: 0;
-	border-radius: 5px 5px 0;
-	-moz-border-radius: 5px 5px 0;
-	-o-border-radius: 5px 5px 0;
-	-webki-border-radius: 5px 5px 0;
-}
 #accordeon h3.active {
 	background: #FFFFFF;
-	color: rgba(235, 143, 0, 0.75);
-	border: 1px solid #FBD850;
+	color: rgb(84, 69, 69);
 	border-bottom: 0;
 	border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
 	-o-border-radius: 5px 5px 0 0;
 	-webki-border-radius: 5px 5px 0 0;
 }
-
 #accordeon h3 {
 	text-align: center;
 	cursor: pointer;
-	border: 1px solid #CCCCCC;
+	border: 1px solid #DDDDDD;
+	margin-top: 7px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	-webki-border-radius: 5px;
 }
-#accordeon h3:hover {
-	background: #FFFFFF;
-	color: rgba(235, 143, 0, 0.75);
-	border: 1px solid #FBD850;
-}
+#accordeon h3:hover { background: #FFFFFF; color: rgba(230, 143, 0, 0.75); }
 #accordeon div {
-	border: 1px solid #DDD;
+	border: 1px solid #DDDDDD;
 	border-top: 0;
 	border-radius: 0 0 5px 5px;
-	margin-bottom: 7px;
 	padding-top: 10px;
 }
 form .recherche { margin-left: 15px; }
