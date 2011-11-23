@@ -5,6 +5,9 @@
 <ul class="tabs">
 	<li class="active"><a href="#mapSS">Sous-sol</a></li>
 	<li><a href="#mapRDC">Rez-De-Chaussée</a></li>
+	<li><a href="#map1">Premier étage</a></li>
+	<li><a href="#map2">Deuxième étage</a></li>
+	<li><a href="#map3">Troisième étage</a></li>
 </ul>
 
 <div class="pill-content">
@@ -31,6 +34,24 @@
 	<div id="mapRDC" class="map">
 		<?php echo $this->Html->image('map/void.png', array('width' => 950, 'height' => 626, 'usemap' => '#mapRDC')); ?>
 		<map name="mapRDC">
+			<area shape="poly" coords="625,496,581,455,520,522,566,561" href="#" />
+		</map>
+	</div>
+	<div id="map1" class="map">
+		<?php echo $this->Html->image('map/void.png', array('width' => 950, 'height' => 626, 'usemap' => '#map1')); ?>
+		<map name="map1">
+			<area shape="poly" coords="625,496,581,455,520,522,566,561" href="#" />
+		</map>
+	</div>
+	<div id="map2" class="map">
+		<?php echo $this->Html->image('map/void.png', array('width' => 950, 'height' => 626, 'usemap' => '#map2')); ?>
+		<map name="map2">
+			<area shape="poly" coords="625,496,581,455,520,522,566,561" href="#" />
+		</map>
+	</div>
+	<div id="map3" class="map">
+		<?php echo $this->Html->image('map/void.png', array('width' => 950, 'height' => 626, 'usemap' => '#map3')); ?>
+		<map name="map3">
 			<area shape="poly" coords="625,496,581,455,520,522,566,561" href="#" />
 		</map>
 	</div>
