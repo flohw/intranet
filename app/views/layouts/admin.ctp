@@ -7,7 +7,7 @@
 		<?php echo $this->Html->css('bootstrap.css'); ?>
 	</head>
 	<body>
-		<?php echo $this->element("topBarEleve"); ?>
+		<?php echo $this->element("topBarAdmin"); ?>
 		
 		<div class="container-fluid" id="container">
 			<div id="messages">
@@ -17,7 +17,7 @@
 			<?php echo $this->element('sidebar'); ?>
 			<div class="content"><?php echo $content_for_layout; ?></div>
 		</div> 
-	
+		
 		<div class="footer">
 			<div class="container-fluid">
 				<p class="pull-right"><a href="#">Haut de page</a></p>

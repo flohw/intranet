@@ -15,7 +15,7 @@ jQuery(function($){
 	// Sidebar
 	$('#accordeon').accordion({
 			autoHeight: false,
-			navigation: true
+			navigation: true,
 	});
 	$('#accordeon h3').click(function(){ $('#accordeon h3').removeClass('active'); $(this).addClass('active'); });
 	// Pour les tableau triable	

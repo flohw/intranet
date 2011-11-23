@@ -1,6 +1,5 @@
 <?php
-
-	class SemestresController extends AppController
+class SemestresController extends AppController
 	{
 		public $name = 'Semestres';
 		public $uses = array('Semestre');

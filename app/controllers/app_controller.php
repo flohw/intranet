@@ -22,7 +22,18 @@ class AppController extends Controller
 		}
 		if ($this->Auth->user('id'))
 		{
-			$this->layout = 'eleve';
+			switch ($this->Auth->user('statut_id'))
+			{
+				case 10:
+					$this->layout = 'eleve';
+					break;
+				case 20:
+					$this->layout = 'professeur';
+					break;
+				case 30:
+					$this->layout = 'admin';
+					break;
+			}
 			if (low($this->action) == 'display' AND $this->params['pass'][0] == 'home')
 				$this->redirect(array('controller' => 'pages', 'action' => 'display', 'personnes_home'));
 		}

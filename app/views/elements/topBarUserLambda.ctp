@@ -1,7 +1,7 @@
 <div class="topbar">
     <div class="fill">
         <div class="container-fluid">
-            <h3><?php echo $this->Html->link("Acceuil",  array('controller' => 'pages', 'action' => 'display', 'home')); ?></h3>
+            <h3><?php echo $this->Html->link('Acceuil'.$this->Html->image('icone-user.png'),  array('controller' => 'pages', 'action' => 'display', 'home'), array('escape' => false)); ?></h3>
             <ul>
                 <li><?php echo $this->Html->link("L'IUT 2", array('controller' => 'pages', 'action' => 'display', 'iut')); ?></li>
                 <li><?php echo $this->Html->link("Infos", array('controller' => 'pages', 'action' => 'display', 'infos')); ?></li>
