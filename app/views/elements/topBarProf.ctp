@@ -12,6 +12,13 @@
                 	</ul>
                 </li>
                 <li class="menu">
+                	<a href="#" class="menu">Scolarité</a>
+                	<ul class="menu-dropdown">
+	                	<li><?php echo $this->Html->link('Abscences', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+	                	<li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+                	</ul>
+                </li>
+                <li class="menu">
                 	<a href="#" class="menu">Infos</a>
                 	<ul class="menu-dropdown">
 	                	<li><?php echo $this->Html->link('Annuaire des professeurs', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
