@@ -32,6 +32,7 @@
 		<?php echo $this->Html->script("jquery-ui"); ?>
 		<?php echo $this->Html->script("menu"); ?>
 		<?php echo $this->Html->script("bootstrap-modal"); ?>
+		<?php echo $this->Html->script("bootstrap-tabs"); ?>
 		<?php echo $this->Html->script("alerts-elements"); ?>
 		<?php echo $this->Html->script("tablesorter"); ?>
 		<?php echo $scripts_for_layout; ?>

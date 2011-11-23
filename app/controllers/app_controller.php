@@ -26,15 +26,12 @@ class AppController extends Controller
 			{
 				case 10:
 					$this->layout = 'eleve';
-					$d['sidebar'] = 'eleve';
 					break;
 				case 20:
 					$this->layout = 'professeur';
-					$d['sidebar'] = 'professeur';
 					break;
 				case 30:
 					$this->layout = 'admin';
-					$d['sidebar'] = 'admin';
 					break;
 			}
 			if (low($this->action) == 'display' AND $this->params['pass'][0] == 'home')

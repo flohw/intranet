@@ -59,13 +59,13 @@ form .recherche { margin-left: 15px; }
 .map {
 	width:950px;
 	height:626px;
-	background:url(intranet/img/mapSS.png) left top no-repeat;
+	background:url(/img/mapSS.png) left top no-repeat;
 	position: relative;
 }
 .map .overlay {
 	width:950px;
 	height:626px;
-	background:url((intranet/img/mapSS.png) 950px top no-repeat;
+	background:url(/img/mapSS.png) 950px top no-repeat;
 	position:absolute;
 	top:0;
 	left:0;
