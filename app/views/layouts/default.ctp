@@ -9,7 +9,7 @@
     <body>
 
       <?php 
-        echo $this->element("topBarUserLambda");
+        echo $this->element("topbars/default");
 
       ?>
            

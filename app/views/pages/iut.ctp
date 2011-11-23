@@ -6,18 +6,18 @@
 </div>
 <div class="row">
     <div class="span3">
-              <p><?php echo $this->Html->image('cj.png', array('url' => 'http://www.iut2.upmf-grenoble.fr//436_0_0_0_Carri%E8res+Juridiques_0.html')); ?></p>
+              <p><?php echo $this->Html->image('departements/cj.png', array('url' => 'http://www.iut2.upmf-grenoble.fr//436_0_0_0_Carri%E8res+Juridiques_0.html')); ?></p>
     </div>
     <div class="span3">
-        <p><?php echo $this->Html->image('tech2co.png', array('url' => 'http://www.iut2.upmf-grenoble.fr//442_0_0_0_Techniques+de+Commercialisation_0.html')); ?></p>
+        <p><?php echo $this->Html->image('departements/tech2co.png', array('url' => 'http://www.iut2.upmf-grenoble.fr//442_0_0_0_Techniques+de+Commercialisation_0.html')); ?></p>
     </div>
     <div class="span4">
-    <p><?php echo $this->Html->image('info.png', array("url" => "home")); ?></p>
+    <p><?php echo $this->Html->image('departements/info.png', array("url" => "home")); ?></p>
     </div>
     <div class="span3">
-        <p><?php echo $this->Html->image('infocom.png', array('url' => 'http://www.iut2.upmf-grenoble.fr//439_0_0_0_Information-Communication_0.html')); ?></p>
+        <p><?php echo $this->Html->image('departements/infocom.png', array('url' => 'http://www.iut2.upmf-grenoble.fr//439_0_0_0_Information-Communication_0.html')); ?></p>
     </div>
     <div class="span3">
-        <p><?php echo $this->Html->image('gea.png', array('url' => 'http://www.iut2.upmf-grenoble.fr//437_0_0_0_Gestion+des+Entreprises+et+des+Administrations+Grenoble++_0.html')); ?></p>
+        <p><?php echo $this->Html->image('departements/gea.png', array('url' => 'http://www.iut2.upmf-grenoble.fr//437_0_0_0_Gestion+des+Entreprises+et+des+Administrations+Grenoble++_0.html')); ?></p>
     </div>
 </div>

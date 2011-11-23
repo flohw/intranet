@@ -7,7 +7,7 @@
 		<?php echo $this->Html->css('bootstrap.css'); ?>
 	</head>
 	<body>
-		<?php echo $this->element("topBarAdmin"); ?>
+		<?php echo $this->element("topbars/admin"); ?>
 		
 		<div class="container-fluid" id="container">
 			<div id="messages">

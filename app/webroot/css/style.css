@@ -55,38 +55,26 @@ form .recherche { margin-left: 15px; }
 	color: #E84F4A;
 	font-weight: bold;
 }
+
 /* Style pour les maps */ 
-.map {
-	width:950px;
-	height:626px;
-	background:url(/img/mapSS.png) left top no-repeat;
-	position: relative;
-}
-.map .overlay {
-	width:950px;
-	height:626px;
-	background:url(/img/mapSS.png) 950px top no-repeat;
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:1;
-}
-.map img {
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:2;
-}
+.map { width:950px; height:626px; }
+.map .overlay { width:950px; height:626px; }
+.map img { position: absolute; top: 0; left: 0; z-index: 2; }
+#mapSS { background: url(/img/map/mapSS.png) left top no-repeat; position: relative; }
+#mapSS .overlay { background: url(/img/map/mapSS.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
+#mapRDC { background: url(/img/map/mapRDC.png) left top no-repeat; position: relative; }
+#mapRDC .overlay { background: url(/img/map/mapRDC.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
+
 .map .tooltip {
-	position:fixed;
-	border-radius:5px;
-	color:#FFF;
-	background:#000;
-	padding:0 10px;
+	position: fixed;
+	border-radius: 5px;
+	color: #FFF;
+	background: #000;
+	padding: 0 10px;
 	display: inline;
-	top:0;
-	left:0;
-	z-index:3;
-	text-align:center;
-	font-size:1.2em;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	text-align: center;
+	font-size: 1.2em;
 }

@@ -8,7 +8,7 @@
     <div class="page-header">
       <h1>Visitez <small>le site de l' <?php echo $this->Html->link('UPMF', 'http://www.upmf-grenoble.fr'); ?></small></h1>
     </div>
-      <p><?php echo $this->Html->image('upmf2.jpg', array('alt' => 'UPMF')); ?></p>
+      <p><?php echo $this->Html->image('upmf.jpg', array('alt' => 'UPMF')); ?></p>
   </div>
 </div>
 

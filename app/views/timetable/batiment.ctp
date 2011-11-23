@@ -9,7 +9,7 @@
 
 <div class="pill-content">
 	<div id="mapSS" class="map active">
-		<?php echo $this->Html->image("void.png", array('width' => 950, 'height' => 626, 'usemap' => '#mapSS')); ?>
+		<?php echo $this->Html->image('map/void.png', array('width' => 950, 'height' => 626, 'usemap' => '#mapSS')); ?>
 		<map name="mapSS">
 			<area shape="poly" coords="625,496,581,455,520,522,566,561" href="#" />
 			<area shape="poly" coords="539,419,581,455,520,522,480,485" href="#" />
@@ -29,7 +29,7 @@
 		</map>
 	</div>
 	<div id="mapRDC" class="map">
-		<?php echo $this->Html->image('void.png', array('width' => 950, 'height' => 621, 'usemap' => '#mapRDC')); ?>
+		<?php echo $this->Html->image('map/void.png', array('width' => 950, 'height' => 626, 'usemap' => '#mapRDC')); ?>
 		<map name="mapRDC">
 			<area shape="poly" coords="625,496,581,455,520,522,566,561" href="#" />
 		</map>
