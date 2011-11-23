@@ -1,29 +1,28 @@
 <div class="topbar">
     <div class="fill">
         <div class="container-fluid">
-            <h3><?php echo $this->Html->link('Elève'.$this->Html->image('icone-eleve.png'),  array('controller' => 'pages', 'action' => 'display', 'personnes_home'), array('escape' => false)); ?></h3>
+            <h3><?php echo $this->Html->link('Administrateur'.$this->Html->image('icone-admin.png'),  array('controller' => 'pages', 'action' => 'display', 'personnes_home'), array('escape' => false)); ?></h3>
             <ul>
                 <li class="menu">
-                	<a href="#" class="menu">Modules</a>
+                	<a href="#" class="menu">Départements</a>
                 	<ul class="menu-dropdown">
-                		<?php echo $this->element('menu_modules'/* , array('cache' => '+1 year') */); ?>
+                		<li><?php echo $this->Html->link('Editer les départements', array('controller' => 'departements', 'action' => 'editer')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
-                	<a href="#" class="menu">Stages & projets</a>
+                	<a href="#" class="menu">Comptes</a>
                 	<ul class="menu-dropdown">
-                		<li><?php echo $this->Html->link('Offres de stage', array('controller' => 'stages', 'action' => 'index')); ?></li>
-                		<li><?php echo $this->Html->link('Infos', array('controller' => 'stages', 'action' => 'infos')); ?></li>
-                		<li><?php echo $this->Html->link('Projet tuteuré 1A', array('controller' => 'stages', 'action' => 'projets')); ?></li>
-                		<li><?php echo $this->Html->link('Projet tuteuré 2A', array('controller' => 'stages', 'action' => 'projets')); ?></li>
-                		<li><?php echo $this->Html->link('Projet personnel professionnel', array('controller' => 'stages', 'action' => 'projets')); ?></li>
+                		<li><?php echo $this->Html->link('Editer un compte', array('controller' => 'stages', 'action' => 'index')); ?></li>
+                		<li><?php echo $this->Html->link('Supprimer un compte', array('controller' => 'stages', 'action' => 'infos')); ?></li>
+                		<li><?php echo $this->Html->link('Ajouter un compte', array('controller' => 'stages', 'action' => 'projets')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
-                	<a href="#" class="menu">Infos</a>
+                	<a href="#" class="menu">Fichiers</a>
                 	<ul class="menu-dropdown">
-	                	<li><?php echo $this->Html->link('Annuaire des professeurs', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
-	                	<li><?php echo $this->Html->link('Annuaire des étudiants', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+	                	<li><?php echo $this->Html->link('Créer un dossier', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+	                	<li><?php echo $this->Html->link('Editer un dossier', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+	                	<li><?php echo $this->Html->link('Supprimer un dossier', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
@@ -33,12 +32,6 @@
                 		<li><?php echo $this->Html->link('Boîte de réception', array('controller' => 'etudes', 'action' => 'emplois')); ?></li>
                 		<li><?php echo $this->Html->link('Messages envoyés', array('controller' => 'etudes', 'action' => 'emplois')); ?></li>
                 	</ul>
-                </li>
-
- 
-               <li><?php echo $this->Form->create('Recherche', array ('controller' => 'personnes', 'action' => 'rechercher'), array('class' => 'recherche')); ?>
-                        <?php echo $this->Form->text('recherche', array('class' => 'recherche', 'placeholder' => 'Recherche', 'label' => false)); ?>
-                        <?php echo $this->Form->end(); ?>
                 </li>
 
 
