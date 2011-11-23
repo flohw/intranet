@@ -13,6 +13,10 @@ class PersonnesController extends AppController
 	function deconnexion() {
 		$this->redirect($this->Auth->logout());
 	}
+
+	function gestion() {
+		
+	}
 }
 
 ?>
