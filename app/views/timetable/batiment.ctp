@@ -60,7 +60,35 @@
 	<div id="map1" class="map">
 		<?php echo $this->Html->image('map/void.png', array('width' => 950, 'height' => 626, 'usemap' => '#map1')); ?>
 		<map name="map1">
-			<area shape="poly" coords="625,496,581,455,520,522,566,561" href="#" />
+			<area shape="poly" coords="858,502,795,501,795,569,858,570"  href="#" />
+			<area shape="poly" coords="794,502,719,501,718,568,796,570"  href="#" />
+			<area shape="poly" coords="718,571,663,570,663,500,718,501"  href="#" />
+			<area shape="poly" coords="663,501,636,501,623,489,610,504,623,504,623,570,663,570"  href="#" />
+			<area shape="poly" coords="539,412,480,478,520,515,580,448"  href="#" />
+			<area shape="poly" coords="465,347,406,411,479,478,539,412"  href="#" />
+			<area shape="poly" coords="380,271,466,346,406,411,323,336"  href="#" />
+			<area shape="poly" coords="303,201,338,232,279,297,244,267"  href="#" />
+			<area shape="poly" coords="257,162,303,201,244,266,200,226"  href="#" />
+			<area shape="poly" coords="80,14,282,27,277,117,258,162,200,225,49,91"  href="#" />
+			<area shape="poly" coords="390,55,438,58,435,127,387,124"  href="#" />
+			<area shape="poly" coords="438,58,486,61,482,130,435,127"  href="#" />
+			<area shape="poly" coords="488,42,587,49,582,136,482,130"  href="#" />
+			<area shape="poly" coords="587,68,636,71,632,141,582,137"  href="#" />
+			<area shape="poly" coords="636,72,684,75,681,145,632,141"  href="#" />
+			<area shape="poly" coords="684,75,733,79,728,147,680,145"  href="#" />
+			<area shape="poly" coords="733,78,779,82,775,150,728,148"  href="#" />
+			<area shape="poly" coords="781,62,775,149,936,159,937,74"  href="#" />
+			<area shape="poly" coords="937,160,858,155,857,210,937,209"  href="#" />
+			<area shape="poly" coords="916,210,858,210,858,272,916,273"  href="#" />
+			<area shape="poly" coords="918,274,858,273,860,316,875,316,874,332,900,331,901,315,917,316"  href="#" />
+			<area shape="poly" coords="917,316,901,316,902,332,874,332,874,316,860,316,858,375,918,375"  href="#" />
+			<area shape="poly" coords="917,376,859,375,859,437,917,436"  href="#" />
+			<area shape="poly" coords="859,438,936,436,938,569,859,569"  href="#" />
+			<area shape="poly" coords="578,238,786,193,786,239,772,239,773,280,768,317,761,352,752,376,574,312"  href="#" />
+			<area shape="poly" coords="452,158,518,162,515,203,450,199"  href="#" />
+			<area shape="poly" coords="450,200,515,203,510,292,499,292,499,276,444,275"  href="#" />
+			<area shape="poly" coords="445,275,498,277,496,320,487,329,444,289"  href="#" />
+			<area shape="poly" coords="375,152,452,157,450,179,391,242,371,223"  href="#" />
 		</map>
 	</div>
 	<div id="map2" class="map">
@@ -72,7 +100,31 @@
 	<div id="map3" class="map">
 		<?php echo $this->Html->image('map/void.png', array('width' => 950, 'height' => 626, 'usemap' => '#map3')); ?>
 		<map name="map3">
-			<area shape="poly" coords="625,496,581,455,520,522,566,561" href="#" />
+			<area shape="poly" coords="1293,756,1203,754,1204,832,1215,837,1222,838,1224,856,1294,855" href="#" />
+			<area shape="poly" coords="1201,753,1128,754,1127,857,1223,856,1222,838,1213,839,1204,832,1203,829" href="#" />
+			<area shape="poly" coords="1129,754,1072,755,1071,855,1127,855" href="#" />
+			<area shape="poly" coords="1071,754,995,755,995,807,1011,806,1012,859,1071,859,1071,857" href="#" />
+			<area shape="poly" coords="994,755,967,755,944,782,945,857,1012,859,1010,807,994,806" href="#" />
+			<area shape="poly" coords="944,784,915,762,850,835,874,856,945,857,944,859" href="#" />
+			<area shape="poly" coords="915,763,850,833,785,777,851,702,850,702" href="#" />
+			<area shape="poly" coords="836,717,776,664,725,720,783,774,783,773" href="#" />
+			<area shape="poly" coords="724,718,776,664,662,561,612,619" href="#" />
+			<area shape="poly" coords="610,618,486,506,538,449,663,561" href="#" />
+			<area shape="poly" coords="485,505,364,398,418,339,540,449" href="#" />
+			<area shape="poly" coords="416,338,353,283,301,340,366,397" href="#" />
+			<area shape="poly" coords="300,338,173,224,221,170,274,190,277,204,284,209,294,212,303,212,312,207,314,202,369,225,365,234,389,244" href="#" />
+			<area shape="poly" coords="419,167,398,161,371,156,330,138,336,34,424,41" href="#" />
+			<area shape="poly" coords="618,86,613,185,727,196,734,92" href="#" />
+			<area shape="poly" coords="728,196,877,208,884,73,736,61" href="#" />
+			<area shape="poly" coords="882,102,1034,114,1027,219,877,207" href="#" />
+			<area shape="poly" coords="1033,112,1176,122,1168,226,1026,216" href="#" />
+			<area shape="poly" coords="1180,93,1168,227,1412,241,1411,108" href="#" />
+			<area shape="poly" coords="1294,233,1294,317,1411,315,1413,241" href="#" />
+			<area shape="poly" coords="1295,315,1293,408,1293,421,1381,420,1381,316" href="#" />
+			<area shape="poly" coords="1293,420,1382,421,1379,503,1294,503" href="#" />
+			<area shape="poly" coords="1294,502,1379,505,1380,587,1291,586" href="#" />
+			<area shape="poly" coords="1292,585,1380,586,1381,657,1294,656,1296,657" href="#" />
+			<area shape="poly" coords="1292,677,1411,675,1413,856,1292,856" href="#" />
 		</map>
 	</div>
 </div>

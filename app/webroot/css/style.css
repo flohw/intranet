@@ -64,6 +64,10 @@ form .recherche { margin-left: 15px; }
 #mapSS .overlay { background: url(../img/map/mapSS.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
 #mapRDC { background: url(../img/map/mapRDC.png) left top no-repeat; position: relative; }
 #mapRDC .overlay { background: url(../img/map/mapRDC.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
+#map1 { background: url(../img/map/map1.png) left top no-repeat; position: relative; }
+#map1 .overlay { background: url(../img/map/map1.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
+#map3 { background: url(../img/map/map3.png) left top no-repeat; position: relative; }
+#map3 .overlay { background: url(../img/map/map3.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
 
 .map .tooltip {
 	position: fixed;
