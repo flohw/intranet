@@ -1,5 +1,6 @@
 jQuery(function($){
-
+	
+	// Topbar
 	$("a.menu").mouseenter(function(){
 		$('.menu-dropdown').slideUp();
 		$('.topbar .active').removeClass('active');
@@ -12,13 +13,15 @@ jQuery(function($){
 		$(this).find('.menu-dropdown').slideUp();
 		$(this).find('.active').removeClass('active');
 	});
+	
 	// Sidebar
 	$('#accordeon').accordion({
 			autoHeight: false,
 			navigation: true,
 	});
 	$('#accordeon h3').click(function(){ $('#accordeon h3').removeClass('active'); $(this).addClass('active'); });
+	
 	// Pour les tableau triable	
-	$("table#sortTableExample").tablesorter({ sortList: [[1,0]] });
+	$("table#sort").tablesorter({ sortList: [[1,0]] });
 
 });

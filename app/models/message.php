@@ -18,31 +18,17 @@ class Message extends AppModel {
 	);
 
 	var $belongsTo = array(
-		'Personne' => array(
+		'Expediteur' => array(
 			'className' => 'Personne',
 			'foreignKey' => 'personne_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
-	);
-
-	var $hasAndBelongsToMany = array(
-		'Personne' => array(
+		),
+		'Destinataire' => array(
 			'className' => 'Personne',
-			'joinTable' => 'messages_personnes',
-			'foreignKey' => 'message_id',
-			'associationForeignKey' => 'personne_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		)
+			'foreignKey' => 'destinataire_id'
+		),
 	);
 	
 	public function beforeSave ()

@@ -30,7 +30,7 @@
                 	<a href="#" class="menu">Messagerie</a>
                 	<ul class="menu-dropdown">
                 		<li><?php echo $this->Html->link('Nouveau message', array('controller' => 'etudes', 'action' => 'etranger')); ?></li>
-                		<li><?php echo $this->Html->link('Boîte de réception', array('controller' => 'etudes', 'action' => 'emplois')); ?></li>
+                		<li><?php echo $this->Html->link('Boîte de réception', array('controller' => 'messages', 'action' => 'index')); ?></li>
                 		<li><?php echo $this->Html->link('Messages envoyés', array('controller' => 'etudes', 'action' => 'emplois')); ?></li>
                 	</ul>
                 </li>
