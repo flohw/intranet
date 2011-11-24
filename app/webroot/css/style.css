@@ -31,6 +31,7 @@
 	padding-top: 10px;
 }
 form .recherche { margin-left: 15px; }
+form select.input { margin-left: 150px; }
 #signin { min-width: 250px; }
 #signin input { margin: 10px; }
 #signin .inputs-list label { float: left; cursor: pointer; }
@@ -56,6 +57,13 @@ form .recherche { margin-left: 15px; }
 	font-weight: bold;
 }
 
+/* Style pour les messages */
+#sort .right { text-align: right; }
+#sort #actions { width: 250px; }
+#auteur-message { width: 170px; }
+#messagerie thead th { text-align: center; }
+#messagerie { width: 940px; margin-left: 20px; }
+
 /* Style pour les maps */ 
 .map { width:950px; height:626px; }
 .map .overlay { width:950px; height:626px; }
@@ -68,7 +76,6 @@ form .recherche { margin-left: 15px; }
 #map1 .overlay { background: url(../img/map/map1.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
 #map3 { background: url(../img/map/map3.png) left top no-repeat; position: relative; }
 #map3 .overlay { background: url(../img/map/map3.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
-
 .map .tooltip {
 	position: fixed;
 	border-radius: 5px;
@@ -82,3 +89,6 @@ form .recherche { margin-left: 15px; }
 	text-align: center;
 	font-size: 1.2em;
 }
+
+/* A SUPPRIMER A LA FIN DU PROJET */
+.cake-debug { position: relative; top: 40px; }

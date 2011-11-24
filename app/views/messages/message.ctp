@@ -1,14 +1,42 @@
-<?php $this->title = 'Intranet | Messagerie | Lecture d\'un message'; ?>
-<?php $personne = $message['Personne']; $message = $message['Message']; ?>
+<?php $this->title = 'Intranet | Messagerie | Lecture d\'un message | '.$message['Message']['titre']; ?>
 <div class="page-header">
-	<h1><?php echo $message['titre']; ?></h1>
+	<h1><?php echo $message['Message']['titre']; ?></h1>
 </div>
 
+<table id="messagerie" class="zebra-striped">
+	<thead>
+		<tr>
+			<th id="auteur-message">Auteur</th>
+			<th id="message-message">Message</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				Par : <?php echo $message['Message']['personne_nom']; ?><br />
+				Le : <?php echo $message['Message']['date_envoi']; ?><br />
+			</td>
+			<td><?php echo nl2br($message['Message']['message']); ?></td>
+		</tr>
+	<?php foreach ($message['Message']['Reponse'] as $r): ?>
+		<tr>
+			<td>
+				Par : <?php echo $r['personne_nom']; ?><br />
+				Le : <?php echo $r['date_envoi']; ?>
+			</td>
+			<td>
+				<?php echo nl2br($r['message']); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</tbody>
+</table>
+
 <span class="row">
-	<span class="span3">
-		<?php debug($personne); ?>
-	</span>
-	<span class="span13">
-		<?php debug($message); ?>
+	<span class="span16">
+		<div class="actions">
+		<?php echo $this->Html->link('Répondre', array('action' => 'repondre', $message['Message']['id']), array('class' => 'btn success')); ?>
+		<?php echo $this->Html->link('Supprimer', array('action' => 'supprimer', $message['Message']['id']), array('class' => 'btn danger'), 'Etes vous sur de vouloir supprimer cette conversation ?'); ?>
+		</div>
 	</span>
 </span>

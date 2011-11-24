@@ -9,10 +9,20 @@ class Message extends AppModel {
 				'message' => 'Le titre du message est vide',
 				'allowEmpty' => false,
 				'required' => true,
+				'on' => 'create',
 			),
 			'maxlength' => array(
 				'rule' => array('maxlength', 255),
 				'message' => 'Le titre est trop long (255 cractères)',
+				'on' => 'create',
+			),
+		),
+		'message' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Le message ne peut pas être vide',
+				'allowEmpty' => false,
+				'required' => true
 			),
 		),
 	);
@@ -30,15 +40,6 @@ class Message extends AppModel {
 			'foreignKey' => 'destinataire_id'
 		),
 	);
-	
-	public function beforeSave ()
-	{
-		$date = new Date();
-		$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
-		$this->data['Message']['personne_id'] = $this->Auth->read('id');
-		// $this->data['Message']['personne_id'] = $this->Session->read('Auth.Personne.id');
-		return true;
-	}
 
 }
 ?>

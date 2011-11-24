@@ -277,8 +277,8 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`messages` (
   `date_envoi` DATETIME NOT NULL ,
   `fichier` VARCHAR(100) NOT NULL ,
   `personne_id` INT NOT NULL COMMENT 'expéditeur' ,
+  `destinataire_id` INT NOT NULL COMMENT 'destinataire du message' ,
   PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `fichier_UNIQUE` (`fichier` ASC) ,
   INDEX `fk_messages_personnes1` (`personne_id` ASC) ,
   CONSTRAINT `fk_messages_personnes1`
     FOREIGN KEY (`personne_id` )
@@ -286,33 +286,6 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`messages` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `intranet`.`messages_personnes`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `intranet`.`messages_personnes` ;
-
-CREATE  TABLE IF NOT EXISTS `intranet`.`messages_personnes` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `message_id` INT NOT NULL ,
-  `personne_id` INT NOT NULL ,
-  `lu` TINYINT(1)  NOT NULL DEFAULT false ,
-  INDEX `fk_messages_has_personnes_personnes1` (`personne_id` ASC) ,
-  INDEX `fk_messages_has_personnes_messages1` (`message_id` ASC) ,
-  PRIMARY KEY (`id`) ,
-  CONSTRAINT `fk_messages_has_personnes_messages1`
-    FOREIGN KEY (`message_id` )
-    REFERENCES `intranet`.`messages` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_messages_has_personnes_personnes1`
-    FOREIGN KEY (`personne_id` )
-    REFERENCES `intranet`.`personnes` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB, 
-COMMENT = 'boite de réception' ;
 
 
 -- -----------------------------------------------------

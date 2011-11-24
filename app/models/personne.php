@@ -1,7 +1,7 @@
 <?php
 class Personne extends AppModel {
 	var $name = 'Personne';
-	var $displayField = 'nom';
+	var $displayField = 'login';
 	var $validate = array(
 		'nom' => array(
 			'notempty' => array(
@@ -91,23 +91,14 @@ class Personne extends AppModel {
 		'Statut' => array(
 			'className' => 'Statut',
 			'foreignKey' => 'statut_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Departement' => array(
 			'className' => 'Departement',
 			'foreignKey' => 'departement_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		),
 		'Groupe' => array(
 			'className' => 'Groupe',
 			'foreignKey' => 'groupe_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
@@ -115,41 +106,14 @@ class Personne extends AppModel {
 		'Abscence' => array(
 			'className' => 'Abscence',
 			'foreignKey' => 'personne_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		),
 		'Document' => array(
 			'className' => 'Document',
 			'foreignKey' => 'personne_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		),
 		'Message' => array(
 			'className' => 'Message',
 			'foreignKey' => 'personne_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		)
 	);
 
@@ -160,47 +124,21 @@ class Personne extends AppModel {
 			'joinTable' => 'evenements_personnes',
 			'foreignKey' => 'personne_id',
 			'associationForeignKey' => 'evenement_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		),
-		'Message' => array(
-			'className' => 'Message',
-			'joinTable' => 'messages_personnes',
-			'foreignKey' => 'personne_id',
-			'associationForeignKey' => 'message_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
 		),
 		'Module' => array(
 			'className' => 'Module',
 			'joinTable' => 'modules_personnes',
 			'foreignKey' => 'personne_id',
 			'associationForeignKey' => 'module_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
 		)
 	);
+	
+	public function afterFind ($results)
+	{
+		foreach ($results as $k => $p)
+			unset($results[$k]['Personne']['mot_de_passe']);
+		return $results;
+	}
 
 }
 ?>
