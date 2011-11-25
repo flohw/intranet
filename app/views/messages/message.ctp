@@ -7,6 +7,9 @@
 	<?php echo $this->Html->link('&larr; Boîte de réception', array('action' => 'index'), array('escape' => false)); ?>
 	</span>
 </span>
+
+<span class="row">
+<span class="span16">
 <table id="messagerie" class="zebra-striped">
 	<thead>
 		<tr>
@@ -28,6 +31,8 @@
 	<?php endforeach; ?>
 	</tbody>
 </table>
+</span>
+</span>
 
 <span class="row">
 	<span class="span16">

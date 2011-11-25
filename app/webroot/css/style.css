@@ -4,6 +4,8 @@
 .hero-unit img { float:left; margin-right:10px; }
 .container { padding-top:60px; }
 #container { margin-top:60px; }
+#accordeon h3:hover { background: #FFFFFF; color: rgba(230, 143, 0, 0.75); }
+#accordeon div { border: 1px solid #DDDDDD; border-top: 0; border-radius: 0 0 5px 5px; padding-top: 10px; }
 #accordeon h3.active {
 	background: #FFFFFF;
 	color: rgb(84, 69, 69);
@@ -23,13 +25,6 @@
 	-o-border-radius: 5px;
 	-webki-border-radius: 5px;
 }
-#accordeon h3:hover { background: #FFFFFF; color: rgba(230, 143, 0, 0.75); }
-#accordeon div {
-	border: 1px solid #DDDDDD;
-	border-top: 0;
-	border-radius: 0 0 5px 5px;
-	padding-top: 10px;
-}
 form .recherche { margin-left: 15px; }
 form select.input { margin-left: 150px; }
 #signin { min-width: 250px; }
@@ -39,10 +34,10 @@ form select.input { margin-left: 150px; }
 #signin .inputs-list span { color: white; }
 #signin .btn { float: right; margin-bottom: 5px; margin-right: 5px; }
 .menu.active { color: white; background: rgba(255, 255, 255, 0.05); }
-.clearfix span { margin-left: 13px; margin-bottom: 5px; font-size: 11px; display: block; }
 #messages { position:relative; left: 240px; max-width: 80%; }
-.clearfix .error
-{
+.clearfix span { margin-left: 13px; margin-bottom: 5px; font-size: 11px; display: block; }
+.clearfix .error .error-message { margin-left: 330px; color: #E84F4A; font-weight: bold; }
+.clearfix .error {
 	background-color: #FF9696;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -50,21 +45,15 @@ form select.input { margin-left: 150px; }
 	-moz-border-radius: 5px;
 	padding: 8px 0;
 }
-.clearfix .error .error-message
-{
-	margin-left: 330px;
-	color: #E84F4A;
-	font-weight: bold;
-}
 
 /* Style pour les messages */
 #sort .right { text-align: right; }
 #sort #date { width: 130px; }
 #sort #correspondant { width: 200px; }
 #sort #actions { width: 250px; }
-#messagerie #auteur-message { width: 200px; }
+#messagerie #auteur-message { width: 200px; border-right: 1px solid #DDDDDD; }
 #messagerie thead th { text-align: center; }
-#messagerie { width: 940px; margin-left: 20px; }
+#messagerie tbody tr td:first-child { border-right: 1px solid #DDDDDD; }
 
 /* Style pour les maps */ 
 .map { width:950px; height:626px; }

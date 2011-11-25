@@ -13,7 +13,7 @@
 		echo $this->Form->input('message', array('label' => 'Contenu du message', 'type' => 'textarea', 'class' => 'xxlarge input'));
 		echo '</div>';
 		echo '<div class="actions">';
-		echo $this->Form->submit('Evoyer', array('class' => 'btn primary'));
+		echo $this->Form->submit('Envoyer', array('class' => 'btn primary'));
 		echo '</div>';
 		echo $this->Form->end();
 	?>
