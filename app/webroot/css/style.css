@@ -74,6 +74,8 @@ form select.input { margin-left: 150px; }
 #mapRDC .overlay { background: url(../img/map/mapRDC.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
 #map1 { background: url(../img/map/map1.png) left top no-repeat; position: relative; }
 #map1 .overlay { background: url(../img/map/map1.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
+#map2 { background: url(../img/map/map2.png) left top no-repeat; position: relative; }
+#map2 .overlay { background: url(../img/map/map2.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
 #map3 { background: url(../img/map/map3.png) left top no-repeat; position: relative; }
 #map3 .overlay { background: url(../img/map/map3.png) 950px top no-repeat; position: absolute; top: 0; left: 0; z-index: 1; }
 .map .tooltip {
