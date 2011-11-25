@@ -2,6 +2,7 @@
 class Personne extends AppModel {
 	var $name = 'Personne';
 	var $displayField = 'login';
+	var $recursive = -1;
 	var $validate = array(
 		'nom' => array(
 			'notempty' => array(

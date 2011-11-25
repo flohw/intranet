@@ -2,7 +2,11 @@
 <div class="page-header">
 	<h1><?php echo $message['Message']['titre']; ?></h1>
 </div>
-
+<span class="row">
+	<span class="span16">
+	<?php echo $this->Html->link('&larr; Boîte de réception', array('action' => 'index'), array('escape' => false)); ?>
+	</span>
+</span>
 <table id="messagerie" class="zebra-striped">
 	<thead>
 		<tr>
@@ -11,17 +15,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>
-				Par : <?php echo $message['Message']['personne_nom']; ?><br />
-				Le : <?php echo $message['Message']['date_envoi']; ?><br />
-			</td>
-			<td><?php echo nl2br($message['Message']['message']); ?></td>
-		</tr>
 	<?php foreach ($message['Message']['Reponse'] as $r): ?>
 		<tr>
 			<td>
-				Par : <?php echo $r['personne_nom']; ?><br />
+				Par : <?php echo $r['expediteur_nom']; ?><br />
 				Le : <?php echo $r['date_envoi']; ?>
 			</td>
 			<td>

@@ -59,8 +59,10 @@ form select.input { margin-left: 150px; }
 
 /* Style pour les messages */
 #sort .right { text-align: right; }
+#sort #date { width: 130px; }
+#sort #correspondant { width: 200px; }
 #sort #actions { width: 250px; }
-#auteur-message { width: 170px; }
+#messagerie #auteur-message { width: 200px; }
 #messagerie thead th { text-align: center; }
 #messagerie { width: 940px; margin-left: 20px; }
 

@@ -9,7 +9,6 @@
 	<?php
 		echo $this->Form->create('Message', array('url' => $this->Html->url(array('controller' => 'messages', 'action' => 'repondre', $message['id']), true)));
 		echo $this->Form->input('id', array('value' => $message['id']));
-		echo $this->Form->input('personne_id', array('value' => $this->Session->read('Auth.Personne.id'), 'type' => 'hidden'));
 		echo '<div class="clearfix">';
 		echo $this->Form->input('message', array('label' => 'Contenu du message', 'type' => 'textarea', 'class' => 'xxlarge input'));
 		echo '</div>';

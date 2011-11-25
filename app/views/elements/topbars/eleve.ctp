@@ -29,9 +29,8 @@
                 <li class="menu">
                 	<a href="#" class="menu">Messagerie</a>
                 	<ul class="menu-dropdown">
+                		<li><?php echo $this->Html->link('Mes messages', array('controller' => 'messages', 'action' => 'index')); ?></li>
                 		<li><?php echo $this->Html->link('Nouveau message', array('controller' => 'messages', 'action' => 'nouveau')); ?></li>
-                		<li><?php echo $this->Html->link('Boîte de réception', array('controller' => 'messages', 'action' => 'index')); ?></li>
-                		<li><?php echo $this->Html->link('Messages envoyés', array('controller' => 'messages', 'action' => 'envoyes')); ?></li>
                 	</ul>
                 </li>
 

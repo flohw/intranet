@@ -9,13 +9,10 @@
 		
 		public function index()
 		{
-			
-		}
-		
-		public function envoyes ()
-		{
-			$d['messages'] = $this->Message->find('all', array(	'conditions' => array('personne_id' => $this->Auth->user('id')),
-																'recursive' => -1,
+			$d['messages'] = $this->Message->find('all', array(	'conditions' => array(
+																	'or' => array(
+																		'destinataire_id' => $this->Auth->user('id'),
+																		'personne_id' => $this->Auth->user('id'))),
 																'order' => 'titre'));
 			$this->set($d);
 		}
@@ -35,6 +32,8 @@
 			App::import('Core', 'Xml');
 			$message = new Xml($message);
 			$message = $message->toArray();
+			if (!isset($message['Message']['Reponse'][0]))
+				$message['Message']['Reponse'] = array($message['Message']['Reponse']);
 			$this->set('message', $message);
 		}
 		
@@ -44,7 +43,6 @@
 			{
 				$date = new Datetime();
 				$this->data['Message']['personne_id'] = $this->Auth->user('id');
-				$this->data['Message']['personne_nom'] = $this->Auth->user('login');
 				$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
 				$this->data['Message']['fichier'] = uniqid('message_').'.xml';
 
@@ -52,14 +50,20 @@
 				if ($this->Message->validates())
 				{
 					$this->Message->save();
-					$this->data['Message']['id'] = $this->Message->id;
-					$nom = $this->Personne->find('first', array('conditions' => array('id' => $this->data['Message']['destinataire_id']), 'recursive' => -1));
-					$this->data['Message']['destinataire_nom'] = $nom['Personne']['login'];
 					App::import('Helper', 'Xml');
 					$xml = new XmlHelper();
-					file_put_contents('files/messages/'.$this->data['Message']['fichier'], $xml->header().$xml->serialize($this->data));
+					
+					$message['Message']['id'] = $this->Message->id;
+					$message['Message']['titre'] = $this->data['Message']['titre'];
+					$message['Message']['fichier'] = $this->data['Message']['fichier'];
+					$message['Message']['Reponse'][0]['expediteur_id'] = $this->Auth->user('id');
+					$message['Message']['Reponse'][0]['expediteur_nom'] = $this->Auth->user('prenom').' '.$this->Auth->user('nom');
+					$message['Message']['Reponse'][0]['message'] = $this->data['Message']['message'];
+					$message['Message']['Reponse'][0]['date_envoi'] = $this->data['Message']['date_envoi'];
+					
+					file_put_contents('files/messages/'.$this->data['Message']['fichier'], $xml->header().$xml->serialize($message));
 					$this->Session->setFlash('Le message a bien été envoyé', 'message', array('class' => 'success'));
-					$this->redirect(array('action' => 'index'));
+					$this->redirect(array('action' => 'message', $this->Message->id));
 				}
 				else
 					$this->Session->setFlash('Le message comporte des erreurs', 'message');
@@ -72,7 +76,7 @@
 		
 		public function repondre ($id)
 		{
-			$message = $this->Message->find('first', array('conditions' => array('id' => $id), 'recursive' => -1));
+			$message = $this->Message->findById($id);
 			if (empty($message))
 			{
 				$this->Session->setFlash('Ce message n\'existe pas', 'message');
@@ -89,22 +93,27 @@
 				$this->Message->set($this->data);
 				if ($this->Message->validates())
 				{
-					$contenuFichier = file_get_contents('files/messages/'.$message['Message']['fichier']);
-					$nom = $this->Personne->find('first', array('conditions' => array('id' => $this->Auth->user('id')), 'recursive' => -1));
-					$this->data['Message']['personne_nom'] = $nom['Personne']['login'];
-					$date = new Datetime();
-					$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
 					// Chargement des helpers xml
 					App::import('Helper', 'Xml');
 					App::import('Core', 'Xml');
+					$date = new Datetime();
+					$contenuFichier = file_get_contents('files/messages/'.$message['Message']['fichier']);
+					unset($this->data['Message']['id']);
+					$this->data['Message']['expediteur_id'] = $this->Auth->user('id');
+					$this->data['Message']['expediteur_nom'] = $this->Auth->user('prenom').' '.$this->Auth->user('nom');
+					$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
+					
 					$xml = new XmlHelper();
 					$message = new Xml($contenuFichier); // On passe du fichier xml a un tableau php
 					$message = $message->toArray();
+					if (!isset($message['Message']['Reponse'][0]))
+						$message['Message']['Reponse'] = array($message['Message']['Reponse']);
 					// On ajoute la réponse on l'enregistre
 					$message['Message']['Reponse'] = array_merge($message['Message']['Reponse'], array($this->data['Message']));
-					file_put_contents('files/messages/'.$message['Message']['fichier'], $contenuFichier.$xml->serialize($this->data));
+					
+					file_put_contents('files/messages/'.$message['Message']['fichier'], $xml->serialize($message));
 					$this->Session->setFlash('La réponse a bien été ajoutée', 'message', array('class' => 'success'));
-					$this->redirect(array('action' => 'envoyes'));
+					$this->redirect(array('action' => 'message', $id));
 				}
 				else
 					$this->Session->setFlash('Le message comporte des erreurs', 'message');

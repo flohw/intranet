@@ -2,6 +2,7 @@
 class Message extends AppModel {
 	var $name = 'Message';
 	var $displayField = 'titre';
+	var $recursive = 0;
 	var $validate = array(
 		'titre' => array(
 			'notempty' => array(
@@ -31,13 +32,12 @@ class Message extends AppModel {
 		'Expediteur' => array(
 			'className' => 'Personne',
 			'foreignKey' => 'personne_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
+			'fields' => 'id, login, nom, prenom',
 		),
 		'Destinataire' => array(
 			'className' => 'Personne',
-			'foreignKey' => 'destinataire_id'
+			'foreignKey' => 'destinataire_id',
+			'fields' => 'id, login, nom, prenom',
 		),
 	);
 
