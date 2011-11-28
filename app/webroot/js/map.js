@@ -125,7 +125,7 @@ jQuery(function($){
 	// Tooltip qui suit la souris
 	$(document).mousemove(function(e){
 		$('.map .tooltip').css({
-			top:e.pageY-$('.map .tooltip').height()-20,
+			top:e.pageY-$('.map .tooltip').height()-(20+$(document).scrollTop()),
 			left:e.pageX-$('.map .tooltip').width()/2-10,
 		});
 	});
