@@ -5,6 +5,7 @@
 		<?php echo $this->Html->charset(); ?>
 		<?php echo $this->Html->css('style.css'); ?>
 		<?php echo $this->Html->css('bootstrap.css'); ?>
+		<?php echo $this->Html->css('jquery-ui.css'); ?>
 	</head>
 	<body>
 		<?php echo $this->element("topbars/eleve"); ?>

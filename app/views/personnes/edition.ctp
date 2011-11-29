@@ -38,7 +38,14 @@ jQuery(function($) {
   	dateFormat: 'yy-mm-dd',
   	dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
   	dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
+  	monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+  	monthNamesShort: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aou', 'Sep', 'Oct', 'Nov', 'Dec'],
   	firstDay: 1,
+  	changeYear: true,
+  	changeMonth: true,
+  	yearRange: '-30y:-15y',
+  	prevText: '',
+  	nextText: '',
   });
 });
 <?php echo $this->Html->scriptEnd(); ?>
