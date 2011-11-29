@@ -20,21 +20,25 @@
         <?php echo $this->Form->input('telephone', array('class' => 'input', 'label' => 'Telephone')); ?>
     </div>
     <div class="clearfix">
-        <?php echo $this->Form->input('date_naissance', array('class' => 'input', 'label' => 'Date de Naissance', 'id' => 'datepicker', 'dateFormat' => 'DMY', 'timeFormat' => 24)); ?>
+        <?php echo $this->Form->input('date_naissance', array('class' => 'input', 'label' => 'Date de Naissance', 'id' => 'datepicker', 'type' => 'text')); ?>
     </div>
     <div class="clearfix">
         <?php echo $this->Form->input('adresse', array('class' => 'input xlarge', 'label' => 'Adresse')); ?>
     </div>
     <div class="actions">
         <?php echo $this->Form->submit('Enregistrer', array('class' => 'btn primary'));?>
-        <?php echo $this->Form->button('Effacer', array('type' => 'reset', 'class' => 'btn')); ?>
     </div>
     <?php echo $this->Form->end(); ?>
   </div>
   </span>
 </span>
-<?php echo $this->Html->scriptStart(); ?>
+<?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($) {
-  $("#datepicker").datepicker();
+  $("#datepicker").datepicker({
+  	dateFormat: 'yy-mm-dd',
+  	dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+  	dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
+  	firstDay: 1,
+  });
 });
 <?php echo $this->Html->scriptEnd(); ?>

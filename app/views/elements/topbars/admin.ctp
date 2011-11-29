@@ -41,7 +41,7 @@
                     <ul class="menu-dropdown">
                         <li><?php echo $this->Html->link("Emploi du Temps", array('controller' => 'pages', 'action' => 'display', 'emploiDutemps')); ?></li>
                         <li><?php echo $this->Html->link("Mes Notifications", array('controller' => 'pages', 'action' => 'display', 'Notifs')); ?></li>
-                        <li><?php echo $this->Html->link('Gestion du compte', array('controller' => 'personnes', 'action' => 'gestion', $this->Session->read('Auth.Personne.id'))); ?></li>
+                        <li><?php echo $this->Html->link('Gestion du compte', array('controller' => 'personnes', 'action' => 'edition', $this->Session->read('Auth.Personne.id'))); ?></li>
                         <li><?php echo $this->Html->link('Déconnexion', array('controller' => 'personnes','action' => 'deconnexion')); ?></li>
                     </ul>
                 </li>

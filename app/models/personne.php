@@ -144,7 +144,10 @@ class Personne extends AppModel {
 	public function afterFind ($results)
 	{
 		foreach ($results as $k => $p)
+		{
 			unset($results[$k]['Personne']['mot_de_passe']);
+			$results[$k]['Personne']['date_naissance'] = substr($results[$k]['Personne']['date_naissance'], 0, 10);
+		}
 		return $results;
 	}
 
