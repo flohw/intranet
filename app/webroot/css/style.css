@@ -83,5 +83,8 @@ form select.input { margin-left: 150px; }
 	font-size: 1.2em;
 }
 
+blockquote h3 {
+	color:#0088bb;
+}
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }
