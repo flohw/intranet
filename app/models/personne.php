@@ -72,6 +72,7 @@ class Personne extends AppModel {
 				'message' => 'Le mot de passe est vide',
 				'allowEmpty' => false,
 				'required' => true,
+				'on' => 'create'
 			),
 		),
 		'login' => array(
@@ -80,6 +81,7 @@ class Personne extends AppModel {
 				'message' => 'Le login est vide',
 				'allowEmpty' => false,
 				'required' => true,
+				'on' => 'create'
 			),
 			'alphanumeric' => array(
 				'rule' => array('alphanumeric'),

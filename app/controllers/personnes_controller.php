@@ -15,8 +15,21 @@ class PersonnesController extends AppController
 		$this->redirect($this->Auth->logout());
 	}
 
-	function gestion() {
-		
+	function edition($id)
+	{
+		if(!empty($this->data))
+		{
+			$this->Personne->set($this->data);
+			if ($this->Personne->validates()) 
+			{
+				$this->Personne->save();
+				$this->Session->setFlash('Modifications enregistrées.', 'message', array('class' => 'success'));
+			}
+			else
+				$this->Session->setFlash('Le formulaire comporte des erreurs !', 'message');	
+		}
+		$this->Personne->recursive = -1;
+		$this->data = $this->Personne->findById($id);
 	}
 
 	function index() {
