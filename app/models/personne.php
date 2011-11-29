@@ -38,7 +38,7 @@ class Personne extends AppModel {
 		),
 		'date_naissance' => array(
 			'date' => array(
-				'rule' => array('date'),
+				'rule' => array('dateNaissance'),
 				'message' => 'Ce n\'est pas une date',
 			),
 		),
@@ -135,6 +135,11 @@ class Personne extends AppModel {
 			'associationForeignKey' => 'module_id',
 		)
 	);
+	
+	public function dateNaissance ($check)
+	{
+		return $check['date_naissance'] < date('Y-m-d H:i:s');
+	}
 	
 	public function afterFind ($results)
 	{

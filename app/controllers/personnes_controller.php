@@ -17,6 +17,11 @@ class PersonnesController extends AppController
 
 	function edition($id)
 	{
+		if ($this->Auth->user('id') != $id)
+		{
+			$this->Session->setFlash('Vous ne pouvez pas modifier le profil d\'une autre personne', 'message');
+			$this->redirect(array('action' => 'edition', $this->Auth->user('id')));
+		}
 		if(!empty($this->data))
 		{
 			$this->Personne->set($this->data);
@@ -28,8 +33,11 @@ class PersonnesController extends AppController
 			else
 				$this->Session->setFlash('Le formulaire comporte des erreurs !', 'message');	
 		}
-		$this->Personne->recursive = -1;
-		$this->data = $this->Personne->findById($id);
+		else
+		{
+			$this->Personne->recursive = -1;
+			$this->data = $this->Personne->findById($id);
+		}
 	}
 
 	function index() {
