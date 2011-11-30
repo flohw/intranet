@@ -24,6 +24,13 @@ class Document extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'Module' => array(
+			'className' => 'Module',
+			'foreignKey' => 'module_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 	

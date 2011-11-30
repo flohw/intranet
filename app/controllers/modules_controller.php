@@ -23,11 +23,5 @@ class ModulesController extends AppController
 		$m['modules'] = $this->Module->find('all', array('conditions' => array('Module.id' => $id)));
 		$this->set($m);
 	}
-
-	function presenter($id) 
-	{
-		$mod['docs'] = $this->Document->find('first', array('conditions' => array('Document.module_id' => $id)));
-		$this->set($mod);
-	}		
 }
 ?>

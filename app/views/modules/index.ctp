@@ -9,7 +9,7 @@
 				echo '<h3>'.$m['LibelleModule']['nom'].'</h3>'; 
 				foreach ($m['Module'] as $mod):
 					echo '<blockquote>';
-					echo '<h5>'. $this->Html->link($mod['abreviation'], array('action' => 'presenter', $mod['id'])).'</h5>';
+					echo '<h5>'. $this->Html->link($mod['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $mod['id'])).'</h5>';
 					echo '<small>'.$mod['description'].'</small>';
 					echo '</blockquote>';
 				endforeach;
