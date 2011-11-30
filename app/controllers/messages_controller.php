@@ -19,7 +19,8 @@
 																					'destinataire_id' => $this->Auth->user('id'),
 																					'personne_id' => $this->Auth->user('id')),
 																				'Message.id' => $id), 'recursive' => -1));
-			$supprime = $message['Message']['supprime_dest'];
+			$supprime = array('supprime_dest' => $message['Message']['supprime_dest'],
+								'supprime_exp' => $message['Message']['supprime_exp']);
 			if (empty($message))
 			{
 				$this->Session->setFlash('Le message ne vous appartient pas', 'message');
