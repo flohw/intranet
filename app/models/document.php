@@ -24,13 +24,6 @@ class Document extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),
-		'Dossier' => array(
-			'className' => 'Dossier',
-			'foreignKey' => 'dossier_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 	

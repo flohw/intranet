@@ -53,7 +53,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB, 
+ENGINE = InnoDB
 COMMENT = 'classes (A1, A2, B1, B2…)' ;
 
 
@@ -227,19 +227,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `intranet`.`dossiers`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `intranet`.`dossiers` ;
-
-CREATE  TABLE IF NOT EXISTS `intranet`.`dossiers` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(255) NOT NULL ,
-  `slug` VARCHAR(255) NOT NULL ,
-  PRIMARY KEY (`id`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `intranet`.`documents`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `intranet`.`documents` ;
@@ -249,18 +236,18 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`documents` (
   `nom` VARCHAR(45) NOT NULL ,
   `slug` VARCHAR(45) NOT NULL ,
   `personne_id` INT NOT NULL ,
-  `dossier_id` INT NOT NULL ,
+  `module_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_documents_professeurs1` (`personne_id` ASC) ,
-  INDEX `fk_documents_dossiers1` (`dossier_id` ASC) ,
+  INDEX `fk_documents_modules1` (`module_id` ASC) ,
   CONSTRAINT `fk_documents_professeurs1`
     FOREIGN KEY (`personne_id` )
     REFERENCES `intranet`.`personnes` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_documents_dossiers1`
-    FOREIGN KEY (`dossier_id` )
-    REFERENCES `intranet`.`dossiers` (`id` )
+  CONSTRAINT `fk_documents_modules1`
+    FOREIGN KEY (`module_id` )
+    REFERENCES `intranet`.`modules` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

@@ -49,6 +49,8 @@ class Module extends AppModel {
 		),
 	);
 
+	var $hasMany = array('Document');
+
 	var $belongsTo = array(
 		'LibelleModule' => array(
 			'className' => 'LibelleModule',
