@@ -3,9 +3,12 @@ class ModulesController extends AppController
 {
 
 	var $name = 'Modules';
+	var $uses = array('Module', 'LibelleModule');
 
-	function presentation_s1($sem=1) {
-		$m['modules'] = $this->Module->find('all', array('conditions' => array('Module.semestre_id' => $sem), 'recursive' => -1)); /* , 'group' => array('Module.libelle_module_id')*/
+	function index($sem=1)
+	{
+		$m['modules'] = $this->LibelleModule->modulesBySem($sem);
+		$m['semestre'] = $this->Module->Semestre->find('first', array('conditions' => array('Semestre.id' => $sem), 'recursive' =>-1));
 		$this->set($m);
 	}
 

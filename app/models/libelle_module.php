@@ -28,6 +28,22 @@ class LibelleModule extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+	
+	public function modulesBySem ($sem)
+	{
+		$datas = $this->find('all', array('recursive' => 1));
+		foreach ($datas as $k => $data)
+		{
+			foreach ($data['Module'] as $kk => $d)
+			{
+				if ($d['semestre_id'] != $sem)
+					unset($datas[$k]['Module'][$kk]);
+			}
+			if (empty($datas[$k]['Module']))
+				unset($datas[$k]);
+		}
+		return $datas;
+	}
 
 }
 ?>

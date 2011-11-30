@@ -1,27 +1,22 @@
-<?php 
+<?php $this->title = 'Intranet | Modules '; ?>
 
-$this->title = 'Intranet | Modules ';
+<div class="page-header">
+	<h1>Listes des modules <small>du <?php echo $semestre['Semestre']['nom']; ?></small></h1>
+</div>
 
-echo '<div class="page-header">
-	<h1>Gestion des modules</h1>
-	</div>';
- 	
-echo "<p>Voci la liste des modules déjà enregistrés. <br><br>Cliquez sur un module pour le modifier.</p>";
-
-//le début du tableau
-echo "<table>";
-echo"<tr> <th>Abréviation</th>  <th>Semestre</th>  <th>Coefficient</th>  <th>Volume horaire</th> <th>Description</th> </tr>";	//les titres
-
-foreach ($modules as $mod)		   //la bouche pour remplir le tableau
-echo "<tr> <td>"
-	.$this->Html->link($mod['Module']['abreviation'], array('action' => 'editer', $mod['Module']['id']))
-	."</td> 
-	<td>".$mod['Module']['semestre_id']."</td>
-	<td>".$mod['Module']['coefficient']."</td>
-	<td>".$mod['Module']['volume_horaire']."</td>
-	<td>".$mod['Module']['description']."</td>
-	</tr>"
-	;
-
-echo "</table>";
- ?>
+<span class="row">
+	<span class="span16">
+	<?php if (!empty($modules)): 
+			foreach ($modules as $m): 
+				echo '<h3>'.$m['LibelleModule']['nom'].'</h3>'; 
+				foreach ($m['Module'] as $mod):
+					echo '<blockquote>';
+					echo '<h5>'.$mod['abreviation'].'</h5>';
+					echo '<small>'.$mod['description'].'</small>';
+					echo '</blockquote>';
+				endforeach;
+			endforeach;
+		endif;
+	?>
+	</span>
+</span>

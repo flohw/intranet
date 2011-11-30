@@ -19,7 +19,7 @@
 			<div class="content"><?php echo $content_for_layout; ?></div>
 		</div> 
 		
-		<div class="footer">
+		<footer class="footer">
 			<div class="container-fluid">
 				<p class="pull-right"><a href="#">Haut de page</a></p>
 				<p>
@@ -27,7 +27,7 @@
 					&copy; Tous droits réservés.
 				</p>
 			</div>
-		</div> 
+		</footer> 
 	
 		<?php echo $this->Html->script("jquery"); ?>
 		<?php echo $this->Html->script("jquery-ui"); ?>
