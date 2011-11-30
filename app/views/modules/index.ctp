@@ -1,6 +1,6 @@
 <?php $this->title = 'Intranet | Modules'; ?>
 <div class="page-header">
-	<h1>Listes des modules <small>du <?php echo $semestre['Semestre']['nom']; ?></small></h1>
+	<h1>Listes des modules <small><?php echo $semestre['Semestre']['nom']; ?></small></h1>
 </div>
 <span class="row">
 	<span class="span16">
