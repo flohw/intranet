@@ -37,7 +37,9 @@
 <span class="row">
 	<span class="span16">
 		<div class="actions">
-		<?php echo $this->Html->link('Répondre', array('action' => 'repondre', $message['Message']['id']), array('class' => 'btn success')); ?>
+		<?php
+			if ($supprime == 0)
+				echo $this->Html->link('Répondre', array('action' => 'repondre', $message['Message']['id']), array('class' => 'btn success')); ?>
 		<?php echo $this->Html->link('Supprimer', array('action' => 'supprimer', $message['Message']['id']), array('class' => 'btn danger'), 'Etes vous sur de vouloir supprimer cette conversation ?'); ?>
 		</div>
 	</span>

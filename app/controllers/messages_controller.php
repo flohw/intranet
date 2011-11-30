@@ -9,11 +9,7 @@
 		
 		public function index()
 		{
-			$d['messages'] = $this->Message->find('all', array(	'conditions' => array(
-																	'or' => array(
-																		'destinataire_id' => $this->Auth->user('id'),
-																		'personne_id' => $this->Auth->user('id'))),
-																'order' => 'titre'));
+			$d['messages'] = $this->Message->findMyMessages($this->Auth->user('id'));
 			$this->set($d);
 		}
 		
@@ -23,6 +19,7 @@
 																					'destinataire_id' => $this->Auth->user('id'),
 																					'personne_id' => $this->Auth->user('id')),
 																				'Message.id' => $id), 'recursive' => -1));
+			$supprime = $message['Message']['supprime_dest'];
 			if (empty($message))
 			{
 				$this->Session->setFlash('Le message ne vous appartient pas', 'message');
@@ -35,6 +32,7 @@
 			if (!isset($message['Message']['Reponse'][0]))
 				$message['Message']['Reponse'] = array($message['Message']['Reponse']);
 			$this->set('message', $message);
+			$this->set('supprime', $supprime);
 		}
 		
 		public function nouveau ()
@@ -120,5 +118,25 @@
 			}
 			
 			$this->set('message', $message['Message']);
+		}
+		
+		public function supprimer ($id)
+		{
+			$message = $this->Message->find('first', array('conditions' => array('Message.id' => $id)));
+			if ($message['Message']['supprime_dest'] == 1 OR $message['Message']['supprime_exp'] == 1)
+			{
+				unlink('files/messages/'.$message['Message']['fichier']);
+				$this->Message->delete($id);
+			}
+			else
+			{
+				if ($this->Auth->user('id') == $message['Message']['destinataire_id'])
+					$message['Message']['supprime_dest'] = 1;
+				else
+					$message['Message']['supprime_exp'] = 1;
+				$this->Message->validate = array();
+				$this->Message->save($message);
+			}
+			$this->redirect(array('action' => 'index'));
 		}
 	}

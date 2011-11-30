@@ -24,11 +24,16 @@
 							$p = $m['Destinataire']; $m = current($m);
 						echo '<tr>';
 						echo '<td>'.$this->Html->link($m['titre'], array('action' => 'message', $m['id'])).'</td>';
-						echo '<td>'.$p['prenom'].' '.$p['nom'].'</td>';
+						echo '<td>';
+						echo ($m['supprime_dest'] == 1) ? '<span class="barre">' : false;
+						echo $p['prenom'].' '.$p['nom'];
+						echo ($m['supprime_dest'] == 1) ? '</span>' : false;
+						echo '</td>';
 						echo '<td>'.$m['date_envoi'].'</td>';
 						echo '<td class="right">';
 						echo $this->Html->link('Lire', array('action' => 'message', $m['id']), array('class' => 'btn info')).'&nbsp;';
-						echo $this->Html->link('Répondre', array('action' => 'repondre', $m['id']), array('class' => 'btn success')).'&nbsp;';
+						if ($m['supprime_dest'] == 0)
+							echo $this->Html->link('Répondre', array('action' => 'repondre', $m['id']), array('class' => 'btn success')).'&nbsp;';
 						echo $this->Html->link('Supprimer', array('action' => 'supprimer', $m['id']), array('class' => 'btn danger'), 'Êtes vous sûr de vouloir supprimer cette conversation ?');
 						echo '</td>';
 						echo '</tr>';
@@ -41,7 +46,7 @@
 		</table>
 	</span>
 </span>
-
+<?php echo $this->element('sql_dump'); ?>
 <span class="row">
 	<span class="span16">
 		<div class="actions">

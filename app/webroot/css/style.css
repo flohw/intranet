@@ -35,6 +35,7 @@ form select.input { margin-left: 150px; }
 #signin .btn { float: right; margin-bottom: 5px; margin-right: 5px; }
 .menu.active { color: white; background: rgba(255, 255, 255, 0.05); }
 #messages { position:relative; left: 240px; max-width: 80%; }
+.barre { text-decoration: line-through; }
 .clearfix span { margin-left: 13px; margin-bottom: 5px; font-size: 11px; display: block; }
 .clearfix .error .error-message { margin-left: 330px; color: #E84F4A; font-weight: bold; }
 .clearfix .error {

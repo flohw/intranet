@@ -40,6 +40,23 @@ class Message extends AppModel {
 			'fields' => 'id, login, nom, prenom',
 		),
 	);
+	
+	public function findMyMessages ($id)
+	{
+		$messages = $this->find('all', array('conditions' => array('or' => array(
+																		'destinataire_id' => $id,
+																		'personne_id' => $id)
+																	),
+																	'order' => 'titre'));
+		foreach ($messages as $k => $m)
+		{
+			if ($m['Message']['personne_id'] == $id AND $m['Message']['supprime_exp'] OR
+				$m['Message']['destinataire_id'] == $id AND $m['Message']['supprime_dest'])
+				unset($messages[$k]);
+		}
+		
+		return $messages;
+	}
 
 }
 ?>
