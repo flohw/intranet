@@ -357,11 +357,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `intranet`.`offres_stage`
+-- Table `intranet`.`stages`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `intranet`.`offres_stage` ;
+DROP TABLE IF EXISTS `intranet`.`stages` ;
 
-CREATE  TABLE IF NOT EXISTS `intranet`.`offres_stage` (
+CREATE  TABLE IF NOT EXISTS `intranet`.`stages` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `entreprise` VARCHAR(45) NOT NULL ,
   `ville` VARCHAR(45) NOT NULL ,
