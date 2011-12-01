@@ -24,7 +24,7 @@ echo "<div style='text-align:center; background-color:red;'><strong>0 resultat a
 //sinon affiche le tableau
 else
 {
-	echo '<table class="zebra-striped" id="sortTableExample">
+	echo '<table class="zebra-striped" id="sort">
 	  <thead>
 	      <tr>
 	      	  <th>#</th>
