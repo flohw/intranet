@@ -41,36 +41,43 @@ class PersonnesController extends AppController
 	}
 
 	function index() {
-		$statuts = $this->Statut->find('all');
-		return $statuts;
 	}
 
-	function annuaire($statut='') {
+	function annuaire() {
 		if (!isset($this->data) || (isset($this->data) && $this->data['Personne']['rech']==""))
 		{
-			if (!isset($this->data))
-			{
-			$d['statut'] = $statut;	
-			$d['personne'] = $this->Personne->find('all', array('conditions'=>array('Personne.statut_id'=>$statut), 'recursive'=>-1));
+			if (!isset($this->data) || (isset($this->data) && $this->data['Personne']['statut']==""))
+			{ 
+				$d['statut'] = ""; 
+				$d['personne'] = $this->Personne->find('all');
 			}
 			else
 			{
-			$d['statut'] = $this->data['Personne']['statut'];		
-			$d['personne'] = $this->Personne->find('all', array('conditions'=>array('Personne.statut_id'=>$d['statut']), 'recursive'=>-1));
+				$d['statut'] = $this->data['Personne']['statut'];
+				$d['personne'] = $this->Personne->find('all', array('conditions'=>array('Personne.statut_id'=>$d['statut']), 'recursive'=>-1)); 
 			}
 			
 		}
 		else
 		{
 			$d['statut'] = $this->data['Personne']['statut'];
-			$d['personne'] = $this->Personne->find('all', array('conditions'=>array(
-				'Personne.statut_id'=>$d['statut'], 
-				'OR'=>array(
-					'Personne.nom LIKE'=>'%'.$this->data['Personne']['rech'].'%',
-					'Personne.prenom LIKE'=>'%'.$this->data['Personne']['rech'].'%')
-				 ), 
-				'recursive'=>-1));
+			if ($d['statut']=="")
+				$d['personne'] = $this->Personne->find('all', array('conditions'=>array(
+					'OR'=>array(
+						'Personne.nom LIKE'=>'%'.$this->data['Personne']['rech'].'%',
+						'Personne.prenom LIKE'=>'%'.$this->data['Personne']['rech'].'%')
+					 ), 
+					'recursive'=>-1));
+			else
+				$d['personne'] = $this->Personne->find('all', array('conditions'=>array(
+					'Personne.statut_id'=>$d['statut'], 
+					'OR'=>array(
+						'Personne.nom LIKE'=>'%'.$this->data['Personne']['rech'].'%',
+						'Personne.prenom LIKE'=>'%'.$this->data['Personne']['rech'].'%')
+					 ), 
+					'recursive'=>-1));
 		}
+		$d['statuts'] = $this->Statut->find('list');	//pour le select
 		$this->set($d);
 	}
 }

@@ -2,7 +2,7 @@
 class ModulesController extends AppController
 {
 	var $name = 'Modules';
-	var $uses = array('Module', 'LibelleModule', 'Document');
+	var $uses = array('Module', 'LibelleModule');
 
 	function index($sem=1)
 	{
@@ -11,17 +11,26 @@ class ModulesController extends AppController
 		$this->set($m);
 	}
 
-	function gestion()
+	function editer($id=null) 
 	{
-		$m['modules'] = $this->Module->find('all');
+		if (isset($this->data)) {
+			$this->Module->set($this->data);
+			if ( $this->Module->validates()) {
+				$this->Module->save();
+				$this->Session->setFlash('Module enregistré !', 'message', array('class' => 'success'));
+				$this->redirect(array('action' => 'index'));
+			}
+			else
+				$this->Session->setFlash('Le module n\'a pas pu etre enregistre', 'message');
+		}
+		else 
+			$this->data = $this->Module->find('first', array('conditions' => array('Module.id' => $id)));
 
-		$this->set($m);
-	}
-
-	function editer($id='') 
-	{
-		$m['modules'] = $this->Module->find('all', array('conditions' => array('Module.id' => $id)));
-		$this->set($m);
+		
+		$d['sem'] = $this->Module->Semestre->find('list');
+		$d['libel'] = $this->LibelleModule->find('list');
+		$this->set( $d);
+		
 	}
 }
 ?>
