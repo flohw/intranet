@@ -6,7 +6,7 @@
 
 <div class="row">
 	<div class="span16">
-		<p>L'accès peut se faire par le Tramway, (arrêt "Gares Europole"), par le train (station "Gares Europole"), par automobile par l'autoroute A48 sortie "GRENOBLE CENTRE..." ou par l'avenue Félix Viallet.</par>
+		<p>L'accès peut se faire par le Tramway, (arrêt "Gares Europole"), par le train (station "Gares Europole"), par automobile par l'autoroute A48 sortie "Grenoble Centre" ou par l'avenue Félix Viallet.<br/><br/></p>
 	</div>
 </div>
 
