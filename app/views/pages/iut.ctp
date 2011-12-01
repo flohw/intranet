@@ -1,8 +1,9 @@
 <?php $this->title = "Intranet du département Informatique" ?>
 <div class="hero-unit" style="margin-top: 5%;">
   <h1>L'IUT 2 c'est quoi ?</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p>L'Institut Universitaire et Technologique 2 de Grenoble propose différentes formations dans les départements suivants : Carrières Juridiques, Gestion des Entreprises et des Administrations, Information et communication, Techniques de Commercialisation, Informatique, Carrières Sociales et Préparation à l'Expertise Comptable.
+
+</p>
 </div>
 <div class="row">
     <div class="span3">

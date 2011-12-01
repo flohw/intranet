@@ -92,6 +92,7 @@
 			if (isset($this->data))
 			{
 				$this->Message->set($this->data);
+				$this->Message->validate = $this->Message->validateRep;
 				if ($this->Message->validates())
 				{
 					// Chargement des helpers xml

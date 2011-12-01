@@ -1,5 +1,8 @@
 .topbar h3 img { margin-left: 5px; }
 .clear { clear:both; }
+.right { float:right; }
+img.right { margin-left : 20px; }
+.block { display:block;}
 .hero-unit { margin-top: 20px; }
 .hero-unit img { float:left; margin-right:10px; }
 .container { padding-top:60px; }

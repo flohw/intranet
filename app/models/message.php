@@ -3,6 +3,14 @@ class Message extends AppModel {
 	var $name = 'Message';
 	var $displayField = 'titre';
 	var $recursive = 0;
+	var $validateRep = array(
+		'message' => array(
+			'rule' => array('notempty'),
+			'allowEmpty' => false,
+			'required' => true,
+			'message' => 'Le message ne peut pas être vide',
+		)
+	);
 	var $validate = array(
 		'titre' => array(
 			'notempty' => array(

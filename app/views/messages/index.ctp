@@ -46,7 +46,6 @@
 		</table>
 	</span>
 </span>
-<?php echo $this->element('sql_dump'); ?>
 <span class="row">
 	<span class="span16">
 		<div class="actions">
