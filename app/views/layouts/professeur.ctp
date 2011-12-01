@@ -43,6 +43,8 @@
 		<?php echo $this->Html->script("bootstrap-tabs"); ?>
 		<?php echo $this->Html->script("alerts-elements"); ?>
 		<?php echo $this->Html->script("tablesorter"); ?>
+		<?php echo $this->Html->script('map'); ?>
+		<?php echo $this->Html->script('bootstrap-popover'); ?>
 		<?php echo $scripts_for_layout; ?>
 		
 	</body>

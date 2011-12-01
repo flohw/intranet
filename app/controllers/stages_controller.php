@@ -6,7 +6,8 @@ class StagesController extends AppController
 
 	function index() 
 	{
-
+		$o['offres'] = $this->Stage->find('all');
+		$this->set($o);
 	}		
 }
 ?>

@@ -10,4 +10,5 @@ jQuery(function($){
 	
 	// Fenetres modales
 	$('.modal-backdrop').hide();
+	//$('span.label').popover('show');
 });

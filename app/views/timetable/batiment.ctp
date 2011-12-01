@@ -152,5 +152,3 @@
 		</map>
 	</div>
 </div>
-
-<?php echo $this->Html->script('map.js', array('inline' => false)); ?>

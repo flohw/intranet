@@ -10,7 +10,7 @@
     	<h3>Liens 2</h3>
     	<div>
 	    	<ul>
-	    		<li><a href="#">Parce que y'en a beaycoup</a></li>
+	    		<li><a href="#">Parce que y'en a beaucoup</a></li>
 		    </ul>
 		</div>
 	</div>
