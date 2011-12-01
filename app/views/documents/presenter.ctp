@@ -25,7 +25,7 @@
 			echo 	'</tbody>
 				</table>';
 				else:
-					echo 'Test';
+					echo '<h2 style="color:red;">Aucun document pour ce module</h2>';
 				endif;
 			?>
 

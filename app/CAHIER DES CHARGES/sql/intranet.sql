@@ -53,7 +53,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB, 
+ENGINE = InnoDB
 COMMENT = 'classes (A1, A2, B1, B2…)' ;
 
 
@@ -143,7 +143,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`personnes` (
   `nom` VARCHAR(80) NOT NULL ,
   `prenom` VARCHAR(80) NOT NULL ,
   `adresse` TEXT NOT NULL ,
-  `date_naissance` DATETIME NULL ,
+  `date_naissance` DATE NULL ,
   `telephone` VARCHAR(10) NOT NULL ,
   `email` VARCHAR(255) NOT NULL ,
   `statut_id` INT NOT NULL ,
@@ -278,11 +278,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `intranet`.`abscences`
+-- Table `intranet`.`absences`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `intranet`.`abscences` ;
+DROP TABLE IF EXISTS `intranet`.`absences` ;
 
-CREATE  TABLE IF NOT EXISTS `intranet`.`abscences` (
+CREATE  TABLE IF NOT EXISTS `intranet`.`absences` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `date` DATETIME NOT NULL ,
   `justification` VARCHAR(255) NOT NULL ,
@@ -351,6 +351,29 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`evenements_personnes` (
   CONSTRAINT `fk_evenements_has_personnes_personnes1`
     FOREIGN KEY (`personne_id` )
     REFERENCES `intranet`.`personnes` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `intranet`.`offres_stage`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `intranet`.`offres_stage` ;
+
+CREATE  TABLE IF NOT EXISTS `intranet`.`offres_stage` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `entreprise` VARCHAR(45) NOT NULL ,
+  `ville` VARCHAR(45) NOT NULL ,
+  `description` TEXT NOT NULL ,
+  `dispo` TINYINT(1)  NOT NULL ,
+  `departements_id` INT NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_offres_stage_departements1` (`departements_id` ASC) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  CONSTRAINT `fk_offres_stage_departements1`
+    FOREIGN KEY (`departements_id` )
+    REFERENCES `intranet`.`departements` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
