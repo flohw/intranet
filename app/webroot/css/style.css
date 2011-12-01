@@ -25,6 +25,11 @@
 	-o-border-radius: 5px;
 	-webki-border-radius: 5px;
 }
+
+.ui-autocomplete { max-height: 100px; overflow-y: auto; overflow-x: hidden; padding-right: 20px; width: 200px; border: 1px solid #DDDDDD; }
+.ui-autocomplete.ui-menu { background-color: #DDDDDD; }/*  ui-widget ui-widget-content ui-corner-all */
+.ui-autocomplete .ui-menu-item { width: 100%; }
+
 form .recherche { margin-left: 15px; }
 form select.input { margin-left: 150px; }
 #signin { min-width: 250px; }

@@ -26,6 +26,18 @@ class Message extends AppModel {
 				'required' => true
 			),
 		),
+		'destinataire' => array(
+			'personneid' => array(
+				'rule' => array('personneId'),
+				'message' => 'La personne n\'existe pas',
+			),
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'La personne n\'est pas renseignée',
+				'allowEmpty' => false,
+				'required' => true
+			),
+		),
 	);
 
 	var $belongsTo = array(
@@ -40,6 +52,11 @@ class Message extends AppModel {
 			'fields' => 'id, login, nom, prenom',
 		),
 	);
+		
+	public function personneId ($check)
+	{
+		return !empty($this->data['Message']['destinataire_id']);
+	}
 	
 	public function findMyMessages ($id)
 	{
