@@ -12,7 +12,7 @@ echo $form->create('Personne', array('url' => array('controller'=>'personnes'), 
 	echo "\n<div class='actions'>\n";
 	$options = array('type' => 'select', 'empty'=> array('' => 'Tous'), 'options' => $statuts,'label' => 'Statut','div' => '','style' => 'margin-left:5px;');
 	echo $form->input('Personne.statut', $options);
-	echo $form->input('rech', array('label' => 'Recherche', 'style'=>'height:25px; margin-left:5px;'));
+	echo $form->input('rech', array('label' => 'Recherche', 'style'=>'height:18px; width:200px; margin-left:5px;'));
 	echo $form->submit('Ok', array('class'=>'btn primary')) ;
 echo "\n</div></fieldset>\n";
 echo $form->end();
@@ -24,7 +24,7 @@ echo "<div style='text-align:center; background-color:red;'><strong>0 resultat a
 //sinon affiche le tableau
 else
 {
-	echo '<table class="zebra-striped" id="sortTableExample">
+	echo '<table class="zebra-striped" id="sort">
 	  <thead>
 	      <tr>
 	      	  <th>#</th>
