@@ -1,8 +1,8 @@
-<?php debug($docs); ?>
-<?php $this->title = 'Intranet | Modules | '.$docs[0]['Module']['abreviation']; ?>
+
+<?php $this->title = 'Intranet | Modules | '.$abre['Module']['abreviation']; ?>
 
 <div class="page-header">
-	<h2>Documents du module <small><?php echo $docs[0]['Module']['abreviation']; ?></small></h2>
+	<h2>Documents du module <small><?php echo $abre['Module']['abreviation']; ?></small></h2>
 </div>
 <span class="row">
 	<span class="span16">
