@@ -11,7 +11,7 @@
 		echo $this->Form->input('titre', array('label' => 'Titre du message', 'class' => 'input'));
 		echo '</div>';
 		echo '<div class="clearfix">';
-		echo $this->Form->input('destinataire_id', array('label' => 'Destinataire', 'options' => $Destinataires, 'class' => 'input'));
+		echo $this->Form->input('destinataire', array('label' => 'Destinataire', 'class' => 'input'));
 		echo '</div>';
 		echo '<div class="clearfix">';
 		echo $this->Form->input('message', array('label' => 'Contenu du message', 'type' => 'textarea', 'class' => 'xxlarge input'));
@@ -23,3 +23,15 @@
 	?>
 	</span>
 </span>
+
+<?php echo $this->Html->scriptStart(array('inline' => false)); ?>
+jQuery(function($){
+	var availableNames = [];
+	<?php foreach ($Destinataires as $d): ?>
+		availableNames.push("<?php echo $d; ?>");
+	<?php endforeach; ?>
+	$("#MessageDestinataire").autocomplete({
+		source: availableNames,
+	});
+});
+<?php echo $this->Html->scriptEnd(); ?>
