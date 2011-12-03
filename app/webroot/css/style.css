@@ -1,4 +1,17 @@
+/* topbar */
 .topbar h3 img { margin-left: 5px; }
+.topbar .secondary-nav .notifs
+{
+	background-color: #666666;
+	width: 25px;
+	display: inline-block;
+	text-align: center;
+	margin-left: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
 .clear { clear:both; }
 .right { float:right; }
 img.right { margin-left : 20px; }
@@ -7,6 +20,7 @@ img.right { margin-left : 20px; }
 .hero-unit img { float:left; margin-right:10px; }
 .container { padding-top:60px; }
 #container { margin-top:60px; }
+/* Sidebar */
 #accordeon h3:hover, #accordeonStage h3:hover { background: #FFFFFF; color: rgba(230, 143, 0, 0.75); }
 #accordeon div, #accordeonStage div { border: 1px solid #DDDDDD; border-top: 0; border-radius: 0 0 5px 5px; padding-top: 10px; }
 #accordeon h3.active, #accordeonStage h3.active {
@@ -28,11 +42,11 @@ img.right { margin-left : 20px; }
 	-o-border-radius: 5px;
 	-webki-border-radius: 5px;
 }
-
+/* autocomplete des messages */
 .ui-autocomplete { max-height: 100px; overflow-y: auto; overflow-x: hidden; padding-right: 20px; width: 200px; border: 1px solid #DDDDDD; }
 .ui-autocomplete.ui-menu { background-color: #DDDDDD; }/*  ui-widget ui-widget-content ui-corner-all */
 .ui-autocomplete .ui-menu-item { width: 100%; }
-
+/* barre de connexion */
 form .recherche { margin-left: 15px; }
 form select.input { margin-left: 150px; }
 #signin { min-width: 250px; }
@@ -42,6 +56,7 @@ form select.input { margin-left: 150px; }
 #signin .inputs-list span { color: white; }
 #signin .btn { float: right; margin-bottom: 5px; margin-right: 5px; }
 .menu.active { color: white; background: rgba(255, 255, 255, 0.05); }
+
 #messages { position:relative; left: 240px; max-width: 80%; }
 .barre { text-decoration: line-through; }
 .clearfix span { margin-left: 13px; margin-bottom: 5px; font-size: 11px; display: block; }
@@ -56,7 +71,6 @@ form select.input { margin-left: 150px; }
 }
 
 /* Style pour les messages */
-#sort .right { text-align: right; }
 #sort #date { width: 130px; }
 #sort #correspondant { width: 200px; }
 #sort #actions { width: 250px; }

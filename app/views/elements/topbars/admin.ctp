@@ -37,7 +37,13 @@
             </ul>
             <ul class="nav secondary-nav">
                 <li class="menu">
-                    <a href="#" class="menu">Mon Profil</a>
+                    <a href="#" class="menu">
+                    	Mon Profil
+                    	<?php
+                    		if (isset($notifs) AND $notifs > 0)
+		                    	echo '<span class="notifs">'.$notifs.'</span>';
+		                ?>
+                    </a>
                     <ul class="menu-dropdown">
                         <li><?php echo $this->Html->link("Emploi du Temps", array('controller' => 'pages', 'action' => 'display', 'emploiDutemps')); ?></li>
                         <li><?php echo $this->Html->link("Mes Notifications", array('controller' => 'pages', 'action' => 'display', 'Notifs')); ?></li>
