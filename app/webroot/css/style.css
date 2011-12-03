@@ -7,9 +7,9 @@ img.right { margin-left : 20px; }
 .hero-unit img { float:left; margin-right:10px; }
 .container { padding-top:60px; }
 #container { margin-top:60px; }
-#accordeon h3:hover { background: #FFFFFF; color: rgba(230, 143, 0, 0.75); }
-#accordeon div { border: 1px solid #DDDDDD; border-top: 0; border-radius: 0 0 5px 5px; padding-top: 10px; }
-#accordeon h3.active {
+#accordeon h3:hover, #accordeonStage h3:hover { background: #FFFFFF; color: rgba(230, 143, 0, 0.75); }
+#accordeon div, #accordeonStage div { border: 1px solid #DDDDDD; border-top: 0; border-radius: 0 0 5px 5px; padding-top: 10px; }
+#accordeon h3.active, #accordeonStage h3.active {
 	background: #FFFFFF;
 	color: rgb(84, 69, 69);
 	border-bottom: 0;
@@ -18,7 +18,7 @@ img.right { margin-left : 20px; }
 	-o-border-radius: 5px 5px 0 0;
 	-webki-border-radius: 5px 5px 0 0;
 }
-#accordeon h3 {
+#accordeon h3, #accordeonStage h3 {
 	text-align: center;
 	cursor: pointer;
 	border: 1px solid #DDDDDD;

@@ -21,6 +21,13 @@ jQuery(function($){
 	});
 	$('#accordeon h3').click(function(){ $('#accordeon h3').removeClass('active'); $(this).addClass('active'); });
 	
+	/* Accordeon du stage */
+	$('#accordeonStage').accordion({
+			autoHeight: false,
+			navigation: true,
+	});
+	$('#accordeonStage h3').click(function(){ $('#accordeonStage h3').removeClass('active'); $(this).addClass('active'); });
+	
 	// Pour les tableau triable	
 	$("table#sort").tablesorter({ sortList: [[1,0]] });
 
