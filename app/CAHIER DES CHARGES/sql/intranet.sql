@@ -151,6 +151,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`personnes` (
   `groupe_id` INT NOT NULL ,
   `mot_de_passe` VARCHAR(255) NOT NULL ,
   `login` VARCHAR(60) NOT NULL ,
+  `last_login` DATETIME NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_professeurs_statuts1` (`statut_id` ASC) ,
   INDEX `fk_professeurs_departements1` (`departement_id` ASC) ,
@@ -441,9 +442,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `intranet`;
-INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`) VALUES (1, 'eleve', 'eleve', 'eleve', '2010-11-12', '0404040404', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve');
-INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`) VALUES (2, 'professeur', 'professeur', 'professeur', '2009-11-12', '0505050505', 'prof@prof.pro', 20, 1, 5, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof');
-INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`) VALUES (3, 'administrateur', 'administrateur', 'administrateur', '2008-11-12', '0101010101', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin');
+INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`, `last_login`) VALUES (1, 'eleve', 'eleve', 'eleve', '2010-11-12', '0404040404', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve', NULL);
+INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`, `last_login`) VALUES (2, 'professeur', 'professeur', 'professeur', '2009-11-12', '0505050505', 'prof@prof.pro', 20, 1, 5, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof', NULL);
+INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`, `last_login`) VALUES (3, 'administrateur', 'administrateur', 'administrateur', '2008-11-12', '0101010101', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin', NULL);
 
 COMMIT;
 
