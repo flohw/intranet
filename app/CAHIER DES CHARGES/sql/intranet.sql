@@ -53,7 +53,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ENGINE = InnoDB, 
 COMMENT = 'classes (A1, A2, B1, B2…)' ;
 
 
@@ -267,6 +267,8 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`messages` (
   `destinataire_id` INT NOT NULL COMMENT 'destinataire du message' ,
   `supprime_dest` INT NOT NULL DEFAULT 0 ,
   `supprime_exp` INT NOT NULL DEFAULT 0 ,
+  `lu_dest` INT NOT NULL DEFAULT 0 ,
+  `lu_exp` INT NOT NULL DEFAULT 0 ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_messages_personnes1` (`personne_id` ASC) ,
   CONSTRAINT `fk_messages_personnes1`

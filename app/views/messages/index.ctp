@@ -23,17 +23,26 @@
 						else
 							$p = $m['Destinataire']; $m = current($m);
 						echo '<tr>';
-						echo '<td>'.$this->Html->link($m['titre'], array('action' => 'message', $m['id'])).'</td>';
+						echo '<td>';
+						if ($this->Session->read('Auth.Personne.id') == $m['personne_id'] AND $m['lu_exp'] == 1)
+							echo $this->Html->link($m['titre'], array('action' => 'message', $m['id']));
+						elseif ($this->Session->read('Auth.Personne.id') == $m['personne_id'] AND $m['lu_exp'] == 0)
+							echo '<strong>'.$this->Html->link($m['titre'], array('action' => 'message', $m['id'])).'</strong>';
+						elseif ($this->Session->read('Auth.Personne.id') == $m['destinataire_id'] AND $m['lu_dest'] == 1)
+							echo $this->Html->link($m['titre'], array('action' => 'message', $m['id']));
+						elseif ($this->Session->read('Auth.Personne.id') == $m['destinataire_id'] AND $m['lu_dest'] == 0)
+							echo '<strong>'.$this->Html->link($m['titre'], array('action' => 'message', $m['id'])).'</strong>';
+						echo '</td>';
 						echo '<td>';
 						echo ($m['supprime_dest'] == 1 OR $m['supprime_exp']) ? '<span class="barre">' : false;
 						echo $p['prenom'].' '.$p['nom'];
 						echo ($m['supprime_dest'] == 1 OR $m['supprime_exp']) ? '</span>' : false;
 						echo '</td>';
 						echo '<td>'.$m['date_envoi'].'</td>';
-						echo '<td class="right">';
-						echo $this->Html->link('Lire', array('action' => 'message', $m['id']), array('class' => 'btn info')).'&nbsp;';
-						if ($m['supprime_dest'] == 0 AND $m['supprime_exp'] == 0)
-							echo $this->Html->link('Répondre', array('action' => 'repondre', $m['id']), array('class' => 'btn success')).'&nbsp;';
+						echo '<td>';
+							echo $this->Html->link('Lire', array('action' => 'message', $m['id']), array('class' => 'btn info')).'&nbsp;';
+							if ($m['supprime_dest'] == 0 AND $m['supprime_exp'] == 0)
+								echo $this->Html->link('Répondre', array('action' => 'repondre', $m['id']), array('class' => 'btn success')).'&nbsp;';
 						echo $this->Html->link('Supprimer', array('action' => 'supprimer', $m['id']), array('class' => 'btn danger'), 'Êtes vous sûr de vouloir supprimer cette conversation ?');
 						echo '</td>';
 						echo '</tr>';

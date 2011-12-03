@@ -26,6 +26,15 @@
 				$this->Session->setFlash('Le message ne vous appartient pas', 'message');
 				$this->redirect(array('action' => 'index'));
 			}
+			
+			$d['Message']['id'] = $id;
+			if ($this->Auth->user('id') == $message['Message']['destinataire_id'])
+				$d['Message']['lu_dest'] = 1;
+			else
+				$d['Message']['lu_exp'] = 1;
+			$this->Message->validate = array();
+			$this->Message->save($d);
+			
 			$message = file_get_contents('files/messages/'.$message['Message']['fichier']);
 			App::import('Core', 'Xml');
 			$message = new Xml($message);
@@ -44,6 +53,7 @@
 				$this->data['Message']['personne_id'] = $this->Auth->user('id');
 				$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
 				$this->data['Message']['fichier'] = uniqid('message_').'.xml';
+				$this->data['Message']['lu_exp'] = 1;
 				
 				$pers = $this->Personne->find('first', array('conditions' => array('Personne.login' => $this->data['Message']['destinataire'])));
 				$this->data['Message']['destinataire_id'] = $pers['Personne']['id'];
@@ -100,11 +110,26 @@
 					App::import('Core', 'Xml');
 					$date = new Datetime();
 					$contenuFichier = file_get_contents('files/messages/'.$message['Message']['fichier']);
-					unset($this->data['Message']['id']);
 					$this->data['Message']['expediteur_id'] = $this->Auth->user('id');
 					$this->data['Message']['expediteur_nom'] = $this->Auth->user('prenom').' '.$this->Auth->user('nom');
 					$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
 					
+					$message = $this->Message->find('first', array('conditions' => array('id' => $this->data['Message']['id']), 'recursive' => -1));
+					$d['Message']['id'] = $this->data['Message']['id'];
+					if ($message['Message']['personne_id'] == $this->Auth->user('id'))
+					{
+						$d['Message']['lu_exp'] = 1;
+						$d['Message']['lu_dest'] = 0;
+					}
+					else
+					{
+						$d['Message']['lu_exp'] = 0;
+						$d['Message']['lu_dest'] = 1;
+					}
+					$this->Message->validate = array();
+					$this->Message->save($d);
+					
+					unset($this->data['Message']['id']);
 					$xml = new XmlHelper();
 					$message = new Xml($contenuFichier); // On passe du fichier xml a un tableau php
 					$message = $message->toArray();
