@@ -26,7 +26,7 @@
 				$this->Session->setFlash('Le message ne vous appartient pas', 'message');
 				$this->redirect(array('action' => 'index'));
 			}
-			
+			// Mis a jour des lectures du message
 			$d['Message']['id'] = $id;
 			if ($this->Auth->user('id') == $message['Message']['destinataire_id'])
 				$d['Message']['lu_dest'] = 1;
@@ -54,16 +54,15 @@
 				$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
 				$this->data['Message']['fichier'] = uniqid('message_').'.xml';
 				$this->data['Message']['lu_exp'] = 1;
-				
 				$pers = $this->Personne->find('first', array('conditions' => array('Personne.login' => $this->data['Message']['destinataire'])));
 				$this->data['Message']['destinataire_id'] = $pers['Personne']['id'];
+				
 				$this->Message->set($this->data);
 				if ($this->Message->validates())
-				{
+				{	// Création du fichier pour le message
 					$this->Message->save();
 					App::import('Helper', 'Xml');
 					$xml = new XmlHelper();
-					
 					$message['Message']['id'] = $this->Message->id;
 					$message['Message']['titre'] = $this->data['Message']['titre'];
 					$message['Message']['fichier'] = $this->data['Message']['fichier'];
@@ -71,7 +70,6 @@
 					$message['Message']['Reponse'][0]['expediteur_nom'] = $this->Auth->user('prenom').' '.$this->Auth->user('nom');
 					$message['Message']['Reponse'][0]['message'] = $this->data['Message']['message'];
 					$message['Message']['Reponse'][0]['date_envoi'] = $this->data['Message']['date_envoi'];
-					
 					file_put_contents('files/messages/'.$this->data['Message']['fichier'], $xml->header().$xml->serialize($message));
 					$this->Session->setFlash('Le message a bien été envoyé', 'message', array('class' => 'success'));
 					$this->redirect(array('action' => 'message', $this->Message->id));
@@ -113,7 +111,7 @@
 					$this->data['Message']['expediteur_id'] = $this->Auth->user('id');
 					$this->data['Message']['expediteur_nom'] = $this->Auth->user('prenom').' '.$this->Auth->user('nom');
 					$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
-					
+					// Mise à jour des lecture du message
 					$message = $this->Message->find('first', array('conditions' => array('id' => $this->data['Message']['id']), 'recursive' => -1));
 					$d['Message']['id'] = $this->data['Message']['id'];
 					if ($message['Message']['personne_id'] == $this->Auth->user('id'))
@@ -128,8 +126,9 @@
 					}
 					$this->Message->validate = array();
 					$this->Message->save($d);
-					
 					unset($this->data['Message']['id']);
+					
+					// Mise à jour du fichier
 					$xml = new XmlHelper();
 					$message = new Xml($contenuFichier); // On passe du fichier xml a un tableau php
 					$message = $message->toArray();
@@ -153,12 +152,12 @@
 		{
 			$message = $this->Message->find('first', array('conditions' => array('Message.id' => $id)));
 			if ($message['Message']['supprime_dest'] == 1 OR $message['Message']['supprime_exp'] == 1)
-			{
+			{	// Si on a supprimé le message des deux cotes, on supprime le fichier
 				unlink('files/messages/'.$message['Message']['fichier']);
 				$this->Message->delete($id);
 			}
 			else
-			{
+			{	// On vérifie qui supprime le message
 				if ($this->Auth->user('id') == $message['Message']['destinataire_id'])
 					$message['Message']['supprime_dest'] = 1;
 				else

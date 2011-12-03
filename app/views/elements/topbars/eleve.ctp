@@ -22,9 +22,8 @@
                 <li class="menu">
                 	<a href="#" class="menu">Infos</a>
                 	<ul class="menu-dropdown">
-	                	<li><?php echo $this->Html->link('Annuaire des professeurs', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
-	                	<li><?php echo $this->Html->link('Annuaire des étudiants', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
-                                                <li><?php echo $this->Html->link('IUT Interactif', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
+	                	<li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+	                	<li><?php echo $this->Html->link('IUT Interactif', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
