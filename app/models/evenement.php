@@ -2,6 +2,7 @@
 class Evenement extends AppModel {
 	var $name = 'Evenement';
 	var $displayField = 'titre';
+	var $actsAs = array('Containable');
 	var $validate = array(
 		'titre' => array(
 			'notempty' => array(
@@ -66,6 +67,29 @@ class Evenement extends AppModel {
 		$dateDebut = $dateDebut['year'].'-'.$dateDebut['month'].'-'.$dateDebut['day'];
 		$dateFin = $check['date_fin']['year'].'-'.$check['date_fin']['month'].'-'.$check['date_fin']['day'];
 		return $dateFin >= $dateDebut;
+	}
+	
+	public function findNewEvenements ($id, $date)
+	{
+		$this->contain('Personne.EvenementsPersonne');
+		$events = $this->find('all', array('conditions' => array('date_fin' <= $date)));
+		foreach ($events as $k => $e)
+		{
+			foreach ($e['Personne'] as $kp => $p)
+			{
+				if ($p['id'] != $id)
+					unset($events[$k]['Personne'][$kp]);
+				else
+				{
+					if ($p['EvenementsPersonne']['lu'] != 0)
+						unset($events[$k]['Personne'][$kp]);
+					unset($events[$k]['Personne'][$kp]['mot_de_passe']);
+				}
+			}
+			if (count($events[$k]['Personne']) == 0)
+				unset($events[$k]);
+		}
+		return $events;
 	}
 
 }

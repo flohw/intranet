@@ -39,5 +39,11 @@ class Document extends AppModel {
 		$this->data['Document']['slug'] = low(Inflector::slug($this->data['Document']['nom'], '-'));
 		return true;
 	}
+	
+	public function findNewDocuments($date)
+	{
+		$docs = $this->find('all', array('conditions' => array('date_ajout >=' => $date)));
+		return $docs;
+	}
 }
 ?>

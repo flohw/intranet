@@ -82,6 +82,19 @@ class Message extends AppModel {
 		
 		return $messages;
 	}
+	
+	public function findNewMessages($id)
+	{
+		$messages = $this->findMyMessages($id);
+		foreach ($messages as $k => $m)
+		{
+			if ($m['Expediteur']['id'] == $id AND $m['Message']['lu_exp'] == 1)
+				unset($messages[$k]);
+			elseif ($m['Destinataire']['id'] == $id AND $m['Message']['lu_dest'] == 1)
+				unset($messages[$k]);
+		}
+		return $messages;
+	}
 
 }
 ?>

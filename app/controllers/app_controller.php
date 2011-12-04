@@ -1,7 +1,7 @@
 <?php
 class AppController extends Controller
 {
-	var $helpers = array('Html', 'Form', 'Session');
+	var $helpers = array('Html', 'Form', 'Session', 'Cache');
 	var $components = array('Session', 'Auth');
 	
 	function beforeFilter()
@@ -36,6 +36,21 @@ class AppController extends Controller
 			}
 			if (low($this->action) == 'display' AND $this->params['pass'][0] == 'home')
 				$this->redirect(array('controller' => 'pages', 'action' => 'display', 'personnes_home'));
+			$notifs = Cache::read('notifs', 'notifs');
+			if ($notifs === false)
+			{
+				$notifs = 0;
+				$this->loadModel('Message');
+				$this->loadModel('Document');
+				$this->loadModel('Evenement');
+				$messages = count($this->Message->findNewMessages($this->Auth->user('id')));
+				$documents = count($this->Document->findNewDocuments($this->Auth->user('last_login')));
+				$evenements = count($this->Evenement->findNewEvenements($this->Auth->user('id'), $this->Auth->user('last_login')));
+				$notifs = $messages + $documents + $evenements;
+				Cache::write('notifs', $notifs, 'notifs');
+			}
+			$n['notifs'] = $notifs;
+			$this->set($n);
 		}
 	}
 }

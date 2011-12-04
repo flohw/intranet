@@ -52,7 +52,12 @@
                     </a>
                     <ul class="menu-dropdown">
                         <li><?php echo $this->Html->link('Emploi du Temps', array('controller' => 'pages', 'action' => 'display', 'emploiDutemps')); ?></li>
-                        <li><?php echo $this->Html->link('Mes Notifications', array('controller' => 'pages', 'action' => 'display', 'Notifs')); ?></li>
+                        <li><?php
+                        	$link = 'Mes Notifications';
+                        	if (isset($notifs) AND $notifs > 0)
+                        		$link .= '<span class="notifslien">'.$notifs.'</span>';
+                        	echo $this->Html->link($link, array('controller' => 'notifications', 'action' => 'index', $this->Session->read('Auth.Personne.id')), array('escape' => false));
+                        ?></li>
                         <li><?php echo $this->Html->link('Gestion du compte', array('controller' => 'personnes', 'action' => 'edition', $this->Session->read('Auth.Personne.id'))); ?></li>
                         <li><?php echo $this->Html->link('Déconnexion', array('controller' => 'personnes','action' => 'deconnexion')); ?></li>
                     </ul>

@@ -293,7 +293,7 @@
  *		'duration'=> 3600, //[optional]
  *		'probability'=> 100, //[optional]
  * 		'prefix' => Inflector::slug(APP_DIR) . '_', //[optional]  prefix every cache file with this string
- * 		'servers' => array(
+ * 		'servers' => array
  * 			'127.0.0.1:11211' // localhost, default port 11211
  * 		), //[optional]
  * 		'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
@@ -301,3 +301,5 @@
  *
  */
 	Cache::config('default', array('engine' => 'File'));
+	Cache::config('notifs', array('engine' => 'File', 'duration' => '600', 'path' => CACHE.'notifs'));
+	Cache::config('long', array('engine' => 'File', 'duration' => '+3 days', 'path' => CACHE.'long'.DS));

@@ -12,6 +12,7 @@ class PersonnesController extends AppController
 	}
 	
 	function deconnexion() {
+		Cache::delete('notifs', 'notifs');
 		$this->redirect($this->Auth->logout());
 	}
 
@@ -38,9 +39,6 @@ class PersonnesController extends AppController
 			$this->Personne->recursive = -1;
 			$this->data = $this->Personne->findById($id);
 		}
-	}
-
-	function index() {
 	}
 
 	function annuaire() {

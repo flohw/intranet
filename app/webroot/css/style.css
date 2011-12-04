@@ -1,6 +1,6 @@
 /* topbar */
 .topbar h3 img { margin-left: 5px; }
-.topbar .secondary-nav .notifs
+.topbar .secondary-nav .notifs, .topbar .secondary-nav .notifslien
 {
 	background-color: #666666;
 	width: 25px;
@@ -12,6 +12,7 @@
 	-o-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
+.topbar .secondary-nav .notifslien { margin-left: 4px; }
 .clear { clear:both; }
 .right { float:right; }
 img.right { margin-left : 20px; }
