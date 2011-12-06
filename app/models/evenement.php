@@ -69,10 +69,10 @@ class Evenement extends AppModel {
 		return $dateFin >= $dateDebut;
 	}
 	
-	public function findNewEvenements ($id, $date)
+	public function findNewEvenements ($id)
 	{
 		$this->contain('Personne.EvenementsPersonne');
-		$events = $this->find('all', array('conditions' => array('date_fin' <= $date)));
+		$events = $this->find('all', array('conditions' => array('date_fin >=' => date('Y-m-d H:i:s'))));
 		foreach ($events as $k => $e)
 		{
 			foreach ($e['Personne'] as $kp => $p)
@@ -80,16 +80,21 @@ class Evenement extends AppModel {
 				if ($p['id'] != $id)
 					unset($events[$k]['Personne'][$kp]);
 				else
-				{
-					if ($p['EvenementsPersonne']['lu'] != 0)
-						unset($events[$k]['Personne'][$kp]);
 					unset($events[$k]['Personne'][$kp]['mot_de_passe']);
-				}
 			}
 			if (count($events[$k]['Personne']) == 0)
 				unset($events[$k]);
 		}
 		return $events;
+	}
+	
+	public function findNotifsNewEvenements ($id)
+	{
+		$events = $this->findNewEvenements($id);
+		$r = array();
+		foreach ($events as $e)
+			$r[$e['Evenement']['id']] = $e['Evenement']['id'];
+		return $r;
 	}
 
 }

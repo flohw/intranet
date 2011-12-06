@@ -5,10 +5,20 @@ class PersonnesController extends AppController
 	var $uses = array('Personne', 'Statut');
 	
 	function beforeFilter() {
+		$this->Auth->autoRedirect = false;
 		parent::beforeFilter();
 	}
 	
-	function connexion() {
+	function connexion()
+	{
+		if ($this->Auth->user('id'))
+			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'personnes_home'));
+		elseif ($this->Auth->login())
+		{
+			$this->Personne->id = $this->Auth->user('id');
+			$this->Personne->saveField('last_login', date('Y-m-d H:i:s'));
+			$this->redirect($this->referer());
+		}
 	}
 	
 	function deconnexion() {

@@ -39,14 +39,13 @@ class AppController extends Controller
 			$notifs = Cache::read('notifs', 'notifs');
 			if ($notifs === false)
 			{
-				$notifs = 0;
 				$this->loadModel('Message');
 				$this->loadModel('Document');
 				$this->loadModel('Evenement');
-				$messages = count($this->Message->findNewMessages($this->Auth->user('id')));
-				$documents = count($this->Document->findNewDocuments($this->Auth->user('last_login')));
-				$evenements = count($this->Evenement->findNewEvenements($this->Auth->user('id'), $this->Auth->user('last_login')));
-				$notifs = $messages + $documents + $evenements;
+				$notifs['messages'] = $this->Message->findNotifsNewMessages($this->Auth->user('id'));
+				$notifs['documents'] = $this->Document->findNotifsNewDocuments($this->Auth->user('last_login'));
+				$notifs['evenements'] = $this->Evenement->findNotifsNewEvenements($this->Auth->user('id'), $this->Auth->user('last_login'));
+				$notifs['total'] = count($notifs['messages']) + count($notifs['documents']) + count($notifs['evenements']);
 				Cache::write('notifs', $notifs, 'notifs');
 			}
 			$n['notifs'] = $notifs;

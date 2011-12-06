@@ -45,5 +45,14 @@ class Document extends AppModel {
 		$docs = $this->find('all', array('conditions' => array('date_ajout >=' => $date)));
 		return $docs;
 	}
+	
+	public function findNotifsNewDocuments($date)
+	{
+		$docs = $this->findNewDocuments($date);
+		$r = array();
+		foreach ($docs as $d)
+			$r[$d['Document']['id']] = $d['Document']['id'];
+		return $r;
+	}
 }
 ?>
