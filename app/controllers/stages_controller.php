@@ -11,5 +11,23 @@ class StagesController extends AppController
 		$o['docutile'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'utile')));
 		$this->set($o);
 	}
+
+	function pt1()
+	{
+		$o['docetu'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'etu1')));
+		$this->set($o);
+	}
+
+	function pt2()
+	{
+		$o['docetu'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'etu2')));
+		$this->set($o);
+	}
+
+	function ppp()
+	{
+		$o['docetu'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'etuppp')));
+		$this->set($o);
+	}
 }
 ?>
