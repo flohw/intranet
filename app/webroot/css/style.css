@@ -110,5 +110,16 @@ form select.input { margin-left: 150px; }
 blockquote h3 {
 	color:#0088bb;
 }
+
+#accordeonStage h3 {
+	text-align: left;
+	padding-left:30px;
+	padding-right:10px;
+}
+
+#accordeonStage h3 span {
+	display:inline-block;
+	float:right;
+}
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }

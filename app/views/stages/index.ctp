@@ -1,17 +1,17 @@
-
 <?php $this->title = 'Intranet | Stages '; ?>
 <div class="page-header">
 	<h2>Stages</h2>
 </div>
 
 <ul class="tabs">
-	<li><a href="#accueil">Présentation</a></li>
-	<li class="active"><a href="#offres">Offres de Stage</a></li>
-	<li><a href="#convention">Conventions de Stage</a></li>
+	<li class="active"><a href="#accueil">Présentation</a></li>
+	<li><a href="#offres">Offres de Stage</a></li>
+	<li><a href="#dates">Dates Importantes</a></li>
+	<li><a href="#fichiers">Documents Utiles</a></li>
 </ul>
 
 <div class="pill-content">
-	<div id="accueil">
+	<div id="accueil"  class="active">
 		<div class="row">
 			<div class="span12">
 				<h3>Objectifs</h3>
@@ -58,29 +58,182 @@
 		</div>
 	</div>
 
-	<div id="offres"  class="active">
+	<div id="offres">
 		<h3>L'IUT vous aide, et vous propose des offres de stage !</h3>
-		<?php if (!empty($offres)): $i = 0; ?>
-		<div class="well" id="accordeonStage">
-		<?php foreach ($offres as $o):
-				if($i==0)
-					echo '<h3 class="active">'.$o['Stage']['entreprise'].'</h3>';
-				else
-					echo '<h3>'.$o['Stage']['entreprise'].'</h3>';
-		?>
-				<div>
-					<ul>
-						<li><?php echo $o['Stage']['description']; ?></li>
-					</ul>
-    			</div>
-    	<?php
-    		$i++;
-			endforeach; ?>
+		<div class="row">
+			<div class="span10">
+				<?php if (!empty($offres)): $i = 0; ?>
+				<div class="well" id="accordeonStage">
+				<?php foreach ($offres as $o):
+					if($i==0)
+						echo '<h3 class="active">'.$o['Stage']['entreprise'].'<span>'.$o['Stage']['ville'].'</span></h3>';
+					else
+						echo '<h3>'.$o['Stage']['entreprise'].'<span>'.$o['Stage']['ville'].'</span></h3>';
+				?>
+					<div>
+						<ul>
+							<li><?php echo $o['Stage']['description']; ?></li>
+						</ul>
+					</div>
+			    	<?php
+		    			$i++;
+					endforeach; 
+				?>
+				</div>
+				<?php endif; 
+				?>
+			</div>
+			<div class="span6">
+				<h4>Fichiers Joints <span class="label notice">Note</span></h4>
+				<table class="condensed-table">
+					<thead>
+					<tr>
+		      				<th class="yellow" header>Document</th>
+		      				<th class="blue">Lien</th>
+					</tr>
+					</thead>
+
+					<tbody>
+						<?php
+							foreach ($docoffre as $d):
+								$title = $d['DocumentsStage']['titre'];
+								$nom = $d['DocumentsStage']['nom_doc'];
+								echo(    '<tr>
+							        		<td>'.$d['DocumentsStage']['titre'].'</td>
+									<td>'.$this->Html->link($title, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
+									</tr>');
+							endforeach;
+						?>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		<?php endif; ?>
 	</div>
 
-	<div id="convention">
+	<div id="dates">
+	<h4>Dates à retenir (2011-2012)<span class="label important">Important</span></h4>
 		
+<table class="bordered-table">
+<tbody>
+<tr>
+<td style="text-align: center;">&nbsp;</td>
+<td style="text-align: center;"><strong><span style="font-size: 10pt; font-family: Arial;">2<sup>&egrave;me</sup> Ann&eacute;e </span></strong></td>
+<td style="text-align: center;"><strong><span style="font-size: 10pt; font-family: Arial;">Ann&eacute;e Sp&eacute;ciale et S3D </span></strong></td>
+<td style="text-align: center;"><strong><span style="font-size: 10pt; font-family: Arial;">S4D </span></strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> Dur&eacute;e du stage </span></p>
+</td>
+<td style="text-align: center;" colspan="3"><span style="font-size: 10pt; font-family: Arial;">10 semaines </span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">Date limite de retour de <strong>l'accord de stage</strong></span></td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">6 Mars 2012 </span></td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 16 Mai 2012 </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 19 Octobre 2011 </span></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> R&eacute;union de d&eacute;part en stage </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> Semaine du 26 Mars 2012 </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> Semaine du 4 Juin 2012 </span></p>
+</td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;"><em>Aucune</em></span></td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> Date de d&eacute;part en stage </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 2 Avril 2012 </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 11 Juin 2012 </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 14 Novembre 2011 </span></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">Date limite de retour de <strong>la fiche de suivi de stage</strong></span></td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">9 Avril 2012 </span></td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 18 Juin 2012 </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 21 Novembre 2011 </span></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> Date limite de retour <strong>des m&eacute;moires de stage</strong> </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 6 Juin 2012 </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 27 Aout 2012 </span></p>
+</td>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> 16 Janvier 2012 </span></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">Date limite de retour <strong>de la fiche app&eacute;ciation entreprise</strong></span></td>
+<td style="text-align: center;" colspan="3"><span style="font-size: 10pt; font-family: Arial;">Au plus tard le jour de la soutenance </span></td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> Fin de stage </span></p>
+</td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">8 Juin 2012 </span></td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">17 Aout 2012 </span></td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">20 Janvier 2012 </span></td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><span style="font-size: 10pt; font-family: Arial;"> Soutenance de stage </span></p>
+</td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">Les 15, 20, 21 et 22 Juin 2012 </span></td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">Fin Ao&ucirc;t/d&eacute;but Septembre 2012 </span></td>
+<td style="text-align: center;"><span style="font-size: 10pt; font-family: Arial;">20 Janvier 2012 </span></td>
+</tr>
+</tbody>
+</table>
+
+	</div>
+
+	<div id="fichiers">
+	<h4>Ces document sont un complément d'informations pour votre stage <span class="label warning">Attention</span></h4>
+		<table class="condensed-table">
+			<thead>
+			<tr>
+      				<th class="yellow" header>Document</th>
+      				<th class="blue">Lien</th>
+			</tr>
+			</thead>
+
+			<tbody>
+				<?php
+					foreach ($docutile as $d):
+						$title = $d['DocumentsStage']['titre'];
+						$nom = $d['DocumentsStage']['nom_doc'];
+						echo(    '<tr>
+					        		<td>'.$d['DocumentsStage']['titre'].'</td>
+							<td>'.$this->Html->link($title, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
+							</tr>');
+					endforeach;
+				?>
+			</tbody>
+		</table>
 	</div>
 </div>
