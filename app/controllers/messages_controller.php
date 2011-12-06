@@ -34,7 +34,14 @@
 				$d['Message']['lu_exp'] = 1;
 			$this->Message->validate = array();
 			$this->Message->save($d);
-			
+			// mise à jour du cache des notifications
+			$notifs = Cache::read('notifs', 'notifs');
+			if (in_array($id, $notifs['messages']))
+			{
+				unset($notifs['messages'][$id]);
+				$notifs['total'] = $notifs['total'] - 1;
+				Cache::write('notifs', $notifs, 'notifs');
+			}
 			$message = file_get_contents('files/messages/'.$message['Message']['fichier']);
 			App::import('Core', 'Xml');
 			$message = new Xml($message);

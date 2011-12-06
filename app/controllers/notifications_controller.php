@@ -8,11 +8,11 @@
 			parent::beforeFilter();
 		}
 		
-		public function index($id)
+		public function index()
 		{
-			$d['messages'] = $this->Message->findNewMessages($id);
+			$d['messages'] = $this->Message->findNewMessages($this->Auth->user('id'));
 			$d['documents'] = $this->Document->findNewDocuments($this->Auth->user('last_login'));
-			$d['evenements'] = $this->Evenement->findNewEvenements($id, $this->Auth->user('last_login'));
+			$d['evenements'] = $this->Evenement->findNewEvenements($this->Auth->user('id'));
 			$this->set($d);
 		}
 	}

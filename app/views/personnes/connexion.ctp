@@ -7,6 +7,10 @@
 		<?php echo $this->Form->create('Personne', array ('controller' => 'personnes', 'action' => 'connexion')); ?>
 		<?php echo $this->Form->input('login', array('class' => 'input', 'label' => 'Identifiant')); ?>
 		<?php echo $this->Form->input('mot_de_passe', array('class' => 'input', 'label' => 'Mot de Passe', 'type' => 'password')); ?>
+		<div class="input">
+			<?php echo $this->Form->checkbox('autoconnect'); ?>
+			<label>Rester connecté</label>
+		</div>
 			<div class="actions">
 				<?php echo $this->Form->button('Connexion', array('class' => 'btn primary'));?>
 				<?php echo $this->Html->link('Mot de passe oublié ?', '#', array('class' => 'btn mdp', 'onclick' => "$('.modal-backdrop').fadeIn()")); ?>

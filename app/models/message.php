@@ -95,6 +95,15 @@ class Message extends AppModel {
 		}
 		return $messages;
 	}
+	
+	public function findNotifsNewMessages ($id)
+	{
+		$messages = $this->findNewMessages($id);
+		$r = array();
+		foreach ($messages as $m)
+			$r[$m['Message']['id']] = $m['Message']['id'];
+		return $r;
+	}
 
 }
 ?>

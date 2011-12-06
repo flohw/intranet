@@ -24,7 +24,8 @@
 		<?php else: ?>
 				<ul>
 		<?php	foreach ($documents as $d): ?>
-					<li><strong><?php echo $d['Document']['nom']; ?></strong> dans le module <?php echo $d['Module']['abreviation']; ?></li>
+					<li><strong><?php echo $d['Document']['nom']; ?></strong> dans le module
+						<?php echo $this->Html->link($d['Module']['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $d['Module']['id'])); ?></li>
 		<?php	endforeach; ?>
 				</ul>
 		<?php endif; ?>
