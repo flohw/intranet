@@ -100,7 +100,7 @@
 								$nom = $d['DocumentsStage']['nom_doc'];
 								echo(    '<tr>
 							        		<td>'.$d['DocumentsStage']['titre'].'</td>
-									<td>'.$this->Html->link($title, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
+									<td>'.$this->Html->link($nom, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
 									</tr>');
 							endforeach;
 						?>
@@ -111,6 +111,8 @@
 	</div>
 
 	<div id="dates">
+	<div class="row">
+	<div class="span12">
 	<h4>Dates à retenir (2011-2012)<span class="label important">Important</span></h4>
 		
 <table class="bordered-table">
@@ -210,30 +212,34 @@
 </tbody>
 </table>
 
-	</div>
+	</div></div></div>
 
 	<div id="fichiers">
-	<h4>Ces document sont un complément d'informations pour votre stage <span class="label warning">Attention</span></h4>
-		<table class="condensed-table">
-			<thead>
-			<tr>
-      				<th class="yellow" header>Document</th>
-      				<th class="blue">Lien</th>
-			</tr>
-			</thead>
+		<div class="row">
+			<div class="span12">
+			<h4>Ces document sont un complément d'informations pour votre stage <span class="label warning">Attention</span></h4>
+			<table class="condensed-table">
+				<thead>
+				<tr>
+	      				<th class="yellow" header>Document</th>
+	      				<th class="blue">Lien</th>
+				</tr>
+				</thead>
 
-			<tbody>
-				<?php
-					foreach ($docutile as $d):
-						$title = $d['DocumentsStage']['titre'];
-						$nom = $d['DocumentsStage']['nom_doc'];
-						echo(    '<tr>
-					        		<td>'.$d['DocumentsStage']['titre'].'</td>
-							<td>'.$this->Html->link($title, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
-							</tr>');
-					endforeach;
-				?>
-			</tbody>
-		</table>
+				<tbody>
+					<?php
+						foreach ($docutile as $d):
+							$title = $d['DocumentsStage']['titre'];
+							$nom = $d['DocumentsStage']['nom_doc'];
+							echo(    '<tr>
+						        		<td>'.$d['DocumentsStage']['titre'].'</td>
+								<td>'.$this->Html->link($nom, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
+								</tr>');
+						endforeach;
+					?>
+				</tbody>
+			</table>
+			</div>
+		</div>
 	</div>
 </div>

@@ -21,6 +21,7 @@ class StagesController extends AppController
 	function pt2()
 	{
 		$o['docetu'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'etu2')));
+		$o['docrap'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'rapports')));
 		$this->set($o);
 	}
 
