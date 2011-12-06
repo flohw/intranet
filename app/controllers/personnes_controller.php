@@ -11,6 +11,14 @@ class PersonnesController extends AppController
 	
 	function connexion()
 	{
+		if (isset($this->data))
+		{
+			if ($this->data['Personne']['autoconnect'] == 1)
+			{
+				$this->Cookie->write('Personne.login', $this->data['Personne']['login']);
+				$this->Cookie->write('Personne.mot_de_passe', $this->data['Personne']['mot_de_passe']);
+			}
+		}
 		if ($this->Auth->user('id'))
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'personnes_home'));
 		elseif ($this->Auth->login())
@@ -23,6 +31,8 @@ class PersonnesController extends AppController
 	
 	function deconnexion() {
 		Cache::delete('notifs', 'notifs');
+		$this->Cookie->delete('Personne');
+		$this->Cookie->destroy('Personne');
 		$this->redirect($this->Auth->logout());
 	}
 

@@ -33,14 +33,6 @@
                 		<li><?php echo $this->Html->link('Nouveau message', array('controller' => 'messages', 'action' => 'nouveau')); ?></li>
                 	</ul>
                 </li>
-
- 
-               <li><?php echo $this->Form->create('Recherche', array ('controller' => 'personnes', 'action' => 'rechercher'), array('class' => 'recherche')); ?>
-                        <?php echo $this->Form->text('recherche', array('class' => 'recherche', 'placeholder' => 'Recherche', 'label' => false)); ?>
-                        <?php echo $this->Form->end(); ?>
-                </li>
-
-
             </ul>
             <ul class="nav secondary-nav">
                 <li class="menu">
