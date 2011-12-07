@@ -113,7 +113,7 @@
 	<div id="dates">
 	<div class="row">
 	<div class="span12">
-	<h4>Dates à retenir (2011-2012)<span class="label important">Important</span></h4>
+	<h4>Dates à retenir (2011-2012) <span class="label important">Important</span></h4>
 		
 <table class="bordered-table">
 <tbody>

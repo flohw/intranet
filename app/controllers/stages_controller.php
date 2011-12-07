@@ -28,6 +28,7 @@ class StagesController extends AppController
 	function ppp()
 	{
 		$o['docetu'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'etuppp')));
+		$o['docpost'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'poster')));
 		$this->set($o);
 	}
 }

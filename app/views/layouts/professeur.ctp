@@ -6,6 +6,7 @@
 		<?php echo $this->Html->css('style.css'); ?>
 		<?php echo $this->Html->css('bootstrap.css'); ?>
 		<?php echo $this->Html->css('jquery-ui.css'); ?>
+		<?php echo $this->Html->css('zoombox.css'); ?>
 	</head>
 	<body>
 		<?php echo $this->element("topbars/prof"); ?>
@@ -45,6 +46,8 @@
 		<?php echo $this->Html->script("tablesorter"); ?>
 		<?php echo $this->Html->script('map'); ?>
 		<?php echo $this->Html->script('bootstrap-popover'); ?>
+		<?php echo $this->Html->script('zoombox/zoombox.js'); ?>
+		<?php echo $this->Html->script('zoombox'); ?>
 		<?php echo $scripts_for_layout; ?>
 		
 	</body>

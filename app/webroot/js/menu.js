@@ -1,5 +1,6 @@
 jQuery(function($){
 	
+	$('a.zoombox').zoombox();
 	// Topbar
 	$("a.menu").mouseenter(function(){
 		$('.menu-dropdown').slideUp();

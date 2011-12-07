@@ -5,7 +5,7 @@
 
 <ul class="tabs">
 	<li class="active"><a href="#docs">Documents Utiles</a></li>
-	<li><a href="#soutenance">Calendrier des Soutenances</a></li>
+	<li><a href="#soutenance">Calendrier</a></li>
 	<li><a href="#affectation">Affectation Groupe/Prof</a></li>
 	<li><a href="#rapports">Rapports en Ligne</a></li>
 </ul>
