@@ -18,15 +18,16 @@ class PersonnesController extends AppController
 				$this->Cookie->write('Personne.login', $this->data['Personne']['login']);
 				$this->Cookie->write('Personne.mot_de_passe', $this->data['Personne']['mot_de_passe']);
 			}
+			if ($this->Auth->login())
+			{
+				$this->Personne->id = $this->Auth->user('id');
+				$this->Personne->saveField('last_login', date('Y-m-d H:i:s'));
+				$this->redirect($this->referer());
+			}
 		}
-		if ($this->Auth->user('id'))
+		elseif ($this->Auth->user('id'))
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'personnes_home'));
-		elseif ($this->Auth->login())
-		{
-			$this->Personne->id = $this->Auth->user('id');
-			$this->Personne->saveField('last_login', date('Y-m-d H:i:s'));
-			$this->redirect($this->referer());
-		}
+		
 	}
 	
 	function deconnexion() {
