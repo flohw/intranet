@@ -1,6 +1,6 @@
 jQuery(function($){
-	
-	$('a.zoombox').zoombox();
+	if($('a.zoombox').length > 0)
+		$('a.zoombox').zoombox();
 	// Topbar
 	$("a.menu").mouseenter(function(){
 		$('.menu-dropdown').slideUp();
