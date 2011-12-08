@@ -16,7 +16,7 @@
 				<?php echo $this->Session->flash('auth'); ?>
 				<?php echo $this->Session->flash(); ?>
 			</div>
-			<?php echo $this->element('sidebar'); ?>
+			<?php echo $this->element('sidebars/admin'); ?>
 			<div class="content"><?php echo $content_for_layout; ?></div>
 		</div> 
 		
