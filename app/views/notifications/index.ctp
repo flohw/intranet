@@ -31,7 +31,7 @@
 		<?php endif; ?>
 	</span>
 	
-	<span class="sapn6">
+	<span class="span6">
 		<h2>Les évènements</h2>
 		<?php if (count($evenements) == 0): echo 'Il n\'y a aucun nouvel évènement'; ?>
 		<?php else: ?>

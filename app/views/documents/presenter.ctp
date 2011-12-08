@@ -1,11 +1,15 @@
-
-<?php $this->title = 'Intranet | Modules | '.$abre['Module']['abreviation']; ?>
-
 <div class="page-header">
-	<h2>Documents du module <small><?php echo $abre['Module']['abreviation']; ?></small></h2>
+	<h2>Documents du module <small><?php echo $abre['Module']['abreviation']; echo ' - '.$abre['Module']['description']?></small></h2>
 </div>
-<span class="row">
-	<span class="span16">
+
+<div class="row">
+	<div class="span16">
+		<?php echo  '<h5 style="display:inline">Volume horaire de ce module : </h5>'.$abre['Module']['volume_horaire'].'h.<br />';?>
+		<?php echo  '<h5 style="display:inline">Coefficient : </h5>'.$abre['Module']['coefficient'].'.';?>
+	</div>
+</div>
+<div class="row">
+	<div class="span16">
 			<?php if (!empty($docs)): 
 			echo 	'<table id="sort" class="zebra-striped">
 				<thead>
@@ -29,5 +33,5 @@
 				endif;
 			?>
 
-	</span>
-</span>
+	</div>
+</div>

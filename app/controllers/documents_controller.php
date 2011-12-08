@@ -2,13 +2,12 @@
 class DocumentsController extends AppController
 {
 	var $name = 'Documents';
-	var $uses = array('Document');
+	var $uses = array('Document', 'Module');
 
 	function presenter($id) 
 	{
+		$mod['abre'] = $this->Module->find('first', array('conditions' => array('Module.id' => $id), 'recursive' => 1));
 		$mod['docs'] = $this->Document->find('all', array('conditions' => array('Document.module_id' => $id), 'recursive' => 1));
-		$mod['abre'] = $this->Document->find('first', array('conditions' => array('Document.module_id' => $id), 'recursive' => 1));
-		
 		// Mise à jour du cache des notifications
 		$r = array();
 		$notifs = Cache::read('notifs', 'notifs');
