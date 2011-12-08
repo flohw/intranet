@@ -21,7 +21,7 @@ class ModulesController extends AppController
 				$this->redirect(array('action' => 'index'));
 			}
 			else
-				$this->Session->setFlash('Le module n\'a pas pu etre enregistre', 'message');
+				$this->Session->setFlash('Le module n\'a pas pu être enregistré', 'message');
 		}
 		else 
 			$this->data = $this->Module->find('first', array('conditions' => array('Module.id' => $id)));
@@ -33,10 +33,24 @@ class ModulesController extends AppController
 		
 	}
 
-	function editmod($nom=null)
+	function editmod($id = null)
 	{
-		$d['libel'] = $this->LibelleModule->find('first', array('conditions' => array('LibelleModule.nom' => $nom)));
-		$this->set( $d);
+		if (isset($this->data))
+		{
+			$this->LibelleModule->set($this->data);
+			if ( $this->LibelleModule->validates())
+			{
+				$this->LibelleModule->save();
+				$this->Session->setFlash('Libellé enregistré !', 'message', array('class' => 'success'));
+				$this->redirect(array('action' => 'index'));
+			}
+			else
+				$this->Session->setFlash('Le libellé n\'a pas pu être enregistré', 'message');
+		}
+		elseif ($id!=null)
+		{
+			$this->data = $this->LibelleModule->find('first', array('conditions' => array('LibelleModule.id' => $id)));
+		}
 	}
 }
 ?>

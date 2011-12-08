@@ -1,30 +1,27 @@
-<?php $this->title = 'Intranet | Editer Modules '; ?>
+<?php $this->title = 'Intranet | ';
+	$this->title .= ($this->data != null) ? 'Editer un libellé' : 'Ajouter un libellé'; ?>
 
 <div class="page-header">
-	<h1>Gestion des libelles des modules</h1>
-	<h2>Editer un Libelle </h2>
+	<h1>Gestion des libellés des modules</h1>
+	
+	<h2>
+	<?php
+	if (isset($this->data))
+		echo 'Editer un libellé';
+	else
+		echo 'Ajouter un libellé';
+	?>
+	</h2>
 </div>
 
-<?php $this->Form->create('Module'); ?>
-<?php
-echo $this->Form->input('id');
-echo '<div class="clearfix">';
-echo	$this->Form->input('libelle_module_id', array('label' => 'Libellé du module', 'class'=> 'input', 'options'=> $libel));
+<?php $this->Form->create('LibelleModule'); ?>
+<?php $this->Form->input('id'); ?>
+<div class="clearfix">
+	<?php echo $this->Form->input('nom', array('label' => 'Libellé du module', 'class'=> 'input')); ?>
+</div>
+<div class="actions">
+	<?php echo $this->Form->submit('Enregistrer', array('class'=> 'btn primary')); ?>
+</div>
+<?php $form->end(); ?>
 
-echo '</div><div class="clearfix">';
-echo	$this->Form->input('abreviation', array('label' => 'Abreviation', 'class'=> 'input'));
-echo '</div><div class="clearfix">';
-echo	$this->Form->input('semestre_id', array('label' => 'Semestre', 'options'=> $sem, 'class'=> 'input'));
-echo '</div><div class="clearfix">';
-echo	$this->Form->input('coefficient', array('label' => 'Coefficient', 'class'=> 'input'));
-echo '</div><div class="clearfix">';
-echo	$this->Form->input('volume_horaire', array('label' => 'Volume horaire', 'class'=> 'input'));
-echo '</div><div class="clearfix">';
-echo	$this->Form->input('description', array('label' => 'Une description', 'class'=> 'input'));
-echo '</div>';
-echo	'<div class="actions">';
-echo	$this->Form->submit('Enregistrer', array('class'=> 'btn primary'));
-echo	'</div>';
-echo	$this->Form->end();
 
-?>
