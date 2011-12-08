@@ -324,11 +324,18 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`evenements` (
   `date_debut` DATETIME NOT NULL ,
   `date_fin` DATETIME NOT NULL ,
   `type_evenement_id` INT NOT NULL ,
+  `personne_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_evenements_type_evenements1` (`type_evenement_id` ASC) ,
+  INDEX `fk_evenements_personnes1` (`personne_id` ASC) ,
   CONSTRAINT `fk_evenements_type_evenements1`
     FOREIGN KEY (`type_evenement_id` )
     REFERENCES `intranet`.`type_evenements` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_evenements_personnes1`
+    FOREIGN KEY (`personne_id` )
+    REFERENCES `intranet`.`personnes` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

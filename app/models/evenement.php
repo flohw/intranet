@@ -21,7 +21,7 @@ class Evenement extends AppModel {
 		'date_fin' => array(
 			'date' => array(
 				'rule' => array('verifDateFin'),
-				'message' => 'La date de fin est après la date de début',
+				'message' => 'La date de fin est avant la date de début !',
 			),
 		),
 	);
@@ -56,16 +56,15 @@ class Evenement extends AppModel {
 	
 	public function verifDateDebut ($check)
 	{
-		$date = $check['date_debut']['year'].'-'.$check['date_debut']['month'].'-'.$check['date_debut']['day'];
-		$ajd = new Date();
-		return $date >= $ajd->format('Y-m-d');
+		$date = $check['date_debut'];
+		$today = date("Y-m-d H:i:s");  
+		return $date >= $today;
 	}
 	
 	public function verifDateFin ($check)
 	{
 		$dateDebut = $this->data['Evenement']['date_debut'];
-		$dateDebut = $dateDebut['year'].'-'.$dateDebut['month'].'-'.$dateDebut['day'];
-		$dateFin = $check['date_fin']['year'].'-'.$check['date_fin']['month'].'-'.$check['date_fin']['day'];
+		$dateFin = $this->data['Evenement']['date_fin'];
 		return $dateFin >= $dateDebut;
 	}
 	
