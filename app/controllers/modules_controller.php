@@ -32,5 +32,11 @@ class ModulesController extends AppController
 		$this->set( $d);
 		
 	}
+
+	function editmod($nom=null)
+	{
+		$d['libel'] = $this->LibelleModule->find('first', array('conditions' => array('LibelleModule.nom' => $nom)));
+		$this->set( $d);
+	}
 }
 ?>

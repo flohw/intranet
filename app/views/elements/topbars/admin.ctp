@@ -18,7 +18,7 @@
                 	</ul>
                 </li>
                 <li class="menu">
-                	<a href="#" class="menu">Fichiers</a>
+                	<a href="#" class="menu">Dossiers</a>
                 	<ul class="menu-dropdown">
 	                	<li><?php echo $this->Html->link('Créer un dossier', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
 	                	<li><?php echo $this->Html->link('Editer un dossier', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
@@ -26,13 +26,42 @@
                 	</ul>
                 </li>
                 <li class="menu">
-                	<a href="#" class="menu">Messagerie</a>
-                	<ul class="menu-dropdown">
-                		<li><?php echo $this->Html->link('Mes messages', array('controller' => 'messages', 'action' => 'index')); ?></li>
-                		<li><?php echo $this->Html->link('Nouveau message', array('controller' => 'messages', 'action' => 'nouveau')); ?></li>
-                	</ul>
+                    <a href="#" class="menu">Scolarité</a>
+                    <ul class="menu-dropdown">
+                        <li><?php echo $this->Html->link('Abscences', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+                        <li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+                    </ul>
                 </li>
 
+                <li class="menu">
+                    <a href="#" class="menu">Modules</a>
+                    <ul class="menu-dropdown">
+                        <?php echo $this->element('menu_modules'/* , array('cache' => '+1 year') */); ?>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="#" class="menu">Stages & projets</a>
+                    <ul class="menu-dropdown">
+                        <li><?php echo $this->Html->link('Stage', array('controller' => 'stages', 'action' => 'index')); ?></li>
+                        <li><?php echo $this->Html->link('Projet tuteuré 1A', array('controller' => 'stages', 'action' => 'pt1')); ?></li>
+                        <li><?php echo $this->Html->link('Projet tuteuré 2A', array('controller' => 'stages', 'action' => 'pt2')); ?></li>
+                        <li><?php echo $this->Html->link('Projet personnel professionnel', array('controller' => 'stages', 'action' => 'ppp')); ?></li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="#" class="menu">Infos</a>
+                    <ul class="menu-dropdown">
+                        <li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+                        <li><?php echo $this->Html->link('IUT Interactif', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="#" class="menu">Messagerie</a>
+                    <ul class="menu-dropdown">
+                        <li><?php echo $this->Html->link('Mes messages', array('controller' => 'messages', 'action' => 'index')); ?></li>
+                        <li><?php echo $this->Html->link('Nouveau message', array('controller' => 'messages', 'action' => 'nouveau')); ?></li>
+                    </ul>
+                </li>
 
             </ul>
             <ul class="nav secondary-nav">

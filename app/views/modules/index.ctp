@@ -6,7 +6,8 @@
 	<span class="span16">
 	<?php if (!empty($modules)): 
 			foreach ($modules as $m): 
-				echo '<h3>'.$m['LibelleModule']['nom'].'</h3>'; 
+				$nom = $m['LibelleModule']['nom'];
+				echo '<h3 style="inline">'.$nom.'<small> - '.$this->Html->link('Editer', array('action' => 'editmod', $nom)).'</small></h3>';
 				foreach ($m['Module'] as $mod):
 					echo '<blockquote>';
 					echo '<h5>'. $this->Html->link($mod['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $mod['id'])) .'<small>'.$this->Html->link('Editer', array('action' => 'editer', $mod['id'])).'</small></h5>';

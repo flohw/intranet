@@ -16,14 +16,8 @@
 				<?php echo $this->Session->flash('auth'); ?>
 				<?php echo $this->Session->flash(); ?>
 			</div>
-		<?php
-			switch ($sidebar)
-			{
-				default:
-					echo $this->element('sidebar');
-					break;
-			}
-		?>
+			<?php echo $this->element('sidebars/professeur'); ?>
+			
 			<div class="content"><?php echo $content_for_layout; ?></div>
 		</div>
 		
