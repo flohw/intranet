@@ -1,0 +1,25 @@
+commun
+	- agenda partage
+
+	- droits
+
+	- partage de doc (en cours)
+
+	>> FONCTIONS COMPLEMENTAIRES
+
+eleve
+	- menu a gauche dynamique (on peut ajouter/mod/supp liens)
+	deuxieme menu "Divers", avec plusieurs categories a part. qui 	
+	sera dynamique + créer une vue pour toutes les categories. Une 
+	seule vue pour toute suivant l'ID de la categorie
+
+prof
+	- scolarite
+
+	- ajout de docs ds modules
+
+admin
+	>> TOUT (sauf departements)
+
+
+ 
