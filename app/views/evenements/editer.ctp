@@ -38,13 +38,8 @@
 		echo $this->Form->input('Evenement.type_evenement_id', $options);
 		echo '</div>';
 		echo '<div class="clearfix">';
-			if ($action=="ajouter")
-			{
-				echo $this->Form->input('Evenements_personnes.personne', array('label' => 'Participant(s)', 'class' => 'input', 'style'=>'height:23px; margin:0px;'));
-				echo '<span class="help-block"><strong>Entrez le login des differents destinaires, separes par une virgule</strong></span>';
-			}
-			else
-				echo $this->Form->input('Evenements_personnes.personne', array('label' => 'Participant(s)', 'class' => 'input', 'disabled'=>'disabled', 'style'=>'height:23px; margin:0px;'));
+		echo $this->Form->input('Evenements_personnes.personne', array('label' => 'Participant(s)', 'class' => 'input', 'style'=>'height:23px; margin:0px;'));
+		echo '<span class="help-block"><strong>Entrez le login des differents destinaires, separes par une virgule</strong></span>';
 		echo '</div>';
 		echo '<div class="clearfix">';
 		echo $this->Form->input('Evenement.date_debut', array('label' => 'Date de debut', 'class' => 'input'));
