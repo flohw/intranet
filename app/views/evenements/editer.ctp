@@ -30,27 +30,37 @@
 	<span class="span11 offset2">
 	<?php
 		echo $this->Form->create();
+
+		echo $this->Form->hidden('Action.', array('value'=>$action));
+
 		echo '<div class="clearfix">';
 		echo $this->Form->input('Evenement.titre', array('label' => 'Titre de l\'evenement', 'class' => 'input', 'style'=>'margin:0px; height:23px;'));
 		echo '</div>';
+
 		echo '<div class="clearfix">';
 		$options = array('type' => 'select', 'options' => $type,'label' => 'Categorie','class' => 'input','style' => 'margin:0px;');
 		echo $this->Form->input('Evenement.type_evenement_id', $options);
 		echo '</div>';
+
 		echo '<div class="clearfix">';
 		echo $this->Form->input('Evenements_personnes.personne', array('label' => 'Participant(s)', 'class' => 'input', 'style'=>'height:23px; margin:0px;'));
 		echo '<span class="help-block"><strong>Entrez le login des differents destinaires, separes par une virgule</strong></span>';
 		echo '</div>';
+
 		echo '<div class="clearfix">';
 		echo $this->Form->input('Evenement.date_debut', array('label' => 'Date de debut', 'class' => 'input'));
 		echo '</div>';
+
 		echo '<div class="clearfix">';
 		echo $this->Form->input('Evenement.date_fin', array('label' => 'Date de fin', 'class' => 'input'));
 		echo '</div>';
+
 		echo '<div class="actions">';
-		echo $this->Form->submit('Enregistrer', array('class'=>'btn primary'));
+		echo $this->Form->submit('Enregistrer', array('class'=>'btn primary', 'style'=>'float:left; margin-right: 20px;'));
+		if ($action=="editer")
+		echo $this->Form->submit('Supprimer', array('class'=>'btn primary', 'name'=>'data[Action]', 'style'=>'margin:0px;')) ;
 		echo '</div>';
-		echo $this->Form->hidden('Action.', array('value'=>$action));
+
 		echo $form->end();
 	?>
 	</span>

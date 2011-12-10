@@ -10,6 +10,15 @@ class EvenementsController extends AppController
 		$i = $this->Auth->user('id');
 		if (isset($this->data))
 		{
+		 if ($this->data['Action']=="Supprimer")
+		 {
+		 	$this->EvenementsPersonne->deleteAll('evenement_id="'.$id.'"', false);
+		 	$this->Evenement->deleteAll('`Evenement`.`id`="'.$id.'"', false);
+		 	$this->Session->setFlash('Evenement supprimé !', 'message', array('class' => 'success'));
+		 	$this->redirect(array('action' => 'editer'));
+		 }
+		 else
+		 {
 			 if (!is_null($id)) $this->data['Evenement']['id']=$id;
 			 $b = ''; $copy = '';
 			 $copy = $this->data; //laisse l'ancienne valeur ds le champ si erreur
@@ -81,6 +90,7 @@ class EvenementsController extends AppController
 						$this->Session->setFlash('L\'evenement est incorrect', 'message');
 					}
 				}
+		 }
 		}
 		else
 		{
