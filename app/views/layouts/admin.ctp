@@ -40,6 +40,8 @@
 		<?php echo $this->Html->script('map'); ?>
 		<?php echo $this->Html->script('bootstrap-popover'); ?>
 		<?php echo $this->Html->script('zoombox'); ?>		
+		<?php echo $this->Html->script('dropfile'); ?>
+		<?php echo $this->Html->script('hover'); ?>
 		<?php echo $scripts_for_layout; ?>
 	
 	</body> 

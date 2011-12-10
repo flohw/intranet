@@ -53,7 +53,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ENGINE = InnoDB, 
 COMMENT = 'classes (A1, A2, B1, B2…)' ;
 
 
@@ -235,7 +235,6 @@ DROP TABLE IF EXISTS `intranet`.`documents` ;
 CREATE  TABLE IF NOT EXISTS `intranet`.`documents` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(45) NOT NULL ,
-  `slug` VARCHAR(45) NOT NULL ,
   `personne_id` INT NOT NULL ,
   `module_id` INT NOT NULL ,
   `date_ajout` DATETIME NOT NULL ,
@@ -397,9 +396,10 @@ DROP TABLE IF EXISTS `intranet`.`documents_stages` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`documents_stages` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `titre` VARCHAR(45) NOT NULL ,
-  `nom_doc` VARCHAR(45) NOT NULL ,
+  `nom` VARCHAR(45) NOT NULL ,
   `categorie` VARCHAR(45) NOT NULL ,
+  `date_ajout` DATETIME NOT NULL ,
+  `type_mime` VARCHAR(70) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 

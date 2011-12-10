@@ -19,13 +19,12 @@ class EvenementsController extends AppController
 		 }
 		 else
 		 {
-			 if (!is_null($id)) $this->data['Evenement']['id']=$id;
-			 $b = ''; $copy = '';
-			 $copy = $this->data; //laisse l'ancienne valeur ds le champ si erreur
+			 if (!is_null($id))
+			 	$this->data['Evenement']['id']=$id;
+			 $b = '';
 
 			 //supprime les espaces eventuels
-				$a=substr_count($this->data['Evenements_personnes']['personne'], ' '); 
-				if ($a != 0) $this->data['Evenements_personnes']['personne'] = str_replace(' ','',$this->data['Evenements_personnes']['personne']);
+			 	$this->data['Evenements_personnes']['personne'] = rtrim($this->data['Evenements_personnes']['personne']);
 
 			 //met les personnes dans un tableau
 				$a=substr_count($this->data['Evenements_personnes']['personne'], ','); 

@@ -106,42 +106,51 @@ form select.input { margin-left: 150px; }
 	text-align: center;
 	font-size: 1.2em;
 }
+/* Pour les stages */
+blockquote h3 { color:#0088bb; }
+#accordeonStage h3 { text-align: left; padding-left:30px; padding-right:10px; }
+#accordeonStage h3 span { display:inline-block; float:right; }
 
-blockquote h3 {
-	color:#0088bb;
-}
+/* Pour les documents */
 
-#accordeonStage h3 {
-	text-align: left;
-	padding-left:30px;
-	padding-right:10px;
+/*[fmt]0200-090A-2*/
+.dropfile {
+	border: 3px dashed #CDCACA;
+	color: #ABA9A9;
+	display: block;
+	float: left;
+	height: 128px;
+	width: 128px;
+	position: relative;
+	margin-bottom: 6px;
+	margin-right: 5px;
 }
-
-#accordeonStage h3 span {
-	display:inline-block;
-	float:right;
+.dropfile .img { position: absolute; z-index: 10; width: 150px; height: 100px; background-color: #FFF !important; }
+.dropfile .progress {
+	position: absolute;
+	left: 0; bottom: 0; right: 0;
+	background-color: #498CFA;
+	height: 0;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+	z-index: 12;
 }
-
-/* evenements */
-#EvenementEditerForm label
-{
-	margin-right : 80px;
+.dropfile.hover { background-color: #D6D7E5; border-color: #3B7FED; }
+.dropfile.hover .img { filter:alpha(opacity=30); opacity:0.3; }
+.dropfile.hover .instructions { color:#3B7FED; }
+.dropfile span.instructions {
+	position: absolute;
+	top: 50%; left: 0; right: 0;
+	font-weight: bold;
+	color: inherit;
+	font-size: 11.7pt;
+	height: 40px;
+	margin-top: -21px;
+	text-align: center;
+	z-index: 9;
 }
-
-#EvenementEditerForm span
-{
-	margin-left : 265px;
-}
-
-#EvenementDateDebutDay, #EvenementDateDebutYear, #EvenementDateDebutMonth, #EvenementDateDebutMin, #EvenementDateDebutMeridian, #EvenementDateFinDay, #EvenementDateFinYear, #EvenementDateFinMonth, #EvenementDateFinMin, #EvenementDateFinMeridian
-{
-	margin:5px 5px 0px 5px; width:90px;
-}
-
-#EvenementDateDebutHour, #EvenementDateFinHour
-{
-	margin : 5px 5px 0px 265px; width:90px;
-}
+.dropfile img.delete { position: absolute; top: 0; right: 0; }
 
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }
