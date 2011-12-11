@@ -89,7 +89,7 @@ class DocumentsController extends AppController
 			if (isset($h['X-File-Name']) AND is_file(WWW_ROOT.$folder.$h['X-File-Name']))
 			{
 				$this->DocumentsStage->delete($h['X-Param-Id']);
-				unlink($folder.$h['X-File-Name']);
+				unlink(WWW_ROOT.$folder.$h['X-File-Name']);
 			}
 			else
 				$o->error = 'Le fichier n\'a pas pût être supprimé ('.$folder.$h['X-File-Name'].')';
