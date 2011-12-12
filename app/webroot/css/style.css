@@ -112,10 +112,9 @@ blockquote h3 { color:#0088bb; }
 #accordeonStage h3 span { display:inline-block; float:right; }
 
 /* Pour les documents */
-
-/*[fmt]0200-090A-2*/
 .dropfile {
 	border: 3px dashed #CDCACA;
+	margin-top: 50px;
 	color: #ABA9A9;
 	display: block;
 	float: left;
@@ -151,6 +150,16 @@ blockquote h3 { color:#0088bb; }
 	z-index: 9;
 }
 .dropfile img.delete { position: absolute; top: 0; right: 0; }
+/* Info bulle */
+.dropfile .infoFichier {
+	position: absolute;
+	width: 123px;
+	background-color: black;
+	color: white;
+	padding: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
 
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }

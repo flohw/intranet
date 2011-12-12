@@ -4,18 +4,13 @@
 </div>
 
 <ul class="tabs">
-	<li><a href="#modules">Modules</a></li>
 	<li class="active"><a href="#stages">Stages</a></li>
+	<li><a href="#PT1A">PT première année</a></li>
+	<li><a href="#PT2A">PT deuxième année</a></li>
 </ul>
 
 <div class="pill-content">
-	<div id="modules">
-		<p>Ajouter un document pour les modules</p>
-		<div class="dropfile" data-folder="modules">
-			<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
-		</div>
-	</div>
-	
+	<!-- Stages -->
 	<div id="stages" class="active">
 		<p>
 			Ajouter un document pour les stages<br />
@@ -35,6 +30,44 @@
 			</div>
 		<?php endforeach; ?>
 		<div class="dropfile" data-folder="stages">
+			<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+		</div>
+	</div>
+	<!-- PT1A -->
+	<div id="PT1A">
+		<p>Ajouter un document pour les projets tuteurés de première année</p>
+		<?php foreach ($docPT1A as $doc): $doc = current($doc); ?>
+			<div class="dropfile" data-folder="PT1A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<?php
+					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
+					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';
+					elseif (in_array($doc['type_mime'], $typesWord))	$image = 'Word';
+					elseif (in_array($doc['type_mime'], $typesExcel))	$image = 'Excel';
+				?>
+				<?php echo $this->Html->image('icones/fichier'.$image.'.png', array('width' => 128, 'height' => 128, 'class' => 'place')); ?>
+			</div>
+		<?php endforeach; ?>
+		<div class="dropfile" data-folder="PT1A">
+			<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+		</div>
+	</div>
+	<!-- PT2A -->
+	<div id="PT2A">
+		<p>Ajouter un document pour les projets tuteurés de deuxième année</p>
+		<?php foreach ($docPT2A as $doc): $doc = current($doc); ?>
+			<div class="dropfile" data-folder="PT2A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<?php
+					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
+					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';
+					elseif (in_array($doc['type_mime'], $typesWord))	$image = 'Word';
+					elseif (in_array($doc['type_mime'], $typesExcel))	$image = 'Excel';
+				?>
+				<?php echo $this->Html->image('icones/fichier'.$image.'.png', array('width' => 128, 'height' => 128, 'class' => 'place')); ?>
+			</div>
+		<?php endforeach; ?>
+		<div class="dropfile" data-folder="PT2A">
 			<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 		</div>
 	</div>
