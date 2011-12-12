@@ -39,32 +39,37 @@ class DocumentsController extends AppController
 	{
 		$this->layout = false;
 		$h = getallheaders();
+		foreach ($h as $k => $v)
+		{
+			$h[low($k)] = $v;
+			unset($h[$k]);
+		}
 		$o = new stdClass();
-		$folder = isset($h['X-Param-Folder']) ? $h['X-Param-Folder'].'/' : '';
-		if ($h['Action'] == 'upload')
+		$folder = isset($h['x-param-folder']) ? 'files/'.$h['x-param-folder'].'/' : 'files/';
+		if ($h['action'] == 'upload')
 		{
 			$source = file_get_contents('php://input');
-			$typeFichier = $h['X-File-Type'];
+			$typeFichier = $h['x-file-type'];
 			$typesImages = array('image/png', 'image/gif', 'image/jpeg');
 			$typesPDF = array('application/pdf');
 			$typesWord = array('application/msword', 'application/vnd.oasis.opendocument.text');
 			$typesExcel = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
 								'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
-			$fichier = $this->DocumentsStage->findByNom($h['X-File-Name']);
+			$fichier = $this->DocumentsStage->findByNom($h['x-file-name']);
 			
 			if (!in_array($typeFichier, array_merge($typesImages, $typesPDF, $typesWord, $typesExcel)))
 				$o->error = 'Format non supporté ('.$typeFichier.')';
-			elseif ($fichier['DocumentsStage']['nom'] == $h['X-File-Name'] AND !isset($h['X-Param-Value']))
-				$o->error = 'Le fichier existe déjà';
+			elseif ($fichier['DocumentsStage']['nom'] == $h['x-file-name'] AND !isset($h['x-param-value']))
+				$o->error = 'Le fichier existe déjà ('.$h['x-file-name'].')';
 			else
 			{
-				if (isset($h['X-Param-Value']) AND is_file(WWW_ROOT.$folder.$h['X-Param-Value']))
+				if (isset($h['x-param-value']) AND is_file(WWW_ROOT.$folder.$h['x-param-value']))
 				{
-					$this->DocumentsStage->delete($h['X-Param-Id']);
-					unlink(WWW_ROOT.$folder.$h['X-Param-Value']);
+					$this->DocumentsStage->delete($h['x-param-id']);
+					unlink(WWW_ROOT.$folder.$h['x-param-value']);
 				}
-				file_put_contents(WWW_ROOT.$folder.$h['X-File-Name'], $source);
-				$o->name = $h['X-File-Name'];
+				file_put_contents(WWW_ROOT.$folder.$h['x-file-name'], $source);
+				$o->name = $h['x-file-name'];
 				
 				App::import('Helper', 'Html');
 				$html = new HtmlHelper();
@@ -76,7 +81,7 @@ class DocumentsController extends AppController
 					$o->content = $html->image('icones/fichierWord.png');
 				elseif (in_array($typeFichier, $typesExcel))
 					$o->content = $html->image('icones/fichierExcel.png');
-				$d['DocumentsStage']['nom'] = $h['X-File-Name'];
+				$d['DocumentsStage']['nom'] = $h['x-file-name'];
 				$d['DocumentsStage']['categorie'] = 'stage';
 				$d['DocumentsStage']['date_ajout'] = date('Y-m-d H:i:s');
 				$d['DocumentsStage']['type_mime'] = $typeFichier;
@@ -84,16 +89,16 @@ class DocumentsController extends AppController
 				$o->id = $this->DocumentsStage->id;
 			}
 		}
-		elseif ($h['Action'] == 'delete')
+		elseif ($h['action'] == 'delete')
 		{
-			if (isset($h['X-File-Name']) AND is_file(WWW_ROOT.$folder.$h['X-File-Name']))
+			if (isset($h['x-file-name']) AND is_file(WWW_ROOT.$folder.$h['x-file-name']))
 			{
-				$this->DocumentsStage->delete($h['X-Param-Id']);
-				unlink(WWW_ROOT.$folder.$h['X-File-Name']);
+				$this->DocumentsStage->delete($h['x-param-id']);
+				unlink(WWW_ROOT.$folder.$h['x-file-name']);
 			}
 			else
-				$o->error = 'Le fichier n\'a pas pût être supprimé ('.$folder.$h['X-File-Name'].')';
-			$o->name = $h['X-File-Name'];
+				$o->error = 'Le fichier n\'a pas pût être supprimé ('.$folder.$h['x-file-name'].')';
+			$o->name = $h['x-file-name'];
 			$o->content = '';
 		}
 			
