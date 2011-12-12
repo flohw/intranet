@@ -4,7 +4,7 @@
 		script:	'upload.php',
 		clone:	true,
 		complete: function (json) { return false; },
-		image: null,
+		image: 'img/delete.png',
 	};
 	
 	$.fn.dropfile = function(oo) {
@@ -38,9 +38,7 @@
 		function upload(files, zone, index) {
 			var file = files[index];
 			var progress = zone.find('.progress');
-			if (o.image == null) o.image = 'img/delete.png';
-			if (index > 0 && o.clone)
-			{
+			if (index > 0 && o.clone) {
 				zone = zone.clone().text('').insertAfter(zone).dropfile(o);
 				zone.data('value', null);
 			}
@@ -50,7 +48,7 @@
 				var json = jQuery.parseJSON(e.target.responseText);
 				zone.removeClass('hover');
 				progress.css({height: 0}).text('');
-				addDelButton(file, zone, o.image, json.id);			// Ajout du bouton de suppression
+				addDelButton(zone, o.image);			// Ajout du bouton de suppression
 				if (index < files.length-1)
 					upload(files, zone, index+1);
 				if (json.error)
@@ -60,10 +58,13 @@
 				}
 				if (o.complete(json))
 					return true;
-				if (o.clone && !replace && index == files.length - 1)
+				if (o.clone && !replace && index == files.length - 1) {
 					zone.clone().text('').insertAfter(zone).dropfile(o);
-				zone.data('value', json.name);
+					zone.data('value', null);
+				}
 				zone.find('img.place').remove();
+				zone.data('value', json.name);
+				zone.data('id', json.id)
 				zone.append(json.content);
 			}, false);
 			// En cours de téléchargement
@@ -82,17 +83,13 @@
 			xhr.setRequestHeader('x-file-size', file.fileSize);
 			xhr.setRequestHeader('x-file-name', file.fileName);
 			for (var i in zone.data())
-			{
 				if (typeof zone.data(i) !== 'object')
 					xhr.setRequestHeader('x-param-'+i, zone.data(i));
-			}
 			
 			xhr.send(file);
 		}
 		
-		function addDelButton(file, zone, image, id) {
-			zone.attr('data-value', file.fileName);
-			zone.attr('data-id', id)
+		function addDelButton(zone, image) {
 			zone.append('<a href="#delete"><img src="'+image+'" class="delete"></a>');
 			zone.find('img.delete').hide();
 		}

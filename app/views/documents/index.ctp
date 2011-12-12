@@ -30,7 +30,6 @@
 			</div>
 		<?php endforeach; ?>
 		<div class="dropfile" data-folder="stages">
-			<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 		</div>
 	</div>
 	<!-- PT1A -->
@@ -49,7 +48,6 @@
 			</div>
 		<?php endforeach; ?>
 		<div class="dropfile" data-folder="PT1A">
-			<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 		</div>
 	</div>
 	<!-- PT2A -->
@@ -68,7 +66,6 @@
 			</div>
 		<?php endforeach; ?>
 		<div class="dropfile" data-folder="PT2A">
-			<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 		</div>
 	</div>
 </div>
@@ -86,7 +83,6 @@ jQuery(function($){
 		
 		xhr.open('post', '<?php echo $this->Html->url(array('action' => 'upload')); ?>', true);
 		xhr.setRequestHeader('action', 'delete');
-		xhr.setRequestHeader('x-file-name', fichier);
 		for (var i in zone.data())
 		{
 			if (typeof zone.data(i) !== 'object')

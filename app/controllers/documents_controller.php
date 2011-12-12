@@ -51,7 +51,7 @@ class DocumentsController extends AppController
 		
 		if ($h['action'] == 'upload')
 		{
-			$source = file_get_contents('php://input');	// Fichier à uploader
+			$source = Inflector::slug(file_get_contents('php://input'), '-');	// Fichier à uploader
 			
 			$typeFichier = $h['x-file-type'];			// Type MIME
 			// Types MIME acceptés
@@ -83,33 +83,34 @@ class DocumentsController extends AppController
 				App::import('Helper', 'Html');
 				$html = new HtmlHelper();
 				if (in_array($typeFichier, $typesImages))
-					$o->content = $html->image('icones/fichierImage.png');
+					$o->content = $html->image('icones/fichierImage.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $typesPDF))
-					$o->content = $html->image('icones/fichierPDF.png');
+					$o->content = $html->image('icones/fichierPDF.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $typesWord))
-					$o->content = $html->image('icones/fichierWord.png');
+					$o->content = $html->image('icones/fichierWord.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $typesExcel))
-					$o->content = $html->image('icones/fichierExcel.png');
+					$o->content = $html->image('icones/fichierExcel.png', array('class' => 'place'));
 				
 				// Creation du document pour la bdd
 				$d['DocumentsStage']['nom'] = $h['x-file-name'];
 				$d['DocumentsStage']['categorie'] = $chemin;
 				$d['DocumentsStage']['date_ajout'] = date('Y-m-d H:i:s');
 				$d['DocumentsStage']['type_mime'] = $typeFichier;
+				$this->DocumentsStage->create();
 				$this->DocumentsStage->save($d);
 				$o->id = $this->DocumentsStage->id;
 			}
 		}
 		elseif ($h['action'] == 'delete')
 		{
-			if (isset($h['x-file-name']) AND is_file(WWW_ROOT.$folder.$h['x-file-name']))
+			if (isset($h['x-param-value']) AND is_file(WWW_ROOT.$folder.$h['x-param-value']))
 			{
 				$this->DocumentsStage->delete($h['x-param-id']);
-				unlink(WWW_ROOT.$folder.$h['x-file-name']);
+				unlink(WWW_ROOT.$folder.$h['x-param-value']);
 			}
 			else
-				$o->error = 'Le fichier n\'a pas pût être supprimé ('.$folder.$h['x-file-name'].')';
-			$o->name = $h['x-file-name'];
+				$o->error = 'Le fichier n\'a pas pût être supprimé ('.$folder.$h['x-param-value'].')';
+			$o->name = $h['x-param-value'];
 			$o->content = '';
 		}
 			

@@ -6,12 +6,12 @@ jQuery(function($) {
 			// Affichage image de suppression
 			$(this).find('img.delete').show();
 			// Affichage infos fichier
-			if (typeof $(this).data('value') != 'undefined')
+			if (typeof $(this).data('value') != 'undefined' && $(this).data('value') != null)
 			{
 				$(this).append('<span class="infoFichier">'+$(this).data('value')+'</span>');
 				
 				var bulle = $(this).find('span.infoFichier');
-				var posTop = -bulle.height()-20;
+				var posTop = -bulle.height() - 20;
 				var posLeft = $(this).width() / 2 - bulle.width() / 2 - 6;
 				
 				bulle.css({left: posLeft, top: posTop - 10, opacity: 0});
