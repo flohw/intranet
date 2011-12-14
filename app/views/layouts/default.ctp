@@ -22,15 +22,15 @@
         <?php echo $content_for_layout; ?>
       </div> 
       
-      <footer class="footer">
-        <div class="container">
-          <p class="pull-right"><a href="#">Haut de page</a></p>
-          <p>
-            Design par PJ, Marie, Flohw, Alexandra, Aurélie et Do'
-            &copy; Tous droits réservés.
-          </p>
-        </div>
-      </footer> 
+    <footer class="footer">
+      <div class="container-fluid">
+        <p class="pull-right"><a href="#">Haut de page</a></p>
+        <p>
+          Design par PJ, Marie, Flohw, Alexandra, Aurélie et Do'
+          &copy; Tous droits réservés.
+        </p>
+      </div>
+    </footer> 
 
       <?php echo $this->Html->script("jquery"); ?>
       <?php echo $this->Html->script("jquery-ui"); ?>

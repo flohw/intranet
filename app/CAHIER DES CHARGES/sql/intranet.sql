@@ -53,7 +53,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB, 
+ENGINE = InnoDB
 COMMENT = 'classes (A1, A2, B1, B2…)' ;
 
 
@@ -449,7 +449,6 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `intranet`;
-INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (1, 'Lecteur');
 INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (10, 'Eleve');
 INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (20, 'Professeur');
 INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (30, 'Administrateur');
