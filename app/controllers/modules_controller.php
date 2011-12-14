@@ -38,12 +38,16 @@ class ModulesController extends AppController
 		if (isset($this->data))
 		{
 			$this->LibelleModule->set($this->data);
-			if ( $this->LibelleModule->validates())
-			{
-				$this->LibelleModule->save();
-				$this->Session->setFlash('Libellé enregistré !', 'message', array('class' => 'success'));
-				$this->redirect(array('action' => 'index'));
-			}
+				if ( $this->LibelleModule->validates())
+				{
+					$this->LibelleModule->save();
+					$this->Session->setFlash('Libellé enregistré !', 'message', array('class' => 'success'));
+					if ($id!=null) 
+						$this->redirect(array('action' => 'index'));
+					else
+						$this->redirect(array('action' => 'editer'));
+					
+				}
 			else
 				$this->Session->setFlash('Le libellé n\'a pas pu être enregistré', 'message');
 		}
@@ -51,6 +55,7 @@ class ModulesController extends AppController
 		{
 			$this->data = $this->LibelleModule->find('first', array('conditions' => array('LibelleModule.id' => $id)));
 		}
+
 	}
 }
 ?>
