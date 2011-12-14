@@ -96,6 +96,9 @@ class PersonnesController extends AppController
 					 ), 
 					'recursive'=>-1));
 		}
+		if(empty($d['personne']))
+		echo $this->Session->setFlash('Aucun resultat n\'a ete trouve', 'message');
+
 		$d['statuts'] = $this->Statut->find('list');	//pour le select
 		$this->set($d);
 	}

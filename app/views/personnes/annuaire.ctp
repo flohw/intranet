@@ -17,12 +17,12 @@ echo $form->create('Personne', array('url' => array('controller'=>'personnes'), 
 echo "\n</div></fieldset>\n";
 echo $form->end();
 
-//si aucun resultat affiche un message
-if (count($personne)==0)
-echo "<div style='text-align:center; background-color:red;'><strong>0 resultat a ete trouvé</strong></br></div></br></br></br></br>";
+//si aucun resultat affiche un message (controller)
 
 //sinon affiche le tableau
-else
+if($session->check('Message')){ echo $this->Session->flash(); }
+
+if (count($personne)!=0)
 {
 	echo '<table class="zebra-striped" id="sort">
 	  <thead>
