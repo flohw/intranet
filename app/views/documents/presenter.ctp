@@ -12,7 +12,7 @@
 <div class="row">
 	<div class="span16">
 			<?php if (!empty($docs)): 
-			echo 	'<table id="sort" class="zebra-striped">
+			echo '<table id="sort" class="zebra-striped">
 				<thead>
 					<tr>
 						<th class="blue headerSortDown">Nom</th>
@@ -21,18 +21,17 @@
 					</tr>
 				</thead>
 				<tbody>';
-				foreach ($docs as $d): 
+			endif;
+			?>
+			<?php 	foreach ($docs as $d): 
 					echo '<tr>';
 					echo '<td>'.$d['Document']['nom'].'</td>';
 					echo '<td>'.$d['Personne']['nom'].' '.$d['Personne']['prenom'].'</td>';
 					echo '<td>ICI LE LIEN DU FICHIER</td>';
 				endforeach;
-			echo 	'</tbody>
-				</table>';
-				else:
-					echo '<h2 style="color:red;">Aucun document pour ce module</h2>';
-				endif;
 			?>
+				</tbody>
+				</table>
 
 	</div>
 </div>
