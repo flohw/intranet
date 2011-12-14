@@ -100,6 +100,18 @@ class Module extends AppModel {
 			'insertQuery' => ''
 		)
 	);
+	
+	public function findModules ($idPers)
+	{
+		$pers = $this->ModulesPersonne->find('all', array('conditions' => array('personne_id' => $idPers)));
+		$r = array();
+		foreach ($pers as $p)
+		{
+			$mod = $this->find('first', array('conditions' => array('id' => $p['ModulesPersonne']['module_id']), 'recursive' => -1));
+			$r[$mod['Module']['id']] = $mod['Module']['abreviation'];
+		}
+		return $r;
+	}
 
 }
 ?>

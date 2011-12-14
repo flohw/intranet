@@ -6,9 +6,8 @@
                 <li class="menu">
                 	<a href="#" class="menu">Documents</a>
                 	<ul class="menu-dropdown">
-                	 <li><?php echo $this->Html->link('Ajouter un document', array('controller' => 'documents')); ?></li>
-                	 <li><?php echo $this->Html->link('Supprimer un document', array('controller' => 'documents')); ?></li>
-                	 <li><?php echo $this->Html->link('Remplacer un document', array('controller' => 'documents')); ?></li>
+                	 <li><?php echo $this->Html->link('Stage et PT', array('controller' => 'documents', 'action' => 'index')); ?></li>
+                	 <li><?php echo $this->Html->link('Modules', array('controller' => 'documents', 'action' => 'modules')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">

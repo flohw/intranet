@@ -1,6 +1,6 @@
-<?php $this->title = "Intranet | Gestion des documents"; ?>
+<?php $this->title = "Intranet | Gestion des documents de stage et projet"; ?>
 <div class="page-header">
-	<h1>Gestion des documents</h1>
+	<h1>Gestion des documents de stage et projet</h1>
 </div>
 
 <ul class="tabs">

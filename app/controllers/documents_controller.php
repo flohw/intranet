@@ -17,6 +17,14 @@ class DocumentsController extends AppController
 		$d['docPT2A'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT2A')));
 		$this->set($d);
 	}
+	
+	function modules($id = null)
+	{
+		$d['doc'] = $this->Document->find('all', array('recursive' => -1, 'personne_id' => $this->Auth->user('id')));
+		$d['modules'] = $this->Module->findModules($this->Auth->user('id'));
+		
+		$this->set($d);
+	}
 
 	function presenter($id) 
 	{
