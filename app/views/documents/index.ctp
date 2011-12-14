@@ -1,6 +1,6 @@
-<?php $this->title = "Intranet | Gestion des documents de stage et projet"; ?>
+<?php $this->title = "Intranet | Gestion des documents des Stages et Projets"; ?>
 <div class="page-header">
-	<h1>Gestion des documents de stage et projet</h1>
+	<h1>Gestion des documents des Stages et Projets</h1>
 </div>
 
 <ul class="tabs">
@@ -12,10 +12,9 @@
 <div class="pill-content">
 	<!-- Stages -->
 	<div id="stages" class="active">
-		<p>
-			Ajouter un document pour les stages<br />
-			Glisser les fichiers par dessus un autre remplacera le fichier, 
-			Glisser les fichiers sur le dernier élément les ajouteront
+		<p>Ajouter un document pour les stages<br />
+			Faire un glisser-déposer pour ajouter un document, 
+			pour remplacer, il suffit de glisser-deposer par dessus.
 		</p>
 		<?php foreach ($docStage as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="stages" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
@@ -34,7 +33,10 @@
 	</div>
 	<!-- PT1A -->
 	<div id="PT1A">
-		<p>Ajouter un document pour les projets tuteurés de première année</p>
+		<p>Ajouter un document pour les projets tuteurés de première année<br />
+			Faire un glisser-déposer pour ajouter un document, 
+			pour remplacer, il suffit de glisser-deposer par dessus.
+		</p>
 		<?php foreach ($docPT1A as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT1A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
@@ -52,7 +54,10 @@
 	</div>
 	<!-- PT2A -->
 	<div id="PT2A">
-		<p>Ajouter un document pour les projets tuteurés de deuxième année</p>
+		<p>Ajouter un document pour les projets tuteurés de deuxième année<br />
+			Faire un glisser-déposer pour ajouter un document, 
+			pour remplacer, il suffit de glisser-deposer par dessus.
+		</p>
 		<?php foreach ($docPT2A as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT2A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>

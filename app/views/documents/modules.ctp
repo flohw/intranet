@@ -1,6 +1,6 @@
-<?php $this->title = 'Intranet | Gestion des documents de module'; ?>
+<?php $this->title = 'Intranet | Gestion des documents des Modules'; ?>
 <div class="page-header">
-	<h1>Gestion des documents de modules</h1>
+	<h1>Gestion des documents des Modules</h1>
 </div>
 
 <span class="row">

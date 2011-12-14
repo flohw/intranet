@@ -29,7 +29,7 @@ if (count($personne)!=0)
 	      <tr>
 	      	  <th>#</th>
 	          <th class="yellow" header headerSortDown>Nom</th>
-	          <th class="blue">Prenom</th>
+	          <th class="blue">Prénom</th>
 	          <th class="red">E-mail</th>
 	      </tr>
 	  </thead>

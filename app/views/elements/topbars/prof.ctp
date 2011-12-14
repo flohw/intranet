@@ -6,22 +6,22 @@
                 <li class="menu">
                 	<a href="#" class="menu">Documents</a>
                 	<ul class="menu-dropdown">
-                	 <li><?php echo $this->Html->link('Stage et PT', array('controller' => 'documents', 'action' => 'index')); ?></li>
+                	 <li><?php echo $this->Html->link('Stages et PT', array('controller' => 'documents', 'action' => 'index')); ?></li>
                 	 <li><?php echo $this->Html->link('Modules', array('controller' => 'documents', 'action' => 'modules')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
                 	<a href="#" class="menu">Scolarité</a>
                 	<ul class="menu-dropdown">
-	                	<li><?php echo $this->Html->link('Abscences', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
-	                	<li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+	                	<li><?php echo $this->Html->link('Abscences', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+	                	<li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' =>  'timetable', 'action' => 'maintenance')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
                 	<a href="#" class="menu">Infos</a>
                 	<ul class="menu-dropdown">
 	                	<li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
-	                	<li><?php echo $this->Html->link('IUT Interactif', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
+	                	<li><?php echo $this->Html->link('Plan Interactif IUT', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
@@ -42,7 +42,7 @@
 		                ?>
                     </a>
                     <ul class="menu-dropdown">
-                        <li><?php echo $this->Html->link('Emploi du Temps', array('controller' => 'pages', 'action' => 'display', 'emploiDutemps')); ?></li>
+                        <li><?php echo $this->Html->link('Emploi du Temps', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
                         <li><?php
                         	$link = 'Mes Notifications';
                         	if ($notifs['total'] > 0)

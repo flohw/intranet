@@ -1,5 +1,5 @@
 <?php $this->title = "Intranet du département Informatique" ?>
-<div class="hero-unit" style="margin-top: 5%;">
+<div class="hero-unit">
 
 <h1>Informations</h1>
 </div>
@@ -10,7 +10,7 @@
 
 <p>
 <br/>
-L'IUT2 est une composante de l'Université Pierre Mendès France. Les formations qu'il dispense sont sanctionnées par des diplômes nationaux.
+L'Institut Universitaire et Technologique 2 de Grenoble est une composante de l'Université Pierre Mendès France. Les formations qu'il dispense sont sanctionnées par des diplômes nationaux.
 Les Diplômes Universitaires de Technologie (DUT), les Licences Professionnelles, etc., sont dispensés en cycle initial, en année spéciale, en alternance, en enseignement à distance, ou en formation continue.<br/><br />
 
 Les formations à la fois théoriques et pratiques, sont assurées par des équipes pédagogiques composées d'enseignants permanents et de vacataires professionnels. Les laboratoires de recherche des 4 universités grenobloises accueillent les enseignants-chercheurs de l'IUT2 depuis de nombreuses années.<br/><br />
@@ -18,7 +18,7 @@ Les formations à la fois théoriques et pratiques, sont assurées par des équi
 Il s'agit en effet de conjuguer une pratique pédagogique et une capacité de recherche s'appuyant sur un contexte local et régional particulièrement fécond, articulées avec
 la dynamique du milieu professionnel.<br/><br/>
 
-<h3>Pour de plus amples imformations, vous pouvez consulter 
+<h3>Pour de plus amples informations, vous pouvez consulter 
 <?php 	echo $this->Html->link('le site de l\'IUT2', "http://www.iut2.upmf-grenoble.fr/") ?>
 </h3>
 </p>

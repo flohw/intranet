@@ -12,7 +12,7 @@
                 <li class="menu">
                 	<a href="#" class="menu">Stages & projets</a>
                 	<ul class="menu-dropdown">
-                		<li><?php echo $this->Html->link('Stage', array('controller' => 'stages', 'action' => 'index')); ?></li>
+                		<li><?php echo $this->Html->link('Stages', array('controller' => 'stages', 'action' => 'index')); ?></li>
                 		<li><?php echo $this->Html->link('Projet tuteuré 1A', array('controller' => 'stages', 'action' => 'pt1')); ?></li>
                 		<li><?php echo $this->Html->link('Projet tuteuré 2A', array('controller' => 'stages', 'action' => 'pt2')); ?></li>
                 		<li><?php echo $this->Html->link('Projet personnel professionnel', array('controller' => 'stages', 'action' => 'ppp')); ?></li>
@@ -22,7 +22,7 @@
                 	<a href="#" class="menu">Infos</a>
                 	<ul class="menu-dropdown">
 	                	<li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
-	                	<li><?php echo $this->Html->link('IUT Interactif', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
+	                	<li><?php echo $this->Html->link('Plan Interactif IUT', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
@@ -43,7 +43,7 @@
 		                ?>
                     </a>
                     <ul class="menu-dropdown">
-                        <li><?php echo $this->Html->link("Emploi du Temps", array('controller' => 'pages', 'action' => 'display', 'emploiDutemps')); ?></li>
+                        <li><?php echo $this->Html->link("Emploi du Temps", array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
                          <li><?php
                         	$link = 'Mes Notifications';
                         	if ($notifs['total'] > 0)

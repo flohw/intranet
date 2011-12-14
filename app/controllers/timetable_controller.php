@@ -8,4 +8,6 @@ class TimetableController extends AppController
 			parent::beforeFilter();
 		}
 		public function batiment() { }
+
+		public function maintenance() {}
 	}
