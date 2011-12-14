@@ -3,16 +3,10 @@ class Document extends AppModel {
 	var $name = 'Document';
 	var $displayField = 'nom';
 	var $validate = array(
-		'nom' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Le nom du document est vide',
-				'allowEmpty' => false,
-				'required' => true,
-			),
-			'alphanumeric' => array(
-				'rule' => array('alphanumeric'),
-				'message' => 'Le nom doit être une chaine de caractères',
+		'fichier' => array(
+			'verifFichier' => array(
+				'rule' => array('verifFichier'),
+				'message' => 'Le fichier n\'est pas présent ou n\'est pas du bon type (image, pdf, word, excel)',
 			),
 		),
 	);
@@ -36,7 +30,23 @@ class Document extends AppModel {
 	
 	public function beforeSave ()
 	{
-		$this->data['Document']['slug'] = low(Inflector::slug($this->data['Document']['nom'], '-'));
+		$this->data['Document']['date_ajout'] = date('Y-m-d H:i:s');
+		return true;
+	}
+		
+	public function verifFichier ($check)
+	{
+		$check = current($check);
+		if (empty($check['name']))
+			return false;
+		$typesImages = array('image/png', 'image/gif', 'image/jpeg');
+		$typesPDF = array('application/pdf');
+		$typesWord = array('application/msword', 'application/vnd.oasis.opendocument.text');
+		$typesExcel = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
+							'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
+		
+		if (!in_array($check['type'], array_merge($typesImages, $typesPDF, $typesWord, $typesExcel)))
+			return false;
 		return true;
 	}
 	

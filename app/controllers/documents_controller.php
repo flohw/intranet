@@ -18,10 +18,41 @@ class DocumentsController extends AppController
 		$this->set($d);
 	}
 	
-	function modules($id = null)
+	function modules()
 	{
 		$d['doc'] = $this->Document->find('all', array('recursive' => -1, 'personne_id' => $this->Auth->user('id')));
 		$d['modules'] = $this->Module->findModules($this->Auth->user('id'));
+		
+		if (isset($this->data))
+		{
+			$this->Document->set($this->data);
+			$this->Document->recursive = -1;
+			$doc = $this->Document->find('count', array('conditions' => array(	'nom' => $this->data['Document']['fichier']['name'],
+																				'module_id' => $this->data['Document']['module_id'])));
+			if ($doc)
+				$this->Session->setFlash('Le nom du document existe déjà dans ce module ('.$this->data['Document']['fichier']['name'].')',
+													'message');
+			else if ($this->Document->validates())
+			{
+				// Variable de sauvegarde en BD puis sauvegarde
+				$s['Document']['nom'] = $this->data['Document']['fichier']['name'];
+				$s['Document']['personne_id'] = $this->Auth->user('id');
+				$s['Document']['module_id'] = $this->data['Document']['module_id'];
+				$this->Document->validate = array();
+				$this->Document->save($s);
+				// Déplacement du document dans le répertoire
+				$this->Module->recursive = -1;
+				$mod = $this->Module->findById($this->data['Document']['module_id']);
+				if (!is_dir(WWW_ROOT.'/files/modules/'.$mod['Module']['abreviation']))
+					mkdir(WWW_ROOT.'/files/modules/'.$mod['Module']['abreviation']);
+				move_uploaded_file($this->data['Document']['fichier']['tmp_name'],
+					WWW_ROOT.'/files/modules/'.$mod['Module']['abreviation'].'/'.$this->data['Document']['fichier']['name']);
+				$this->Session->setFlash('Le document a bien été enregistré !', 'message', array('class' => 'success'));
+				$this->redirect(array('action' => 'presenter', $this->data['Document']['module_id']));
+			}
+			else
+				$this->Session->setFlash('Erreur dans le formulaire', 'message');
+		}
 		
 		$this->set($d);
 	}

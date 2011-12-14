@@ -8,6 +8,7 @@
 		<table id="sort" class="zebra-striped">
 			<thead>
 				<tr>
+					<th class="id">#</th>
 					<th class="blue">Titre</th>
 					<th id="correspondant">Correspondant</th>
 					<th id="date">Date de réception</th>
@@ -23,6 +24,7 @@
 						else
 							$p = $m['Destinataire']; $m = current($m);
 						echo '<tr>';
+						echo '<td class="id">'.$m['id'].'</td>';
 						echo '<td>';
 						if ($this->Session->read('Auth.Personne.id') == $m['personne_id'] AND $m['lu_exp'] == 1)
 							echo $this->Html->link($m['titre'], array('action' => 'message', $m['id']));

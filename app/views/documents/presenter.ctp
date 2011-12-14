@@ -1,3 +1,4 @@
+<?php $this->title = 'Intranet | '.$abre['Module']['abreviation'].' | Les documents'; ?>
 <div class="page-header">
 	<h2>Documents du module <small><?php echo $abre['Module']['abreviation']; echo ' - '.$abre['Module']['description']?></small></h2>
 </div>
