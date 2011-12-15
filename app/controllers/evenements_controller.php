@@ -80,7 +80,7 @@ function editer($id = null)
 				$groupe_ = $this->Groupe->find('list', array('conditions' => array('Groupe.nom' => $p)));
 				if (empty($groupe_)) $d .= $p.', ';
 			 }
-			 if (!empty($d))
+			 if (!empty($d)) 
 			 {
 				$d = substr($d, 0, -2);	//on enleve la derniere virgule
 				$d='Groupe introuvable : '.$d."</br>";
@@ -99,11 +99,7 @@ function editer($id = null)
 				empty($this->data['Evenements_personnes']['semestre'])) 
 				$b='Vous ne pouvez pas choisir de groupe sans choisir de semestre';
 
-			if (!empty($b))
-			{
-				$this->data = $copy; 
-				$this->Session->setFlash($b, 'message');
-			}
+			if (!empty($b)) { $this->data = $copy; $this->Session->setFlash($b, 'message'); }
 
 		//=> sinon enregistre
 			else
