@@ -9,6 +9,12 @@ class PersonnesController extends AppController
 		parent::beforeFilter();
 	}
 	
+
+	function index() {
+		$pers['personnes'] = $this->Personne->find('list');
+		$this->set($pers);
+	}
+
 	function connexion()
 	{
 		if (isset($this->data))
@@ -37,13 +43,13 @@ class PersonnesController extends AppController
 		$this->redirect($this->Auth->logout());
 	}
 
-	function edition($id)
+	function edition($id = NULL)
 	{
-		if ($this->Auth->user('id') != $id)
+		/*if ($this->Auth->user('id') != $id)
 		{
 			$this->Session->setFlash('Vous ne pouvez pas modifier le profil d\'une autre personne', 'message');
 			$this->redirect(array('action' => 'edition', $this->Auth->user('id')));
-		}
+		}*/
 		if(!empty($this->data))
 		{
 			$this->Personne->set($this->data);
@@ -102,6 +108,13 @@ class PersonnesController extends AppController
 		$d['statuts'] = $this->Statut->find('list');	//pour le select
 		$this->set($d);
 	}
-}
 
+
+
+	function supprimer($id) {
+		$this->Personne->delete($id, true);
+		$this->redirect(array('action' => 'annuaire'));
+	}
+
+}
 ?>

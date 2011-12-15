@@ -31,6 +31,7 @@ if (count($personne)!=0)
 	          <th class="yellow" header headerSortDown>Nom</th>
 	          <th class="blue">Prénom</th>
 	          <th class="red">E-mail</th>
+	          <th class="purple">Action</th>
 	      </tr>
 	  </thead>
 	  <tbody>';
@@ -44,6 +45,8 @@ if (count($personne)!=0)
 	        <td>'.strtoupper($p['Personne']['nom']).'</td>
 	        <td>'.ucwords($p['Personne']['prenom']).'</td>
 	        <td>'.$p['Personne']['email'].'</td>
+	        <td>'.$this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['Personne']['id'])).'/'.
+	        	$this->Html->link('Supprimer', array('controller' => 'personnes', 'action' => 'supprimer', $p['Personne']['id']), null, 'Voulez-vous vraiment supprimer ce compte ? ').'</td>
 	     </tr>');
 	}
 

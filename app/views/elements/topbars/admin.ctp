@@ -12,17 +12,8 @@
                 <li class="menu">
                 	<a href="#" class="menu">Comptes</a>
                 	<ul class="menu-dropdown">
-                		<li><?php echo $this->Html->link('Editer un compte', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-                		<li><?php echo $this->Html->link('Supprimer un compte', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-                		<li><?php echo $this->Html->link('Ajouter un compte', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-                	</ul>
-                </li>
-                <li class="menu">
-                	<a href="#" class="menu">Dossiers</a>
-                	<ul class="menu-dropdown">
-	                	<li><?php echo $this->Html->link('Créer un dossier', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-	                	<li><?php echo $this->Html->link('Editer un dossier', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-	                	<li><?php echo $this->Html->link('Supprimer un dossier', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+                		<li><?php echo $this->Html->link('Editer un compte', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
+                		<li><?php echo $this->Html->link('Ajouter un compte', array('controller' => 'personnes', 'action' => 'edition')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
