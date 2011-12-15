@@ -24,10 +24,11 @@
 			endif;
 			?>
 			<?php 	foreach ($docs as $d): 
+					$nom = $d['Document']['nom'];
 					echo '<tr>';
-					echo '<td>'.$d['Document']['nom'].'</td>';
+					echo '<td>'.$nom.'</td>';
 					echo '<td>'.$d['Personne']['nom'].' '.$d['Personne']['prenom'].'</td>';
-					echo '<td>ICI LE LIEN DU FICHIER</td>';
+					echo '<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'modules', $abre['Module']['abreviation'], $nom)) .'</td>';
 				endforeach;
 			?>
 				</tbody>

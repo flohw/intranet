@@ -26,11 +26,10 @@
 					<tbody>
 						<?php
 							foreach ($docetu as $d):
-								$title = $d['DocumentsStage']['titre'];
-								$nom = $d['DocumentsStage']['nom_doc'];
+								$nom = $d['DocumentsStage']['nom'];
 								echo(    '<tr>
-							        		<td>'.$d['DocumentsStage']['titre'].'</td>
-									<td>'.$this->Html->link($nom, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
+							        		<td>'.$d['DocumentsStage']['nom'].'</td>
+									<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'PPP', $nom)) .'</td>
 									</tr>');
 							endforeach;
 						?>
@@ -94,7 +93,7 @@
 				<span class="label notice">Informations</span>
 				<p>Chaque groupe de projet tuteuré doit choisir un professeur qui sera leur tuteur. Il leur apportera de l'aide lorsque ce sera necessaire. Le PDF suivant recapitule les etudiants avec leur groupe ainsi que le professeur qu'ils ont choisi comme tuteur.</p>
 				<br>
-				<?php echo $this->Html->link('PDF', array('controller' => 'files', 'action' => 'documents', 'Entreprises-09-10.pdf')); ?>
+				<?php echo $this->Html->link('PDF', array('controller' => 'files', 'action' => 'PPP', 'affectation.pdf')); ?>
 			</div>
 		</div>
 	</div>
@@ -103,10 +102,9 @@
 		<ul class="media-grid">
 		<?php
 			foreach ($docpost as $d):
-				$title = $d['DocumentsStage']['titre'];
-				$nom = $d['DocumentsStage']['nom_doc'];
+				$nom = $d['DocumentsStage']['nom'];
 				echo('<li>'.$this->Html->link(
-					$html->image('/files/posters/'.$nom, array(														'alt' => $title,													'width' => '200px',												'height' => '200px')), 
+					$html->image('/files/posters/'.$nom, array(														'alt' => $nom,													'width' => '200px',												'height' => '200px')), 
 							array(
 							'controller' => 'files',
 							 'action' => 'posters', $nom), array('escape' => false, 'class' => 'zoombox zgallery1',)).

@@ -96,11 +96,10 @@
 					<tbody>
 						<?php
 							foreach ($docoffre as $d):
-								$title = $d['DocumentsStage']['titre'];
-								$nom = $d['DocumentsStage']['nom_doc'];
+								$nom = $d['DocumentsStage']['nom'];
 								echo(    '<tr>
-							        		<td>'.$d['DocumentsStage']['titre'].'</td>
-									<td>'.$this->Html->link($nom, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
+							        		<td>'.$d['DocumentsStage']['nom'].'</td>
+									<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'stages-offres', $nom)) .'</td>
 									</tr>');
 							endforeach;
 						?>
@@ -229,11 +228,10 @@
 				<tbody>
 					<?php
 						foreach ($docutile as $d):
-							$title = $d['DocumentsStage']['titre'];
-							$nom = $d['DocumentsStage']['nom_doc'];
+							$nom = $d['DocumentsStage']['nom'];
 							echo(    '<tr>
-						        		<td>'.$d['DocumentsStage']['titre'].'</td>
-								<td>'.$this->Html->link($nom, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
+						        		<td>'.$d['DocumentsStage']['nom'].'</td>
+								<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'stages-utiles', $nom)) .'</td>
 								</tr>');
 						endforeach;
 					?>
