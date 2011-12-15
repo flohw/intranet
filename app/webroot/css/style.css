@@ -163,13 +163,24 @@ blockquote h3 { color:#0088bb; }
 }
 
 /* evenements */
-#EvenementEditerForm label { margin-right : 80px; }
-#EvenementEditerForm span { margin-left : 265px; }
+#EvenementEditerForm label { margin-right : 75px;}
+#EvenementEditerForm span.help-block { margin-left : 260px; }
 
 #EvenementDateDebutDay, #EvenementDateDebutYear, #EvenementDateDebutMonth, #EvenementDateDebutMin, #EvenementDateDebutMeridian, #EvenementDateFinDay, #EvenementDateFinYear, #EvenementDateFinMonth, #EvenementDateFinMin, #EvenementDateFinMeridian
 { margin:5px 5px 0px 5px; width:90px; }
 
-#EvenementDateDebutHour, #EvenementDateFinHour { margin : 5px 5px 0px 265px; width:90px; }
+#EvenementDateDebutHour, #EvenementDateFinHour { margin : 5px 5px 0px 260px; width:90px; }
+
+.evenement_gp
+{
+border: 1px solid gray;
+background-color:gray;
+margin-top:15px;
+margin-bottom:10px;
+padding-top:10px;
+padding-bottom:10px;
+margin-left:150px;
+}
 
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }
