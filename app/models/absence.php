@@ -12,6 +12,20 @@ class Absence extends AppModel {
 				'on' => 'update',
 			),
 		),
+		'date'=> array(
+			'notempty' => array (
+				'rule' => array ('notempty'), 
+				'message' => 'Date vide',
+				'allowEmpty' => false,
+				'required' => true,
+			),
+			'notempty' => array (
+				'rule' => array ('verifDate'), 
+				'message' => 'Date invalide',
+				'allowEmpty' => false,
+				'required' => true,
+			),
+		),
 	);
 
 	var $belongsTo = array(
@@ -23,11 +37,11 @@ class Absence extends AppModel {
 			'order' => ''
 		)
 	);
-	
-	public function beforeSave ()
-	{
-		$this->data['Absence']['date'] = date('Y-m-d H:i:s');
-		return true;
+
+	public function verifDate ($check) {
+		return $check['date'] <= date('Y-m-d H:i:s');
 	}
+	
+	
 }
 ?>
