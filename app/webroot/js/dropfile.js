@@ -80,8 +80,8 @@
 			xhr.setRequestHeader('action', 'upload');
 			xhr.setRequestHeader('content-type', 'multipart/form-data');
 			xhr.setRequestHeader('x-file-type', file.type);
-			xhr.setRequestHeader('x-file-size', file.fileSize);
-			xhr.setRequestHeader('x-file-name', file.fileName);
+			xhr.setRequestHeader('x-file-size', file.size);
+			xhr.setRequestHeader('x-file-name', file.name);
 			for (var i in zone.data())
 				if (typeof zone.data(i) !== 'object')
 					xhr.setRequestHeader('x-param-'+i, zone.data(i));

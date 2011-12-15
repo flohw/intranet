@@ -82,10 +82,8 @@ class DocumentsController extends AppController
 	{
 		$this->layout = false;
 		$h = getallheaders();
-		foreach ($h as $k => $v) {
+		foreach ($h as $k => $v)
 			$h[low($k)] = $v;
-			unset($h[$k]);
-		}
 		$o = new stdClass();
 		$chemin = $h['x-param-folder'];
 		$folder = 'files/'.$h['x-param-folder'].'/';
