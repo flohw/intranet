@@ -62,7 +62,7 @@ class DocumentsController extends AppController
 		$mod['abre'] = $this->Module->find('first', array('conditions' => array('Module.id' => $id), 'recursive' => 1));
 		$mod['docs'] = $this->Document->find('all', array('conditions' => array('Document.module_id' => $id), 'recursive' => 1));
 		 if (empty($mod['docs']))
-			echo $this->Session->setFlash('Aucun document pour ce module', 'message');
+			echo $this->Session->setFlash('Aucun document pour ce module', 'message', array('class' => 'info'));
 		// Mise à jour du cache des notifications
 		$r = array();
 		$notifs = Cache::read('notifs', 'notifs');

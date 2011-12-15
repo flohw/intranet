@@ -22,7 +22,7 @@ class PersonnesController extends AppController
 			{
 				$this->Personne->id = $this->Auth->user('id');
 				$this->Personne->saveField('last_login', date('Y-m-d H:i:s'));
-				$this->redirect($this->referer());
+				$this->redirect($this->Auth->loginRedirect);
 			}
 		}
 		elseif ($this->Auth->user('id'))
