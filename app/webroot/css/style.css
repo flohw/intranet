@@ -162,5 +162,14 @@ blockquote h3 { color:#0088bb; }
 	border-radius: 5px;
 }
 
+/* evenements */
+#EvenementEditerForm label { margin-right : 80px; }
+#EvenementEditerForm span { margin-left : 265px; }
+
+#EvenementDateDebutDay, #EvenementDateDebutYear, #EvenementDateDebutMonth, #EvenementDateDebutMin, #EvenementDateDebutMeridian, #EvenementDateFinDay, #EvenementDateFinYear, #EvenementDateFinMonth, #EvenementDateFinMin, #EvenementDateFinMeridian
+{ margin:5px 5px 0px 5px; width:90px; }
+
+#EvenementDateDebutHour, #EvenementDateFinHour { margin : 5px 5px 0px 265px; width:90px; }
+
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }
