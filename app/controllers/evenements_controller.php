@@ -21,10 +21,7 @@ class EvenementsController extends AppController
 		 {
 			 if (!is_null($id))
 			 	$this->data['Evenement']['id']=$id;
-			 $b = '';
-
-			 //supprime les espaces eventuels
-			 	$this->data['Evenements_personnes']['personne'] = rtrim($this->data['Evenements_personnes']['personne']);
+			 $b = ''; $copy = $this->data;
 
 			 //met les personnes dans un tableau
 				$a=substr_count($this->data['Evenements_personnes']['personne'], ','); 
@@ -35,6 +32,7 @@ class EvenementsController extends AppController
 				unset($this->data['Evenements_personnes']);
 				foreach ($people as $id=>$p)
 				{
+					$p = trim($p); //supprime les espaces eventuels
 					$a = $this->Personne->find('first', array('conditions' => array('Personne.login' => $p)));
 					if (empty($a)) $b .= $p.', ';
 					else $people_[] = $a['Personne']['id'];
@@ -85,7 +83,7 @@ class EvenementsController extends AppController
 					}
 					else
 					{
-						$this->data['Evenements_personnes']=$copy;
+						$this->data=$copy;
 						$this->Session->setFlash('L\'evenement est incorrect', 'message');
 					}
 				}

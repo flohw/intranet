@@ -25,11 +25,10 @@
 					<tbody>
 						<?php
 							foreach ($docetu as $d):
-								$title = $d['DocumentsStage']['titre'];
-								$nom = $d['DocumentsStage']['nom_doc'];
+								$nom = $d['DocumentsStage']['nom'];
 								echo(    '<tr>
-							        		<td>'.$d['DocumentsStage']['titre'].'</td>
-									<td>'.$this->Html->link($nom, array('controller' => 'files', 'action' => 'documents', $nom)) .'</td>
+							        		<td>'.$d['DocumentsStage']['nom'].'</td>
+									<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'PT1A', $nom)) .'</td>
 									</tr>');
 							endforeach;
 						?>
@@ -85,7 +84,7 @@
 				<p>Chaque groupe de projet tuteuré doit choisir un professeur qui sera leur tuteur. Il leur apportera de l'aide lorsque ce sera necessaire. Le PDF suivant recapitule les etudiants avec leur groupe ainsi que le professeur qu'ils ont choisi comme tuteur.</p>
 				<p>Les eleves qui n'ont pas encore de groupe ni de professeur sont indiqués en bas de tableau et sont priés de se dépecher de trouver un groupe, ou d'en former un avec ceux qui n'en n'ont pas.</p>
 				<br>
-				<?php echo $this->Html->link('PDF', array('controller' => 'files', 'action' => 'documents', 'Entreprises-09-10.pdf')); ?>
+				<?php echo $this->Html->link('PDF', array('controller' => 'files', 'action' => 'PT1A', 'affectation.pdf')); ?>
 			</div>
 		</div>
 	</div>

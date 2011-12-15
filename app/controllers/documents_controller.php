@@ -12,9 +12,13 @@ class DocumentsController extends AppController
 		$d['typesWord'] = array('application/msword', 'application/vnd.oasis.opendocument.text');
 		$d['typesExcel'] = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
 					'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
-		$d['docStage'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages')));
+		$d['docStageUtile'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages-utiles')));
+		$d['docStageOffres'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages-offres')));
 		$d['docPT1A'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT1A')));
 		$d['docPT2A'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT2A')));
+		$d['docPT2Arapports'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT2A-rapports')));
+		$d['docPPP'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PPP')));
+		$d['docPosters'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'posters')));
 		$this->set($d);
 	}
 	
@@ -85,8 +89,8 @@ class DocumentsController extends AppController
 		foreach ($h as $k => $v)
 			$h[low($k)] = $v;
 		$o = new stdClass();
-		$chemin = $h['x-param-folder'];
-		$folder = 'files/'.$h['x-param-folder'].'/';
+		$categorie = $h['x-param-folder'];
+		$folder = 'files/'.$categorie.'/';
 		
 		if ($h['action'] == 'upload')
 		{
@@ -94,15 +98,20 @@ class DocumentsController extends AppController
 			
 			$typeFichier = $h['x-file-type'];			// Type MIME
 			// Types MIME acceptés
-			$typesImages = array('image/png', 'image/gif', 'image/jpeg');
-			$typesPDF = array('application/pdf');
-			$typesWord = array('application/msword', 'application/vnd.oasis.opendocument.text');
-			$typesExcel = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
-								'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
-			$acceptsFolders = array('files/stages/', 'files/', 'files/PT1A/', 'files/PT2A/');
+			$types = $typesImages = array('image/png', 'image/gif', 'image/jpeg');
+			$acceptsFolders = array('files/stages-utiles/', 'files/PT1A/', 'files/PT2A/', 'files/PPP/',
+										'files/stages-offres', 'files/PT2A-rapports', 'files/posters/');
+			if ($categorie != 'posters')
+			{
+				$typesPDF = array('application/pdf');
+				$typesWord = array('application/msword', 'application/vnd.oasis.opendocument.text');
+				$typesExcel = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
+									'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
+				$types = array_merge($types, $typesPDF, $typesWord, $typesExcel);
+			}
 			// Verification existance fichier
-			$fichier = $this->DocumentsStage->findByNom($h['x-file-name']);
-			if (!in_array($typeFichier, array_merge($typesImages, $typesPDF, $typesWord, $typesExcel)))
+			$fichier = $this->DocumentsStage->find('first', array('conditions' => array('nom' => $h['x-file-name'],'categorie'=>$categorie)));
+			if (!in_array($typeFichier, $types))
 				$o->error = 'Format non supporté ('.$typeFichier.')';
 			elseif ($fichier['DocumentsStage']['nom'] == $h['x-file-name'] AND !isset($h['x-param-value']))
 				$o->error = 'Le fichier existe déjà ('.$h['x-file-name'].')';
@@ -132,7 +141,7 @@ class DocumentsController extends AppController
 				
 				// Creation du document pour la bdd
 				$d['DocumentsStage']['nom'] = $h['x-file-name'];
-				$d['DocumentsStage']['categorie'] = $chemin;
+				$d['DocumentsStage']['categorie'] = $categorie;
 				$d['DocumentsStage']['date_ajout'] = date('Y-m-d H:i:s');
 				$d['DocumentsStage']['type_mime'] = $typeFichier;
 				$this->DocumentsStage->create();
