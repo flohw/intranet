@@ -75,7 +75,6 @@
 					progress.css({height: perc}).html(perc);
 				}
 			}, false);
-			
 			xhr.open('post', o.script, true);
 			xhr.setRequestHeader('action', 'upload');
 			xhr.setRequestHeader('content-type', 'multipart/form-data');
