@@ -6,13 +6,9 @@ class DepartementsController extends AppController
 	
 	public function beforeFilter() { parent::beforeFilter(); }
 
-	function index()
-	{
-		$d['departements'] = $this->Departement->find('all');
-		$this->set($d);
-	}
+	
 
-	function editer($id = null)
+	function editer($id = NULL)
 	{
 		if (isset($this->data))
 		{
