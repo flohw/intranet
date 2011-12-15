@@ -7,8 +7,8 @@ class StagesController extends AppController
 	function index() 
 	{
 		$o['offres'] = $this->Stage->find('all');
-		$o['docoffre'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'offres')));
-		$o['docutile'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'utile')));
+		$o['docoffre'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stage-offres')));
+		$o['docutile'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stage-utiles')));
 		$this->set($o);
 	}
 
@@ -21,14 +21,14 @@ class StagesController extends AppController
 	function pt2()
 	{
 		$o['docetu'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT2A')));
-		$o['docrap'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'rapports')));
+		$o['docrap'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT2A-rapports')));
 		$this->set($o);
 	}
 
 	function ppp()
 	{
 		$o['docetu'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PPP')));
-		$o['docpost'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'poster')));
+		$o['docpost'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'posters')));
 		$this->set($o);
 	}
 }

@@ -100,7 +100,7 @@ class DocumentsController extends AppController
 			// Types MIME acceptés
 			$types = $typesImages = array('image/png', 'image/gif', 'image/jpeg');
 			$acceptsFolders = array('files/stages-utiles/', 'files/PT1A/', 'files/PT2A/', 'files/PPP/',
-										'files/stages-offres', 'files/PT2A-rapports', 'files/posters/');
+										'files/stages-offres/', 'files/PT2A-rapports/', 'files/posters/');
 			if ($categorie != 'posters')
 			{
 				$typesPDF = array('application/pdf');
