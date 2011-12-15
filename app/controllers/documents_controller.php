@@ -94,7 +94,7 @@ class DocumentsController extends AppController
 		
 		if ($h['action'] == 'upload')
 		{
-			$source = Inflector::slug(file_get_contents('php://input'), '-');	// Fichier à uploader
+			$source = Inflector::slug(file_get_contents('php://temp'), '-');	// Fichier à uploader
 			
 			$typeFichier = $h['x-file-type'];			// Type MIME
 			// Types MIME acceptés
