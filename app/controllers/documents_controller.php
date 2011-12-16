@@ -94,7 +94,7 @@ class DocumentsController extends AppController
 		
 		if ($h['action'] == 'upload')
 		{
-			$source = Inflector::slug(file_get_contents('php://temp'), '-');	// Fichier à uploader
+			$source = file_get_contents('php://input');	// Fichier à uploader
 			
 			$typeFichier = $h['x-file-type'];			// Type MIME
 			// Types MIME acceptés
@@ -151,11 +151,9 @@ class DocumentsController extends AppController
 		}
 		elseif ($h['action'] == 'delete')
 		{
+			$this->DocumentsStage->delete($h['x-param-id']);
 			if (isset($h['x-param-value']) AND is_file(WWW_ROOT.$folder.$h['x-param-value']))
-			{
-				$this->DocumentsStage->delete($h['x-param-id']);
 				unlink(WWW_ROOT.$folder.$h['x-param-value']);
-			}
 			else
 				$o->error = 'Le fichier n\'a pas pût être supprimé ('.$folder.$h['x-param-value'].')';
 			$o->name = $h['x-param-value'];
