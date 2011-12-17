@@ -1,6 +1,12 @@
 <?php $this->title = 'Intranet | Modules'; ?>
 <div class="page-header">
-	<h1>Listes des modules <small><?php echo $semestre['Semestre']['nom'].' - '.$this->Html->link('Ajouter', array('action' => 'editmod')); ?></small></h1>
+	<?php
+		$sousTitre = null;
+		$granted = $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'];
+		if ($granted)
+			$sousTitre = ' - '.$this->Html->link('Ajouter', array('action' => 'editmod'));
+	?>
+	<h1>Listes des modules <small><?php echo $semestre['Semestre']['nom'].$sousTitre; ?></small></h1>
 </div>
 <span class="row">
 	<span class="span16">
@@ -8,10 +14,16 @@
 			foreach ($modules as $m):
 				$nom= $m['LibelleModule']['nom'];
 				$id = $m['LibelleModule']['id'];
-				echo '<h3 style="inline">'.$nom.'<small> - '.$this->Html->link('Editer', array('action' => 'editmod', $id)).'</small></h3>';
+				echo '<h3 style="inline">'.$nom;
+					if ($granted)
+						echo '<small> - '.$this->Html->link('Editer', array('action' => 'editmod', $id)).'</small>';
+				echo '</h3>';
 				foreach ($m['Module'] as $mod):
 					echo '<blockquote>';
-					echo '<h5>'. $this->Html->link($mod['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $mod['id'])) .'<small>'.$this->Html->link('Editer', array('action' => 'editer', $mod['id'])).'</small></h5>';
+					echo '<h5>'. $this->Html->link($mod['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $mod['id']));
+						if (in_array($mod['abreviation'], $myMod))
+							echo '<small>'.$this->Html->link('Editer', array('action' => 'editer', $mod['id'])).'</small>';
+					echo '</h5>';
 					echo '<small>'.$mod['description'].'</small>';
 					echo '</blockquote>';
 				endforeach;

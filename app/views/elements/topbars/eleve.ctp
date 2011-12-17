@@ -50,7 +50,7 @@
                         		$link .= '<span class="notifslien">'.$notifs['total'].'</span>';
                         	echo $this->Html->link($link, array('controller' => 'notifications', 'action' => 'index'), array('escape' => false));
                         ?></li>
-                        <li><?php echo $this->Html->link('Gestion du compte', array('controller' => 'personnes', 'action' => 'edition', $this->Session->read('Auth.Personne.id'))); ?></li>
+                        <li><?php echo $this->Html->link('Mon mot de passe', array('controller' => 'personnes', 'action' => 'editme')); ?></li>
                         <li><?php echo $this->Html->link('Déconnexion', array('controller' => 'personnes','action' => 'deconnexion')); ?></li>
                     </ul>
                 </li>

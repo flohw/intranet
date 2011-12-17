@@ -112,6 +112,16 @@ class Module extends AppModel {
 		}
 		return $r;
 	}
+	
+	public function findProfsModule ($idModule)
+	{
+		$pe = $this->findById($idModule);
+		$pe =$pe['Personne'];
+		$r = array();
+		foreach ($pe as $p)
+			$r[$p['id']] = $p['login'];
+		return $r;
+	}
 
 }
 ?>

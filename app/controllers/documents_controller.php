@@ -5,6 +5,20 @@ class DocumentsController extends AppController
 	var $uses = array('Document', 'DocumentsStage', 'Module');
 	var $components = array('RequestHandler');
 	
+	
+	function beforeFilter()
+	{
+		parent::beforeFilter();
+		if ($this->action == 'index' OR $this->action == 'modules')
+		{
+			if ($this->Auth->user('statut_id') < $this->statuts['prof'])
+			{
+				$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
+				$this->redirect($this->referer());
+			}
+		}
+	}
+	// Affichage des documents mis en ligne par les professeurs + Upload
 	function index ()
 	{
 		$d['typesImages'] = array('image/png', 'image/gif', 'image/jpeg');
@@ -22,6 +36,7 @@ class DocumentsController extends AppController
 		$this->set($d);
 	}
 	
+	// Upload de document pour un module
 	function modules()
 	{
 		$d['doc'] = $this->Document->find('all', array('recursive' => -1, 'personne_id' => $this->Auth->user('id')));
@@ -60,7 +75,8 @@ class DocumentsController extends AppController
 		
 		$this->set($d);
 	}
-
+	
+	// Affichage des documents pour le module $id
 	function presenter($id) 
 	{
 		$mod['abre'] = $this->Module->find('first', array('conditions' => array('Module.id' => $id), 'recursive' => 1));
@@ -82,6 +98,7 @@ class DocumentsController extends AppController
 		$this->set($mod);
 	}
 	
+	// Methode pour l'ipload de la fonction index (appelée en ajax)
 	function upload()
 	{
 		$this->layout = false;
