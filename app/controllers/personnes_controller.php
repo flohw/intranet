@@ -67,9 +67,10 @@ class PersonnesController extends AppController
 			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
 			$this->redirect($this->referer());
 		}
-		$id = (is_null($id)) ? $this->Auth->user('id') : $id;
 		if(isset($this->data))
 		{
+			if (empty($this->data['Personne']['id']))
+				$this->data['Personne']['last_login'] = date('Y-m-d H:i:s');
 			$this->Personne->set($this->data);
 			if ($this->Personne->validates()) 
 			{
@@ -87,12 +88,12 @@ class PersonnesController extends AppController
 		{
 			$this->Personne->recursive = -1;
 			$this->data = $this->Personne->findById($id);
-			if (empty($this->data))
+			if (empty($this->data) AND !is_null($id))
 				$this->redirect(array('action' => 'edition', $this->Auth->user('id')));
 		}
 		$d['depts'] = $this->Personne->Departement->find('list');
 		$d['statuts'] = $this->Statut->find('list');
-		$d['groupes'] = $this->Personne->Groupe->find('list');
+		$d['groupes'] = $this->Personne->Groupe->getGroupeList();
 		$this->set($d);
 	}
 	

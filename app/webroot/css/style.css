@@ -69,6 +69,7 @@ form select.input { margin-left: 150px; }
 #signin .btn { float: right; margin-bottom: 5px; margin-right: 5px; }
 .menu.active { color: white; background: rgba(255, 255, 255, 0.05); }
 
+/* Messages */
 #messages { position:relative; left: 240px; max-width: 80%; }
 #sort .id { display: none; }
 .barre { text-decoration: line-through; }
@@ -179,6 +180,9 @@ blockquote h3 { color:#0088bb; }
 	text-align: center;
 	vertical-align: middle;
 }
+
+/* lien edition dans liste */
+li small.edit { font-size: x-small; }
 
 /* evenements */
 #EvenementEditerForm label { margin-right : 75px;}

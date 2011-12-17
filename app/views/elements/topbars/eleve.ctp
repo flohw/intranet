@@ -21,6 +21,7 @@
                 <li class="menu">
                 	<a href="#" class="menu">Infos</a>
                 	<ul class="menu-dropdown">
+	                	<li><?php echo $this->Html->link('Mon groupe', array('controller' => 'groupes', 'action' => 'index', $this->Session->read('Auth.Personne.groupe_id'))); ?></li>
 	                	<li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
 	                	<li><?php echo $this->Html->link('Plan Interactif IUT', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
                 	</ul>

@@ -2,6 +2,7 @@
 class Groupe extends AppModel {
 	var $name = 'Groupe';
 	var $displayField = 'nom';
+	var $order = 'Semestre.nom, Groupe.nom';
 	var $validate = array(
 		'nom' => array(
 			'notempty' => array(
@@ -10,14 +11,13 @@ class Groupe extends AppModel {
 				'allowEmpty' => false,
 				'required' => true,
 			),
-			// Si on peut que la lettre du groupe
 			'alphanumeric' => array(
 				'rule' => array('alphanumeric'),
-				'message' => 'Le nom du groupe doit être un caractère alphanumérique',
+				'message' => 'Le nom du groupe doit être une chaine de caractères alphanumériques',
 			),
-			'maxLength' => array(
-				'rule' => array('maxlength', 1),
-				'message' => 'Le nom du groupe doit être une lettre',
+			'unique' => array(
+				'rule' => array('groupeUnique'),
+				'message' => 'Le groupe existe déjà pour le semestre',
 			),
 		),
 		'nb_max_eleves' => array(
@@ -40,7 +40,7 @@ class Groupe extends AppModel {
 			'foreignKey' => 'semestre_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => 'Semestre.nom'
 		)
 	);
 
@@ -60,11 +60,20 @@ class Groupe extends AppModel {
 		)
 	);
 	
-	// Si c'est une lettre pour le groupe
-	public function beforeSave ()
+	public function groupeUnique ($check)
 	{
-		$this->data['Groupe']['nom'] = 'Groupe '.$this->data['Groupe']['nom'];
-		return true;
+		$this->recursive = -1;
+		$g=$this->find('first', array('conditions' => array('nom' => $check['nom'], 'semestre_id' => $this->data['Groupe']['semestre_id'])));
+		return (empty($g)) OR $g['Groupe']['id'] == $this->data['Groupe']['id'];
+	}
+	
+	public function getGroupeList ()
+	{
+		$gr = $this->find('all', array('recursive' => 0));
+		$r = array();
+		foreach ($gr as $g)
+			$r[$g['Groupe']['id']] = $g['Semestre']['nom'].' - '.$g['Groupe']['nom'];
+		return $r;
 	}
 
 }
