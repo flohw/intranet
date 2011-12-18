@@ -22,7 +22,7 @@
 				<tr>
 					<th class="id">#</th>
 					<th class="yellow">Nom</th>
-					<th class="blue">Preom</th>
+					<th class="blue">Prénom</th>
 					<th class="red">Login</th>
 				</tr>
 			</thead>

@@ -13,9 +13,9 @@
                 	<a href="#" class="menu">Stages & projets</a>
                 	<ul class="menu-dropdown">
                 		<li><?php echo $this->Html->link('Stages', array('controller' => 'stages', 'action' => 'index')); ?></li>
-                		<li><?php echo $this->Html->link('Projet tuteuré 1A', array('controller' => 'stages', 'action' => 'pt1')); ?></li>
-                		<li><?php echo $this->Html->link('Projet tuteuré 2A', array('controller' => 'stages', 'action' => 'pt2')); ?></li>
-                		<li><?php echo $this->Html->link('Projet personnel professionnel', array('controller' => 'stages', 'action' => 'ppp')); ?></li>
+                		<li><?php echo $this->Html->link('Projet Tuteuré 1A', array('controller' => 'stages', 'action' => 'pt1')); ?></li>
+                		<li><?php echo $this->Html->link('Projet Tuteuré 2A', array('controller' => 'stages', 'action' => 'pt2')); ?></li>
+                		<li><?php echo $this->Html->link('Projet Personnel Professionnel', array('controller' => 'stages', 'action' => 'ppp')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
