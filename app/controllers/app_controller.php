@@ -3,9 +3,11 @@ class AppController extends Controller
 {
 	var $helpers = array('Html', 'Form', 'Session', 'Cache');
 	var $components = array('Session', 'Auth', 'Cookie');
+	var $statuts = array('admin' => 30, 'prof' => 20, 'eleve' => 10);
 	
 	function beforeFilter()
 	{
+		$this->set('statutsID', $this->statuts);
 		// Configuration du composant Auth
 		$this->Auth->loginAction = array('controller' => 'personnes', 'action' =>'connexion');
 		$this->Auth->loginRedirect = array('controller' => 'pages', 'action' => 'display', 'personnes_home');
@@ -46,6 +48,7 @@ class AppController extends Controller
 			}
 		}
 		
+		// Definition du layout son on est connecté, en fonction du statut
 		if ($this->Auth->user('id'))
 		{
 			switch ($this->Auth->user('statut_id'))
@@ -62,6 +65,7 @@ class AppController extends Controller
 			}
 			if (low($this->action) == 'display' AND $this->params['pass'][0] == 'home')
 				$this->redirect(array('controller' => 'pages', 'action' => 'display', 'personnes_home'));
+			// Récupération des notifications, nouveaux documents et nouveaux messages
 			$notifs = Cache::read('notifs', 'notifs');
 			if ($notifs === false)
 			{

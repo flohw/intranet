@@ -14,6 +14,22 @@
         <?php echo $this->Form->input('prenom', array('class' => 'input', 'label' => 'Prenom')); ?>
     </div>
     <div class="clearfix">
+    	<?php echo $this->Form->input('departement_id', array('label' => 'Département', 'options' => $depts, 'class' => 'input')); ?>
+    </div>
+    <div class="clearfix">
+    	<?php echo $this->Form->input('groupe_id', array('label' => 'Groupe', 'options' => $groupes, 'class' => 'input')); ?>
+    </div>
+    <div class="clearfix">
+    	<?php echo $this->Form->input('statut_id', array('label' => 'Statut', 'options' => $statuts, 'class' => 'input')); ?>
+    </div>
+    <div class="clearfix">
+    	<?php echo $this->Form->input('login', array('label' => 'Login', 'class' => 'input')); ?>
+    </div>
+    <div class="clearfix">
+    	<?php echo $this->Form->input('mot_de_passe', array('label' => 'Mot de passe', 'class' => 'input')); ?>
+    </div>
+    
+    <div class="clearfix">
         <?php echo $this->Form->input('email', array('class' => 'input', 'label' => 'Email')); ?>
     </div>
     <div class="clearfix">
@@ -36,6 +52,7 @@
 jQuery(function($) {
   $("#datepicker").datepicker({
   	dateFormat: 'yy-mm-dd',
+  	defaultDate: '1981-01-01',
   	dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
   	dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
   	monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],

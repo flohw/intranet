@@ -13,14 +13,15 @@
                 	<a href="#" class="menu">Stages & projets</a>
                 	<ul class="menu-dropdown">
                 		<li><?php echo $this->Html->link('Stages', array('controller' => 'stages', 'action' => 'index')); ?></li>
-                		<li><?php echo $this->Html->link('Projet tuteuré 1A', array('controller' => 'stages', 'action' => 'pt1')); ?></li>
-                		<li><?php echo $this->Html->link('Projet tuteuré 2A', array('controller' => 'stages', 'action' => 'pt2')); ?></li>
-                		<li><?php echo $this->Html->link('Projet personnel professionnel', array('controller' => 'stages', 'action' => 'ppp')); ?></li>
+                		<li><?php echo $this->Html->link('Projet Tuteuré 1A', array('controller' => 'stages', 'action' => 'pt1')); ?></li>
+                		<li><?php echo $this->Html->link('Projet Tuteuré 2A', array('controller' => 'stages', 'action' => 'pt2')); ?></li>
+                		<li><?php echo $this->Html->link('Projet Personnel Professionnel', array('controller' => 'stages', 'action' => 'ppp')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
                 	<a href="#" class="menu">Infos</a>
                 	<ul class="menu-dropdown">
+	                	<li><?php echo $this->Html->link('Mon groupe', array('controller' => 'groupes', 'action' => 'index', $this->Session->read('Auth.Personne.groupe_id'))); ?></li>
 	                	<li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
 	                	<li><?php echo $this->Html->link('Plan Interactif IUT', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
                 	</ul>
@@ -50,7 +51,7 @@
                         		$link .= '<span class="notifslien">'.$notifs['total'].'</span>';
                         	echo $this->Html->link($link, array('controller' => 'notifications', 'action' => 'index'), array('escape' => false));
                         ?></li>
-                        <li><?php echo $this->Html->link('Gestion du compte', array('controller' => 'personnes', 'action' => 'edition', $this->Session->read('Auth.Personne.id'))); ?></li>
+                        <li><?php echo $this->Html->link('Mon mot de passe', array('controller' => 'personnes', 'action' => 'editme')); ?></li>
                         <li><?php echo $this->Html->link('Déconnexion', array('controller' => 'personnes','action' => 'deconnexion')); ?></li>
                     </ul>
                 </li>

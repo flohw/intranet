@@ -7,12 +7,14 @@
 		
 		public function beforeFilter() { parent::beforeFilter(); }
 		
+		// Liste des messages (tous)
 		public function index()
 		{
 			$d['messages'] = $this->Message->findMyMessages($this->Auth->user('id'));
 			$this->set($d);
 		}
 		
+		// Lecture d'un message (tous)
 		public function message ($id)
 		{
 			$message = $this->Message->find('first', array('conditions' => array('or' => array(
@@ -42,6 +44,7 @@
 				$notifs['total'] = $notifs['total'] - 1;
 				Cache::write('notifs', $notifs, 'notifs');
 			}
+			// Récupération des messages et parsage en tableau php
 			$message = file_get_contents('files/messages/'.$message['Message']['fichier']);
 			App::import('Core', 'Xml');
 			$message = new Xml($message);
@@ -52,10 +55,12 @@
 			$this->set('supprime', $supprime);
 		}
 		
+		// Envoi d'un nouveau message
 		public function nouveau ()
 		{
 			if (isset($this->data))
 			{
+				// Création des champs dynamiques (qui, à qui, quand...)
 				$date = new Datetime();
 				$this->data['Message']['personne_id'] = $this->Auth->user('id');
 				$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
@@ -84,12 +89,14 @@
 				else
 					$this->Session->setFlash('Le message comporte des erreurs', 'message');
 			}
+			// Nomes des destinataires possibles (tous sauf soi-meme)
 			$d['Destinataires'] = $this->Message->Destinataire->find('list', array(	'recursive' => -1,
 																					'conditions' => array(
 																						'not' => array('id' => $this->Auth->user('id')))));
 			$this->set($d);
 		}
 		
+		// Répondre à un message
 		public function repondre ($id)
 		{
 			$message = $this->Message->findById($id);
@@ -98,7 +105,8 @@
 				$this->Session->setFlash('Ce message n\'existe pas', 'message');
 				$this->redirect(array('action' => 'index'));
 			}
-			elseif (!in_array($this->Auth->user('id'), array($message['Message']['personne_id'], $message['Message']['destinataire_id'])))
+			elseif ($this->Auth->user('id') != $message['Message']['personne_id']
+					AND $this->Auth->user('id') != $message['Message']['destinataire_id'])
 			{
 				$this->Session->setFlash('Vous ne pouvez pas répondre à un message qui ne vous est pas destiné', 'message');
 				$this->redirect(array('action' => 'index'));
@@ -110,7 +118,7 @@
 				$this->Message->validate = $this->Message->validateRep;
 				if ($this->Message->validates())
 				{
-					// Chargement des helpers xml
+					// Chargement des helpers xml, ajout des champs dynamiques (qui, a qui, quand...)
 					App::import('Helper', 'Xml');
 					App::import('Core', 'Xml');
 					$date = new Datetime();
@@ -155,10 +163,17 @@
 			$this->set('message', $message['Message']);
 		}
 		
+		// Suprression d'un message (tous)
 		public function supprimer ($id)
 		{
 			$message = $this->Message->find('first', array('conditions' => array('Message.id' => $id)));
-			if ($message['Message']['supprime_dest'] == 1 OR $message['Message']['supprime_exp'] == 1)
+			if ($this->Auth->user('id') != $message['Message']['personne_id']
+				AND $this->Auth->user('id') != $message['Message']['destinataire_id'])
+			{
+				$this->Session->setFlash('Le message ne vous appartient pas !', 'message');
+				$this->redirect(array('action' => 'index'));
+			}
+			elseif ($message['Message']['supprime_dest'] == 1 OR $message['Message']['supprime_exp'] == 1)
 			{	// Si on a supprimé le message des deux cotes, on supprime le fichier
 				unlink('files/messages/'.$message['Message']['fichier']);
 				$this->Message->delete($id);

@@ -1,8 +1,24 @@
 <div class="topbar">
     <div class="fill">
         <div class="container-fluid">
-            <h3><?php echo $this->Html->link('Professeur'.$this->Html->image('icones/icone-prof.png'),  array('controller' => 'pages', 'action' => 'display', 'personnes_home'), array('escape' => false)); ?></h3>
+            <h3><?php echo $this->Html->link('Enseignant'.$this->Html->image('icones/icone-prof.png'),  array('controller' => 'pages', 'action' => 'display', 'personnes_home'), array('escape' => false)); ?></h3>
             <ul>
+            	<li class="menu">
+            		<a href="#" class="menu">Modules</a>
+            		<ul class="menu-dropdown">
+                		<?php echo $this->element('menu_modules'/* , array('cache' => '+1 year') */); ?>
+            		</ul>
+            	</li>
+            	<li class="menu">
+                	<a href="#" class="menu">Stages & projets</a>
+                	<ul class="menu-dropdown">
+                		<li><?php echo $this->Html->link('Stages', array('controller' => 'stages', 'action' => 'index')); ?></li>
+                		<li><?php echo $this->Html->link('Projet tuteuré 1A', array('controller' => 'stages', 'action' => 'pt1')); ?></li>
+                		<li><?php echo $this->Html->link('Projet tuteuré 2A', array('controller' => 'stages', 'action' => 'pt2')); ?></li>
+                		<li><?php echo $this->Html->link('Projet personnel professionnel', array('controller' => 'stages', 'action' => 'ppp')); ?></li>
+                	</ul>
+                </li>
+                <li class="separator"></li>
                 <li class="menu">
                 	<a href="#" class="menu">Documents</a>
                 	<ul class="menu-dropdown">
@@ -13,13 +29,14 @@
                 <li class="menu">
                 	<a href="#" class="menu">Scolarité</a>
                 	<ul class="menu-dropdown">
-	                	<li><?php echo $this->Html->link('Abscences', array('controller' => 'absences', 'action' => 'index')); ?></li>
+	                	<li><?php echo $this->Html->link('Absences', array('controller' => 'absences', 'action' => 'index')); ?></li>
 	                	<li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' =>  'timetable', 'action' => 'maintenance')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
                 	<a href="#" class="menu">Infos</a>
                 	<ul class="menu-dropdown">
+	                	<li><?php echo $this->Html->link('Tous les enseignants', array('controller' => 'groupes', 'action' => 'index', $this->Session->read('Auth.Personne.groupe_id'))); ?></li>
 	                	<li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
 	                	<li><?php echo $this->Html->link('Plan Interactif IUT', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
                 	</ul>
@@ -49,7 +66,7 @@
                         		$link .= '<span class="notifslien">'.$notifs['total'].'</span>';
                         	echo $this->Html->link($link, array('controller' => 'notifications', 'action' => 'index'), array('escape' => false));
                         ?></li>
-                        <li><?php echo $this->Html->link('Gestion du compte', array('controller' => 'personnes', 'action' => 'edition', $this->Session->read('Auth.Personne.id'))); ?></li>
+                        <li><?php echo $this->Html->link('Mon mot de passe', array('controller' => 'personnes', 'action' => 'editme')); ?></li>
                         <li><?php echo $this->Html->link('Déconnexion', array('controller' => 'personnes','action' => 'deconnexion')); ?></li>
                     </ul>
                 </li>

@@ -10,20 +10,22 @@
                 	</ul>
                 </li>
                 <li class="menu">
-                	<a href="#" class="menu">Comptes</a>
+                	<a href="#" class="menu">Personnel</a>
                 	<ul class="menu-dropdown">
                 		<li><?php echo $this->Html->link('Editer un compte', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
                 		<li><?php echo $this->Html->link('Ajouter un compte', array('controller' => 'personnes', 'action' => 'edition')); ?></li>
+                		<li><?php echo $this->Html->link('Editer un groupe', array('controller' => 'groupes', 'action' => 'index')); ?></li>
+                		<li><?php echo $this->Html->link('Ajouter un groupe', array('controller' => 'groupes', 'action' => 'editer')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
                     <a href="#" class="menu">Scolarité</a>
                     <ul class="menu-dropdown">
-                        <li><?php echo $this->Html->link('Abscences', array('controller' => 'absences', 'action' => 'index')); ?></li>
+                        <li><?php echo $this->Html->link('Absences', array('controller' => 'absences', 'action' => 'index')); ?></li>
                         <li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
                     </ul>
                 </li>
-
+                <li class="separator"></li>
                 <li class="menu">
                     <a href="#" class="menu">Modules</a>
                     <ul class="menu-dropdown">
@@ -42,6 +44,7 @@
                 <li class="menu">
                     <a href="#" class="menu">Infos</a>
                     <ul class="menu-dropdown">
+                        <li><?php echo $this->Html->link('Les groupes', array('controller' => 'groupes', 'action' => 'index')); ?></li>
                         <li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
                         <li><?php echo $this->Html->link('Plan Interactif IUT', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>
                     </ul>
@@ -73,6 +76,7 @@
                         	echo $this->Html->link($link, array('controller' => 'notifications', 'action' => 'index'), array('escape' => false));
                         ?></li>
                         <li><?php echo $this->Html->link('Gestion du compte', array('controller' => 'personnes', 'action' => 'edition', $this->Session->read('Auth.Personne.id'))); ?></li>
+                        <li><?php echo $this->Html->link('Mon mot de passe', array('controller' => 'personnes', 'action' => 'edition')); ?></li>
                         <li><?php echo $this->Html->link('Déconnexion', array('controller' => 'personnes','action' => 'deconnexion')); ?></li>
                     </ul>
                 </li>

@@ -22,6 +22,7 @@
 		</p>
 		<?php foreach ($docStageUtile as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="stages-utiles" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
@@ -42,6 +43,7 @@
 		</p>
 		<?php foreach ($docStageOffres as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="stages-offres" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
@@ -62,6 +64,7 @@
 		</p>
 		<?php foreach ($docPT1A as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT1A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
@@ -82,6 +85,7 @@
 		</p>
 		<?php foreach ($docPT2A as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT2A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
@@ -102,6 +106,7 @@
 		</p>
 		<?php foreach ($docPT2Arapports as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT2A-rapports" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
@@ -123,6 +128,7 @@
 
 		<?php foreach ($docPPP as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PPP" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
@@ -145,6 +151,7 @@
 
 		<?php foreach ($docPosters as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="posters" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
+				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
 				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
@@ -179,7 +186,7 @@ jQuery(function($){
 				xhr.setRequestHeader('x-param-'+i, zone.data(i));
 		}
 		xhr.send();
-		$(this).parent().remove();
+		$(this).parent().fadeOut();
 		return false;
 	});
 	

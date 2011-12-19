@@ -4,10 +4,9 @@
 	{
 		public $uses = array('Message', 'Document', 'Evenement');
 		
-		public function beforeFilter() {
-			parent::beforeFilter();
-		}
+		public function beforeFilter() { parent::beforeFilter(); }
 		
+		// Récupération des évènements non lus (tous)
 		public function index()
 		{
 			$d['messages'] = $this->Message->findNewMessages($this->Auth->user('id'));
