@@ -9,12 +9,14 @@
 		public function index($groupeID = null)
 		{
 			$groupeID = (is_null($groupeID)) ? $this->Auth->user('groupe_id') : $groupeID;
-			$d['groupes'] = $this->Groupe->find('all', array('recursive' => 0, 'order' => 'Semestre.nom, Groupe.nom'));
-			if (empty($d['groupes']))
+			$this->Groupe->recursive = 0;
+			$d['groupe'] = $this->Groupe->findById($groupeID);
+			if (empty($d['groupe']))
 			{
 				$this->Session->setFlash('Ce groupe n\'existe pas', 'message');
 				$this->redirect(array('action' => 'index', $this->Auth->user('groupe_id')));
 			}
+			$d['groupes'] = $this->Groupe->getGroupeList();
 			$d['membres'] = $this->Groupe->Personne->findAllByGroupeId($groupeID);
 			$d['groupeID'] = $groupeID;
 			$this->set($d);
@@ -45,5 +47,17 @@
 				$this->data = $this->Groupe->findById($id);
 			$d['semestres'] = $this->Groupe->Semestre->find('list');
 			$this->set($d);
+		}
+		
+		public function supprimer ($id)
+		{
+			if ($this->Auth->user('statut_id') < $this->statuts['admin'])
+			{
+				$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
+				$this->redirect($this->referer());
+			}
+			$this->Groupe->delete($id);
+			$this->Session->setFlash('Le groupe a bien été supprimé', 'message', array('class' => 'success'));
+			$this->redirect(array('action' => 'index'));
 		}
 	}

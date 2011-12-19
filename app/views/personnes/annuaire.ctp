@@ -32,20 +32,26 @@
 					<td><?php echo $p['nom']; ?></td>
 					<td><?php echo $p['prenom']; ?></td>
 					<td><?php echo $p['email']; ?></td>
-					<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'] AND
+					<td>
+					<?php
+						if ($p['statut_id'] == $statutsID['prof'])
+						{
+							echo $this->Html->link('Ses modules', array('controller' => 'modules', 'action' => 'affectations', $p['id']));
+							if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+								echo ' - ';
+						}
+							
+						if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'] AND
 							$this->Session->read('Auth.Personne.id') != $p['id']
-							AND $this->Session->read('Auth.Personne.statut_id') > $p['statut_id']): ?>
-					<td>
-						<?php echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['id'])); ?> / 
-						<?php echo $this->Html->link('Supprimer', array('controller' => 'personnes', 'action' => 'supprimer', $p['id']), null, 'Voulez-vous vraiment supprimer ce compte ?'); ?>
+							AND $this->Session->read('Auth.Personne.statut_id') > $p['statut_id'])
+						{
+							echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['id'])).' - ';
+							echo $this->Html->link('Supprimer', array('controller' => 'personnes', 'action' => 'supprimer', $p['id']), null, 'Voulez-vous vraiment supprimer ce compte ?');
+						}
+						elseif ($this->Session->read('Auth.Personne.id') == $p['id'])
+							echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['id']));
+					?>
 					</td>
-					<?php elseif ($this->Session->read('Auth.Personne.id') == $p['id']): ?>
-					<td>
-						<?php echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['id'])); ?>
-					</td>
-					<?php else: ?>
-						<td></td>
-					<?php endif; ?>
 				</tr>
 <?php	endforeach; ?>
 			</tbody>

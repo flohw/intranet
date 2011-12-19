@@ -2,7 +2,7 @@
 class Groupe extends AppModel {
 	var $name = 'Groupe';
 	var $displayField = 'nom';
-	var $order = 'Semestre.nom, Groupe.nom';
+	var $order = 'Groupe.nom';
 	var $validate = array(
 		'nom' => array(
 			'notempty' => array(
@@ -69,10 +69,20 @@ class Groupe extends AppModel {
 	
 	public function getGroupeList ()
 	{
-		$gr = $this->find('all', array('recursive' => 0));
+		$se = $this->Semestre->find('list');
+		$gr = $this->find('all', array('recursive' => -1));
 		$r = array();
-		foreach ($gr as $g)
-			$r[$g['Groupe']['id']] = $g['Semestre']['nom'].' - '.$g['Groupe']['nom'];
+		foreach ($se as $id => $s)
+		{
+			foreach ($gr as $k => $g)
+			{
+				if ($g['Groupe']['semestre_id'] == $id)
+				{
+					$r[$s][$g['Groupe']['id']] = $g['Groupe']['nom'];
+					unset($gr[$k]);
+				}
+			}
+		}
 		return $r;
 	}
 

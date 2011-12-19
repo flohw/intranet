@@ -113,6 +113,15 @@ class Module extends AppModel {
 		return $r;
 	}
 	
+	public function findProfs ($idProf)
+	{
+		$this->Personne->recursive = 2;
+		$pers = $this->Personne->findById($idProf);
+		foreach ($pers['Module'] as $k => $p)
+			unset($pers['Module'][$k]['ModulesPersonne'], $pers['Module'][$k]['Document'], $pers['Module'][$k]['TypeModule']);
+		return $pers['Module'];
+	}
+	
 	public function findProfsModule ($idModule)
 	{
 		$pe = $this->findById($idModule);

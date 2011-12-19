@@ -7,7 +7,7 @@ class ModulesController extends AppController
 	public function beforeFilter ()
 	{
 		parent::beforeFilter();
-		if ($this->Auth->user('statut_id') < $this->statuts['prof'])
+		if ($this->Auth->user('statut_id') < $this->statuts['prof'] AND $this->action != 'index')
 		{
 			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
 			$this->redirect($this->referer());
@@ -15,7 +15,7 @@ class ModulesController extends AppController
 	}
 	
 	// Liste des modules en fonction du semestre (tous)
-	function index($sem=1)
+	function index($sem = 1)
 	{
 		$m['myMod'] = $this->Module->findModules($this->Auth->user('id'));
 		$m['modules'] = $this->LibelleModule->modulesBySem($sem);
@@ -81,6 +81,40 @@ class ModulesController extends AppController
 		}
 		elseif ($id != null)
 			$this->data = $this->LibelleModule->find('first', array('conditions' => array('LibelleModule.id' => $id)));
+	}
+	
+	public function affecter ()
+	{
+		if ($this->Auth->user('statut_id') < $this->statuts['admin'])
+		{
+			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
+			$this->redirect($this->referer());
+		}
+		
+		if (isset($this->data))
+		{
+			if ($this->Module->saveAll($this->data, array('validate' => false)))
+				$this->Session->setFlash('Affectation enregistrée !', 'message', array('class' => 'success'));
+			else
+				$this->Session->setFlash('Erreur lors de l\'affectation', 'message');
+		}
+		$d['personnes'] = $this->Module->Personne->find('list', array('conditions' => array('statut_id' => $this->statuts['prof'])));
+		$d['modules'] = $this->Module->find('list');
+		$this->set($d);
+	}
+	
+	public function affectations ($id)
+	{
+		$this->Module->Personne->recursive = -1;
+		$d['prof'] = $this->Module->Personne->find('first', array('conditions' => array('statut_id' => $this->statuts['prof'], 'id' => $id)));
+		if (empty($d['prof']))
+		{
+			$this->Session->setFlash('Cette personne n\'existe pas ou n\'est pas un enseignant', 'message');
+			$this->redirect($this->referer());
+		}
+		$d['prof'] = $d['prof']['Personne']['prenom'].' '.$d['prof']['Personne']['nom'];
+		$d['modules'] = $this->Module->findProfs($id);
+		$this->set($d);
 	}
 }
 ?>

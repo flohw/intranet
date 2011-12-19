@@ -21,7 +21,7 @@
 				foreach ($m['Module'] as $mod):
 					echo '<blockquote>';
 					echo '<h5>'. $this->Html->link($mod['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $mod['id']));
-						if (in_array($mod['abreviation'], $myMod))
+						if (in_array($mod['abreviation'], $myMod) OR $granted)
 							echo '<small>'.$this->Html->link('Editer', array('action' => 'editer', $mod['id'])).'</small>';
 					echo '</h5>';
 					echo '<small>'.$mod['description'].'</small>';

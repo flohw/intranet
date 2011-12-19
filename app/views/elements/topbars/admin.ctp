@@ -30,6 +30,7 @@
                     <a href="#" class="menu">Modules</a>
                     <ul class="menu-dropdown">
                         <?php echo $this->element('menu_modules'/* , array('cache' => '+1 year') */); ?>
+                        <li><?php echo $this->Html->link('Affecter un professeur', array('controller' => 'modules', 'action' => 'affecter')); ?></li>
                     </ul>
                 </li>
                 <li class="menu">

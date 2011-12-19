@@ -1,22 +1,36 @@
-<?php $this->title = 'Intranet | Les Groupes'; ?>
+<?php $this->title = 'Intranet | Les Groupes | '.$groupe['Semestre']['nom'].' | '.$groupe['Groupe']['nom']; ?>
 <div class="page-header">
-	<h1>Les Groupes</h1>
+	<h1>Les Groupes <small><?php echo $groupe['Semestre']['nom'].' - '.$groupe['Groupe']['nom']; ?></small></h1>
 </div>
 
 <span class="row">
 	<span class="span5">
 		<ul>
-		<?php foreach ($groupes as $g): $s = $g['Semestre']; $g = current($g); ?>
-			<li>
-				<?php echo $this->Html->link($g['nom'], array('action' => 'index', $g['id'])).' <small>'.$s['nom'].'</small>'; ?>
+		<?php foreach ($groupes as $k => $g): ?>
+			<li><?php echo $k; ?>
+				<ul>
+				<?php foreach ($g as $id => $nom): ?>
+					<li>
+						<?php echo $this->Html->link($nom, array('action' => 'index', $id)); ?>
+					</li>
+				<?php endforeach; ?>
+				</ul>
 			</li>
-		<?php endforeach; ?><br />
-			<?php echo $this->Html->link('Nouveau groupe', array('action' => 'editer'), array('class' => 'btn primary')); ?>
-		</ul>
+		<?php endforeach; ?>
+		</ul><br />
+			<?php
+			if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+				echo $this->Html->link('Nouveau groupe', array('action' => 'editer'), array('class' => 'btn primary')); ?>
 	</span>
 	
 	<span class="span11">
-		<?php echo $this->Html->link('Editer ce groupe', array('action' => 'editer', $groupeID), array('class' => 'btn')); ?><br /><br />
+		<?php
+			if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']):
+				echo $this->Html->link('Editer ce groupe', array('action' => 'editer', $groupeID), array('class' => 'btn')); ?>&nbsp;
+		<?php
+				echo $this->Html->link('Supprimer ce groupe', array('action' => 'supprimer', $groupeID), array('class' => 'btn danger'),
+											'Êtes vous-certain de vouloir supprimer ce groupe ?');
+			endif;?><br /><br />
 		<table id="sort" class="zebra-stripped">
 			<thead>
 				<tr>
