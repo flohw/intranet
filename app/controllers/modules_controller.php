@@ -102,6 +102,7 @@ class ModulesController extends AppController
 					$this->Session->setFlash('Affectation enregistrée !', 'message', array('class' => 'success'));
 				else
 					$this->Session->setFlash('Erreur lors de l\'affectation', 'message');
+				$this->redirect(array('action' => 'affectations', $this->data['ModulesPersonne']['personne_id']));
 			}
 			else
 			{

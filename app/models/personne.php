@@ -236,6 +236,19 @@ class Personne extends AppModel {
 		return $results;
 	}
 	
+	public function findLogins ($personnes)
+	{
+		$this->recursive = -1;
+		foreach ($personnes as $k => $p)
+		{
+			$personnes[$k] = $p = trim($p);
+			if (empty($p))
+				unset($personnes[$k]);
+		}
+		$p = $this->find('list', array('conditions' => array('login' => $personnes)));
+		return array('personnes' => $p, 'all' => count($personnes) == count($p));
+	}
+	
 	public function beforeSave ()
 	{
 		if (!$this->id)

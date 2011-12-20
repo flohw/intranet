@@ -29,6 +29,7 @@
                 <li class="menu">
                 	<a href="#" class="menu">Scolarité</a>
                 	<ul class="menu-dropdown">
+	                	<li><?php echo $this->Html->link('Évènements', array('controller' => 'evenements', 'action' => 'index')); ?></li>
 	                	<li><?php echo $this->Html->link('Absences', array('controller' => 'absences', 'action' => 'index')); ?></li>
 	                	<li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' =>  'timetable', 'action' => 'maintenance')); ?></li>
                 	</ul>

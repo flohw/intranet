@@ -67,6 +67,36 @@ class Groupe extends AppModel {
 		return (empty($g)) OR $g['Groupe']['id'] == $this->data['Groupe']['id'];
 	}
 	
+	public function findLogins ($groupes)
+	{
+		$res = array('all' => true, 'personnes' => array());
+		$this->recursive = $this->Semestre->recursive = $this->Personne->recursive = -1;
+		foreach ($groupes as $k => $g)
+		{
+			$g = trim($g);
+			if (empty($g))
+				unset($groupes[$k]);
+			else
+			{
+				$groupes[$k] = explode('-', $g);
+				$groupes[$k]['semestre'] = trim($groupes[$k][0]);
+				$groupes[$k]['groupe'] = trim($groupes[$k][1]);
+				unset($groupes[$k][0], $groupes[$k][1]);
+				$sid = $this->Semestre->findByNom($groupes[$k]['semestre']);
+				$sid = $sid['Semestre']['id'];
+				$gid = $this->find('first', array('conditions' => array('semestre_id' => $sid, 'nom' => $groupes[$k]['groupe'])));
+				if (empty($gid))
+					$res['all'] = false;
+				$res['personnes'] = array_merge($res['personnes'], $this->Personne->find('all', array('conditions' => array('groupe_id' => $gid['Groupe']['id']))));
+			}
+		}
+		foreach ($res['personnes'] as $k => $r)
+		{
+			unset($res['personnes'][$k]);
+			$res['personnes'][$r['Personne']['id']] = $r['Personne']['login'];
+		}
+		return $res;
+	}
 	public function getGroupeList ()
 	{
 		$se = $this->Semestre->find('list');

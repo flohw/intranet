@@ -3,6 +3,16 @@ class Evenement extends AppModel {
 	var $name = 'Evenement';
 	var $displayField = 'titre';
 	var $actsAs = array('Containable');
+	var $validGroupe = array(
+		'groupes' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'required' => true,
+				'allowEmpty' => false,
+				'message' => 'Aucun groupe sélectionné pour cet évènement',
+			),
+		)
+	);
 	var $validate = array(
 		'titre' => array(
 			'notempty' => array(
@@ -12,13 +22,33 @@ class Evenement extends AppModel {
 				'required' => true,
 			),
 		),
+		'personnes' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'allowEmpty' => false,
+				'required' => true,
+				'message' => 'Aucune personne sélectionnée pour cet évènement',
+			)
+		),
 		'date_debut' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'allowEmpty' => false,
+				'required' => true,
+				'message' => 'La date est vide'
+			),
 			'date' => array(
 				'rule' => array('verifDateDebut'),
 				'message' => 'La date de début est déjà passée',
 			),
 		),
 		'date_fin' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'allowEmpty' => false,
+				'required' => true,
+				'message' => 'La date est vide'
+			),
 			'date' => array(
 				'rule' => array('verifDateFin'),
 				'message' => 'La date de fin est avant la date de début !',
@@ -66,6 +96,27 @@ class Evenement extends AppModel {
 		$dateDebut = $this->data['Evenement']['date_debut'];
 		$dateFin = $this->data['Evenement']['date_fin'];
 		return $dateFin >= $dateDebut;
+	}
+	
+	public function findEvenement ($idEvent = null)
+	{
+		if (is_null($idEvent))
+			$ev = $this->find('all');
+		else
+			$ev = $this->find('all', array('conditions' => array('Evenement.id' => $idEvent)));
+		foreach ($ev as $k => $e)
+		{
+			$ev[$k]['Evenement']['personnes'] = null;
+			foreach ($ev[$k]['Personne'] as $p)
+				$ev[$k]['Evenement']['personnes'] .= $p['login'].', ';
+			$ev[$k]['Evenement']['date_debut'] = substr($ev[$k]['Evenement']['date_debut'], 0, 10);
+			$ev[$k]['Evenement']['date_fin'] = substr($ev[$k]['Evenement']['date_fin'], 0, 10);
+			unset($ev[$k]['TypeEvenement'], $ev[$k]['Personne']);
+		}
+		if (is_null($idEvent))
+			return $ev;
+		else
+			return current($ev);
 	}
 	
 	public function findNewEvenements ($id)
