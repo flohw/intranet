@@ -5,14 +5,14 @@
 
 <span class="row">
 	<span class="16">
-	<?php echo $this->Form->create('Module'); ?>
+	<?php echo $this->Form->create('ModulesPersonne', array('url' => $this->Html->url(array('controller' => 'modules', 'action' => 'affecter')))); ?>
 	
 		<div class="clearfix">
-		<?php echo $this->Form->input('Personne.id', array('label' => 'Enseignant', 'options' => $personnes, 'class' => 'input')); ?>
+		<?php echo $this->Form->input('personne_id', array('label' => 'Enseignant', 'options' => $personnes, 'class' => 'input')); ?>
 		</div>
 		
 		<div class="clearfix">
-		<?php echo $this->Form->input('Module.id', array('label' => 'Module', 'options' => $modules, 'class' => 'input')); ?>
+		<?php echo $this->Form->input('module_id', array('label' => 'Module', 'options' => $modules, 'class' => 'input')); ?>
 		</div>
 		
 		<div class="actions">

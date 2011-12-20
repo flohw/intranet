@@ -87,7 +87,7 @@ form select.input { margin-left: 150px; }
 /* Style pour les messages */
 #sort #date { width: 130px; }
 #sort #correspondant { width: 200px; }
-#sort #actions { width: 250px; }
+#sort #actions { width: 300px; }
 #messagerie #auteur-message { width: 200px; border-right: 1px solid #DDDDDD; }
 #messagerie thead th { text-align: center; }
 #messagerie tbody tr td:first-child { border-right: 1px solid #DDDDDD; }

@@ -42,6 +42,13 @@ class Absence extends AppModel {
 		return $check['date'] <= date('Y-m-d H:i:s');
 	}
 	
+	public function afterFind ($result)
+	{
+		foreach ($result as $k => $r)
+			$result[$k]['Absence']['date'] = substr($result[$k]['Absence']['date'], 0, 10);
+		return $result;
+	}
+	
 	
 }
 ?>

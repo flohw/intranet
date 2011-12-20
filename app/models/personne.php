@@ -223,9 +223,14 @@ class Personne extends AppModel {
 		{
 			foreach ($results as $k => $p)
 			{
-				unset($results[$k]['Personne']['mot_de_passe']);
-				if (isset($p['Personne']['date_naissance']))
-					$results[$k]['Personne']['date_naissance'] = substr($p['Personne']['date_naissance'], 0, 10);
+				if (is_integer($k))
+				{
+					unset($results[$k]['Personne']['mot_de_passe']);
+					if (isset($p['Personne']['date_naissance']))
+						$results[$k]['Personne']['date_naissance'] = substr($p['Personne']['date_naissance'], 0, 10);
+				}
+				elseif (is_string($k) AND $k == 'mot_de_passe')
+					unset($results[$k]);
 			}
 		}
 		return $results;

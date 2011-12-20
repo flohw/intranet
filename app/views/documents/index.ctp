@@ -58,6 +58,13 @@
 	</div>
 	<!-- PT1A -->
 	<div id="PT1A">
+		<p>Sélectionner le fichier des affectations de groupes</p>
+		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
+		<?php echo $this->Form->hidden('pt', array('value' => 'PT1A')); ?>
+		<?php echo $this->Form->text('fichier', array('label' => 'Fichier des affectations', 'type' => 'file', 'class' => 'input')); ?>
+		<?php echo $this->Form->submit('Envoyer', array('class' => 'btn primary')); ?>
+		<?php echo $this->Form->end(); ?>
+		
 		<p>Ajouter un document pour les projets tuteurés de première année<br />
 			Faire un glisser-déposer pour ajouter un document, 
 			pour remplacer, il suffit de glisser-deposer par dessus.
@@ -79,6 +86,13 @@
 	</div>
 	<!-- PT2A -->
 	<div id="PT2A">
+		<p>Sélectionner le fichier des affectations de groupes</p>
+		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
+		<?php echo $this->Form->hidden('pt', array('value' => 'PT2A')); ?>
+		<?php echo $this->Form->text('fichier', array('label' => 'Fichier des affectations', 'type' => 'file', 'class' => 'input')); ?>
+		<?php echo $this->Form->submit('Envoyer', array('class' => 'btn primary')); ?>
+		<?php echo $this->Form->end(); ?>
+		
 		<p>Ajouter un document pour les projets tuteurés de deuxième année<br />
 			Faire un glisser-déposer pour ajouter un document, 
 			pour remplacer, il suffit de glisser-deposer par dessus.
@@ -121,6 +135,13 @@
 	</div>
 	<!-- PPP -->
 	<div id="PPP">
+		<p>Sélectionner le fichier des affectations de groupes</p>
+		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
+		<?php echo $this->Form->hidden('pt', array('value' => 'PPP')); ?>
+		<?php echo $this->Form->text('fichier', array('label' => 'Fichier des affectations', 'type' => 'file', 'class' => 'input')); ?>
+		<?php echo $this->Form->submit('Envoyer', array('class' => 'btn primary')); ?>
+		<?php echo $this->Form->end(); ?>
+
 		<p>Ajouter un document pour les projets tuteurés de deuxième année<br />
 			Faire un glisser-déposer pour ajouter un document, 
 			pour remplacer, il suffit de glisser-deposer par dessus.

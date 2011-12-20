@@ -4,11 +4,17 @@
 </div>
 
 <div class="row">
-	<div class="span16">
-		<?php echo  '<h5 style="display:inline">Volume horaire de ce module : </h5>'.$abre['Module']['volume_horaire'].'h.<br />';?>
-		<?php echo  '<h5 style="display:inline">Coefficient : </h5>'.$abre['Module']['coefficient'].'.';?>
+	<div class="span8">
+		<?php echo  '<h5 style="display: inline;">Volume horaire de ce module : </h5>'.$abre['Module']['volume_horaire'].'h.<br />';?>
+		<?php echo  '<h5 style="display: inline;">Coefficient : </h5>'.$abre['Module']['coefficient'].'.';?>
 	</div>
+	<?php if (in_array($this->Session->read('Auth.Personne.login'), $profs)): ?>
+		<div class="span8 offset4">
+			<?php echo $this->Html->link('Ajouter un document', array('action' => 'modules'), array('class' => 'btn primary')); ?>
+		</div>
+	<?php endif; ?>
 </div>
+
 <div class="row">
 	<div class="span16">
 		<?php if (!empty($docs)): ?>

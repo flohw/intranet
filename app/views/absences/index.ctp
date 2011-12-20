@@ -1,4 +1,4 @@
-<?php $this->title = 'Intranet | Absences | '; ?>
+<?php $this->title = 'Intranet | Absences'; ?>
 
 
 <div class="page-header">
@@ -40,23 +40,24 @@
 		<table id="sort" class="zebra-striped">
 			<thead>
 				<tr>
+					<th class="id">id</th>
 					<th class="blue" headerSortDown>Date</th>
 					<th class="yellow" id="eleve">Eleve</th>
 					<th class="red" id="justificatif">Justificatif</th>
 				</tr>
 			</thead>
-			<tbody>;
+			<tbody>
 			
-			<?php foreach ($absences as $a): 
-				echo '<tr>';
-				echo '<td>'.$this->Html->link($a['Absence']['date'], array('action' => 'editer', $a['Absence']['id'])).'</td>';
-				echo '<td>'.$a['Personne']['nom'].$a['Personne']['prenom'].'</td>';
-				echo '<td>'.$a['Absence']['justification'].'</td>';
-			endforeach;   ?>
+			<?php foreach ($absences as $a): ?>
+				<tr>
+					<td class="id"><?php echo $a['Absence']['id']; ?></td>
+					<td><?php echo $this->Html->link($a['Absence']['date'], array('action' => 'index', $a['Absence']['id'])); ?></td>
+					<td><?php echo $a['Personne']['nom'].' '.$a['Personne']['prenom']; ?></td>
+					<td><?php echo $a['Absence']['justification']; ?></td>
+				</tr>
+			<?php endforeach;   ?>
 		 	</tbody>
 		</table>
-
-
 	</div>
 </div>
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>

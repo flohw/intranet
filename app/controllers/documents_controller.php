@@ -21,6 +21,18 @@ class DocumentsController extends AppController
 	// Affichage des documents mis en ligne par les professeurs + Upload
 	function index ()
 	{
+		if (isset($this->data))
+		{
+			$this->Document->set($this->data);
+			if ($this->Document->validates())
+			{
+				move_uploaded_file($this->data['Document']['fichier']['tmp_name'],
+									WWW_ROOT.'files/'.$this->data['Document']['pt'].'/affectation.pdf');
+				$this->Session->setFlash('Le document a bien été sauvegardé', 'message', array('class' => 'success'));
+			}
+			else
+				$this->Session->setFlash ('Le document n\'a pas été correctement sauvegardé', 'message');
+		}
 		$d['typesImages'] = array('image/png', 'image/gif', 'image/jpeg');
 		$d['typesPDF'] = array('application/pdf');
 		$d['typesWord'] = array('application/msword', 'application/vnd.oasis.opendocument.text');
@@ -79,9 +91,9 @@ class DocumentsController extends AppController
 	// Affichage des documents pour le module $id
 	function presenter($id) 
 	{
-		$mod['abre'] = $this->Module->find('first', array('conditions' => array('Module.id' => $id), 'recursive' => 1));
-		$mod['docs'] = $this->Document->find('all', array('conditions' => array('Document.module_id' => $id), 'recursive' => 1));
-		 if (empty($mod['docs']))
+		$mod['abre'] = $this->Module->find('first', array('conditions' => array('Module.id' => $id), 'recursive' => -1));
+		$mod['docs'] = $this->Document->find('all', array('conditions' => array('Document.module_id' => $id), 'recursive' => 0));
+		if (empty($mod['docs']))
 			echo $this->Session->setFlash('Aucun document pour ce module', 'message', array('class' => 'info'));
 		// Mise à jour du cache des notifications
 		$r = array();
@@ -95,6 +107,7 @@ class DocumentsController extends AppController
 			}
 		}
 		Cache::write('notifs', $notifs, 'notifs');
+		$mod['profs'] = $this->Module->findProfsModule($id);
 		$this->set($mod);
 	}
 	
