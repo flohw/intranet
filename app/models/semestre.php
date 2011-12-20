@@ -10,9 +10,9 @@ class Semestre extends AppModel {
 				'allowEmpty' => false,
 				'required' => true,
 			),
-			'alphanumeric' => array(
-				'rule' => array('alphanumeric'),
-				'message' => 'Le nom du semestre doit être une chaine de caractères',
+			'unique' => array(
+				'rule' => 'isUnique',
+				'message' => 'Ce nom de semestre existe déjà',
 			),
 		),
 	);
@@ -45,6 +45,12 @@ class Semestre extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+	
+	public function beforeValidate ()
+	{
+		$this->data['Semestre']['nom'] = ucfirst($this->data['Semestre']['nom']);
+		return true;
+	}
 
 }
 ?>

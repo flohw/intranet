@@ -20,11 +20,17 @@
 				echo '</h3>';
 				foreach ($m['Module'] as $mod):
 					echo '<blockquote>';
-					echo '<h5>'. $this->Html->link($mod['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $mod['id']));
-						if (in_array($mod['abreviation'], $myMod) OR $granted)
+					echo '<h5>'.$this->Html->link($mod['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $mod['id'])).'</h5>';
+					echo '<strong>Description</strong> : '.$mod['description'];
+					echo '<p><strong>Reponçables</strong> : ';
+					if (!empty($mod['Personne']))
+						foreach ($mod['Personne'] as $id => $p)
+							echo $this->Html->link($p, array('action' => 'affectations', $id)).', ';
+					else
+						echo 'Aucun responçable';
+					echo '</p>';
+					if (in_array($mod['abreviation'], $myMod) OR $granted)
 							echo '<small>'.$this->Html->link('Editer', array('action' => 'editer', $mod['id'])).'</small>';
-					echo '</h5>';
-					echo '<small>'.$mod['description'].'</small>';
 					echo '</blockquote>';
 				endforeach;
 			endforeach;

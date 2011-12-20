@@ -7,7 +7,7 @@ class ModulesController extends AppController
 	public function beforeFilter ()
 	{
 		parent::beforeFilter();
-		if ($this->Auth->user('statut_id') < $this->statuts['prof'] AND $this->action != 'index')
+		if ($this->Auth->user('statut_id') < $this->statuts['prof'] AND !in_array($this->action, array('index', 'affectations')))
 		{
 			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
 			$this->redirect($this->referer());
@@ -24,11 +24,10 @@ class ModulesController extends AppController
 	}
 	
 	// Editer un module (nb heures, coef...) (Prof qui sont responcable du module)
-	function editer($id=null) 
+	function editer($id = null) 
 	{
 		if (isset($this->data))
 		{
-			$this->data['Personne']['id'] = $this->Auth->user('id');
 			$this->Module->set($this->data);
 			if ( $this->Module->validates())
 			{
@@ -41,17 +40,18 @@ class ModulesController extends AppController
 		}
 		else
 		{
-			if (!is_null($id) AND !in_array($this->Auth->user('login'), $this->Module->findProfsModule($id)))
+			if (!is_null($id) AND (!in_array($this->Auth->user('login'), $this->Module->findProfsModule($id)) AND $this->Auth->user('statut_id') < $this->statuts['admin']))
 			{
 				$this->Session->setFlash('Vous n\'avez pas le droit de gérer un module dont vous n\'êtes pas responçcable', 'message');
 				$this->redirect($this->referer());
 			}
+			$this->Module->recursive = 0;
 			$this->data = $this->Module->find('first', array('conditions' => array('Module.id' => $id)));
 		}
 
-		
 		$d['sem'] = $this->Module->Semestre->find('list');
 		$d['libel'] = $this->LibelleModule->find('list');
+		$d['typeMod'] = $this->Module->TypeModule->find('list');
 		$this->set( $d);
 		
 	}
@@ -113,6 +113,13 @@ class ModulesController extends AppController
 				$this->Session->setFlash('L\'affectation a déjà été faite', 'confirm', $options);
 			}
 		}
+		elseif (!isset($this->data))
+		{
+			if (isset($this->params['named']['module']))
+				$this->data['ModulesPersonne']['module_id'] = $this->params['named']['module'];
+			if (isset($this->params['named']['personne']))
+				$this->data['ModulesPersonne']['personne_id'] = $this->params['named']['personne'];
+		}
 		$d['personnes'] = $this->Module->Personne->find('list', array('conditions' => array('statut_id' => $this->statuts['prof'])));
 		$d['modules'] = $this->Module->find('list');
 		$this->set($d);
@@ -149,6 +156,75 @@ class ModulesController extends AppController
 		else
 		{
 			$e = $this->Module->ModulesPersonne->find('first', array('conditions' => array('module_id' => $id, 'personne_id' => $pers)));
+			if (!empty($e))
+			{
+				$this->Module->ModulesPersonne->delete($e['ModulesPersonne']['id']);
+				$this->Session->setFlash('L\'affectation a été effacée', 'message', array('class' => 'success'));
+			}
+			else
+				$this->Session->setFlash('L\'affectation n\'existe pas', 'message');
+			$this->redirect($this->referer());
+		}
+	}
+	
+	public function affectertype ()
+	{
+		if ($this->Auth->user('statut_id') < $this->statuts['admin'])
+		{
+			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
+			$this->redirect($this->referer());
+		}
+		
+		if (isset($this->data))
+		{
+			$e = $this->Module->ModulesTypeModule->find('first', array('conditions' => array(
+																	'module_id' => $this->data['ModulesTypeModule']['module_id'],
+																	'type_module_id' => $this->data['ModulesTypeModule']['type_module_id'])));
+			if (empty($e))
+			{
+				if ($this->Module->ModulesTypeModule->save($this->data, array('validate' => false)))
+					$this->Session->setFlash('Affectation enregistrée !', 'message', array('class' => 'success'));
+				else
+					$this->Session->setFlash('Erreur lors de l\'affectation', 'message');
+				$this->redirect(array('controller' => 'documents', 'action' => 'presenter', $this->data['ModulesTypeModule']['module_id']));
+			}
+			else
+			{
+				App::import('Helper', 'Html');
+				$Html = new HtmlHelper();
+				$options['text'] = 'Effacer l\'affectation';
+				$options['url'] = $Html->url(array('action' => 'supprimerafftype', $e['ModulesTypeModule']['id']));
+				$this->Session->setFlash('L\'affectation a déjà été faite', 'confirm', $options);
+			}
+		}
+		elseif (!isset($this->data))
+		{
+			if (isset($this->params['named']['module']))
+				$this->data['ModulesTypeModule']['module_id'] = $this->params['named']['module'];
+			if (isset($this->params['named']['type']))
+				$this->data['ModulesTypeModule']['type_module_id'] = $this->params['named']['type'];
+		}
+		$d['modules'] = $this->Module->find('list');
+		$d['typesMod'] = $this->Module->TypeModule->find('list');
+		$this->set($d);
+	}
+	
+	public function supprimerafftype ($idModule, $type = null)
+	{
+		if ($this->Auth->user('statut_id') < $this->statuts['admin'])
+		{
+			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
+			$this->redirect($this->referer());
+		}
+		if (is_null($type))
+		{
+			$this->Module->ModulesTypeModule->delete($idModule);
+			$this->Session->setFlash('L\'affectation a été effacée', 'message', array('class' => 'success'));
+			$this->redirect($this->referer());
+		}
+		else
+		{
+			$e = $this->Module->ModulesTypeModule->find('first', array('conditions' => array('module_id' => $id, 'type_module_id' => $type)));
 			if (!empty($e))
 			{
 				$this->Module->ModulesPersonne->delete($e['ModulesPersonne']['id']);

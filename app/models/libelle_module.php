@@ -2,6 +2,7 @@
 class LibelleModule extends AppModel {
 	var $name = 'LibelleModule';
 	var $displayField = 'nom';
+	var $actsAs = array('Containable');
 	var $validate = array(
 		'nom' => array(
 			'notempty' => array(
@@ -31,17 +32,28 @@ class LibelleModule extends AppModel {
 	
 	public function modulesBySem ($sem)
 	{
-		$datas = $this->find('all', array('recursive' => 1));
+		$this->contain('Module.Personne');
+		$datas = $this->find('all', array('recursive' => 2));
 		foreach ($datas as $k => $data)
 		{
 			foreach ($data['Module'] as $kk => $d)
 			{
 				if ($d['semestre_id'] != $sem)
 					unset($datas[$k]['Module'][$kk]);
+				else
+				{
+					foreach ($d['Personne'] as $c => $d)
+					{
+						unset($datas[$k]['Module'][$kk]['Personne'][$c]);
+						$datas[$k]['Module'][$kk]['Personne'][$d['id']] = $d['login'];
+					}
+				}
 			}
+			
 			if (empty($datas[$k]['Module']))
 				unset($datas[$k]);
 		}
+		
 		return $datas;
 	}
 

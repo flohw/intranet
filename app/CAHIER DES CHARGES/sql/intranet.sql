@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `intranet`.`semestres` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`semestres` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(20) NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -53,7 +53,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ENGINE = InnoDB, 
 COMMENT = 'classes (A1, A2, B1, B2…)' ;
 
 
@@ -323,18 +323,11 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`evenements` (
   `date_debut` DATETIME NOT NULL ,
   `date_fin` DATETIME NOT NULL ,
   `type_evenement_id` INT NOT NULL ,
-  `personne_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_evenements_type_evenements1` (`type_evenement_id` ASC) ,
-  INDEX `fk_evenements_personnes1` (`personne_id` ASC) ,
   CONSTRAINT `fk_evenements_type_evenements1`
     FOREIGN KEY (`type_evenement_id` )
     REFERENCES `intranet`.`type_evenements` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_evenements_personnes1`
-    FOREIGN KEY (`personne_id` )
-    REFERENCES `intranet`.`personnes` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -404,75 +397,33 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`documents_stages` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `intranet`.`notes`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `intranet`.`notes` ;
+
+CREATE  TABLE IF NOT EXISTS `intranet`.`notes` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `personne_id` INT NOT NULL ,
+  `module_id` INT NOT NULL ,
+  `note` INT NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_notes_modules1` (`module_id` ASC) ,
+  INDEX `fk_notes_personnes1` (`personne_id` ASC) ,
+  CONSTRAINT `fk_notes_modules1`
+    FOREIGN KEY (`module_id` )
+    REFERENCES `intranet`.`modules` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_notes_personnes1`
+    FOREIGN KEY (`personne_id` )
+    REFERENCES `intranet`.`personnes` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
--- -----------------------------------------------------
--- Data for table `intranet`.`departements`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `intranet`;
-INSERT INTO `intranet`.`departements` (`id`, `nom`, `nb_max_eleves`, `slug`, `abreviation`) VALUES (1, 'Informatique', 300, 'informatique', 'info');
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `intranet`.`semestres`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `intranet`;
-INSERT INTO `intranet`.`semestres` (`id`, `nom`) VALUES (1, 'Semestre 1');
-INSERT INTO `intranet`.`semestres` (`id`, `nom`) VALUES (2, 'Semestre 2');
-INSERT INTO `intranet`.`semestres` (`id`, `nom`) VALUES (3, 'Semestre 3');
-INSERT INTO `intranet`.`semestres` (`id`, `nom`) VALUES (4, 'Semestre 4');
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `intranet`.`groupes`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `intranet`;
-INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (1, 'A1', 15, 1);
-INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (2, 'A2', 15, 1);
-INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (3, 'A1', 15, 2);
-INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (4, 'A2', 15, 2);
-INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (5, 'Professeurs', 100, 1);
-INSERT INTO `intranet`.`groupes` (`id`, `nom`, `nb_max_eleves`, `semestre_id`) VALUES (6, 'Administrateurs', 100, 1);
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `intranet`.`statuts`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `intranet`;
-INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (10, 'Eleve');
-INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (20, 'Professeur');
-INSERT INTO `intranet`.`statuts` (`id`, `nom`) VALUES (30, 'Administrateur');
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `intranet`.`personnes`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `intranet`;
-INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`, `last_login`) VALUES (1, 'eleve', 'eleve', 'eleve', '2010-11-12', '0404040404', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve', '2011-09-03');
-INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`, `last_login`) VALUES (2, 'professeur', 'professeur', 'professeur', '2009-11-12', '0505050505', 'prof@prof.pro', 20, 1, 5, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof', '2011-09-03');
-INSERT INTO `intranet`.`personnes` (`id`, `nom`, `prenom`, `adresse`, `date_naissance`, `telephone`, `email`, `statut_id`, `departement_id`, `groupe_id`, `mot_de_passe`, `login`, `last_login`) VALUES (3, 'administrateur', 'administrateur', 'administrateur', '2008-11-12', '0101010101', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin', '2011-09-03');
-
-COMMIT;
-
--- -----------------------------------------------------
--- Data for table `intranet`.`type_evenements`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `intranet`;
-INSERT INTO `intranet`.`type_evenements` (`id`, `nom`) VALUES (1, 'Réunion');
-INSERT INTO `intranet`.`type_evenements` (`id`, `nom`) VALUES (2, 'Convocation');
-INSERT INTO `intranet`.`type_evenements` (`id`, `nom`) VALUES (3, 'Soirée');
-
-COMMIT;

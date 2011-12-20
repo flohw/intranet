@@ -151,6 +151,10 @@ class Personne extends AppModel {
 	);
 
 	var $hasMany = array(
+		'Note' => array(
+			'className' => 'Note',
+			'foreignKey' => 'personne_id',
+		),
 		'Absence' => array(
 			'className' => 'Absence',
 			'foreignKey' => 'personne_id',

@@ -40,8 +40,8 @@
 	</tbody>
 </table>
 
-<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof']): ?>
+<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']): ?>
 <div class="actions">
-	<?php echo $this->Html->link('Affecter à un module', array('action' => 'affecter'), array('class' => 'btn primary')); ?>
+	<?php echo $this->Html->link('Affecter à un module', array('action' => 'affecter', 'personne' => $prof['id']), array('class' => 'btn primary')); ?>
 </div>
 <?php endif; ?>

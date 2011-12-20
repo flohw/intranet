@@ -4,9 +4,10 @@
             <h3><?php echo $this->Html->link('Administrateur'.$this->Html->image('icones/icone-admin.png'),  array('controller' => 'pages', 'action' => 'display', 'personnes_home'), array('escape' => false)); ?></h3>
             <ul>
                 <li class="menu">
-                	<a href="#" class="menu">Départements</a>
+                	<a href="#" class="menu">L'Infrastrucutre</a>
                 	<ul class="menu-dropdown">
-                		<li><?php echo $this->Html->link('Editer les départements', array('controller' => 'departements', 'action' => 'editer')); ?></li>
+                		<li><?php echo $this->Html->link('Les semestres', array('controller' => 'semestres', 'action' => 'index')); ?></li>
+                		<li><?php echo $this->Html->link('Les départements', array('controller' => 'departements', 'action' => 'editer')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
@@ -32,6 +33,7 @@
                     <ul class="menu-dropdown">
                         <?php echo $this->element('menu_modules'/* , array('cache' => '+1 year') */); ?>
                         <li><?php echo $this->Html->link('Affecter un professeur', array('controller' => 'modules', 'action' => 'affecter')); ?></li>
+                        <li><?php echo $this->Html->link('Affecter un type de module', array('controller' => 'modules', 'action' => 'affectertype')); ?></li>
                     </ul>
                 </li>
                 <li class="menu">

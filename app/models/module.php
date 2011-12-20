@@ -49,7 +49,16 @@ class Module extends AppModel {
 		),
 	);
 
-	var $hasMany = array('Document');
+	var $hasMany = array(
+		'Document' => array(
+			'className' => 'Document',
+			'foreignKey' => 'module_id',
+		),
+		'Note' => array(
+			'className' => 'Note',
+			'foreignKey' => 'module_id',
+		),
+	);
 
 	var $belongsTo = array(
 		'LibelleModule' => array(
