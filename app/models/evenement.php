@@ -149,8 +149,10 @@ class Evenement extends AppModel {
 	{
 		foreach ($result as $k => $r)
 		{
-			$result[$k]['Evenement']['date_debut'] = substr($r['Evenement']['date_debut'], 0, 10);
-			$result[$k]['Evenement']['date_fin'] = substr($r['Evenement']['date_fin'], 0, 10);
+			if (isset($result[$k]['Evenement']['date_debut']))
+				$result[$k]['Evenement']['date_debut'] = substr($r['Evenement']['date_debut'], 0, 10);
+			if (isset($result[$k]['Evenement']['date_fin']))
+				$result[$k]['Evenement']['date_fin'] = substr($r['Evenement']['date_fin'], 0, 10);
 		}
 		return $result;
 	}

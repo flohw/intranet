@@ -45,6 +45,7 @@ class EvenementsController extends AppController
 		$this->set($d);
 	}
 	
+	// Ajoute un évènement pour un groupe (Profs)
 	public function groupe ($id = null)
 	{
 		if ($this->Auth->user('statut_id') < $this->statuts['prof'])
@@ -77,7 +78,7 @@ class EvenementsController extends AppController
 						$this->Evenement->EvenementsPersonne->save($d, array('validate' => false));
 					}
 					$this->Session->setFlash('L\'évènement a été ajouté', 'message', array('class' => 'success'));
-					$this->redirect($this->referer());
+					$this->redirect(array('action' => 'index'));
 				}
 			}
 			else
@@ -96,7 +97,7 @@ class EvenementsController extends AppController
 		if ($this->Auth->user('statut_id') < $this->statuts['prof'])
 		{
 			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page', 'message');
-			$this->redirect($this->referer());
+			$this->redirect(array('action' => 'index'));
 		}
 		$this->Evenement->EvenementsPersonne->deleteAll(array('evenement_id' => $id));
 		$this->Evenement->delete($id);

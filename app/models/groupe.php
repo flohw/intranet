@@ -79,15 +79,20 @@ class Groupe extends AppModel {
 			else
 			{
 				$groupes[$k] = explode('-', $g);
-				$groupes[$k]['semestre'] = trim($groupes[$k][0]);
-				$groupes[$k]['groupe'] = trim($groupes[$k][1]);
-				unset($groupes[$k][0], $groupes[$k][1]);
-				$sid = $this->Semestre->findByNom($groupes[$k]['semestre']);
-				$sid = $sid['Semestre']['id'];
-				$gid = $this->find('first', array('conditions' => array('semestre_id' => $sid, 'nom' => $groupes[$k]['groupe'])));
-				if (empty($gid))
+				if (count($groupes[$k]) == 2)
+				{
+					$groupes[$k]['semestre'] = trim($groupes[$k][0]);
+					$groupes[$k]['groupe'] = trim($groupes[$k][1]);
+					unset($groupes[$k][0], $groupes[$k][1]);
+					$sid = $this->Semestre->findByNom($groupes[$k]['semestre']);
+					$sid = $sid['Semestre']['id'];
+					$gid = $this->find('first', array('conditions' => array('semestre_id' => $sid, 'nom' => $groupes[$k]['groupe'])));
+					if (empty($gid))
+						$res['all'] = false;
+					$res['personnes'] = array_merge($res['personnes'], $this->Personne->find('all', array('conditions' => array('groupe_id' => $gid['Groupe']['id']))));
+				}
+				else
 					$res['all'] = false;
-				$res['personnes'] = array_merge($res['personnes'], $this->Personne->find('all', array('conditions' => array('groupe_id' => $gid['Groupe']['id']))));
 			}
 		}
 		foreach ($res['personnes'] as $k => $r)
