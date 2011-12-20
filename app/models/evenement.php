@@ -109,8 +109,6 @@ class Evenement extends AppModel {
 			$ev[$k]['Evenement']['personnes'] = null;
 			foreach ($ev[$k]['Personne'] as $p)
 				$ev[$k]['Evenement']['personnes'] .= $p['login'].', ';
-			$ev[$k]['Evenement']['date_debut'] = substr($ev[$k]['Evenement']['date_debut'], 0, 10);
-			$ev[$k]['Evenement']['date_fin'] = substr($ev[$k]['Evenement']['date_fin'], 0, 10);
 			unset($ev[$k]['TypeEvenement'], $ev[$k]['Personne']);
 		}
 		if (is_null($idEvent))
@@ -145,6 +143,16 @@ class Evenement extends AppModel {
 		foreach ($events as $e)
 			$r[$e['Evenement']['id']] = $e['Evenement']['id'];
 		return $r;
+	}
+	
+	public function afterFind ($result)
+	{
+		foreach ($result as $k => $r)
+		{
+			$result[$k]['Evenement']['date_debut'] = substr($r['Evenement']['date_debut'], 0, 10);
+			$result[$k]['Evenement']['date_fin'] = substr($r['Evenement']['date_fin'], 0, 10);
+		}
+		return $result;
 	}
 
 }

@@ -1,17 +1,44 @@
-<?php $this->title = 'Intranet | Administration | Nouveau évènement'; ?>
+<?php
+	$granted = $this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'];
+	$this->title = 'Intranet | Les évènements | ';
+	if (empty($this->data))
+		{
+			if ($granted)
+				$this->title .= 'Ajouter un évènement';
+			else
+				$this->title .= 'Liste des évènements';
+		}
+		else
+			$this->title .= 'Editer '.$this->data['Evenement']['titre'];
+?>
 
 <div class="page-header">
-	<h1>Ajouter un évènement</h1>
+	<?php
+		if (empty($this->data))
+		{
+			if ($granted)
+				echo '<h1>Ajouter un évènement</h1>';
+			else
+				echo '<h1>Liste des évènements</h1>';
+		}
+		else
+			echo '<h1>Editer '.$this->data['Evenement']['titre'].'</h1>';
+	?>
 </div>
 
 <ul class="tabs">
-	<li <?php echo ($this->action == 'index') ? 'class="active"' : null; ?>><a href="#simple">Nouvel évènement personnel</a></li>
+<?php
+	if ($granted): ?>
+	<li  <?php echo ($this->action == 'index' AND isset($this->data)) ? 'class="active"' : null; ?>><a href="#simple">Nouvel évènement personnel</a></li>
 	<li <?php echo ($this->action == 'groupe') ? 'class="active"' : null; ?>><a href="#groupe">Nouvel évènement groupé</a></li>
-	<li><a href="#liste">Tous les évènements</a></li>
+<?php endif; ?>
+	<li <?php echo ($this->action == 'index' AND !isset($this->data)) ? 'class="active"' : null; ?>>
+		<a href="#liste">Tous les évènements</a></li>
 </ul>
 
 <div class="pill-content">
-	<div id="simple" <?php echo ($this->action == 'index') ? 'class="active"' : null; ?>>
+<?php if ($granted): ?>
+	<div id="simple" <?php echo ($this->action == 'index' AND isset($this->data)) ? 'class="active"' : null; ?>>
 		<?php	echo $this->Form->create('Evenement'); ?>
 		<?php	echo $this->Form->input('id'); ?>
 				<div class="clearfix">
@@ -58,8 +85,8 @@
 				</div>
 		<?php 	echo $form->end(); ?>
 	</div>
-	
-	<div id="liste">
+<?php endif; ?>
+	<div id="liste" <?php echo ($this->action == 'index' AND !isset($this->data)) ? 'class="active"' : null; ?>>
 <?php	if(!empty($evenements)): ?>
 		<table id="sort" class="zebra-striped">
 			<thead>
