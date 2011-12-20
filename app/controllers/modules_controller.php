@@ -136,7 +136,7 @@ class ModulesController extends AppController
 	{
 		if ($this->Auth->user('statut_id') < $this->statuts['admin'])
 		{
-			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page', 'message');
+			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
 			$this->redirect($this->referer());
 		}
 		if (is_null($pers))
