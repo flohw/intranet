@@ -21,6 +21,26 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 USE `intranet`;
 
 --
+-- Vidage des tables 
+--
+
+TRUNCATE TABLE `documents`;
+TRUNCATE TABLE `notes`;
+TRUNCATE TABLE `modules_personnes`;
+TRUNCATE TABLE `modules`;
+TRUNCATE TABLE `libelle_modules`;
+TRUNCATE TABLE `evenements_personnes`;
+TRUNCATE TABLE `evenements`;
+TRUNCATE TABLE `type_evenements`;
+TRUNCATE TABLE `documents_stages`;
+TRUNCATE TABLE `absences`;
+TRUNCATE TABLE `personnes`;
+TRUNCATE TABLE `groupes`;
+TRUNCATE TABLE `statuts`;
+TRUNCATE TABLE `semestres`;
+TRUNCATE TABLE `departements`;
+
+--
 -- Contenu de la table `departements`
 --
 
@@ -144,7 +164,7 @@ INSERT INTO `modules_personnes` VALUES(3, 5, 8);
 -- Contenu de la table `notes`
 --
 INSERT INTO `notes` VALUES(1, 7, 1, 20);
-INSERT INTO `notes` VALUES(1, 7, 5, 10);
+INSERT INTO `notes` VALUES(2, 7, 5, 10);
 
 --
 -- Contenu de la table `documents`
