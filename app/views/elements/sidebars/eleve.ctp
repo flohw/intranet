@@ -9,11 +9,33 @@
 		    		<li><?php echo $this->Html->link('Mes Notes', array('controller' => 'notes', 'action' => 'mesnotes')); ?></li>		    		
 		    	</ul>
 	    	</div>
-    	
-    	<h3>Divers</h3>
+
+	<h3>Infos Utiles</h3>
 		<div>
 		    	<ul>
-		    		<li><a href="#">Parce que y'en a beaucoup</a></li>
+		    		<li><?php echo $this->Html->link('Convocations', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Règlement', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Documents Officiels', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Astuces', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Universités', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+
+			</ul>
+		</div>
+
+	<h3>Et ensuite...</h3>
+		<div>
+		    	<ul>
+		    		<li><?php echo $this->Html->link('Poursuites à l\'étranger', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Offres d\'emploi', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Poursuites d\'études', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+			</ul>
+		</div>
+
+	<h3>Vie Etudiante</h3>
+		<div>
+		    	<ul>
+		    		<li><?php echo $this->Html->link('Oedig', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Sport', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
 			</ul>
 		</div>
 	</div>

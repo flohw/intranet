@@ -4,9 +4,9 @@
             <h3><?php echo $this->Html->link('Enseignant'.$this->Html->image('icones/icone-prof.png'),  array('controller' => 'pages', 'action' => 'display', 'personnes_home'), array('escape' => false)); ?></h3>
             <ul>
             	<li class="menu">
-            		<a href="#" class="menu">Modules</a>
+            		<a href="#" class="menu">Enseignements</a>
             		<ul class="menu-dropdown">
-                		<?php echo $this->element('menu_modules'/* , array('cache' => '+1 year') */); ?>
+                		<?php echo $this->element('menu_modules'); ?>
             		</ul>
             	</li>
             	<li class="menu">

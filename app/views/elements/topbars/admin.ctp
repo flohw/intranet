@@ -22,14 +22,14 @@
                 <li class="menu">
                     <a href="#" class="menu">Scolarité</a>
                     <ul class="menu-dropdown">
-	                	<li><?php echo $this->Html->link('Évènements', array('controller' => 'evenements', 'action' => 'index')); ?></li>
+	         <li><?php echo $this->Html->link('Évènements', array('controller' => 'evenements', 'action' => 'index')); ?></li>
                         <li><?php echo $this->Html->link('Absences', array('controller' => 'absences', 'action' => 'index')); ?></li>
                         <li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
                     </ul>
                 </li>
                 <li class="separator"></li>
                 <li class="menu">
-                    <a href="#" class="menu">Modules</a>
+                    <a href="#" class="menu">Enseignements</a>
                     <ul class="menu-dropdown">
                         <?php echo $this->element('menu_modules'/* , array('cache' => '+1 year') */); ?>
                         <li><?php echo $this->Html->link('Affecter un professeur', array('controller' => 'modules', 'action' => 'affecter')); ?></li>
@@ -69,7 +69,7 @@
                     	<?php
                     		if ($notifs['total'] > 0)
 		                    	echo '<span class="notifs">'.$notifs['total'].'</span>';
-		                ?>
+		?>
                     </a>
                     <ul class="menu-dropdown">
                         <li><?php echo $this->Html->link("Emploi du Temps", array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
