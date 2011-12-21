@@ -16,10 +16,8 @@
 <div class="pill-content">
 	<!-- Stages-Utiles -->
 	<div id="stages-utiles" class="active">
-		<p>Ajouter un document pour les renseignements sur les stages<br />
-			Faire un glisser-déposer pour ajouter un document, 
-			pour remplacer, il suffit de glisser-deposer par dessus.
-		</p>
+		<h3>Renseignements sur les stages</h3>
+		</p>Faire un glisser-déposer pour ajouter un document, pour remplacer, il suffit de glisser-deposer par dessus.</p>
 		<?php foreach ($docStageUtile as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="stages-utiles" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
@@ -37,10 +35,8 @@
 	</div>
 	<!-- Stages-Offres -->
 	<div id="stages-offres">
-		<p>Ajouter un document pour les offres de stages<br />
-			Faire un glisser-déposer pour ajouter un document, 
-			pour remplacer, il suffit de glisser-déposer par dessus.
-		</p>
+		<h3>Offres de stages</h3>
+		</p>Faire un glisser-déposer pour ajouter un document, pour remplacer, il suffit de glisser-deposer par dessus.</p>
 		<?php foreach ($docStageOffres as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="stages-offres" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
@@ -58,17 +54,15 @@
 	</div>
 	<!-- PT1A -->
 	<div id="PT1A">
-		<p>Sélectionner le fichier des affectations de groupes</p>
+		<h3>Affectations des groupes</h3>
 		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
 		<?php echo $this->Form->hidden('pt', array('value' => 'PT1A')); ?>
 		<?php echo $this->Form->text('fichier', array('label' => 'Fichier des affectations', 'type' => 'file', 'class' => 'input')); ?>
 		<?php echo $this->Form->submit('Envoyer', array('class' => 'btn primary')); ?>
 		<?php echo $this->Form->end(); ?>
 		
-		<p>Ajouter un document pour les projets tuteurés de première année<br />
-			Faire un glisser-déposer pour ajouter un document, 
-			pour remplacer, il suffit de glisser-deposer par dessus.
-		</p>
+		<h3>Ajouter un document pour les projets tuteurés de première année</h3>
+		</p>Faire un glisser-déposer pour ajouter un document, pour remplacer, il suffit de glisser-deposer par dessus.</p>
 		<?php foreach ($docPT1A as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT1A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
@@ -86,17 +80,15 @@
 	</div>
 	<!-- PT2A -->
 	<div id="PT2A">
-		<p>Sélectionner le fichier des affectations de groupes</p>
+		<h3>Affectations des groupes</h3>
 		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
 		<?php echo $this->Form->hidden('pt', array('value' => 'PT2A')); ?>
 		<?php echo $this->Form->text('fichier', array('label' => 'Fichier des affectations', 'type' => 'file', 'class' => 'input')); ?>
 		<?php echo $this->Form->submit('Envoyer', array('class' => 'btn primary')); ?>
 		<?php echo $this->Form->end(); ?>
 		
-		<p>Ajouter un document pour les projets tuteurés de deuxième année<br />
-			Faire un glisser-déposer pour ajouter un document, 
-			pour remplacer, il suffit de glisser-deposer par dessus.
-		</p>
+		<h3>Ajouter un document pour les projets tuteurés de deuxième année</h3>
+		</p>Faire un glisser-déposer pour ajouter un document, pour remplacer, il suffit de glisser-deposer par dessus.</p>
 		<?php foreach ($docPT2A as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT2A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
@@ -114,10 +106,8 @@
 	</div>
 	<!-- PT2A-rapports -->
 	<div id="PT2A-rapports">
-		<p>Ajouter un document pour les rapports de stages de deuxième année<br />
-			Faire un glisser-déposer pour ajouter un document, 
-			pour remplacer, il suffit de glisser-deposer par dessus.
-		</p>
+		<h3>Rapports de stages de deuxième année</h3>
+		</p>Faire un glisser-déposer pour ajouter un document, pour remplacer, il suffit de glisser-deposer par dessus.</p>
 		<?php foreach ($docPT2Arapports as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT2A-rapports" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
@@ -135,18 +125,15 @@
 	</div>
 	<!-- PPP -->
 	<div id="PPP">
-		<p>Sélectionner le fichier des affectations de groupes</p>
+		<h3>Affectations des groupes</h3>
 		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
 		<?php echo $this->Form->hidden('pt', array('value' => 'PPP')); ?>
 		<?php echo $this->Form->text('fichier', array('label' => 'Fichier des affectations', 'type' => 'file', 'class' => 'input')); ?>
 		<?php echo $this->Form->submit('Envoyer', array('class' => 'btn primary')); ?>
 		<?php echo $this->Form->end(); ?>
 
-		<p>Ajouter un document pour les projets tuteurés de deuxième année<br />
-			Faire un glisser-déposer pour ajouter un document, 
-			pour remplacer, il suffit de glisser-deposer par dessus.
-		</p>
-
+		<h3>Ajouter un document pour les projets tuteurés de deuxième année</h3>
+		</p>Faire un glisser-déposer pour ajouter un document, pour remplacer, il suffit de glisser-deposer par dessus.</p>
 		<?php foreach ($docPPP as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PPP" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
@@ -165,11 +152,8 @@
 	</div>
 	<!-- Posters -->
 	<div id="posters">
-		<p>Ajouter un poster de PPP<br />
-			Faire un glisser-déposer pour ajouter un document, 
-			pour remplacer, il suffit de glisser-deposer par dessus.
-		</p>
-
+		<h3>Ajouter un poster de PPP</h3>
+		</p>Faire un glisser-déposer pour ajouter un document, pour remplacer, il suffit de glisser-deposer par dessus.</p>
 		<?php foreach ($docPosters as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="posters" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>

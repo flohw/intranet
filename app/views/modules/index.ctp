@@ -4,7 +4,7 @@
 		$sousTitre = null;
 		$granted = $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'];
 		if ($granted)
-			$sousTitre = ' - '.$this->Html->link('Ajouter', array('action' => 'editmod'));
+			$sousTitre = ' - '.$this->Html->link('Ajouter', array('action' => 'editmod'), array('class' => 'btn small success'));
 	?>
 	<h1>Listes des modules <small><?php echo $semestre['Semestre']['nom'].$sousTitre; ?></small></h1>
 </div>
@@ -16,7 +16,7 @@
 				$id = $m['LibelleModule']['id'];
 				echo '<h3 style="inline">'.$nom;
 					if ($granted)
-						echo '<small> - '.$this->Html->link('Editer', array('action' => 'editmod', $id)).'</small>';
+						echo '<small> - '.$this->Html->link('Editer', array('action' => 'editmod', $id), array('class' => 'btn small info')).'</small>';
 				echo '</h3>';
 				foreach ($m['Module'] as $mod):
 					echo '<blockquote>';
@@ -37,7 +37,7 @@
 					echo '</p>';
 					echo '<p><strong>Description</strong> : '.$mod['description'].'</p>';
 					if (in_array($mod['abreviation'], $myMod) OR $granted)
-							echo '<small>'.$this->Html->link('Editer', array('action' => 'editer', $mod['id'])).'</small>';
+							echo '<small>'.$this->Html->link('Editer', array('action' => 'editer', $mod['id']), array('class' => 'btn small info')).'</small>';
 					echo '</blockquote>';
 				endforeach;
 			endforeach;

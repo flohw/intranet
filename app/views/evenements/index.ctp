@@ -115,8 +115,8 @@
 					<?php
 					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
 					{
-						echo '<td>'.$this->Html->link('Editer', array('action' => 'index', $e['id']), array('class' => 'btn')).'&nbsp';
-						echo $this->Html->link('Supprimer', array('action' => 'supprimer', $e['id']), array('class' => 'btn danger'),
+						echo '<td>'.$this->Html->link('Editer', array('action' => 'index', $e['id']), array('class' => 'btn small')).'&nbsp';
+						echo $this->Html->link('Supprimer', array('action' => 'supprimer', $e['id']), array('class' => 'btn small danger'),
 																'Êtes vous sûr de vouloir supprime l\'évènement '.$e['titre'].' ?').'</td>';
 					}
 					?>

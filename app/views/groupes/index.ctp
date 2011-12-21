@@ -26,9 +26,9 @@
 	<span class="span11">
 		<?php
 			if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']):
-				echo $this->Html->link('Editer ce groupe', array('action' => 'editer', $groupeID), array('class' => 'btn')); ?>&nbsp;
+				echo $this->Html->link('Editer ce groupe', array('action' => 'editer', $groupeID), array('class' => 'btn small')); ?>&nbsp;
 		<?php
-				echo $this->Html->link('Supprimer ce groupe', array('action' => 'supprimer', $groupeID), array('class' => 'btn danger'),
+				echo $this->Html->link('Supprimer ce groupe', array('action' => 'supprimer', $groupeID), array('class' => 'btn small danger'),
 											'Êtes vous-certain de vouloir supprimer ce groupe ?');
 			endif;?><br /><br />
 		<table id="sort" class="zebra-stripped">

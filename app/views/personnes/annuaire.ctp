@@ -36,7 +36,7 @@
 					<?php
 						if ($p['statut_id'] == $statutsID['prof'])
 						{
-							echo $this->Html->link('Ses modules', array('controller' => 'modules', 'action' => 'affectations', $p['id']), array('class' => 'btn info'));
+							echo $this->Html->link('Ses modules', array('controller' => 'modules', 'action' => 'affectations', $p['id']), array('class' => 'btn small info'));
 							if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'] OR
 								$this->Session->read('Auth.Personne.statut_id') <= $statutsID['prof'] AND
 								$this->Session->read('Auth.Personne.id') == $p['id'])
@@ -49,16 +49,16 @@
 							$this->Session->read('Auth.Personne.id') != $p['id']
 							AND $this->Session->read('Auth.Personne.statut_id') > $p['statut_id'])
 						{
-							echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['id']), array('class' => 'btn')).'&nbsp;';
-							echo $this->Html->link('Supprimer', array('controller' => 'personnes', 'action' => 'supprimer', $p['id']), array('class' => 'btn danger'), 'Voulez-vous vraiment supprimer ce compte ?');
+							echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['id']), array('class' => 'btn small')).'&nbsp;';
+							echo $this->Html->link('Supprimer', array('controller' => 'personnes', 'action' => 'supprimer', $p['id']), array('class' => 'btn small danger'), 'Voulez-vous vraiment supprimer ce compte ?');
 						}
 						elseif ($this->Session->read('Auth.Personne.id') == $p['id']
 							AND $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
 						{
-							echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['id']), array('class' => 'btn'));
+							echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'edition', $p['id']), array('class' => 'btn small'));
 						}
 						elseif ($this->Session->read('Auth.Personne.id') == $p['id'])
-							echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'editme'), array('class' => 'btn'));
+							echo $this->Html->link('Modifier', array('controller' => 'personnes', 'action' => 'editme'), array('class' => 'btn small'));
 					?>
 					</td>
 				</tr>
