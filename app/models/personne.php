@@ -255,11 +255,10 @@ class Personne extends AppModel {
 	
 	public function beforeSave ()
 	{
-		if (!$this->id)
-		{
+		if (isset($this->data['Personne']['nom']))
 			$this->data['Personne']['nom'] = strtoupper($this->data['Personne']['nom']);
+		if (isset($this->data['Personne']['prenom']))
 			$this->data['Personne']['prenom'] = ucwords($this->data['Personne']['prenom']);
-		}
 		return true;
 	}
 

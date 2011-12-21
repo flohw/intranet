@@ -65,9 +65,8 @@ INSERT INTO `semestres` VALUES(9, 'Licence Professionnelle');
 -- Contenu de la table `statuts`
 --
 
-INSERT INTO `statuts` VALUES(1, 'Lecteur');
 INSERT INTO `statuts` VALUES(10, 'Eleve');
-INSERT INTO `statuts` VALUES(20, 'Professeur');
+INSERT INTO `statuts` VALUES(20, 'Enseignant');
 INSERT INTO `statuts` VALUES(30, 'Administrateur');
 
 --
@@ -81,7 +80,6 @@ INSERT INTO `groupes` VALUES(5, 'Enseignants', 100, 1);
 INSERT INTO `groupes` VALUES(6, 'Administrateurs', 100, 1);
 INSERT INTO `groupes` VALUES(7, 'B1', 20, 1);
 INSERT INTO `groupes` VALUES(9, 'C1', 10, 1);
-INSERT INTO `groupes` VALUES(10, 'Sans', 1000, 1);
 
 --
 -- Contenu de la table `personnes`
@@ -89,7 +87,7 @@ INSERT INTO `groupes` VALUES(10, 'Sans', 1000, 1);
 
 INSERT INTO `personnes` VALUES(3, 'ADMIN', 'Administrateur', 'administrateur', '2008-11-12', '0101010101', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin', '2011-12-20 17:00:49');
 INSERT INTO `personnes` VALUES(5, 'ADMIN2', 'Admin', '10', '1981-01-01', '0101010101', 'admin@admin.ad', 30, 2, 1, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin2a', '0000-00-00 00:00:00');
-INSERT INTO `personnes` VALUES(7, 'eleve', 'eleve', 'aze', '1981-01-01', '0101010101', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve', '2011-12-20 16:46:56');
+INSERT INTO `personnes` VALUES(7, 'ELEVE', 'Eleve', 'aze', '1981-01-01', '0101010101', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve', '2011-12-20 16:46:56');
 INSERT INTO `personnes` VALUES(8, 'PROF', 'Prof', '10', '1981-01-22', '0101010101', 'prof@prof.pro', 20, 1, 3, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof', '2011-12-20 16:35:30');
 INSERT INTO `personnes` VALUES(9, 'ELEVE2', 'Eleve', '123', '1981-01-01', '0101010101', 'eleve@eleve.el', 10, 1, 3, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve2', '2011-12-20 08:40:33');
 INSERT INTO `personnes` VALUES(10, 'PROF2', 'Prof', '123', '1981-01-08', '0101010101', 'prof@prof.pro', 20, 1, 5, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof2', '2011-12-20 09:48:05');

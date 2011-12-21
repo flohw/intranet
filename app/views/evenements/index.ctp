@@ -38,6 +38,7 @@
 
 <div class="pill-content">
 <?php if ($granted): ?>
+<!-- Ajouter un évènement à une personne (profs et plus) -->
 	<div id="simple" <?php echo ($this->action == 'index' AND isset($this->data)) ? 'class="active"' : null; ?>>
 		<?php	echo $this->Form->create('Evenement'); ?>
 		<?php	echo $this->Form->input('id'); ?>
@@ -61,7 +62,7 @@
 				</div>
 		<?php 	echo $form->end(); ?>
 	</div>
-	
+<!-- Ajouter un évènement pour un groupe d'un semestre (profs et plus) -->	
 	<div id="groupe" <?php echo ($this->action == 'groupe') ? 'class="active"' : null; ?>>
 		<?php	echo $this->Form->create('Evenement', array('url' => $this->Html->url(array('action' => 'groupe')))); ?>
 		<?php	echo $this->Form->input('id'); ?>
@@ -86,6 +87,7 @@
 		<?php 	echo $form->end(); ?>
 	</div>
 <?php endif; ?>
+<!-- Liste des évènements -->
 	<div id="liste" <?php echo ($this->action == 'index' AND !isset($this->data)) ? 'class="active"' : null; ?>>
 <?php	if(!empty($evenements)): ?>
 		<table id="sort" class="zebra-striped">
@@ -125,9 +127,11 @@
 	<?php else: ?>
 			<strong>Aucun évènement</strong>
 	<?php endif; ?>
+	<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof']): ?>
 		<div class="actions">
 			<?php echo $this->Html->link('Nouvel évènement', array('action' => 'index'), array('class' => 'btn primary')); ?>
 		</div>
+	<?php endif; ?>
 	</div>
 </div>
 

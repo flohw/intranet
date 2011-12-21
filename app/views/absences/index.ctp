@@ -15,7 +15,7 @@
 	<?php 
 
 			echo $this->Form->create('Absence');
-
+			echo $this->Form->input('id');
 			echo '<div class="clearfix">';
 			echo $this->Form->input('date', array('class' => 'input', 'label' => 'Date de l\'absence (aaaa-mm-jj)', 'id' => 'datepicker', 'type' => 'text'));
 			echo '</div>';

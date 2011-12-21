@@ -25,10 +25,11 @@
     <div class="clearfix">
     	<?php echo $this->Form->input('login', array('label' => 'Login', 'class' => 'input')); ?>
     </div>
+<!--
     <div class="clearfix">
-    	<?php echo $this->Form->input('mot_de_passe', array('label' => 'Mot de passe', 'class' => 'input')); ?>
+    	<?php //echo $this->Form->input('mot_de_passe', array('label' => 'Mot de passe', 'class' => 'input')); ?>
     </div>
-    
+-->
     <div class="clearfix">
         <?php echo $this->Form->input('email', array('class' => 'input', 'label' => 'Email')); ?>
     </div>
