@@ -218,8 +218,10 @@ class ModulesController extends AppController
 		}
 		if (is_null($type))
 		{
-			$this->Module->ModulesTypeModule->delete($idModule);
-			$this->Session->setFlash('L\'affectation a été effacée', 'message', array('class' => 'success'));
+			if ($this->Module->ModulesTypeModule->delete($idModule))
+				$this->Session->setFlash('L\'affectation a été effacée', 'message', array('class' => 'success'));
+			else
+				$this->Session->setFlash('L\'affectation n\'a pas été effacée, des notes y sont peut être attachées', 'message');
 			$this->redirect($this->referer());
 		}
 		else

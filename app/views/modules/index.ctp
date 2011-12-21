@@ -23,11 +23,15 @@
 					echo '<h5>'.$this->Html->link($mod['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $mod['id'])).'</h5>';
 					echo '<p><strong>Reponsable(s)</strong> : ';
 					if (!empty($mod['Personne']))
+					{
+						$i = 0; $sum = count($mod['Personne']);
 						foreach ($mod['Personne'] as $id => $p)
-							if (count($p)==1)
+						{
 							echo $this->Html->link($p, array('action' => 'affectations', $id));
-							else
-							echo $this->Html->link($p, array('action' => 'affectations', $id)).', ';
+							if (++$i < $sum)
+								echo ', ';
+						}
+					}
 					else
 						echo 'Aucun responsable';
 					echo '</p>';
