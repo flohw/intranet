@@ -13,14 +13,10 @@ DROP TABLE IF EXISTS `intranet`.`departements` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`departements` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(60) NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
-  `slug` VARCHAR(60) NOT NULL ,
-  `abreviation` VARCHAR(45) NOT NULL COMMENT 'cj, info, tech2co' ,
   PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `nom_UNIQUE` (`nom` ASC) ,
-  UNIQUE INDEX `slug_UNIQUE` (`slug` ASC) ,
-  UNIQUE INDEX `abreviation_UNIQUE` (`abreviation` ASC) )
+  UNIQUE INDEX `nom_UNIQUE` (`nom` ASC) )
 ENGINE = InnoDB;
 
 
@@ -43,7 +39,7 @@ DROP TABLE IF EXISTS `intranet`.`groupes` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(45) NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
   `semestre_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
@@ -64,7 +60,7 @@ DROP TABLE IF EXISTS `intranet`.`libelle_modules` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`libelle_modules` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(70) NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -76,7 +72,7 @@ DROP TABLE IF EXISTS `intranet`.`modules` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`modules` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `abreviation` VARCHAR(45) NOT NULL ,
+  `abreviation` VARCHAR(255) NOT NULL ,
   `description` TEXT NOT NULL ,
   `coefficient` INT NOT NULL ,
   `volume_horaire` INT NOT NULL ,
@@ -106,7 +102,7 @@ DROP TABLE IF EXISTS `intranet`.`type_modules` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`type_modules` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(45) NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
   `nb_max_eleves` INT NOT NULL ,
   `departement_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
@@ -128,7 +124,7 @@ DROP TABLE IF EXISTS `intranet`.`statuts` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`statuts` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(45) NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -210,7 +206,6 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`modules_type_modules` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `module_id` INT NOT NULL ,
   `type_module_id` INT NOT NULL ,
-  `cours_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_modules_has_type_modules_type_modules1` (`type_module_id` ASC) ,
   INDEX `fk_modules_has_type_modules_modules1` (`module_id` ASC) ,
@@ -234,7 +229,7 @@ DROP TABLE IF EXISTS `intranet`.`documents` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`documents` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(45) NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
   `personne_id` INT NOT NULL ,
   `module_id` INT NOT NULL ,
   `date_ajout` DATETIME NOT NULL ,
@@ -307,7 +302,7 @@ DROP TABLE IF EXISTS `intranet`.`type_evenements` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`type_evenements` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `nom` VARCHAR(45) NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
@@ -405,14 +400,15 @@ DROP TABLE IF EXISTS `intranet`.`notes` ;
 CREATE  TABLE IF NOT EXISTS `intranet`.`notes` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `personne_id` INT NOT NULL ,
-  `module_id` INT NOT NULL ,
+  `modules_type_modules_id` INT NOT NULL ,
   `note` INT NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `fk_notes_modules1` (`module_id` ASC) ,
+  `coefficient` INT NOT NULL ,
+  INDEX `fk_notes_modules_type_modules1` (`modules_type_modules_id` ASC) ,
   INDEX `fk_notes_personnes1` (`personne_id` ASC) ,
-  CONSTRAINT `fk_notes_modules1`
-    FOREIGN KEY (`module_id` )
-    REFERENCES `intranet`.`modules` (`id` )
+  PRIMARY KEY (`id`) ,
+  CONSTRAINT `fk_notes_modules_type_modules1`
+    FOREIGN KEY (`modules_type_modules_id` )
+    REFERENCES `intranet`.`modules_type_modules` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_notes_personnes1`

@@ -18,48 +18,28 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Base de données: `intranet`
 --
-USE `intranet`;
-
---
--- Vidage des tables 
---
-
-TRUNCATE TABLE `documents`;
-TRUNCATE TABLE `notes`;
-TRUNCATE TABLE `modules_personnes`;
-TRUNCATE TABLE `modules`;
-TRUNCATE TABLE `libelle_modules`;
-TRUNCATE TABLE `evenements_personnes`;
-TRUNCATE TABLE `evenements`;
-TRUNCATE TABLE `type_evenements`;
-TRUNCATE TABLE `documents_stages`;
-TRUNCATE TABLE `absences`;
-TRUNCATE TABLE `personnes`;
-TRUNCATE TABLE `groupes`;
-TRUNCATE TABLE `statuts`;
-TRUNCATE TABLE `semestres`;
-TRUNCATE TABLE `departements`;
 
 --
 -- Contenu de la table `departements`
 --
 
-INSERT INTO `departements` VALUES(1, 'Informatique', 300, 'informatique', 'info');
-INSERT INTO `departements` VALUES(2, 'Carrières juridique', 200, 'carrieres-juridique', 'CJ');
+INSERT INTO `departements` VALUES(1, 'Informatique', 300);
+INSERT INTO `departements` VALUES(2, 'Carrières juridique', 200);
 
 --
 -- Contenu de la table `semestres`
 --
 
 INSERT INTO `semestres` VALUES(1, 'Semestre 1');
-INSERT INTO `semestres` VALUES(2, 'Semestre 2d');
+INSERT INTO `semestres` VALUES(2, 'Semestre 2');
 INSERT INTO `semestres` VALUES(3, 'Semestre 3');
 INSERT INTO `semestres` VALUES(4, 'Semestre 4');
 INSERT INTO `semestres` VALUES(5, 'Semestre 1d');
-INSERT INTO `semestres` VALUES(6, 'semestre 3d');
-INSERT INTO `semestres` VALUES(7, 'semestre 4d');
-INSERT INTO `semestres` VALUES(8, 'Année spéciale');
-INSERT INTO `semestres` VALUES(9, 'Licence Professionnelle');
+INSERT INTO `semestres` VALUES(6, 'Semestre 2d');
+INSERT INTO `semestres` VALUES(7, 'semestre 3d');
+INSERT INTO `semestres` VALUES(8, 'semestre 4d');
+INSERT INTO `semestres` VALUES(9, 'Année spéciale');
+INSERT INTO `semestres` VALUES(10, 'Licence Professionnelle');
 
 --
 -- Contenu de la table `statuts`
