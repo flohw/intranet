@@ -19,9 +19,17 @@
                 	</ul>
                 </li>
                 <li class="menu">
-                	<a href="#" class="menu">Infos</a>
+                	<a href="#" class="menu">Infos<?php if ($notifs['evenements']['total'] > 0)
+		                    	echo '<span class="notifs">'.$notifs['evenements']['total'].'</span>'; ?></a>
                 	<ul class="menu-dropdown">
-	                	<li><?php echo $this->Html->link('Mes évènements', array('controller' => 'evenements', 'action' => 'index')); ?></li>
+	                	<li>
+	                	<?php
+	                		$link = 'Mes évènements';
+		                	if ($notifs['evenements']['total'] > 0)
+                        		$link .= '<span class="notifslien">'.$notifs['evenements']['total'].'</span>';
+	                		echo $this->Html->link($link, array('controller' => 'evenements', 'action' => 'index'), array('escape' => false));
+	                	?>
+	                	</li>
 	                	<li><?php echo $this->Html->link('Mon groupe', array('controller' => 'groupes', 'action' => 'index', $this->Session->read('Auth.Personne.groupe_id'))); ?></li>
 	                	<li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
 	                	<li><?php echo $this->Html->link('Plan Interactif IUT', array('controller' => 'timetable', 'action' => 'batiment')); ?></li>

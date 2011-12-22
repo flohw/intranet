@@ -64,7 +64,7 @@
 	</div>
 <!-- Ajouter un évènement pour un groupe d'un semestre (profs et plus) -->	
 	<div id="groupe" <?php echo ($this->action == 'groupe') ? 'class="active"' : null; ?>>
-		<?php	echo $this->Form->create('Evenement', array('url' => $this->Html->url(array('action' => 'groupe')))); ?>
+		<?php	echo $this->Form->create('Evenement', array('url' => $this->Html->url(array('action' => 'groupe'), true))); ?>
 		<?php	echo $this->Form->input('id'); ?>
 				<div class="clearfix">
 		<?php	echo $this->Form->input('titre', array('label' => 'Titre de l\'évènement',  'class' => 'input')); ?>
@@ -89,7 +89,6 @@
 <?php endif; ?>
 <!-- Liste des évènements -->
 	<div id="liste" <?php echo ($this->action == 'index' AND !isset($this->data)) ? 'class="active"' : null; ?>>
-<?php	if(!empty($evenements)): ?>
 		<table id="sort" class="zebra-striped">
 			<thead>
 				<tr>
@@ -105,6 +104,7 @@
 				</tr>
 			</thead>
 			<tbody>
+			<?php	if(!empty($evenements)): ?>
 			<?php foreach ($evenements as $e): $e = current($e); ?>
 				<tr>
 					<td class="id"><?php echo $e['id']; ?></td>
@@ -115,18 +115,23 @@
 					<?php
 					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
 					{
-						echo '<td>'.$this->Html->link('Editer', array('action' => 'index', $e['id']), array('class' => 'btn small')).'&nbsp';
-						echo $this->Html->link('Supprimer', array('action' => 'supprimer', $e['id']), array('class' => 'btn small danger'),
-																'Êtes vous sûr de vouloir supprime l\'évènement '.$e['titre'].' ?').'</td>';
+						echo '<td>';
+						if ($this->Session->read('Auth.Personne.id') == $e['personne_id'])
+						{
+							echo $this->Html->link('Editer', array('action' => 'index', $e['id']), array('class' => 'btn small')).'&nbsp';
+							echo $this->Html->link('Supprimer', array('action' => 'supprimer', $e['id']), array('class' => 'btn small danger'),
+																'Êtes vous sûr de vouloir supprime l\'évènement '.$e['titre'].' ?');
+						}
+						echo '</td>';
 					}
 					?>
 				</tr>
 			<?php endforeach; ?>
+			<?php else: ?>
+				<tr><td colspan="6"><strong>Aucun évènement</strong></td></tr>
+			<?php endif; ?>
 			</tbody>
 		</table>
-	<?php else: ?>
-			<strong>Aucun évènement</strong>
-	<?php endif; ?>
 	<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof']): ?>
 		<div class="actions">
 			<?php echo $this->Html->link('Nouvel évènement', array('action' => 'index'), array('class' => 'btn primary')); ?>

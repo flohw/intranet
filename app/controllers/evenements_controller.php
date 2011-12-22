@@ -38,7 +38,7 @@ class EvenementsController extends AppController
 		elseif (!isset($this->data) AND !is_null($id) AND $this->Auth->user('statut_id') >= $this->statuts['prof'])
 			$this->data = $this->Evenement->findEvenement($id);
 		
-		$d['evenements'] = $this->Evenement->findEvenement();
+		$d['evenements'] = $this->Evenement->findNewEvenements($this->Auth->user('login'), $this->Auth->user('id'));
 		$d['personnes'] = $this->Evenement->Personne->find('list');
 		$d['groupes'] = $this->Evenement->Personne->Groupe->getGroupeList('list');
 		$d['type'] = $this->TypeEvenement->find('list');

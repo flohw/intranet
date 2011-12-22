@@ -27,9 +27,16 @@
                 	</ul>
                 </li>
                 <li class="menu">
-                	<a href="#" class="menu">Scolarité</a>
+                	<a href="#" class="menu">Scolarité<?php if ($notifs['evenements']['total'] > 0)
+		                    	echo '<span class="notifs">'.$notifs['evenements']['total'].'</span>'; ?></a>
                 	<ul class="menu-dropdown">
-	                	<li><?php echo $this->Html->link('Évènements', array('controller' => 'evenements', 'action' => 'index')); ?></li>
+	                	<li>
+	                	<?php
+	                		$link = 'Évènements';
+	                		if ($notifs['evenements']['total'] > 0)
+                        		$link .= '<span class="notifslien">'.$notifs['evenements']['total'].'</span>';
+	                		echo $this->Html->link($link, array('controller' => 'evenements', 'action' => 'index'), array('escape' => false)); ?>
+	                	</li>
 	                	<li><?php echo $this->Html->link('Absences', array('controller' => 'absences', 'action' => 'index')); ?></li>
 	                	<li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' =>  'timetable', 'action' => 'maintenance')); ?></li>
                 	</ul>

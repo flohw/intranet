@@ -50,15 +50,18 @@ class Document extends AppModel {
 		return true;
 	}
 	
-	public function findNewDocuments($date)
+	public function findNewDocuments($date, $idPersonne = null)
 	{
-		$docs = $this->find('all', array('conditions' => array('date_ajout >=' => $date)));
+		$cond = array('date_ajout >=' => $date);
+		if (!is_null($idPersonne))
+			$cond = array_merge($cond, array('personne_id <>' => $idPersonne));
+		$docs = $this->find('all', array('conditions' => $cond));
 		return $docs;
 	}
 	
-	public function findNotifsNewDocuments($date)
+	public function findNotifsNewDocuments($date, $idPersonne = null)
 	{
-		$docs = $this->findNewDocuments($date);
+		$docs = $this->findNewDocuments($date, $idPersonne);
 		$r = array();
 		foreach ($docs as $d)
 			$r[$d['Document']['id']] = $d['Document']['id'];

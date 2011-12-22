@@ -1,6 +1,6 @@
 /* topbar */
 .topbar h3 img { margin-left: 5px; }
-.topbar .secondary-nav .notifs, .topbar .secondary-nav .notifslien
+.topbar .notifs, .topbar .notifslien
 {
 	background-color: #666666;
 	width: 25px;

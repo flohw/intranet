@@ -98,6 +98,7 @@ class Evenement extends AppModel {
 		return $dateFin >= $dateDebut;
 	}
 	
+	// Pour l'affichage des evenements
 	public function findEvenement ($idEvent = null)
 	{
 		if (is_null($idEvent))
@@ -117,7 +118,22 @@ class Evenement extends AppModel {
 			return current($ev);
 	}
 	
-	public function findNewEvenements ($id)
+	public function findNewEvenements ($loginPersonne, $idPersonne)
+	{
+		$events = $this->findEvenement();
+		foreach ($events as $k => $e)
+		{
+			$personnes = explode(',', $e['Evenement']['personnes']);
+			foreach ($personnes as $kk => $p)
+				$personnes[$kk] = trim($p);
+			if (!in_array($loginPersonne, $personnes) AND $e['Evenement']['personne_id'] != $idPersonne)
+				unset($events[$k]);
+		}
+		return $events;
+	}
+	
+	// pour le tableau des notifications
+	public function findNotifsNewEvenements ($idPersonne)
 	{
 		$this->contain('Personne.EvenementsPersonne');
 		$events = $this->find('all', array('conditions' => array('date_fin >=' => date('Y-m-d H:i:s'))));
@@ -125,7 +141,7 @@ class Evenement extends AppModel {
 		{
 			foreach ($e['Personne'] as $kp => $p)
 			{
-				if ($p['id'] != $id)
+				if ($p['id'] != $idPersonne)
 					unset($events[$k]['Personne'][$kp]);
 				else
 					unset($events[$k]['Personne'][$kp]['mot_de_passe']);
@@ -133,12 +149,6 @@ class Evenement extends AppModel {
 			if (count($events[$k]['Personne']) == 0)
 				unset($events[$k]);
 		}
-		return $events;
-	}
-	
-	public function findNotifsNewEvenements ($id)
-	{
-		$events = $this->findNewEvenements($id);
 		$r = array();
 		foreach ($events as $e)
 			$r[$e['Evenement']['id']] = $e['Evenement']['id'];

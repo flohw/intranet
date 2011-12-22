@@ -4,7 +4,7 @@
 </div>
 
 <span class="row">
-	<span class="span5">
+	<span class="span8">
 		<h2>Les messages</h2>
 		<?php if (count($messages) == 0): echo 'Il n\'y a aucun nouveau message'; ?>
 		<?php else: ?>
@@ -18,7 +18,7 @@
 		<?php endif; ?>
 	</span>
 	
-	<span class="span5">
+	<span class="span8">
 		<h2>Les documents</h2>
 		<?php if (count($documents) == 0): echo 'Il n\'y a aucun nouveau document'; ?>
 		<?php else: ?>
@@ -26,22 +26,6 @@
 		<?php	foreach ($documents as $d): ?>
 					<li><strong><?php echo $d['Document']['nom']; ?></strong> dans le module
 						<?php echo $this->Html->link($d['Module']['abreviation'], array('controller' => 'documents', 'action' => 'presenter', $d['Module']['id'])); ?></li>
-		<?php	endforeach; ?>
-				</ul>
-		<?php endif; ?>
-	</span>
-	
-	<span class="span6">
-		<h2>Les évènements</h2>
-		<?php if (count($evenements) == 0): echo 'Il n\'y a aucun nouvel évènement'; ?>
-		<?php else: ?>
-				<ul>
-		<?php	foreach ($evenements as $e): $e = current($e); ?>
-					<li>
-						<strong><?php echo $e['titre']; ?></strong>
-						du <?php echo $e['date_debut']; ?>
-						au <?php echo $e['date_fin']; ?>
-					</li>
 		<?php	endforeach; ?>
 				</ul>
 		<?php endif; ?>
