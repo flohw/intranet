@@ -42,6 +42,7 @@
 		<?php echo $this->Html->script('zoombox'); ?>		
 		<?php echo $this->Html->script('dropfile'); ?>
 		<?php echo $this->Html->script('hover'); ?>
+		<?php echo $this->Html->script('formulaire'); ?>
 		<?php echo $scripts_for_layout; ?>
 	
 	</body> 

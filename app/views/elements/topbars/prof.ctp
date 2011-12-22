@@ -38,6 +38,7 @@
 	                		echo $this->Html->link($link, array('controller' => 'evenements', 'action' => 'index'), array('escape' => false)); ?>
 	                	</li>
 	                	<li><?php echo $this->Html->link('Absences', array('controller' => 'absences', 'action' => 'index')); ?></li>
+	                	<li><?php echo $this->Html->link('Notes', array('controller' => 'notes', 'action' => 'index')); ?></li>
 	                	<li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' =>  'timetable', 'action' => 'maintenance')); ?></li>
                 	</ul>
                 </li>

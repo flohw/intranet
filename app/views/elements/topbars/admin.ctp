@@ -8,6 +8,9 @@
                 	<ul class="menu-dropdown">
                 		<li><?php echo $this->Html->link('Les semestres', array('controller' => 'semestres', 'action' => 'index')); ?></li>
                 		<li><?php echo $this->Html->link('Les départements', array('controller' => 'departements', 'action' => 'editer')); ?></li>
+                        <li><?php echo $this->Html->link('Affecter un professeur', array('controller' => 'modules', 'action' => 'affecter')); ?></li>
+                        <li><?php echo $this->Html->link('Affecter un type de module', array('controller' => 'modules', 'action' => 'affectertype')); ?></li>
+                        <li><?php echo $this->Html->link('Créer un type de module', array('controller' => 'modules', 'action' => 'edittype')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
@@ -32,8 +35,6 @@
                     <a href="#" class="menu">Enseignements</a>
                     <ul class="menu-dropdown">
                         <?php echo $this->element('menu_modules'/* , array('cache' => '+1 year') */); ?>
-                        <li><?php echo $this->Html->link('Affecter un professeur', array('controller' => 'modules', 'action' => 'affecter')); ?></li>
-                        <li><?php echo $this->Html->link('Affecter un type de module', array('controller' => 'modules', 'action' => 'affectertype')); ?></li>
                     </ul>
                 </li>
                 <li class="menu">
