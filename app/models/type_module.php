@@ -2,6 +2,7 @@
 class TypeModule extends AppModel {
 	var $name = 'TypeModule';
 	var $displayField = 'nom';
+	var $actsAs = array('Containable');
 	var $validate = array(
 		'nom' => array(
 			'notempty' => array(
@@ -20,7 +21,11 @@ class TypeModule extends AppModel {
 			),
 			'numeric' => array(
 				'rule' => array('numeric'),
-				'message' => 'Le nombre d\'élèves n\'est pas un nombre',
+				'message' => 'Ce n\'est pas un nombre',
+			),
+			'paszero' => array(
+				'rule' => array('comparison', '>', 0),
+				'message' => 'Le nombre est incorrect (inférieur ou égal à zéro)',
 			),
 		),
 	);

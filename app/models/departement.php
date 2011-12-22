@@ -2,6 +2,7 @@
 class Departement extends AppModel {
 	var $name = 'Departement';
 	var $displayField = 'nom';
+	var $actsAs = array('Containable');
 	var $validate = array(
 		'nom' => array(
 			'notempty' => array(
@@ -73,12 +74,6 @@ class Departement extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-	
-	public function beforeSave ()
-	{
-		$this->data['Departement']['slug'] = low(Inflector::slug($this->data['Departement']['nom'], '-'));
-		return true;
-	}
 
 }
 ?>

@@ -56,6 +56,12 @@
 				$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
 				$this->redirect($this->referer());
 			}
+			$g = $this->Groupe->findById($id);
+			if (!empty($g['Personne']))
+			{
+				$this->Session->setFlash('Le groupe n\'est pas vide !', 'message');
+				$this->redirect($this->referer());
+			}
 			$this->Groupe->delete($id);
 			$this->Session->setFlash('Le groupe a bien été supprimé', 'message', array('class' => 'success'));
 			$this->redirect(array('action' => 'index'));

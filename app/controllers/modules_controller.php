@@ -2,7 +2,7 @@
 class ModulesController extends AppController
 {
 	var $name = 'Modules';
-	var $uses = array('Module', 'LibelleModule');
+	var $uses = array('Module', 'LibelleModule', 'TypeModule');
 	
 	public function beforeFilter ()
 	{
@@ -236,6 +236,33 @@ class ModulesController extends AppController
 				$this->Session->setFlash('L\'affectation n\'existe pas', 'message');
 			$this->redirect($this->referer());
 		}
+	}
+	
+	public function edittype ($id = null)
+	{
+		if ($this->Auth->user('statut_id') < $this->statuts['admin'])
+		{
+			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
+			$this->redirect($this->referer());
+		}
+		if (isset($this->data))
+		{
+			$this->TypeModule->set($this->data);
+			if ($this->TypeModule->validates())
+			{
+				$this->TypeModule->save();
+				$this->Session->setFlash('Le type de module a été enregistré', 'message', array('class' => 'success'));
+				$this->redirect(array('action' => 'edittype'));
+			}
+			else
+				$this->Session->setFlash('Le type de module est incorrect', 'message');
+		}
+		elseif (!is_null($id))
+			$this->data = $this->TypeModule->findById($id);
+		
+		$d['types'] = $this->TypeModule->Departement->find('all', array('contain' => array('TypeModule')));
+		$d['departements'] = $this->TypeModule->Departement->find('list');
+		$this->set($d);
 	}
 }
 ?>

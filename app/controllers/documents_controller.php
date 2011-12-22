@@ -63,7 +63,7 @@ class DocumentsController extends AppController
 			if ($doc)
 				$this->Session->setFlash('Le nom du document existe déjà dans ce module ('.$this->data['Document']['fichier']['name'].')',
 													'message');
-			else if ($this->Document->validates())
+			elseif ($this->Document->validates())
 			{
 				// Variable de sauvegarde en BD puis sauvegarde
 				$s['Document']['nom'] = $this->data['Document']['fichier']['name'];

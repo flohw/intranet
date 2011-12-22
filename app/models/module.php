@@ -2,6 +2,7 @@
 class Module extends AppModel {
 	var $name = 'Module';
 	var $displayField = 'abreviation';
+	var $actsAs = array('Containable');
 	var $validate = array(
 		'abreviation' => array(
 			'notempty' => array(
@@ -52,10 +53,6 @@ class Module extends AppModel {
 	var $hasMany = array(
 		'Document' => array(
 			'className' => 'Document',
-			'foreignKey' => 'module_id',
-		),
-		'Note' => array(
-			'className' => 'Note',
 			'foreignKey' => 'module_id',
 		),
 	);
@@ -128,6 +125,7 @@ class Module extends AppModel {
 		$pers = $this->Personne->findById($idProf);
 		foreach ($pers['Module'] as $k => $p)
 			unset($pers['Module'][$k]['ModulesPersonne'], $pers['Module'][$k]['Document'], $pers['Module'][$k]['TypeModule']);
+		
 		return $pers['Module'];
 	}
 	
@@ -138,6 +136,25 @@ class Module extends AppModel {
 		$r = array();
 		foreach ($pe as $p)
 			$r[$p['id']] = $p['login'];
+		return $r;
+	}
+	
+	public function findModuleType ($idProf)
+	{
+		$this->TypeModule->contain(array(
+				'Module.Personne' => array(
+					'conditions' => array('Personne.id' => $idProf))));
+		$modules = $this->TypeModule->find('all');
+		$r = array();
+		foreach ($modules as $k => $mod)
+		{
+			$r[$mod['TypeModule']['nom']] = array();
+			foreach ($mod['Module'] as $kk => $m)
+			{
+				if (!empty($m['Personne']))
+					$r[$mod['TypeModule']['nom']][$mod['TypeModule']['id'].'-'.$m['id']] = $m['abreviation'];
+			}
+		}
 		return $r;
 	}
 

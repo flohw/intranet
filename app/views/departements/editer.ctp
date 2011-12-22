@@ -34,10 +34,6 @@
 		echo $this->Form->input('nb_max_eleves', array('label' => 'Nombre maximal d\'élèves', 'class' => 'input'));
 		echo '</div>';
 
-		echo '<div class="clearfix">';
-		echo $this->Form->input('abreviation', array('label' => 'Abréviation', 'class' => 'input'));
-		echo '</div>';
-
 		echo '<div class="actions">';
 		echo $this->Form->submit('Enregistrer', array('class'=>'btn primary'));
 		echo '</div>';
