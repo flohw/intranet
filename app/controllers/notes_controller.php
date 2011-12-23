@@ -21,9 +21,9 @@
 				$data['module'] = $data['module'][1];
 				$this->redirect(array('action' => 'ajouter', $data['groupe'], $data['module'], $data['type_module']));
 			}
+			
 			$d['groupes'] = $this->Note->Personne->Groupe->getGroupeList();
-			$this->Note->ModulesTypeModule->bindModel(array('belongsTo' => array('Module' => array('className' => 'Module', 'foreignKey' => 'module_id'))));
-			$d['modules'] = $this->Note->ModulesTypeModule->Module->findModuleType($this->Auth->user('id'));
+			$d['modules'] = $this->Note->Module->findModuleType($this->Auth->user('id'));
 			$this->set($d);
 		}
 		
@@ -41,8 +41,8 @@
 				$this->Session->setFlash('Ce groupe est vide', 'message');
 				$this->redirect($this->referer());
 			}
-			$module = $this->Note->ModulesTypeModule->find('first', array('conditions' => array('module_id' => $idModule,
-																							'type_module_id' => $idTypeModule)));
+			
+			$module = $this->Note->Module->ModulesTypeModule->find('first', array('conditions' => array('module_id' => $idModule, 'type_module_id' => $idTypeModule)));
 			if (empty($module))
 			{
 				$this->Session->setFlash('Ce module n\'est pas associé à ce type de module ou n\'existe pas', 'message');
@@ -60,11 +60,13 @@
 					{
 						$this->Note->create();
 						$n['Note'] = $n;
+						$n['Note']['coefficient'] = $coef;
 						unset($n['personne_id'], $n['note']);
-						$n['Note']['modules_type_modules_id'] = $module['ModulesTypeModule']['id'];
+						$n['Note']['type_module_id'] = $idTypeModule;
+						$n['Note']['module_id'] = $idModule;
 						$this->Note->recursive = -1;
 						$note = $this->Note->find('first', array('conditions' => array('personne_id' => $n['Note']['personne_id'],
-														'modules_type_modules_id' => $n['Note']['modules_type_modules_id'])));
+														'type_module_id' => $idTypeModule, 'module_id' => $idModule)));
 						if (!empty($note))
 							$n['Note']['id'] = $note['Note']['id'];
 						$this->Note->save($n, false);
@@ -76,13 +78,16 @@
 					$this->Session->setFlash('Une des notes est négative ou vide !', 'message');
 			}
 			else
-				$this->data = $this->Note->findNotes($module['ModulesTypeModule']['id'], $idGroupe);
-			
+				$this->data = $this->Note->findNotes($idGroupe, $idModule, $idTypeModule);
 			$this->set($d);
 		}
 		
-		
-		
+		public function mesnotes ()
+		{
+			$d['notes'] = $this->Note->findMesNotes($this->Auth->user('id'));
+			$this->Session->setFlash('Seules les notes renseignées par les enseignants sont affichées', 'message', array('class' => 'info'));
+			$this->set($d);
+		}
 		
 		
 		

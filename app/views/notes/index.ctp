@@ -2,7 +2,6 @@
 <div class="page-header">
 	<h1>Ajouter des notes</h1>
 </div>
-
 <?php echo $this->Form->create('Note'); ?>
 	<div class="clearfix">
 	<?php echo $this->Form->input('groupe', array('label' => 'Groupe', 'class' => 'input', 'options' => $groupes)); ?>

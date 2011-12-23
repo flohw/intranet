@@ -3,8 +3,8 @@
 	<head>
 	<title><?php echo $this->title; ?></title>
 		<?php echo $this->Html->charset(); ?>
-		<?php echo $this->Html->css('style.css'); ?>
 		<?php echo $this->Html->css('bootstrap.css'); ?>
+		<?php echo $this->Html->css('style.css'); ?>
 		<?php echo $this->Html->css('jquery-ui.css'); ?>
 		<?php echo $this->Html->css('zoombox.css'); ?>
 	</head>

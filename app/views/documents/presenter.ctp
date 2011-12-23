@@ -12,7 +12,7 @@
 			OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']): ?>
 		<div class="span7 offset4">
 			<?php echo $this->Html->link('Ajouter un document', array('action' => 'modules'), array('class' => 'btn primary')); ?>&nbsp;
-			<?php echo $this->Html->link('Ajouter des notes', array('controller' => 'notes', 'action' => '', $abre['Module']['id']), array('class' => 'btn')); ?>
+			<?php echo $this->Html->link('Ajouter des notes', array('controller' => 'notes'), array('class' => 'btn')); ?>
 			<?php
 				if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
 				{

@@ -83,9 +83,9 @@ form select.input { margin-left: 150px; }
 	-moz-border-radius: 5px;
 	padding: 8px 0;
 }
-td.clearfix { padding-left: 50px; }
-td.clearfix.error { background-color: #FF9696; color: #E84F4A; font-weight: bold; }
-td.clearfix.error input { border-color: #EE5F5B; color: #B94A48; }
+table td.clearfix { padding-left: 50px; }
+table td.clearfix.error { background-color: #FF9696; color: #E84F4A; font-weight: bold; }
+table td.clearfix.error input { border-color: #EE5F5B; color: #B94A48; }
 
 /* Style pour les messages */
 #sort #date { width: 130px; }
@@ -187,32 +187,12 @@ blockquote h3 { color:#0088bb; }
 /* lien edition dans liste */
 li small.edit { font-size: x-small; }
 
-
-/* evenements */
-/*
-#EvenementEditerForm label { margin-right : 75px;}
-#EvenementEditerForm span.help-block { margin-left : 260px; }
-*/
-
-/*
-#EvenementDateDebutDay, #EvenementDateDebutYear, #EvenementDateDebutMonth, #EvenementDateDebutMin, #EvenementDateDebutMeridian, #EvenementDateFinDay, #EvenementDateFinYear, #EvenementDateFinMonth, #EvenementDateFinMin, #EvenementDateFinMeridian
-{ margin:5px 5px 0px 5px; width:90px; }
-*/
-
-/* #EvenementDateDebutHour, #EvenementDateFinHour { margin : 5px 5px 0px 260px; width:90px; } */
-
-/*
-.evenement_gp
-{
-border: 1px solid gray;
-background-color:gray;
-margin-top:15px;
-margin-bottom:10px;
-padding-top:10px;
-padding-bottom:10px;
-margin-left:150px;
-}
-*/
+/* Notes */
+table.notes th { text-align: center; }
+table.notes td.module, table.notes td.moyenne { text-align: center; vertical-align: middle; }
+table.notes td.moyenne { border-right: 1px solid #DDDDDD; }
+table.notes tr.notes td { text-align: center; }
+table.notes tr.notes td.intitule { text-align: left; }
 
 
 /* A SUPPRIMER A LA FIN DU PROJET */
