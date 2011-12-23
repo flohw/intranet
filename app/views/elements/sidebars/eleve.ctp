@@ -4,6 +4,7 @@
 		<div>
 			<ul>
 		    		<li><?php echo $this->Html->link('Emploi du temps', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Mes modules', array('controller' => 'modules', 'action' => 'index')); ?></li>
 		    		<li><?php echo $this->Html->link('Nouveau Message', array('controller' => 'messages', 'action' => 'nouveau')); ?></li>
 		    		<li><?php echo $this->Html->link('Annuaire', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
 		    		<li><?php echo $this->Html->link('Mes Notes', array('controller' => 'notes', 'action' => 'mesnotes')); ?></li>		    		

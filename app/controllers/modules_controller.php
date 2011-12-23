@@ -15,10 +15,22 @@ class ModulesController extends AppController
 	}
 	
 	// Liste des modules en fonction du semestre (tous)
-	function index($sem = 1)
+	function index($sem = null)
 	{
+		if (is_null($sem))
+		{
+			$this->loadModel('Groupe');
+			$this->Groupe->recursive = -1;
+			$g = $this->Groupe->find('first', array('conditions' => array('id' => $this->Session->read('Auth.Personne.groupe_id'))));
+			$sem = $g['Groupe']['semestre_id'];
+		}
 		$m['myMod'] = $this->Module->findModules($this->Auth->user('id'));
 		$m['modules'] = $this->LibelleModule->modulesBySem($sem);
+		if (empty($m['modules']))
+		{
+			$this->Session->setFlash('Il n\'y a pas de module pour ce semestre !', 'message', array('class' => 'info'));
+			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'personnes_home'));
+		}
 		$m['semestre'] = $this->Module->Semestre->find('first', array('conditions' => array('Semestre.id' => $sem), 'recursive' =>-1));
 		$this->set($m);
 	}
