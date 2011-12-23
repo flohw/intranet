@@ -400,20 +400,27 @@ DROP TABLE IF EXISTS `intranet`.`notes` ;
 CREATE  TABLE IF NOT EXISTS `intranet`.`notes` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `personne_id` INT NOT NULL ,
-  `modules_type_modules_id` INT NOT NULL ,
+  `type_module_id` INT NOT NULL ,
+  `module_id` INT NOT NULL ,
   `note` INT NOT NULL ,
   `coefficient` INT NOT NULL ,
-  INDEX `fk_notes_modules_type_modules1` (`modules_type_modules_id` ASC) ,
   INDEX `fk_notes_personnes1` (`personne_id` ASC) ,
   PRIMARY KEY (`id`) ,
-  CONSTRAINT `fk_notes_modules_type_modules1`
-    FOREIGN KEY (`modules_type_modules_id` )
-    REFERENCES `intranet`.`modules_type_modules` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_notes_type_modules1` (`type_module_id` ASC) ,
+  INDEX `fk_notes_modules1` (`module_id` ASC) ,
   CONSTRAINT `fk_notes_personnes1`
     FOREIGN KEY (`personne_id` )
     REFERENCES `intranet`.`personnes` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_notes_type_modules1`
+    FOREIGN KEY (`type_module_id` )
+    REFERENCES `intranet`.`type_modules` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_notes_modules1`
+    FOREIGN KEY (`module_id` )
+    REFERENCES `intranet`.`modules` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

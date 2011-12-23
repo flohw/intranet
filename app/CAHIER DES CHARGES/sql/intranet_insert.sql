@@ -131,18 +131,21 @@ INSERT INTO `modules` VALUES(5, 'test', 'aze', 30, 30, 1, 1);
 INSERT INTO `modules` VALUES(6, 'teste', 'aze', 120, 12, 1, 1);
 
 --
+-- Contenu de la table `modules_type_modules`
+--
+
+INSERT INTO `modules_type_modules` VALUES(1, 1, 3);
+INSERT INTO `modules_type_modules` VALUES(2, 1, 2);
+INSERT INTO `modules_type_modules` VALUES(3, 1, 1);
+INSERT INTO `modules_type_modules` VALUES(4, 2, 1);
+
+--
 -- Contenu de la table `modules_personnes`
 --
 
 INSERT INTO `modules_personnes` VALUES(1, 2, 8);
 INSERT INTO `modules_personnes` VALUES(2, 4, 8);
 INSERT INTO `modules_personnes` VALUES(3, 5, 8);
-
---
--- Contenu de la table `notes`
---
-INSERT INTO `notes` VALUES(1, 7, 1, 20);
-INSERT INTO `notes` VALUES(2, 7, 5, 10);
 
 --
 -- Contenu de la table `documents`
