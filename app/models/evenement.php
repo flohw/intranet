@@ -98,9 +98,10 @@ class Evenement extends AppModel {
 		return $dateFin >= $dateDebut;
 	}
 	
-	// Pour l'affichage des evenements
+	// Pour l'affichage de tous les evenements (admin ou edition de l'evenement $idEvent)
 	public function findEvenement ($idEvent = null)
 	{
+		$this->contain(array('Personne'));
 		if (is_null($idEvent))
 			$ev = $this->find('all');
 		else
@@ -110,7 +111,7 @@ class Evenement extends AppModel {
 			$ev[$k]['Evenement']['personnes'] = null;
 			foreach ($ev[$k]['Personne'] as $p)
 				$ev[$k]['Evenement']['personnes'] .= $p['login'].', ';
-			unset($ev[$k]['TypeEvenement'], $ev[$k]['Personne']);
+			unset($ev[$k]['Personne']);
 		}
 		if (is_null($idEvent))
 			return $ev;
@@ -118,6 +119,7 @@ class Evenement extends AppModel {
 			return current($ev);
 	}
 	
+	// Affiche les evenements de la personne concernée
 	public function findNewEvenements ($loginPersonne, $idPersonne)
 	{
 		$events = $this->findEvenement();
@@ -146,7 +148,7 @@ class Evenement extends AppModel {
 				else
 					unset($events[$k]['Personne'][$kp]['mot_de_passe']);
 			}
-			if (count($events[$k]['Personne']) == 0)
+			if (count($events[$k]['Personne']) == 0 AND $e['Evenement']['personne_id'] != $idPersonne)
 				unset($events[$k]);
 		}
 		$r = array();

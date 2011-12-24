@@ -45,7 +45,7 @@ class LibelleModule extends AppModel {
 					foreach ($d['Personne'] as $c => $d)
 					{
 						unset($datas[$k]['Module'][$kk]['Personne'][$c]);
-						$datas[$k]['Module'][$kk]['Personne'][$d['id']] = $d['login'];
+						$datas[$k]['Module'][$kk]['Personne'][$d['id']] = $d['prenom'].' '.$d['nom'];
 					}
 				}
 			}

@@ -67,7 +67,7 @@ class Groupe extends AppModel {
 		return (empty($g)) OR $g['Groupe']['id'] == $this->data['Groupe']['id'];
 	}
 	
-	public function findLogins ($groupes)
+	public function findDisplayName ($groupes)
 	{
 		$res = array('all' => true, 'personnes' => array());
 		$this->recursive = $this->Semestre->recursive = $this->Personne->recursive = -1;
@@ -98,7 +98,7 @@ class Groupe extends AppModel {
 		foreach ($res['personnes'] as $k => $r)
 		{
 			unset($res['personnes'][$k]);
-			$res['personnes'][$r['Personne']['id']] = $r['Personne']['login'];
+			$res['personnes'][$r['Personne']['id']] = $r['Personne']['nom'].' '.$r['Personne']['prenom'];
 		}
 		return $res;
 	}

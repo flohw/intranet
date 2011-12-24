@@ -104,7 +104,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			<?php	if(!empty($evenements)): ?>
+			<?php if(!empty($evenements)): ?>
 			<?php foreach ($evenements as $e): $e = current($e); ?>
 				<tr>
 					<td class="id"><?php echo $e['id']; ?></td>
@@ -128,7 +128,7 @@
 				</tr>
 			<?php endforeach; ?>
 			<?php else: ?>
-				<tr><td colspan="6"><strong>Aucun évènement</strong></td></tr>
+				<tr><td><strong>Aucun évènement</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
 			<?php endif; ?>
 			</tbody>
 		</table>

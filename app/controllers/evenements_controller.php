@@ -9,13 +9,14 @@ class EvenementsController extends AppController
 	function index ($id = null)
 	{
 		if (isset($this->data) AND $this->Auth->user('statut_id') >= $this->statuts['prof'])
-		{ 
+		{
 			$personnes = explode(',', $this->data['Evenement']['personnes']);
-			$personnes = $this->Evenement->Personne->findLogins($personnes);
+			$personnes = $this->Evenement->Personne->findDisplayName($personnes);
 			if (!$personnes['all'])
 				$this->Session->setFlash('Certains utilisateurs n\'existent pas, vérifiez les noms', 'message');
 			else
 			{
+				$this->data['Evenement']['personne_id'] = $this->Auth->user('id');
 				$this->Evenement->set($this->data);
 				if ($this->Evenement->validates())
 				{
@@ -38,7 +39,11 @@ class EvenementsController extends AppController
 		elseif (!isset($this->data) AND !is_null($id) AND $this->Auth->user('statut_id') >= $this->statuts['prof'])
 			$this->data = $this->Evenement->findEvenement($id);
 		
-		$d['evenements'] = $this->Evenement->findNewEvenements($this->Auth->user('login'), $this->Auth->user('id'));
+		
+		if ($this->Auth->user('statut_id') >= $this->statuts['admin'])
+			$d['evenements'] = $this->Evenement->findEvenement();
+		else
+			$d['evenements'] = $this->Evenement->findNewEvenements($this->Auth->user('login'), $this->Auth->user('id'));
 		$d['personnes'] = $this->Evenement->Personne->find('list');
 		$d['groupes'] = $this->Evenement->Personne->Groupe->getGroupeList('list');
 		$d['type'] = $this->TypeEvenement->find('list');
@@ -57,11 +62,12 @@ class EvenementsController extends AppController
 		{
 			unset($this->Evenement->validate['personnes']);
 			$this->Evenement->validate['groupes'] = $this->Evenement->validGroupe['groupes'];
+			$this->data['Evenement']['personne_id'] = $this->Auth->user('id');
 			$this->Evenement->set($this->data);
 			if ($this->Evenement->validates())
 			{
 				$groupes = explode(',', $this->data['Evenement']['groupes']);
-				$personnes = $this->Evenement->Personne->Groupe->findLogins($groupes);
+				$personnes = $this->Evenement->Personne->Groupe->findDisplayName($groupes);
 				if (!$personnes['all'])
 					$this->Session->setFlash('Certains groupes n\'existent pas, vérifiez les groupes', 'message');
 				elseif (empty($personnes['personnes']))
@@ -84,7 +90,10 @@ class EvenementsController extends AppController
 			else
 				$this->Session->setFlash('L\'évènement est incorrect', 'message');
 		}
-		$d['evenements'] = $this->Evenement->findEvenement();
+		if ($this->Auth->user('statut_id') >= $this->statuts['admin'])
+			$d['evenements'] = $this->Evenement->findEvenement();
+		else
+			$d['evenements'] = $this->Evenement->findNewEvenements($this->Auth->user('login'), $this->Auth->user('id'));
 		$d['personnes'] = $this->Evenement->Personne->find('list');
 		$d['groupes'] = $this->Evenement->Personne->Groupe->getGroupeList('list');
 		$d['type'] = $this->TypeEvenement->find('list');
@@ -98,6 +107,13 @@ class EvenementsController extends AppController
 		{
 			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page', 'message');
 			$this->redirect(array('action' => 'index'));
+		}
+		$this->Evenement->recursive = -1;
+		$e = $this->Evenement->findById($id);
+		if (empty($e) OR $e['Evenement']['personne_id'] != $this->Auth->user('id'))
+		{
+			$this->Session->setFlash('Vous n\'avez pas le droit de supprimer cet évènement', 'message');
+			$this->redirect($this->referer());
 		}
 		$this->Evenement->EvenementsPersonne->deleteAll(array('evenement_id' => $id));
 		$this->Evenement->delete($id);

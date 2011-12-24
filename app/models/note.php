@@ -98,30 +98,6 @@
 			}
 			if ($coef != 0)	$moy = $moy / $coef;
 			else			$moy = 'Pas de note';
-/*
-			foreach ($mod as $id => $m)
-				$r[] = $id;
-			$notes = $this->find('all', array('conditions' => array('personne_id' => $idPers, 'module_id' => $r)));
-			debug($notes);
-			$r = array();
-			foreach ($notes as $n)
-			{
-				$moduleID = $n['Module']['id'];
-				$typeModuleID = $n['TypeModule']['id'];
-				$r[$moduleID]['abreviation'] = $n['Module']['abreviation'];
-				$r[$moduleID]['moyenne'] = 0;
-				$r[$moduleID]['coefficient'] = 0;
-				$r[$moduleID]['Note'][$typeModuleID]['nom'] = $n['TypeModule']['nom'];
-				$r[$moduleID]['Note'][$typeModuleID]['coefficient'] = $n['Note']['coefficient'];
-				$r[$moduleID]['Note'][$typeModuleID]['note'] = $n['Note']['note'];
-				foreach ($r[$moduleID]['Note'] as $note)
-				{
-					$r[$moduleID]['coefficient'] += $note['coefficient'];
-					$r[$moduleID]['moyenne'] += $note['note'] * $note['coefficient'];
-				}
-				$r[$moduleID]['moyenne'] /= $r[$moduleID]['coefficient'];
-			}
-*/
 			return array('notes' => $r, 'moyenne' => $moy);
 		}
 	}

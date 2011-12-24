@@ -1,7 +1,7 @@
 <?php
 class Personne extends AppModel {
 	var $name = 'Personne';
-	var $displayField = 'nom';
+	var $displayField = 'display';
 	var $recursive = -1;
 	var $findMotPasse = false;
 	var $validate = array(
@@ -231,7 +231,7 @@ class Personne extends AppModel {
 		return $results;
 	}
 	
-	public function findLogins ($personnes)
+	public function findDisplayName ($personnes)
 	{
 		$this->recursive = -1;
 		foreach ($personnes as $k => $p)
@@ -240,8 +240,13 @@ class Personne extends AppModel {
 			if (empty($p))
 				unset($personnes[$k]);
 		}
-		$p = $this->find('list', array('conditions' => array('login' => $personnes)));
+		$p = $this->find('list', array('conditions' => array('CONCAT(nom, " ", prenom)' => $personnes)));
 		return array('personnes' => $p, 'all' => count($personnes) == count($p));
+	}
+	
+	public function beforeFind ($datas)
+	{
+		$this->virtualFields = array('display' => 'CONCAT('.$this->alias.'.nom, " ", '.$this->alias.'.prenom)');
 	}
 	
 	public function beforeSave ()
