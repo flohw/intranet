@@ -1,4 +1,4 @@
-<?php $this->title = "Intranet du département Informatique" ?>
+<?php $this->title = 'Intranet | Administration | Ajout d\'une personne'; ?>
   <div class="page-header">
     <h1>Gestion du Compte</h1>
   </div>
@@ -25,11 +25,6 @@
     <div class="clearfix">
     	<?php echo $this->Form->input('login', array('label' => 'Login', 'class' => 'input')); ?>
     </div>
-<!--
-    <div class="clearfix">
-    	<?php //echo $this->Form->input('mot_de_passe', array('label' => 'Mot de passe', 'class' => 'input')); ?>
-    </div>
--->
     <div class="clearfix">
         <?php echo $this->Form->input('email', array('class' => 'input', 'label' => 'Email')); ?>
     </div>

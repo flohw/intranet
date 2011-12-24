@@ -15,6 +15,7 @@ class PersonnesController extends AppController
 				$this->Cookie->write('Personne.login', $this->data['Personne']['login']);
 				$this->Cookie->write('Personne.mot_de_passe', $this->data['Personne']['mot_de_passe']);
 			}
+			$this->data['Personne']['mot_de_passe'];
 			// Si la connexion a réussi, on met à jour la date de derniere connexion
 			if ($this->Auth->login())
 			{
@@ -74,9 +75,25 @@ class PersonnesController extends AppController
 			$this->Personne->set($this->data);
 			if ($this->Personne->validates()) 
 			{
-				$this->Personne->save();
-				$this->Session->setFlash('Modifications enregistrées.', 'message', array('class' => 'success'));
-				$this->redirect(array('action' => 'annuaire'));
+				$mdp = '';
+				$caracteres = array_rand($this->caracteres, 8);
+				foreach($caracteres as $i)
+					$mdp .= $this->caracteres[$i];
+				$this->data['Personne']['mot_de_passe'] = $this->Auth->password($mdp);
+				$pers = ucwords($this->data['Personne']['prenom']).' '.strtoupper($this->data['Personne']['nom']).':';
+				$pers.= $mdp.':'.$this->data['Personne']['login']."\n";
+				$f = fopen(WWW_ROOT.'files/groupes/'.$this->data['Personne']['groupe_id'].'.txt', 'a');
+				if ($f === false)
+					$this->Session->setFlash('Le fichier n\'a pas pût être ouvert ou créé, réessayez', 'message');
+				else
+				{
+					fwrite($f, $pers);
+					fclose($f);
+					$this->Personne->set($this->data);
+					$this->Personne->save();
+					$this->Session->setFlash('Modifications enregistrées.', 'message', array('class' => 'success'));
+					$this->redirect(array('action' => 'annuaire'));
+				}
 			}
 			else
 			{

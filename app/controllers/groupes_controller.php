@@ -8,7 +8,6 @@
 		
 		public function index($groupeID = null)
 		{
-			debug($this->Auth->password('chefdeprojet'));
 			$groupeID = (is_null($groupeID)) ? $this->Auth->user('groupe_id') : $groupeID;
 			$this->Groupe->recursive = 0;
 			$d['groupe'] = $this->Groupe->findById($groupeID);

@@ -4,10 +4,13 @@ class AppController extends Controller
 	var $helpers = array('Html', 'Form', 'Session', 'Cache');
 	var $components = array('Session', 'Auth', 'Cookie');
 	var $statuts = array('admin' => 30, 'prof' => 20, 'eleve' => 10);
+	// Pour la génération de mot de passe
+	var $caracteres = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+							'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+							0,1,2,3,4,5,6,7,8,9);
 	
 	function beforeFilter()
 	{
-		$this->set('statutsID', $this->statuts);
 		// Configuration du composant Auth
 		$this->Auth->loginAction = array('controller' => 'personnes', 'action' =>'connexion');
 		$this->Auth->loginRedirect = array('controller' => 'pages', 'action' => 'display', 'personnes_home');
@@ -82,6 +85,7 @@ class AppController extends Controller
 			$n['notifs'] = $notifs;
 			$this->set($n);
 		}
+		$this->set('statutsID', $this->statuts);
 	}
 }
 
