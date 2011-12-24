@@ -193,6 +193,7 @@ table.notes td.module, table.notes td.moyenne { text-align: center; vertical-ali
 table.notes td.moyenne { border-right: 1px solid #DDDDDD; }
 table.notes tr.notes td { text-align: center; }
 table.notes tr.notes td.intitule { text-align: left; }
+h3.moyenne { text-align: center; }
 
 
 /* A SUPPRIMER A LA FIN DU PROJET */

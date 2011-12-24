@@ -84,8 +84,8 @@
 		
 		public function mesnotes ()
 		{
-			$d['notes'] = $this->Note->findMesNotes($this->Auth->user('id'));
-			$this->Session->setFlash('Seules les notes renseignées par les enseignants sont affichées', 'message', array('class' => 'info'));
+			$d = $this->Note->findMesNotes($this->Auth->user('id'), $this->Auth->user('groupe_id'));
+/* 			$this->Session->setFlash('Seules les notes renseignées par les enseignants sont affichées', 'message', array('class' => 'info')); */
 			$this->set($d);
 		}
 		

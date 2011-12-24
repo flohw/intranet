@@ -2,6 +2,7 @@
 class ModulesController extends AppController
 {
 	var $name = 'Modules';
+	var $actsAs = array('Containable');
 	var $uses = array('Module', 'LibelleModule', 'TypeModule');
 	
 	public function beforeFilter ()
