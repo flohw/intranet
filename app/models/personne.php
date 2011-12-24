@@ -67,15 +67,6 @@ class Personne extends AppModel {
 				'message' => 'Ce n\'est pas un email',
 			),
 		),
-		'mot_de_passe' => array(
-			'notempty' => array(
-				'rule' => array('verifMotPasse'),
-				'message' => 'Le mot de passe est vide',
-				'allowEmpty' => false,
-				'required' => true,
-				'on' => 'create'
-			),
-		),
 		'login' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),

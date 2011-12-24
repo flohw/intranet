@@ -50,10 +50,59 @@
 			return array('Note' => $r);
 		}
 		
-		public function findMesNotes ($idPers)
+		public function findMesNotes ($idPers, $idGroupe)
 		{
-			$this->contain(array('TypeModule', 'Module'));
-			$notes = $this->find('all', array('conditions' => array('personne_id' => $idPers)));
+			$this->recursive = $this->Module->recursive = $this->Personne->Groupe->recursive = -1;
+			$this->Module->contain(array('TypeModule'));
+			$g = $this->Personne->Groupe->findById($idGroupe);
+			$mod = $this->Module->find('all', array('conditions' => array('semestre_id' => $g['Groupe']['semestre_id'])));
+			$r = array();
+			$moy = $coef = 0;
+			foreach ($mod as $m)
+			{
+				if (!empty($m['TypeModule']))
+				{
+					$moduleId = $m['Module']['id'];
+					$r[$moduleId]['abreviation'] = $m['Module']['abreviation'];
+					$r[$moduleId]['coefficient'] = 1;
+					$r[$moduleId]['moyenne'] = 0;
+					$r[$moduleId]['Note'] = array();
+					foreach ($m['TypeModule'] as $tm)
+					{
+						$typeModuleId = $tm['id'];
+						$r[$moduleId]['Note'][$typeModuleId]['nom'] = $tm['nom'];
+						$n = $this->find('first', array('conditions' => array(	'personne_id' => $idPers,
+																				'module_id' => $moduleId,
+																				'type_module_id' => $tm['id'])));
+						if (!empty($n))
+						{
+							$r[$moduleId]['moyenne'] = $r[$moduleId]['coefficient'] = 0;
+							$r[$moduleId]['Note'][$typeModuleId]['coefficient'] = $n['Note']['coefficient'];
+							$r[$moduleId]['Note'][$typeModuleId]['note'] = $n['Note']['note'];
+							foreach ($r[$moduleId]['Note'] as $note)
+							{
+								$r[$moduleId]['coefficient'] += $note['coefficient'];
+								$r[$moduleId]['moyenne'] += $note['note'] * $note['coefficient'];
+							}
+							$r[$moduleId]['moyenne'] /= $r[$moduleId]['coefficient'];
+						}
+						else
+							$r[$moduleId]['moyenne'] = 'Pas de note';
+					}
+					if (is_numeric($r[$moduleId]['moyenne']))
+					{
+						$moy += $r[$moduleId]['moyenne'] * $r[$moduleId]['coefficient'];
+						$coef += $r[$moduleId]['coefficient'];
+					}
+				}
+			}
+			if ($coef != 0)	$moy = $moy / $coef;
+			else			$moy = 'Pas de note';
+/*
+			foreach ($mod as $id => $m)
+				$r[] = $id;
+			$notes = $this->find('all', array('conditions' => array('personne_id' => $idPers, 'module_id' => $r)));
+			debug($notes);
 			$r = array();
 			foreach ($notes as $n)
 			{
@@ -65,7 +114,6 @@
 				$r[$moduleID]['Note'][$typeModuleID]['nom'] = $n['TypeModule']['nom'];
 				$r[$moduleID]['Note'][$typeModuleID]['coefficient'] = $n['Note']['coefficient'];
 				$r[$moduleID]['Note'][$typeModuleID]['note'] = $n['Note']['note'];
-				$moyenne = 0;
 				foreach ($r[$moduleID]['Note'] as $note)
 				{
 					$r[$moduleID]['coefficient'] += $note['coefficient'];
@@ -73,6 +121,7 @@
 				}
 				$r[$moduleID]['moyenne'] /= $r[$moduleID]['coefficient'];
 			}
-			return $r;
+*/
+			return array('notes' => $r, 'moyenne' => $moy);
 		}
 	}
