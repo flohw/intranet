@@ -28,7 +28,7 @@
 				<td><?php echo $m['description']; ?></td>
 				<?php
 					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
-						echo '<td>'.$this->Html->link('Effacer son affectation', array('action' => 'supprimeraff', $m['id'], $prof['id']), array('class' => 'btn danger'), 'Êtes vous sûr de vouloir effacer l\'affectation de '.$prof['nom'].' à '.$m['abreviation'].' ?').'</td>';
+						echo '<td>'.$this->Html->link('Effacer son affectation', array('action' => 'supprimeraff', $m['id'], $prof['id']), array('class' => 'btn small danger'), 'Êtes vous sûr de vouloir effacer l\'affectation de '.$prof['nom'].' à '.$m['abreviation'].' ?').'</td>';
 				?>
 			</tr>
 		<?php endforeach; ?>

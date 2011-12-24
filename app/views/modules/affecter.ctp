@@ -2,11 +2,9 @@
 <div class="page-header">
 	<h1>Affecter un module à un professeur</h1>
 </div>
-
 <span class="row">
 	<span class="16">
-	<?php echo $this->Form->create('ModulesPersonne', array('url' => $this->Html->url(array('controller' => 'modules', 'action' => 'affecter')))); ?>
-	
+	<?php echo $this->Form->create('ModulesPersonne', array('url' => $this->Html->url(array('controller' => 'modules', 'action' => 'affecter'), true))); ?>
 		<div class="clearfix">
 		<?php echo $this->Form->input('personne_id', array('label' => 'Enseignant', 'options' => $personnes, 'class' => 'input')); ?>
 		</div>

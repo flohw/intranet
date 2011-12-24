@@ -1,7 +1,7 @@
 <?php
 class Personne extends AppModel {
 	var $name = 'Personne';
-	var $displayField = 'login';
+	var $displayField = 'nom';
 	var $recursive = -1;
 	var $findMotPasse = false;
 	var $validate = array(
