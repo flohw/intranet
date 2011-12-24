@@ -8,10 +8,6 @@
 		
 		public function index($groupeID = null)
 		{
-<<<<<<< HEAD
-			debug($this->Auth->password('profomglmac'));
-=======
->>>>>>> 2f1e14be995b02ec427ee8d4b51990ab45586ca8
 			$groupeID = (is_null($groupeID)) ? $this->Auth->user('groupe_id') : $groupeID;
 			$this->Groupe->recursive = 0;
 			$d['groupe'] = $this->Groupe->findById($groupeID);
