@@ -1,7 +1,7 @@
 <?php $this->title = 'Intranet | Les Notes | Ajouter'; ?>
 
 <div class="page-header">
-	<h1>Ajouter une note</h1>
+	<h1>Ajouter des notes</h1>
 </div>
 
 <?php echo $this->Form->create('Note', array('url' => $this->Html->url(array('action' => $this->params['action'],

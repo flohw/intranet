@@ -171,91 +171,91 @@ INSERT INTO `statuts` VALUES(30, 'Administrateur');
 
 /*BASE*/
 
-INSERT INTO `personnes` VALUES(1, 'ADMIN', 'Administrateur', 'administrateur', '2008-11-12', '0101010101', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin', '2011-12-20 17:00:49'); /*mdp : admin*/
+INSERT INTO `personnes` VALUES(1, 'ADMIN', 'Administrateur', 'administrateur', '2008-11-12', '0101010101', '', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin', '2011-12-20 17:00:49'); /*mdp : admin*/
 
-INSERT INTO `personnes` VALUES(2, 'ELEVE', 'Eleve', 'aze', '1981-01-01', '0101010101', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve', '2011-12-20 16:46:56'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(2, 'ELEVE', 'Eleve', 'aze', '1981-01-01', '0101010101', '', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve', '2011-12-20 16:46:56'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(3, 'PROF', 'Prof', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'prof@prof.pro', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof', '2011-12-20 16:35:30'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(3, 'PROF', 'Prof', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'prof@prof.pro', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof', '2011-12-20 16:35:30'); /*mdp : prof*/
 
 /*ADMIN*/
 
-INSERT INTO `personnes` VALUES(4, 'VASSOILE', 'Marc', '10 rue du Lac Grenoble 38000', '1980-04-12', '0664531627', 'vassoile.marc@iut2.fr', 30, 1, 17, 'ba282cee005c8d1e72ae796aadf82c8fc3a92226', 'vassoim', '2010-12-20 15:00:00'); /*mdp : vassoilm2*/
+INSERT INTO `personnes` VALUES(4, 'VASSOILE', 'Marc', '10 rue du Lac Grenoble 38000', '1980-04-12', '0664531627', '', 'vassoile.marc@iut2.fr', 30, 1, 17, 'ba282cee005c8d1e72ae796aadf82c8fc3a92226', 'vassoim', '2010-12-20 15:00:00'); /*mdp : vassoilm2*/
 
 /*ELEVES*/
 
-INSERT INTO `personnes` VALUES(5, 'PARRENO', 'Florian', '654 route de chantecler 38070 Saint Quentin Fallavier', '1991-08-12', '0678931627', 'parreno.florian@iut2.fr', 10, 1, 1, '8ab1235a988641d8aac200155d4dde0999ff6318', 'parrenof', '2010-12-20 15:00:00'); /*mdp : florian*/
+INSERT INTO `personnes` VALUES(5, 'PARRENO', 'Florian', '654 route de chantecler 38070 Saint Quentin Fallavier', '1991-08-12', '0678931627', '', 'parreno.florian@iut2.fr', 10, 1, 1, '8ab1235a988641d8aac200155d4dde0999ff6318', 'parrenof', '2010-12-20 15:00:00'); /*mdp : florian*/
 
-INSERT INTO `personnes` VALUES(6, 'PAULI', 'Marie', '8 Allée des fleurs 38000 Grenoble', '1992-02-15', '0678934567', 'pauli.marie@iut2.fr', 10, 1, 1, '072b5a53c998070e5395dba1375c6b991699f978', 'paulim', '2010-12-20 15:00:00'); /*mdp : mushisama*/
+INSERT INTO `personnes` VALUES(6, 'PAULI', 'Marie', '8 Allée des fleurs 38000 Grenoble', '1992-02-15', '0678934567', '', 'pauli.marie@iut2.fr', 10, 1, 1, '072b5a53c998070e5395dba1375c6b991699f978', 'paulim', '2010-12-20 15:00:00'); /*mdp : mushisama*/
 
-INSERT INTO `personnes` VALUES(7, 'LANDRISCINA', 'Dorian', '12 chemin des vignes', '1992-11-25', '0675628627', 'landriscina.dorian@iut2.fr', 10, 1, 1, '22d8dd753c9dd5147623bdf0834ed8ad097639d4', 'landrisd', '2010-12-20 15:00:00'); /*mdp : dodoletombeur*/
+INSERT INTO `personnes` VALUES(7, 'LANDRISCINA', 'Dorian', '12 chemin des vignes', '1992-11-25', '0675628627', '', 'landriscina.dorian@iut2.fr', 10, 1, 1, '22d8dd753c9dd5147623bdf0834ed8ad097639d4', 'landrisd', '2010-12-20 15:00:00'); /*mdp : dodoletombeur*/
 
-INSERT INTO `personnes` VALUES(8, 'MISTRI', 'Aurelie', '90 rue du dauphiné 38000 Grenoble', '1992-01-28', '0789901627', 'mistri.aurelie@iut2.fr', 10, 1, 1, 'cc8b85a78285e4fbca442ef02644a06f4ea5010b', 'mistria', '2010-12-20 15:00:00'); /*mdp : fautfairequoi*/
+INSERT INTO `personnes` VALUES(8, 'MISTRI', 'Aurelie', '90 rue du dauphiné 38000 Grenoble', '1992-01-28', '0789901627', '', 'mistri.aurelie@iut2.fr', 10, 1, 1, 'cc8b85a78285e4fbca442ef02644a06f4ea5010b', 'mistria', '2010-12-20 15:00:00'); /*mdp : fautfairequoi*/
 
-INSERT INTO `personnes` VALUES(9, 'MONNIER', 'Alexandra', '5 rue du platane Saint Martin D\'Hères', '1992-08-29', '0623097654', 'alexandra.monnier@iut2.fr', 10, 1, 1, '50d68802aae0791bad09451d61cc39d2356fe3fe', 'monnieal', '2010-12-20 15:00:00'); /*mdp : alexlabikeuse*/
+INSERT INTO `personnes` VALUES(9, 'MONNIER', 'Alexandra', '5 rue du platane Saint Martin D\'Hères', '1992-08-29', '0623097654', '', 'alexandra.monnier@iut2.fr', 10, 1, 1, '50d68802aae0791bad09451d61cc39d2356fe3fe', 'monnieal', '2010-12-20 15:00:00'); /*mdp : alexlabikeuse*/
 
-INSERT INTO `personnes` VALUES(10, 'MARTINEZ', 'Pierre Julien', '66 rue du vercors 38000 Grenoble', '1992-08-18', '0673786534', 'martinez.pierrejulien@iut2.fr', 10, 1, 1, '54c87bffe256effed7c3c7ee7bc7680e8b64b33b', 'mapierre', '2010-12-20 15:00:00'); /*mdp : legendpj*/
+INSERT INTO `personnes` VALUES(10, 'MARTINEZ', 'Pierre Julien', '66 rue du vercors 38000 Grenoble', '1992-08-18', '0673786534', '', 'martinez.pierrejulien@iut2.fr', 10, 1, 1, '54c87bffe256effed7c3c7ee7bc7680e8b64b33b', 'mapierre', '2010-12-20 15:00:00'); /*mdp : legendpj*/
 
-INSERT INTO `personnes` VALUES(11, 'LOUVETON', 'Joffrey', '38 rue Général Férrié', '1991-11-03', '0637345692', 'hello@joff.me', 10, 1, 1, '821c212bc5dcb219afea62be602c08c7754c1f2a', 'louvetoj', '2010-12-20 15:00:00');  /*mdp : jojobpm*/
+INSERT INTO `personnes` VALUES(11, 'LOUVETON', 'Joffrey', '38 rue Général Férrié', '1991-11-03', '0637345692', '', 'hello@joff.me', 10, 1, 1, '821c212bc5dcb219afea62be602c08c7754c1f2a', 'louvetoj', '2010-12-20 15:00:00');  /*mdp : jojobpm*/
 
-INSERT INTO `personnes` VALUES(38, 'MALLARONI-CONSENTINO', 'Hugo', '1 rue de la resistance', '1992-01-20', '0657463524', 'mallaroni.hugo@iut2.upmf-grenoble.fr ', 10, 1, 1, '11994b0f821efbed3e4aeb9df97b3759ec529f2b', 'mallaroh', '2010-12-20 15:00:00'); /*mdp : hugosecretaire*/
+INSERT INTO `personnes` VALUES(38, 'MALLARONI-CONSENTINO', 'Hugo', '1 rue de la resistance', '1992-01-20', '0657463524', '', 'mallaroni.hugo@iut2.upmf-grenoble.fr ', 10, 1, 1, '11994b0f821efbed3e4aeb9df97b3759ec529f2b', 'mallaroh', '2010-12-20 15:00:00'); /*mdp : hugosecretaire*/
 
-INSERT INTO `personnes` VALUES(39, 'DOMINGUEZ', 'Jp', 'Tatooine', '1992-02-20', '0678787877', 'hazkaal@gmail.com', 10, 1, 2, '8c76002fe114060cfda2abc178d2574789daa208', 'dominjp', '2010-12-20 15:00:00'); /*mdp : <trololo8le8piju>*/
+INSERT INTO `personnes` VALUES(39, 'DOMINGUEZ', 'Jp', 'Tatooine', '1992-02-20', '0678787877', '', 'hazkaal@gmail.com', 10, 1, 2, '8c76002fe114060cfda2abc178d2574789daa208', 'dominjp', '2010-12-20 15:00:00'); /*mdp : <trololo8le8piju>*/
 
 /*PROFS*/
 
-INSERT INTO `personnes` VALUES(12, 'BELKHATIR', 'Noureddine', '20 route de l\'IUT', '1981-01-22', '0101010101', 'belkhatir.nourredine@iut2.fr', 20, 1, 18, '97ab7b75e32207c0c1bc8f044a788d403f67c562', 'nourbel', '2010-12-01 15:00:00'); /*mdp : chefdep*/
+INSERT INTO `personnes` VALUES(12, 'BELKHATIR', 'Noureddine', '20 route de l\'IUT', '1981-01-22', '0101010101', '151', 'belkhatir.nourredine@iut2.fr', 20, 1, 18, '97ab7b75e32207c0c1bc8f044a788d403f67c562', 'nourbel', '2010-12-01 15:00:00'); /*mdp : chefdep*/
 
-INSERT INTO `personnes` VALUES(13, 'BLANCHON', 'Hervé', '20 route de l\'IUT', '1981-01-22', '0101010101', 'blanchon.herve@iut2.fr', 20, 1, 18, 'fc5e9c8431b89f5a839ca264c466dc3f43ea60bf', 'blanchonh', '2010-12-01 15:00:00'); /*mdp : vecteur*/
+INSERT INTO `personnes` VALUES(13, 'BLANCHON', 'Hervé', '20 route de l\'IUT', '1981-01-22', '0101010101', '', 'blanchon.herve@iut2.fr', 20, 1, 18, 'fc5e9c8431b89f5a839ca264c466dc3f43ea60bf', 'blanchonh', '2010-12-01 15:00:00'); /*mdp : vecteur*/
 
-INSERT INTO `personnes` VALUES(14, 'BLANCO-LAINE', 'Gaëlle', '20 route de l\'IUT', '1981-01-22', '0101010101', 'blancolaine.gaelle@iut2.fr', 20, 1, 18, '715d9bf5e707a2122eba3039baa0ec35ff079406', 'blancog', '2010-12-01 15:00:00'); /*mdp : chefdeprojet*/
+INSERT INTO `personnes` VALUES(14, 'BLANCO-LAINE', 'Gaëlle', '20 route de l\'IUT', '1981-01-22', '0101010101', '', 'blancolaine.gaelle@iut2.fr', 20, 1, 18, '715d9bf5e707a2122eba3039baa0ec35ff079406', 'blancog', '2010-12-01 15:00:00'); /*mdp : chefdeprojet*/
 
-INSERT INTO `personnes` VALUES(15, 'BONNAUD', 'Laurent', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'bonnaud.laurent@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bonnaudl', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(15, 'BONNAUD', 'Laurent', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'bonnaud.laurent@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bonnaudl', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(16, 'BRUNET-MANQUAT', 'Francis', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'brunetmanquat.francis@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'brunetmf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(16, 'BRUNET-MANQUAT', 'Francis', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'brunetmanquat.francis@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'brunetmf', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(17, 'CARAVEL ', 'Marie-Claude', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'caravel.marieclaude@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'caravel', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(17, 'CARAVEL ', 'Marie-Claude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'caravel.marieclaude@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'caravel', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(18, 'CHASTEL', 'Frédéric', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'chastel.frederic@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'chastelf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(18, 'CHASTEL', 'Frédéric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'chastel.frederic@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'chastelf', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(19, 'CHEVALLET', 'Jean-Pierre', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'chevallet.jeanpierre@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'jpchevallet', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(19, 'CHEVALLET', 'Jean-Pierre', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'chevallet.jeanpierre@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'jpchevallet', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(20, 'COAT', 'Françoise', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'coat.francoise@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'coatfr', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(20, 'COAT', 'Françoise', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'coat.francoise@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'coatfr', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(21, 'COLLOMBET', 'Caryn', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'collombet.caryn@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'colloc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(21, 'COLLOMBET', 'Caryn', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'collombet.caryn@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'colloc', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(22, 'CORSET', 'Franck', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'corset.franck@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'corsetf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(22, 'CORSET', 'Franck', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'corset.franck@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'corsetf', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(23, 'CULET', 'Annie', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'culet.annie@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'culeta', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(23, 'CULET', 'Annie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'culet.annie@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'culeta', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(24, 'FONTENAS', 'Eric', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'fontenas.eric@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'fontenae', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(24, 'FONTENAS', 'Eric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'fontenas.eric@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'fontenae', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(25, 'GATUMEL', 'Mathieu', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'gatumel.mathieu@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gatumelm', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(25, 'GATUMEL', 'Mathieu', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'gatumel.mathieu@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gatumelm', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(26, 'GEROT', 'Cédric', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'gerot.cedric@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gerotc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(26, 'GEROT', 'Cédric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'gerot.cedric@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gerotc', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(27, 'GOULIAN', 'Jérôme', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'goulian.jerome@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'goulianj', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(27, 'GOULIAN', 'Jérôme', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'goulian.jerome@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'goulianj', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(28, 'HAMON', 'Agnès', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'hamon.agnes@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'hamona', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(28, 'HAMON', 'Agnès', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'hamon.agnes@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'hamona', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(29, 'JOYCE', 'Laura', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'joyce.laura@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'joycel', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(29, 'JOYCE', 'Laura', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'joyce.laura@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'joycel', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(30, 'LAURILLAU', 'Yann', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'laurillau.yann@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'laurilly', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(30, 'LAURILLAU', 'Yann', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'laurillau.yann@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'laurilly', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(31, 'LEJEUNE', 'Anne', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'lejeune.anne@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'lejeuna', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(31, 'LEJEUNE', 'Anne', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'lejeune.anne@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'lejeuna', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(32, 'MARTIN', 'Philippe', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'martin.philippe@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'martinp', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(32, 'MARTIN', 'Philippe', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'martin.philippe@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'martinp', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(33, 'MONTANVERT', 'Annick', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'montanvert.annick@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'montana', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(33, 'MONTANVERT', 'Annick', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'montanvert.annick@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'montana', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(34, 'PESTY', 'Sylvie', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'pesty.sylvie@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'pestys', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(34, 'PESTY', 'Sylvie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'pesty.sylvie@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'pestys', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(35, 'RACAULT', 'Laëtitia', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'racault.laeticia@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'racaultl', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(35, 'RACAULT', 'Laëtitia', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'racault.laeticia@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'racaultl', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(36, 'ROISIN', 'Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'roisin.cecile@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'roisinc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(36, 'ROISIN', 'Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'roisin.cecile@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'roisinc', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(37, 'SIMONET', 'Ana', '20 place Doyen Gosse', '1981-01-22', '0101010101', 'simonet.ana@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'simona', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(37, 'SIMONET', 'Ana', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'simonet.ana@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'simona', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(40, 'FRONT', 'Agnès', '6 rue de la Jouvence 38000 Grenoble', '1971-12-20', '0654632788', 'front.agnes@iut2.fr', 20, 1, 18, '4fe11351445d96fa63c0f7c55a5f7dd93283e434', 'fronta', '2001-12-11 00:00:00'); /*mdp : profomglmac*/
+INSERT INTO `personnes` VALUES(40, 'FRONT', 'Agnès', '6 rue de la Jouvence 38000 Grenoble', '1971-12-20', '0654632788', '', 'front.agnes@iut2.fr', 20, 1, 18, '4fe11351445d96fa63c0f7c55a5f7dd93283e434', 'fronta', '2001-12-11 00:00:00'); /*mdp : profomglmac*/
 
 -- Contenu de la table `modules_personnes`
 
@@ -514,9 +514,9 @@ INSERT INTO `type_evenements` VALUES(3, 'Soirée');
 -- Contenu de la table `evenements`
 --
 
-INSERT INTO `evenements` VALUES(1, 'Noël', '2011-12-25 00:00:00', '2011-12-25 00:00:00', 3);
-INSERT INTO `evenements` VALUES(2, 'Nouvelle Année', '2011-12-31 23:59:59', '2012-01-01 23:59:59', 3);
-INSERT INTO `evenements` VALUES(3, 'Réunion de Rentrée', '2012-01-03 19:00:00', '2012-01-03 21:00:00', 3);
+INSERT INTO `evenements` VALUES(1, 'Noël', '2011-12-25 00:00:00', '2011-12-25 00:00:00', 3, 1);
+INSERT INTO `evenements` VALUES(2, 'Nouvelle Année', '2011-12-31 23:59:59', '2012-01-01 23:59:59', 3, 1);
+INSERT INTO `evenements` VALUES(3, 'Réunion de Rentrée', '2012-01-03 19:00:00', '2012-01-03 21:00:00', 3, 1);
 
 --
 -- Contenu de la table `evenements_personnes`

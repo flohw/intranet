@@ -49,7 +49,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`groupes` (
     REFERENCES `intranet`.`semestres` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB, 
+ENGINE = InnoDB
 COMMENT = 'classes (A1, A2, B1, B2…)' ;
 
 
@@ -75,6 +75,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`modules` (
   `abreviation` VARCHAR(255) NOT NULL ,
   `description` TEXT NOT NULL ,
   `volume_horaire` INT NOT NULL ,
+  `coefficient` INT NOT NULL ,
   `libelle_module_id` INT NOT NULL ,
   `semestre_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
@@ -140,6 +141,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`personnes` (
   `adresse` TEXT NOT NULL ,
   `date_naissance` DATE NULL ,
   `telephone` VARCHAR(10) NOT NULL ,
+  `bureau` VARCHAR(45) NULL ,
   `email` VARCHAR(255) NOT NULL ,
   `statut_id` INT NOT NULL ,
   `departement_id` INT NOT NULL ,
@@ -167,8 +169,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`personnes` (
     REFERENCES `intranet`.`groupes` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB, 
-COMMENT = 'celle la' ;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

@@ -103,7 +103,7 @@ class Personne extends AppModel {
 		'mot_de_passe_change' => array(
 			'different' => array(
 				'rule' => array('different'),
-				'message' => 'Le mot de passe est identique à l\'encien',
+				'message' => 'Le mot de passe est identique à l\'ancien',
 			),
 			'notempty' => array(
 				'rule' => array('notempty'),

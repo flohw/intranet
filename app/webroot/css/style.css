@@ -198,3 +198,6 @@ h3.moyenne { text-align: center; }
 
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }
+.marge {
+margin-left: 6em;
+}

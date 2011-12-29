@@ -20,6 +20,8 @@
 					<th class="yellow" header headerSortDown>Nom</th>
 					<th class="blue">Prénom</th>
 					<th class="red">E-mail</th>
+					<th class="orange">Téléphone</th>
+					<th class="green">Bureau</th>
 					<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
 						echo '<th id="actions" class="purple">Actions</th>';
 					?>
@@ -32,6 +34,8 @@
 					<td><?php echo $p['nom']; ?></td>
 					<td><?php echo $p['prenom']; ?></td>
 					<td><?php echo $p['email']; ?></td>
+					<td><?php echo $p['telephone']; ?></td>
+					<td><?php echo $p['bureau']; ?></td>
 					<td>
 					<?php
 						if ($p['statut_id'] == $statutsID['prof'])
@@ -43,6 +47,10 @@
 							{
 								echo '&nbsp;';
 							}
+						}
+						elseif($p['statut_id'] == $statutsID['eleve'] OR $p['statut_id'] == $statutsID['admin'])
+						{
+							echo '<span class="marge">&nbsp;&nbsp;</span>';
 						}
 							
 						if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'] AND

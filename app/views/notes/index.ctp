@@ -7,10 +7,10 @@
 	<?php echo $this->Form->input('groupe', array('label' => 'Groupe', 'class' => 'input', 'options' => $groupes)); ?>
 	</div>
 	<div class="clearfix">
-	<?php echo $this->Form->input('module', array('label' => 'Module', 'class' => 'input', 'options' => $modules)); ?>
+	<?php echo $this->Form->input('module', array('label' => 'Type de module', 'class' => 'input', 'options' => $modules)); ?>
 	</div>
 	
 	<div class="actions">
-	<?php echo $this->Form->submit('Ajotuer des notes', array('class' => 'btn primary')); ?>
+	<?php echo $this->Form->submit('Ajouter des notes', array('class' => 'btn primary')); ?>
 	</div>
 <?php echo $this->Form->end(); ?>

@@ -3,24 +3,48 @@
 	<h2>Documents du module <?php echo $abre['Module']['abreviation']; ?> <small><?php echo $abre['Module']['description']?></small></h2>
 </div>
 
+<!--
+<div class="row">
+	<div class="span5">
+		<?php //echo  '<h5 style="display: inline;">Volume horaire de ce module : </h5>'.$abre['Module']['volume_horaire'].'h.<br />';?>
+		<?php //echo  '<h5 style="display: inline;">Coefficient : </h5>'.$abre['Module']['coefficient'].'.';?>
+	</div>
+	<?php//if (in_array($this->Session->read('Auth.Personne.login'), $profs)
+			//OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']): ?>
+		<div class="span7 offset4">
+			<?php //echo $this->Html->link('Ajouter un document', array('action' => 'modules'), array('class' => 'btn primary')); ?>&nbsp;
+			<?php //echo $this->Html->link('Ajouter des notes', array('controller' => 'notes'), array('class' => 'btn')); ?>
+			<?php
+				//if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+				{
+				//	echo '<br /><br />'.$this->Html->link('Affecter un enseignant', array('controller' => 'modules', 'action' => 'affecter', 'module' => $abre['Module']['id']), array('class' => 'btn')).'&nbsp;';
+				//	echo $this->Html->link('Affecter un type de module', array('controller' => 'modules', 'action' => 'affectertype', 'module' => $abre['Module']['id']), array('class' => 'btn'));
+				}
+			?>
+		</div>
+	<?php //endif; ?>
+</div>
+-->
+
 <div class="row">
 	<div class="span5">
 		<?php echo  '<h5 style="display: inline;">Volume horaire de ce module : </h5>'.$abre['Module']['volume_horaire'].'h.<br />';?>
 		<?php echo  '<h5 style="display: inline;">Coefficient : </h5>'.$abre['Module']['coefficient'].'.';?>
 	</div>
-	<?php if (in_array($this->Session->read('Auth.Personne.login'), $profs)
-			OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']): ?>
+	<?php if (in_array($this->Session->read('Auth.Personne.login'), $profs)): ?>
 		<div class="span7 offset4">
 			<?php echo $this->Html->link('Ajouter un document', array('action' => 'modules'), array('class' => 'btn primary')); ?>&nbsp;
 			<?php echo $this->Html->link('Ajouter des notes', array('controller' => 'notes'), array('class' => 'btn')); ?>
+		</div>
 			<?php
-				if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+				elseif ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']):
 				{
-					echo '<br /><br />'.$this->Html->link('Affecter un enseignant', array('controller' => 'modules', 'action' => 'affecter', 'module' => $abre['Module']['id']), array('class' => 'btn')).'&nbsp;';
+					echo '<div class="span7 offset4">';
+					echo $this->Html->link('Affecter un enseignant', array('controller' => 'modules', 'action' => 'affecter', 'module' => $abre['Module']['id']), array('class' => 'btn primary')).'&nbsp;';
 					echo $this->Html->link('Affecter un type de module', array('controller' => 'modules', 'action' => 'affectertype', 'module' => $abre['Module']['id']), array('class' => 'btn'));
+					echo '</div>';
 				}
 			?>
-		</div>
 	<?php endif; ?>
 </div>
 

@@ -5,7 +5,7 @@
 
 <span class="row">
 	<span class="span16">
-	<h3>Ajouter un document pour le modules choisi</h3><br />
+	<h3>Ajouter un document pour le module choisi</h3><br />
 	<?php
 		echo $this->Form->create('Document', array('type' => 'file'));
 		echo '<div class="clearfix">';
