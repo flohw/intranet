@@ -61,12 +61,13 @@
                         	echo $this->Html->link($link, array('controller' => 'notifications', 'action' => 'index'), array('escape' => false));
                         ?></li>
                         <li><?php echo $this->Html->link('Mon mot de passe', array('controller' => 'personnes', 'action' => 'editme')); ?></li>
-                        <li><?php //echo $this->Html->link('Déconnexion', array('controller' => 'personnes','action' => 'deconnexion')); ?></li>
                     </ul>
                 </li>
-                <li class="menu">
-                <?php echo $this->Html->link($this->Html->image('deconnexion.png'),  array('controller' => 'personnes', 'action' => 'deconnexion'), array('escape' => false)); ?>
+
+				<li class="menu">
+                <?php echo $this->Html->link($this->Html->image('icones/icone-deconnexion.png'),  array('controller' => 'personnes', 'action' => 'deconnexion'), array('style' => 'padding-bottom: 9px;', 'escape' => false)); ?>
                 </li>
+
             </ul>
         </div>
     </div>
