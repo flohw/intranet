@@ -19,6 +19,7 @@
 			<?php echo $this->element('sidebars/admin'); ?>
 			<div class="content"><?php echo $content_for_layout; ?></div>
 		</div> 
+		<br /><br /><br /><br /><br /><br /><br />
 		
 		<footer class="footer">
 			<div class="container-fluid">

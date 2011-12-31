@@ -9,13 +9,11 @@
                 		<li><?php echo $this->Html->link('Les semestres', array('controller' => 'semestres', 'action' => 'index')); ?></li>
                 		<li><?php echo $this->Html->link('Les départements', array('controller' => 'departements', 'action' => 'editer')); ?></li>
                 		<li><?php echo $this->Html->link('Créer un module', array('controller' => 'modules', 'action' => 'editer')); ?></li>
-                        <li><?php echo $this->Html->link('Affecter un professeur', array('controller' => 'modules', 'action' => 'affecter')); ?></li>
-                        <li><?php echo $this->Html->link('Affecter un type de module', array('controller' => 'modules', 'action' => 'affectertype')); ?></li>
-                        <li><?php echo $this->Html->link('Créer un type de module', array('controller' => 'modules', 'action' => 'edittype')); ?></li>
+                                                <li><?php echo $this->Html->link('Créer un type de module', array('controller' => 'modules', 'action' => 'edittype')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
-                	<a href="#" class="menu">Personnel</a>
+                	<a href="#" class="menu">Comptes</a>
                 	<ul class="menu-dropdown">
                 		<li><?php echo $this->Html->link('Editer un compte', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
                 		<li><?php echo $this->Html->link('Ajouter un compte', array('controller' => 'personnes', 'action' => 'edition')); ?></li>
@@ -35,7 +33,7 @@
 	                		echo $this->Html->link($link, array('controller' => 'evenements', 'action' => 'index'), array('escape' => false)); ?>
 	                	</li>
                         <li><?php echo $this->Html->link('Absences', array('controller' => 'absences', 'action' => 'index')); ?></li>
-                        <li><?php echo $this->Html->link('Modification d\'emplois du temps', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+                        <li><?php echo $this->Html->link('Modifier l\'emploi du temps', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
                     </ul>
                 </li>
                 <li class="separator"></li>

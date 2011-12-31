@@ -5,4 +5,3 @@
 <div class="row">
 	<div class="span16"><?php echo $this->Html->image("header.png", array("alt" => "Bonjour")); ?></div>
 </div>
-<br /><br /><br /><br /><br /><br /><br />

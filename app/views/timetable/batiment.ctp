@@ -1,6 +1,6 @@
 <?php $this->title = "Intranet du département Informatique" ?>
 <div class="page-header">
-	<h1>Plans de l'IUT Interactif</h1>
+	<h1>Plans Interactifs de l'IUT</h1>
 </div>
 <ul class="tabs">
 	<li class="active"><a href="#mapSS">Sous-sol</a></li>

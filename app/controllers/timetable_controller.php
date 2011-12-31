@@ -9,4 +9,12 @@
 		public function batiment() { }
 		
 		public function maintenance() { }
+
+		public function reglement() { }
+
+		public function docofficiels() { }
+
+		public function astuces() { }
+
+		public function universites() {}
 	}

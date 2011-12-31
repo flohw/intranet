@@ -17,10 +17,10 @@
 				<?php echo $this->Session->flash(); ?>
 			</div>
 			<?php echo $this->element('sidebars/professeur'); ?>
-			
 			<div class="content"><?php echo $content_for_layout; ?></div>
 		</div>
-		
+		<br /><br /><br /><br /><br /><br /><br />
+
 		<footer class="footer">
 			<div class="container-fluid">
 				<p class="pull-right"><a href="#">Haut de page</a></p>

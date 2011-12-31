@@ -14,12 +14,10 @@
  	<h3>Infos Utiles</h3>
 		<div>
 		    	<ul>
-		    		<li><?php echo $this->Html->link('Convocations', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Convocations', array('controller' => 'evenements', 'action' => 'index')); ?></li>
 		    		<li><?php echo $this->Html->link('Règlement', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
 		    		<li><?php echo $this->Html->link('Documents Officiels', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-		    		<li><?php echo $this->Html->link('Astuces', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-		    		<li><?php echo $this->Html->link('Astuces', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-
+		    		<li><?php echo $this->Html->link('Astuces', array('controller' => 'timetable', 'action' => 'astuces')); ?></li>
 			</ul>
 		</div>
 	</div>
