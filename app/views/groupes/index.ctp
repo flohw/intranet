@@ -24,14 +24,23 @@
 	</span>
 	
 	<span class="span11">
-		<?php
-			if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']):
-				echo $this->Html->link('Editer ce groupe', array('action' => 'editer', $groupeID), array('class' => 'btn small')).'&nbsp';
-				echo $this->Html->link('Supprimer ce groupe', array('action' => 'supprimer', $groupeID), array('class' => 'btn small danger'),
-											'Êtes vous-certain de vouloir supprimer ce groupe ?').'&nbsp;';
-				echo $this->Html->link('Télécharger les logins', array('controller' => 'files', 'action' => 'groupes', $groupe['Groupe']['id'].'.txt'),
-																array('class' => 'btn small info'));
-			endif;?><br /><br />
+		<span class="row">
+			<span class="span7">
+			<?php
+				$offset = 'offset7';
+				if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']):
+					$offset = '';
+					echo $this->Html->link('Editer ce groupe', array('action' => 'editer', $groupeID), array('class' => 'btn small')).'&nbsp';
+					echo $this->Html->link('Supprimer ce groupe', array('action' => 'supprimer', $groupeID), array('class' => 'btn small danger'),
+												'Êtes vous-certain de vouloir supprimer ce groupe ?').'&nbsp;';
+					echo $this->Html->link('Télécharger les logins', array('controller' => 'files', 'action' => 'groupes', $groupe['Groupe']['id'].'.txt'),
+																	array('class' => 'btn small info'));
+				endif;
+			?>
+			</span>
+			<span class="span3 <?php echo $offset; ?>"><strong><?php echo count($membres).' personnes'; ?></strong></span>
+		</span>	
+		<br /><br />
 		<table id="sort" class="zebra-stripped">
 			<thead>
 				<tr>

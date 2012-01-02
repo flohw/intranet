@@ -70,6 +70,7 @@ class Groupe extends AppModel {
 	public function findDisplayName ($groupes)
 	{
 		$res = array('all' => true, 'personnes' => array());
+		$pers = array();
 		$this->recursive = $this->Semestre->recursive = $this->Personne->recursive = -1;
 		foreach ($groupes as $k => $g)
 		{
@@ -89,17 +90,15 @@ class Groupe extends AppModel {
 					$gid = $this->find('first', array('conditions' => array('semestre_id' => $sid, 'nom' => $groupes[$k]['groupe'])));
 					if (empty($gid))
 						$res['all'] = false;
-					$res['personnes'] = array_merge($res['personnes'], $this->Personne->find('all', array('conditions' => array('groupe_id' => $gid['Groupe']['id']))));
+					$pers = array_merge($pers, $this->Personne->find('all', array('conditions' => array('groupe_id' => $gid['Groupe']['id']))));
 				}
 				else
 					$res['all'] = false;
 			}
 		}
-		foreach ($res['personnes'] as $k => $r)
-		{
-			unset($res['personnes'][$k]);
+		foreach ($pers as $r)
 			$res['personnes'][$r['Personne']['id']] = $r['Personne']['nom'].' '.$r['Personne']['prenom'];
-		}
+		
 		return $res;
 	}
 	public function getGroupeList ()

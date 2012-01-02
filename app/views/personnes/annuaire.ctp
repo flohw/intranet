@@ -35,7 +35,9 @@
 					<td><?php echo $p['prenom']; ?></td>
 					<td><?php echo $p['email']; ?></td>
 					<td><?php echo $p['telephone']; ?></td>
+					<?php if ($p['statut_id'] == $statutsID['prof']): ?>
 					<td><?php echo $p['bureau']; ?></td>
+					<?php else: echo '<td></td>'; endif; ?>
 					<td>
 					<?php
 						if ($p['statut_id'] == $statutsID['prof'])
@@ -48,10 +50,8 @@
 								echo '&nbsp;';
 							}
 						}
-						elseif($p['statut_id'] == $statutsID['eleve'] OR $p['statut_id'] == $statutsID['admin'])
-						{
+						elseif($p['statut_id'] != $statutsID['prof'])
 							echo '<span class="marge">&nbsp;&nbsp;</span>';
-						}
 							
 						if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'] AND
 							$this->Session->read('Auth.Personne.id') != $p['id']
