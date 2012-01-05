@@ -182,6 +182,7 @@ INSERT INTO `personnes` VALUES(38, 'MALLARONI-CONSENTINO', 'Hugo', '1 rue de la 
 
 INSERT INTO `personnes` VALUES(39, 'DOMINGUEZ', 'Jp', 'Tatooine', '1992-02-20', '0678787877', '', 'hazkaal@gmail.com', 10, 1, 2, '8c76002fe114060cfda2abc178d2574789daa208', 'dominjp', '2010-12-20 15:00:00'); /*mdp : <trololo8le8piju>*/
 
+INSERT INTO `personnes` VALUES(1, 'DAGNIAUX', 'Quentin', '326A Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-03-10', '0686497105', 'darkideo@gmail.com', 10, 1, 6, '', 'dagniauq', '2010-12-20 15:00:00'); /*mdp : dagniauxq*/
 /*PROFS*/
 
 INSERT INTO `personnes` VALUES(12, 'BELKHATIR', 'Noureddine', '20 route de l\'IUT', '1981-01-22', '0101010101', '151', 'belkhatir.nourredine@iut2.fr', 20, 1, 18, '97ab7b75e32207c0c1bc8f044a788d403f67c562', 'nourbel', '2010-12-01 15:00:00'); /*mdp : chefdep*/
