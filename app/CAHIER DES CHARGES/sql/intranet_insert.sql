@@ -16,26 +16,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 
---
-TRUNCATE `notes`;
-TRUNCATE `documents_stages`;
-TRUNCATE `stages`;
-TRUNCATE `evenements_personnes`;
-TRUNCATE `evenements`;
-TRUNCATE `type_evenements`;
-TRUNCATE `absences`;
-TRUNCATE `messages`;
-TRUNCATE `documents`;
-TRUNCATE `modules_type_modules`;
-TRUNCATE `modules_personnes`;
-TRUNCATE `personnes`;
-TRUNCATE `statuts`;
-TRUNCATE `type_modules`;
-TRUNCATE `modules`;
-TRUNCATE `libelle_modules`;
-TRUNCATE `groupes`;
-TRUNCATE `semestres`;
-TRUNCATE `departements`;
 -- Base de données: `intranet`
 --
 
