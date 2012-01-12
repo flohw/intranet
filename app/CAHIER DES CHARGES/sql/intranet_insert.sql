@@ -9,22 +9,10 @@
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
-
--- Base de données: `intranet`
---
-
--- Contenu de la table `departements`
-
 INSERT INTO `departements` VALUES(1, 'Informatique', 300);
 INSERT INTO `departements` VALUES(2, 'Carrières juridique', 200);
 
--- Contenu de la table `semestres`
+
 
 INSERT INTO `semestres` VALUES(1, 'Semestre 1');
 INSERT INTO `semestres` VALUES(2, 'Semestre 2');
@@ -37,7 +25,7 @@ INSERT INTO `semestres` VALUES(8, 'Semestre 4d');
 INSERT INTO `semestres` VALUES(9, 'Année spéciale');
 INSERT INTO `semestres` VALUES(10, 'Licence Pro');
 
--- Contenu de la table `groupes`
+
 
 INSERT INTO `groupes` VALUES(1, 'A1', 15, 1);
 INSERT INTO `groupes` VALUES(2, 'A2', 15, 1);
@@ -60,7 +48,7 @@ INSERT INTO `groupes` VALUES(16, 'D2', 15, 2);
 INSERT INTO `groupes` VALUES(17, 'Administrateurs', 15, 1);
 INSERT INTO `groupes` VALUES(18, 'Enseignants', 15, 1);
 
--- Contenu de la table `libelle_modules`
+
 
 INSERT INTO `libelle_modules` VALUES(1, 'Algorithmique et programmation');
 INSERT INTO `libelle_modules` VALUES(2, 'Architectures, systèmes et réseaux');
@@ -71,7 +59,7 @@ INSERT INTO `libelle_modules` VALUES(6, 'Economie et gestion des organisations')
 INSERT INTO `libelle_modules` VALUES(7, 'Informatique');
 INSERT INTO `libelle_modules` VALUES(8, 'Connaissances et compétences complémentaires');
 
--- Contenu de la table `modules`
+
 
 /*S1*/
 INSERT INTO `modules` VALUES(1, 'AP1', 'Initiation à l''algorithmique', 20, 200, 1, 1);
@@ -135,22 +123,20 @@ INSERT INTO `modules` VALUES(50, 'C-CCG4A', 'Mathématiques financières', 20, 1
 INSERT INTO `modules` VALUES(51, 'C-CCG4B', 'Propriété intellectuelle', 20, 100, 8, 4);
 INSERT INTO `modules` VALUES(52, 'C-CCG4C', 'Création d\'entreprise', 20, 100, 8, 4);
 
--- Contenu de la table `type_modules`
+
 
 INSERT INTO `type_modules` VALUES(1, 'Cours', 120, 1);
 INSERT INTO `type_modules` VALUES(2, 'TD', 30, 1);
 INSERT INTO `type_modules` VALUES(3, 'TP', 15, 1);
 INSERT INTO `type_modules` VALUES(4, 'Projet', 6, 1);
 
--- Contenu de la table `statuts`
+
 
 INSERT INTO `statuts` VALUES(10, 'Eleve');
 INSERT INTO `statuts` VALUES(20, 'Enseignant');
 INSERT INTO `statuts` VALUES(30, 'Administrateur');
 
--- Contenu de la table `personnes`
 
-/*BASE*/
 
 INSERT INTO `personnes` VALUES(1, 'ADMIN', 'Administrateur', 'administrateur', '2008-11-12', '0101010101', '', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin', '2011-12-20 17:00:49'); /*mdp : admin*/
 
@@ -239,7 +225,7 @@ INSERT INTO `personnes` VALUES(37, 'SIMONET', 'Ana', '20 place Doyen Gosse', '19
 
 INSERT INTO `personnes` VALUES(40, 'FRONT', 'Agnès', '6 rue de la Jouvence 38000 Grenoble', '1971-12-20', '0654632788', '', 'front.agnes@iut2.fr', 20, 1, 18, '4fe11351445d96fa63c0f7c55a5f7dd93283e434', 'fronta', '2001-12-11 00:00:00'); /*mdp : profomglmac*/
 
--- Contenu de la table `modules_personnes`
+
 
 INSERT INTO `modules_personnes` (`id`, `module_id`, `personne_id`) VALUES
 (1, 1, 12),
@@ -321,8 +307,7 @@ INSERT INTO `modules_personnes` (`id`, `module_id`, `personne_id`) VALUES
 (82, 36, 20),
 (83, 37, 14);
 
--- Contenu de la table `modules_type_modules`
---
+
 
 INSERT INTO `modules_type_modules` VALUES(1, 1, 1);
 INSERT INTO `modules_type_modules` VALUES(2, 1, 2);
@@ -447,7 +432,7 @@ INSERT INTO `modules_type_modules` VALUES(91, 29, 3);
 INSERT INTO `modules_type_modules` VALUES(92, 30, 1);
 INSERT INTO `modules_type_modules` VALUES(93, 30, 2);
 INSERT INTO `modules_type_modules` VALUES(94, 30, 3);
-INSERT INTO `modules_type_modules` VALUES(95, 30, 4);   /*30 */
+INSERT INTO `modules_type_modules` VALUES(95, 30, 4); 
 
 INSERT INTO `modules_type_modules` VALUES(96, 31, 1);
 INSERT INTO `modules_type_modules` VALUES(97, 31, 2);
@@ -479,40 +464,60 @@ INSERT INTO `modules_type_modules` VALUES(116, 37, 3);
 INSERT INTO `modules_type_modules` VALUES(117, 37, 3);
 
 
---
--- Contenu de la table `absences`
---
-/*
---INSERT INTO `absences` VALUES(1, '2011-12-18 00:00:00', 'aze', 7);
-*/
--- Contenu de la table `type_evenements`
---
 
 INSERT INTO `type_evenements` VALUES(1, 'Réunion');
 INSERT INTO `type_evenements` VALUES(2, 'Convocation');
 INSERT INTO `type_evenements` VALUES(3, 'Soirée');
 
---
--- Contenu de la table `evenements`
---
+
 
 INSERT INTO `evenements` VALUES(1, 'Noël', '2011-12-25 00:00:00', '2011-12-25 00:00:00', 3, 1);
 INSERT INTO `evenements` VALUES(2, 'Nouvelle Année', '2011-12-31 23:59:59', '2012-01-01 23:59:59', 3, 1);
 INSERT INTO `evenements` VALUES(3, 'Réunion de Rentrée', '2012-01-03 19:00:00', '2012-01-03 21:00:00', 3, 1);
 
---
--- Contenu de la table `evenements_personnes`
---
-/*
---INSERT INTO `evenements_personnes` VALUES(23, 3, 5);
---INSERT INTO `evenements_personnes` VALUES(24, 3, 9);
---INSERT INTO `evenements_personnes` VALUES(25, 3, 8);
-*/
---
---
+
 
 INSERT INTO `stages` (`id`, `entreprise`, `ville`, `description`, `dispo`, `departements_id`, `date_ajout`) VALUES
 (1, 'Apple', 'New-York City', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 0, 1, '2011-12-06 14:11:34'),
 (2, 'Schneider', 'Grenoble', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 0, 1, '2011-12-06 14:12:00'),
 (3, 'IUT2', 'Grenoble', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ', 0, 1, '2011-12-06 14:13:13'),
 (4, 'Credit agricole', 'Lyon', 'te velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 0, 1, '2011-12-06 14:13:35');
+
+
+
+INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `date_ajout`) VALUES
+(1, 'TP1-Bases.pdf', 13, 1, '2012-01-12 20:13:35'),
+(2, 'TP2-Procedures.pdf', 13, 1, '2012-01-12 20:13:45'),
+(3, 'Traduction.pdf', 13, 1, '2012-01-12 20:13:58');
+
+
+
+INSERT INTO `documents_stages` (`id`, `nom`, `categorie`, `date_ajout`, `type_mime`) VALUES
+(1, '2A-AS-GD-Reunion-Stage-11-12.pdf', 'stages-utiles', '2012-01-12 17:01:50', 'application/pdf'),
+(2, 'CO-Fiche_de_presentation-11-12.pdf', 'stages-utiles', '2012-01-12 17:01:51', 'application/pdf'),
+(3, 'Guide-Redaction-Rapport-DUT-10-11.doc', 'stages-utiles', '2012-01-12 17:01:52', 'application/msword'),
+(4, 'Liste-Tuteurs-S4D-11-12.pdf', 'stages-utiles', '2012-01-12 17:01:53', 'application/pdf'),
+(5, 'Entreprises-10-11.pdf', 'stages-offres', '2012-01-12 17:02:11', 'application/pdf'),
+(6, 'Liste-Entreprises-09-10.pdf', 'stages-offres', '2012-01-12 17:02:11', 'application/pdf'),
+(7, 'Rapport_FreeZic.pdf', 'PT2A-rapports', '2012-01-12 17:02:21', 'application/pdf'),
+(8, 'Fiche 2 prepa soutenance 2011.doc', 'PT2A', '2012-01-12 17:02:39', 'application/msword'),
+(9, 'Grille évaluation PT2A 2010.pdf', 'PT2A', '2012-01-12 17:02:40', 'application/pdf'),
+(10, 'Pages_De_Présentation.doc', 'PT2A', '2012-01-12 17:02:41', 'application/msword'),
+(11, 'Document Etudiant PT2A 2011-2012.pdf', 'PT2A', '2012-01-12 17:02:42', 'application/pdf'),
+(12, 'Fiche 1 sujet étudiant 2011.doc', 'PT2A', '2012-01-12 17:02:42', 'application/msword'),
+(13, 'Calendrier PT2A 2011 s4.pdf', 'PT1A', '2012-01-12 17:02:55', 'application/pdf'),
+(14, 'Document Etudiant PT1A 2011.pdf', 'PT1A', '2012-01-12 17:02:56', 'application/pdf'),
+(15, 'Fiche type évaluation PT1A.pdf', 'PT1A', '2012-01-12 17:02:57', 'application/pdf'),
+(16, 'Notes PT1A com s1+s2D sept 2010-janv 2011.pdf', 'PT1A', '2012-01-12 17:02:57', 'application/pdf'),
+(17, 'Note Etudiants PPP 2012.pdf', 'PPP', '2012-01-12 17:03:09', 'application/pdf'),
+(18, 'GrilleAnalyse.doc', 'PPP', '2012-01-12 17:03:09', 'application/msword'),
+(19, 'dec 2007 - janv 2008 068.jpg', 'posters', '2012-01-12 17:03:17', 'image/jpeg'),
+(20, 'dec 2007 - janv 2008 070.jpg', 'posters', '2012-01-12 17:03:18', 'image/jpeg'),
+(21, 'dec 2007 - janv 2008 071.jpg', 'posters', '2012-01-12 17:03:20', 'image/jpeg'),
+(22, 'dec 2007 - janv 2008 073.jpg', 'posters', '2012-01-12 17:03:21', 'image/jpeg'),
+(23, 'dec 2007 - janv 2008 062.jpg', 'posters', '2012-01-12 17:03:22', 'image/jpeg'),
+(24, 'dec 2007 - janv 2008 063.jpg', 'posters', '2012-01-12 17:03:23', 'image/jpeg'),
+(25, 'dec 2007 - janv 2008 064.jpg', 'posters', '2012-01-12 17:03:23', 'image/jpeg'),
+(26, 'dec 2007 - janv 2008 065.jpg', 'posters', '2012-01-12 17:03:24', 'image/jpeg'),
+(27, 'dec 2007 - janv 2008 066.jpg', 'posters', '2012-01-12 17:03:25', 'image/jpeg'),
+(28, 'dec 2007 - janv 2008 067.jpg', 'posters', '2012-01-12 17:03:26', 'image/jpeg');
