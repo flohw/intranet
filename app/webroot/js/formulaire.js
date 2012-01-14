@@ -1,4 +1,5 @@
 jQuery(function($){
+	$('#bureau').hide();
 	$('#ajouter').click(function(){
 		var valide = true;
 		$('.note').each(function(index){
@@ -14,5 +15,12 @@ jQuery(function($){
 			}
 		});
 		return valide;
+	});
+	
+	$('#PersonneStatutId').change(function() {
+		if ($(this).val() >= 20)
+			$('#bureau').slideDown();
+		else
+			$('#bureau').slideUp();
 	});
 });

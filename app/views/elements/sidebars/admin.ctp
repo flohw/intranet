@@ -16,6 +16,7 @@
 				<li><?php echo $this->Html->link('Affecter un enseignant', array('controller' => 'modules', 'action' => 'affecter')); ?></li>
 				<li><?php echo $this->Html->link('Affecter un module', array('controller' => 'modules', 'action' => 'affectertype')); ?></li>
 				<li><?php echo $this->Html->link('Gérer les droits', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+				<li><?php echo $this->Html->link('Gestion des documents', array('controller' => 'documents', 'action' => 'index')); ?></li>
 			</ul>
 		</div>
 

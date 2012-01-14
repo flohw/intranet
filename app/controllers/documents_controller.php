@@ -111,6 +111,25 @@ class DocumentsController extends AppController
 		$this->set($mod);
 	}
 	
+	function supprimer ($id)
+	{
+		if ($this->Auth->user('statut_id') < $this->statuts['prof'])
+		{
+			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page !', 'message');
+			$this->redirect($this->referer());
+		}
+		$d = $this->Document->findById($id);
+		if ($d['Personne']['id'] != $this->Auth->user('id'))
+		{
+			$this->Session->setFlash('Vous n\'avez pas le droit de supprimer une document ne vous appartenant pas', 'message');
+			$this->redirect($this->referer());
+		}
+		unlink('files/modules/'.$d['Module']['abreviation'].'/'.$d['Document']['nom']);
+		$this->Document->delete($id);
+		$this->Session->setFlash('Le document a bien été supprimé');
+		$this->redirect($this->referer());
+	}
+	
 	// Methode pour l'ipload de la fonction index (appelée en ajax)
 	function upload()
 	{
@@ -174,6 +193,7 @@ class DocumentsController extends AppController
 				$d['DocumentsStage']['categorie'] = $categorie;
 				$d['DocumentsStage']['date_ajout'] = date('Y-m-d H:i:s');
 				$d['DocumentsStage']['type_mime'] = $typeFichier;
+				$d['DocumentsStage']['personne_id'] = $this->Auth->user('id');
 				$this->DocumentsStage->create();
 				$this->DocumentsStage->save($d);
 				$o->id = $this->DocumentsStage->id;

@@ -21,7 +21,10 @@
 		<?php foreach ($docStageUtile as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="stages-utiles" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
-				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<a href="#delete">
+				<?php if ($this->Session->read('Auth.Personne.id') == $doc['personne_id']
+						OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+							echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
 					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';
@@ -40,7 +43,10 @@
 		<?php foreach ($docStageOffres as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="stages-offres" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
-				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<a href="#delete">
+				<?php if ($this->Session->read('Auth.Personne.id') == $doc['personne_id']
+						OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+							echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
 					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';
@@ -66,7 +72,11 @@
 		<?php foreach ($docPT1A as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT1A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
-				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<a href="#delete">
+				<?php
+					if ($this->Session->read('Auth.Personne.id') == $doc['personne_id']
+						OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+							echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
 					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';
@@ -92,7 +102,10 @@
 		<?php foreach ($docPT2A as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT2A" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
-				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<a href="#delete">
+				<?php if ($this->Session->read('Auth.Personne.id') == $doc['personne_id']
+						OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+							echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
 					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';
@@ -111,7 +124,10 @@
 		<?php foreach ($docPT2Arapports as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PT2A-rapports" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
-				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<a href="#delete">
+				<?php if ($this->Session->read('Auth.Personne.id') == $doc['personne_id']
+						OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+							echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
 					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';
@@ -137,7 +153,10 @@
 		<?php foreach ($docPPP as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="PPP" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
-				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<a href="#delete">
+				<?php if ($this->Session->read('Auth.Personne.id') == $doc['personne_id']
+						OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+							echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
 					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';
@@ -157,7 +176,10 @@
 		<?php foreach ($docPosters as $doc): $doc = current($doc); ?>
 			<div class="dropfile" data-folder="posters" data-value="<?php echo $doc['nom']; ?>" data-id="<?php echo $doc['id']; ?>">
 				<span class="infoFichier"><?php echo $doc['nom']; ?></span>
-				<a href="#delete"><?php echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
+				<a href="#delete">
+				<?php if ($this->Session->read('Auth.Personne.id') == $doc['personne_id']
+						OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+							echo $this->Html->image('delete.png', array('class' => 'delete')); ?></a>
 				<?php
 					if (in_array($doc['type_mime'], $typesImages))		$image = 'Image';
 					elseif (in_array($doc['type_mime'], $typesPDF))		$image = 'PDF';

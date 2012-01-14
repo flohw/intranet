@@ -67,6 +67,16 @@ class Personne extends AppModel {
 				'message' => 'Ce n\'est pas un email',
 			),
 		),
+		'bureau' => array(
+			'validProf' => array(
+				'rule' => array('verifBureauProf'),
+				'message' => 'Le bureau est vide',
+			),
+			'validEleve' => array(
+				'rule' => array('verifBureauEleve'),
+				'message' => 'Le bureau ne peut pas être renseigné',
+			),
+		),
 		'login' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -210,6 +220,24 @@ class Personne extends AppModel {
 	public function motPasseConf ($check)
 	{
 		return $check['mot_de_passe_conf'] == $this->data['Personne']['mot_de_passe_change'];
+	}
+	
+	// Bureau Prof
+	public function verifBureauProf($check)
+	{
+		if (empty($check['bureau']) && $this->data['Personne']['statut_id'] >= 20)
+			return false;
+		else
+			return true;
+	}
+	
+	// Bureau Eleve
+	public function verifBureauEleve($check)
+	{
+		if (!empty($check['bureau']) && $this->data['Personne']['statut_id'] < 20)
+			return false;
+		else
+			return true;
 	}
 	
 	public function afterFind ($results)

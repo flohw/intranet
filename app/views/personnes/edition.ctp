@@ -31,7 +31,7 @@
     <div class="clearfix">
         <?php echo $this->Form->input('telephone', array('class' => 'input', 'label' => 'Telephone')); ?>
     </div>
-        <div class="clearfix">
+        <div class="clearfix" id="bureau">
         <?php echo $this->Form->input('bureau', array('class' => 'input', 'label' => 'Bureau')); ?>
     </div>
     <div class="clearfix">
