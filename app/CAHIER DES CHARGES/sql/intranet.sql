@@ -232,6 +232,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`documents` (
   `nom` VARCHAR(255) NOT NULL ,
   `personne_id` INT NOT NULL ,
   `module_id` INT NOT NULL ,
+  `type_mime` VARCHAR(70) NOT NULL ,
   `date_ajout` DATETIME NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_documents_professeurs1` (`personne_id` ASC) ,
@@ -367,15 +368,14 @@ DROP TABLE IF EXISTS `intranet`.`stages` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`stages` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `entreprise` VARCHAR(45) NOT NULL ,
-  `ville` VARCHAR(45) NOT NULL ,
+  `entreprise` VARCHAR(20) NOT NULL ,
+  `ville` VARCHAR(20) NOT NULL ,
   `description` TEXT NOT NULL ,
   `dispo` TINYINT(1)  NOT NULL ,
   `departements_id` INT NOT NULL ,
   `date_ajout` DATETIME NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_offres_stage_departements1` (`departements_id` ASC) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
   CONSTRAINT `fk_offres_stage_departements1`
     FOREIGN KEY (`departements_id` )
     REFERENCES `intranet`.`departements` (`id` )
@@ -392,10 +392,17 @@ DROP TABLE IF EXISTS `intranet`.`documents_stages` ;
 CREATE  TABLE IF NOT EXISTS `intranet`.`documents_stages` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(45) NOT NULL ,
+  `personne_id` INT NOT NULL ,
   `categorie` VARCHAR(45) NOT NULL ,
   `date_ajout` DATETIME NOT NULL ,
   `type_mime` VARCHAR(70) NOT NULL ,
-  PRIMARY KEY (`id`) )
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_documents_stages_personnes1` (`personne_id` ASC) ,
+  CONSTRAINT `fk_documents_stages_personnes1`
+    FOREIGN KEY (`personne_id` )
+    REFERENCES `intranet`.`personnes` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
