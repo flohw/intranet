@@ -17,7 +17,8 @@
 			echo $this->Form->create('Absence');
 			echo $this->Form->input('id');
 			echo '<div class="clearfix">';
-			echo $this->Form->input('date', array('class' => 'input', 'label' => 'Date de l\'absence (aaaa-mm-jj)', 'id' => 'datepicker', 'type' => 'text'));
+			echo $this->Form->input('date', array('class' => 'input', 'label' => 'Date de l\'absence (aaaa-mm-jj)',
+													'id' => 'datepicker', 'type' => 'text', 'readonly' => 'readonly'));
 			echo '</div>';
 
 			echo '<div class="clearfix">';
@@ -47,33 +48,35 @@
 				</tr>
 			</thead>
 			<tbody>
-			
-			<?php foreach ($absences as $a): ?>
+			<?php
+				if (!empty($absences)):
+				foreach ($absences as $a): ?>
 				<tr>
 					<td class="id"><?php echo $a['Absence']['id']; ?></td>
 					<td><?php echo $this->Html->link($a['Absence']['date'], array('action' => 'index', $a['Absence']['id'])); ?></td>
 					<td><?php echo $a['Personne']['nom'].' '.$a['Personne']['prenom']; ?></td>
 					<td><?php echo $a['Absence']['justification']; ?></td>
 				</tr>
-			<?php endforeach;   ?>
+			<?php
+				endforeach;
+				else:
+					echo '<tr><td>Aucune absence</td><td></td><td></td><td></td></tr>';
+				endif;
+			?>
 		 	</tbody>
 		</table>
 	</div>
 </div>
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($) {
-  $("#datepicker").datepicker({
-  	dateFormat: 'yy-mm-dd',
-  	dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-  	dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
-  	monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-  	monthNamesShort: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aou', 'Sep', 'Oct', 'Nov', 'Dec'],
-  	firstDay: 1,
-  	changeYear: true,
-  	changeMonth: true,
-  	yearRange: '-1y:+1y',
-  	prevText: '',
-  	nextText: '',
-  });
+	$.datepicker.setDefaults($.datepicker.regional['fr']);
+	$("#datepicker").datetimepicker({
+		minDate: 0,
+		dateFormat: 'yy-mm-dd',
+		changeYear: true,
+		changeMonth: true,
+		yearRange: '-1y:+1y',
+		timeFormat: 'hh:mm',
+	});
 });
 <?php echo $this->Html->scriptEnd(); ?>

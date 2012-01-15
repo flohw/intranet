@@ -45,7 +45,7 @@ class Absence extends AppModel {
 	public function afterFind ($result)
 	{
 		foreach ($result as $k => $r)
-			$result[$k]['Absence']['date'] = substr($result[$k]['Absence']['date'], 0, 10);
+			$result[$k]['Absence']['date'] = substr($result[$k]['Absence']['date'], 0, 16);
 		return $result;
 	}
 	

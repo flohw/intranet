@@ -66,7 +66,7 @@
 				$this->data['Message']['date_envoi'] = $date->format('Y-m-d H:i:s');
 				$this->data['Message']['fichier'] = uniqid('message_').'.xml';
 				$this->data['Message']['lu_exp'] = 1;
-				$pers = $this->Personne->find('first', array('conditions' => array('Personne.login' => $this->data['Message']['destinataire'])));
+				$pers = $this->Personne->find('first', array('conditions' => array('Personne.display' => $this->data['Message']['destinataire'])));
 				$this->data['Message']['destinataire_id'] = $pers['Personne']['id'];
 				
 				$this->Message->set($this->data);
