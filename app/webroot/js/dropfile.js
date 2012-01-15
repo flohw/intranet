@@ -4,7 +4,7 @@
 		script:	'upload.php',
 		clone:	true,
 		complete: function (json) { return false; },
-		image: 'img/delete.png',
+		image: '/img/delete.png',
 	};
 	
 	$.fn.dropfile = function(oo) {
@@ -48,7 +48,6 @@
 				var json = jQuery.parseJSON(e.target.responseText);
 				zone.removeClass('hover');
 				progress.css({height: 0}).text('');
-				addDelButton(zone, o.image);			// Ajout du bouton de suppression
 				if (index < files.length-1)
 					upload(files, zone, index+1);
 				if (json.error)
@@ -56,6 +55,7 @@
 					alert(json.error);
 					return false;
 				}
+				addDelButton(zone, o.image, file.name);			// Ajout du bouton de suppression
 				if (o.complete(json))
 					return true;
 				if (o.clone && !replace && index == files.length - 1) {
@@ -77,19 +77,19 @@
 			}, false);
 			xhr.open('post', o.script, true);
 			xhr.setRequestHeader('action', 'upload');
-			xhr.setRequestHeader('content-type', 'multipart/form-data');
+			xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
 			xhr.setRequestHeader('x-file-type', file.type);
 			xhr.setRequestHeader('x-file-size', file.size);
 			xhr.setRequestHeader('x-file-name', file.name);
 			for (var i in zone.data())
 				if (typeof zone.data(i) !== 'object')
 					xhr.setRequestHeader('x-param-'+i, zone.data(i));
-			
 			xhr.send(file);
 		}
 		
-		function addDelButton(zone, image) {
+		function addDelButton(zone, image, fichier) {
 			zone.append('<a href="#delete"><img src="'+image+'" class="delete"></a>');
+			zone.append('<span class="infoFichier">'+fichier+'</span>');
 			zone.find('img.delete').hide();
 		}
 		

@@ -4,6 +4,11 @@ class DocumentsController extends AppController
 	var $name = 'Documents';
 	var $uses = array('Document', 'DocumentsStage', 'Module');
 	var $components = array('RequestHandler');
+	var $typesImages = array('image/png', 'image/gif', 'image/jpeg');
+	var $typesPDF = array('application/pdf');
+	var $typesWord = array('application/msword', 'application/vnd.oasis.opendocument.text');
+	var $typesExcel = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
+					'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
 	
 	
 	function beforeFilter()
@@ -33,11 +38,8 @@ class DocumentsController extends AppController
 			else
 				$this->Session->setFlash ('Le document n\'a pas été correctement sauvegardé', 'message');
 		}
-		$d['typesImages'] = array('image/png', 'image/gif', 'image/jpeg');
-		$d['typesPDF'] = array('application/pdf');
-		$d['typesWord'] = array('application/msword', 'application/vnd.oasis.opendocument.text');
-		$d['typesExcel'] = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
-					'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
+		$d = array_merge(array('typesImages' => $this->typesImages), array('typesPDF' => $this->typesPDF),
+						array('typesWord' => $this->typesWord), array('typesExcel' => $this->typesExcel));
 		$d['docStageUtile'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages-utiles')));
 		$d['docStageOffres'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages-offres')));
 		$d['docPT1A'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT1A')));
@@ -49,41 +51,20 @@ class DocumentsController extends AppController
 	}
 	
 	// Upload de document pour un module
-	function modules()
+	function modules($id = 0)
 	{
-		$d['doc'] = $this->Document->find('all', array('recursive' => -1, 'personne_id' => $this->Auth->user('id')));
+		$d = array_merge(array('typesImages' => $this->typesImages), array('typesPDF' => $this->typesPDF),
+						array('typesWord' => $this->typesWord), array('typesExcel' => $this->typesExcel));
+		$d['docs'] = $this->Document->findMyDocuments($this->Auth->user('id'));
 		$d['modules'] = $this->Module->findModules($this->Auth->user('id'));
-		
-		if (isset($this->data))
-		{
-			$this->Document->set($this->data);
-			$this->Document->recursive = -1;
-			$doc = $this->Document->find('count', array('conditions' => array(	'nom' => $this->data['Document']['fichier']['name'],
-																				'module_id' => $this->data['Document']['module_id'])));
-			if ($doc)
-				$this->Session->setFlash('Le nom du document existe déjà dans ce module ('.$this->data['Document']['fichier']['name'].')',
-													'message');
-			elseif ($this->Document->validates())
-			{
-				// Variable de sauvegarde en BD puis sauvegarde
-				$s['Document']['nom'] = $this->data['Document']['fichier']['name'];
-				$s['Document']['personne_id'] = $this->Auth->user('id');
-				$s['Document']['module_id'] = $this->data['Document']['module_id'];
-				$this->Document->validate = array();
-				$this->Document->save($s);
-				// Déplacement du document dans le répertoire
-				$this->Module->recursive = -1;
-				$mod = $this->Module->findById($this->data['Document']['module_id']);
-				if (!is_dir(WWW_ROOT.'/files/modules/'.$mod['Module']['abreviation']))
-					mkdir(WWW_ROOT.'/files/modules/'.$mod['Module']['abreviation']);
-				move_uploaded_file($this->data['Document']['fichier']['tmp_name'],
-					WWW_ROOT.'/files/modules/'.$mod['Module']['abreviation'].'/'.$this->data['Document']['fichier']['name']);
-				$this->Session->setFlash('Le document a bien été enregistré !', 'message', array('class' => 'success'));
-				$this->redirect(array('action' => 'presenter', $this->data['Document']['module_id']));
-			}
-			else
-				$this->Session->setFlash('Erreur dans le formulaire', 'message');
+		$i = 0;
+		foreach ($d['modules'] as $idm => $m) {
+			$first = ($i++ == 0) ? $idm : $first;
+			if ($idm == $id)
+				$d['select'] = $id;
 		}
+		$d['select'] = (isset($d['select'])) ? $d['select'] : $first;
+			
 		
 		$this->set($d);
 	}
@@ -138,8 +119,11 @@ class DocumentsController extends AppController
 		foreach ($h as $k => $v)
 			$h[low($k)] = $v;
 		$o = new stdClass();
+		$isModule = false;
 		$categorie = $h['x-param-folder'];
 		$folder = 'files/'.$categorie.'/';
+		if (preg_match('#files/modules/[A-Z0-1]+#', $folder))
+			$isModule = true;
 		
 		if ($h['action'] == 'upload')
 		{
@@ -147,31 +131,39 @@ class DocumentsController extends AppController
 			
 			$typeFichier = $h['x-file-type'];			// Type MIME
 			// Types MIME acceptés
-			$types = $typesImages = array('image/png', 'image/gif', 'image/jpeg');
+			$types = $this->typesImages;
 			$acceptsFolders = array('files/stages-utiles/', 'files/PT1A/', 'files/PT2A/', 'files/PPP/',
 										'files/stages-offres/', 'files/PT2A-rapports/', 'files/posters/');
 			if ($categorie != 'posters')
-			{
-				$typesPDF = array('application/pdf');
-				$typesWord = array('application/msword', 'application/vnd.oasis.opendocument.text');
-				$typesExcel = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
-									'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
-				$types = array_merge($types, $typesPDF, $typesWord, $typesExcel);
-			}
+				$types = array_merge($types, $this->typesPDF, $this->typesWord, $this->typesExcel);
+			
 			// Verification existance fichier
-			$fichier = $this->DocumentsStage->find('first', array('conditions' => array('nom' => $h['x-file-name'],'categorie'=>$categorie)));
+			$this->Module->recursive = $this->Document->recursive = $this->DocumentsStage->recursive = -1;
+			$modele = 'Document';
+			if (!$isModule)
+			{
+				$modele .= 'sStage';
+				$fichier = $this->$modele->find('first', array('conditions' => array('nom' => $h['x-file-name'],'categorie'=>$categorie)));
+			}
+			else
+			{
+				$moduleId = $this->Module->findById($h['x-param-module']);
+				$fichier = $this->$modele->find('first', array('conditions' => array('nom' => $h['x-file-name'], 'module_id' => $moduleId['Module']['id'])));
+			}
 			if (!in_array($typeFichier, $types))
 				$o->error = 'Format non supporté ('.$typeFichier.')';
-			elseif ($fichier['DocumentsStage']['nom'] == $h['x-file-name'] AND !isset($h['x-param-value']))
+			elseif ($fichier[$modele]['nom'] == $h['x-file-name'] AND !isset($h['x-param-value']))
 				$o->error = 'Le fichier existe déjà ('.$h['x-file-name'].')';
-			elseif (!in_array($folder, $acceptsFolders))
+			elseif (!in_array($folder, $acceptsFolders) AND !$isModule)
 				$o->error = 'Le dossier n\'existe pas ('.$folder.')';
+			elseif (!is_dir($folder) AND $isModule)
+				mkdir($folder);
 			else
 			{
 				// Si on remplace un fichier
 				if (isset($h['x-param-value']) AND is_file(WWW_ROOT.$folder.$h['x-param-value']))
 				{
-					$this->DocumentsStage->delete($h['x-param-id']);
+					$this->$modele->delete($h['x-param-id']);
 					unlink(WWW_ROOT.$folder.$h['x-param-value']);
 				}
 				file_put_contents(WWW_ROOT.$folder.$h['x-file-name'], $source);
@@ -179,29 +171,37 @@ class DocumentsController extends AppController
 				// Création de l'image à placer
 				App::import('Helper', 'Html');
 				$html = new HtmlHelper();
-				if (in_array($typeFichier, $typesImages))
-					$o->content = $html->image('icones/fichierImage.png', array('class' => 'place'));
-				elseif (in_array($typeFichier, $typesPDF))
-					$o->content = $html->image('icones/fichierPDF.png', array('class' => 'place'));
-				elseif (in_array($typeFichier, $typesWord))
-					$o->content = $html->image('icones/fichierWord.png', array('class' => 'place'));
-				elseif (in_array($typeFichier, $typesExcel))
-					$o->content = $html->image('icones/fichierExcel.png', array('class' => 'place'));
+				if (in_array($typeFichier, $this->typesImages))
+					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierImage.png', array('class' => 'place'));
+				elseif (in_array($typeFichier, $this->typesPDF))
+					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierPDF.png', array('class' => 'place'));
+				elseif (in_array($typeFichier, $this->typesWord))
+					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierWord.png', array('class' => 'place'));
+				elseif (in_array($typeFichier, $this->typesExcel))
+					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierExcel.png', array('class' => 'place'));
 				
 				// Creation du document pour la bdd
-				$d['DocumentsStage']['nom'] = $h['x-file-name'];
-				$d['DocumentsStage']['categorie'] = $categorie;
-				$d['DocumentsStage']['date_ajout'] = date('Y-m-d H:i:s');
-				$d['DocumentsStage']['type_mime'] = $typeFichier;
-				$d['DocumentsStage']['personne_id'] = $this->Auth->user('id');
-				$this->DocumentsStage->create();
-				$this->DocumentsStage->save($d);
-				$o->id = $this->DocumentsStage->id;
+				if (!$isModule)
+					$d[$modele]['categorie'] = $categorie;
+				else
+					$d[$modele]['module_id'] = $moduleId['Module']['id'];
+				
+				$d[$modele]['nom'] = $h['x-file-name'];
+				$d[$modele]['date_ajout'] = date('Y-m-d H:i:s');
+				$d[$modele]['type_mime'] = $typeFichier;
+				$d[$modele]['personne_id'] = $this->Auth->user('id');
+				
+				$this->$modele->create();
+				$this->$modele->save($d);
+				$o->id = $this->$modele->id;
 			}
 		}
 		elseif ($h['action'] == 'delete')
 		{
-			$this->DocumentsStage->delete($h['x-param-id']);
+			$modele = 'Document';
+			if (!$isModule)
+				$modele .= 'sStage';
+			$this->$modele->delete($h['x-param-id']);
 			if (isset($h['x-param-value']) AND is_file(WWW_ROOT.$folder.$h['x-param-value']))
 				unlink(WWW_ROOT.$folder.$h['x-param-value']);
 			else
@@ -209,7 +209,7 @@ class DocumentsController extends AppController
 			$o->name = $h['x-param-value'];
 			$o->content = '';
 		}
-			
+		
 		echo json_encode($o);
 	}
 }

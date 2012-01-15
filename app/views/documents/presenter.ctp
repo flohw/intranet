@@ -10,7 +10,7 @@
 	</div>
 	<?php if (in_array($this->Session->read('Auth.Personne.login'), $profs)): ?>
 		<div class="span7 offset4">
-			<?php echo $this->Html->link('Ajouter un document', array('action' => 'modules'), array('class' => 'btn primary')); ?>&nbsp;
+			<?php echo $this->Html->link('Ajouter un document', array('action' => 'modules', $abre['Module']['id']), array('class' => 'btn primary')); ?>&nbsp;
 			<?php echo $this->Html->link('Ajouter des notes', array('controller' => 'notes'), array('class' => 'btn')); ?>
 		</div>
 			<?php

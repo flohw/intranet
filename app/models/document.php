@@ -67,5 +67,25 @@ class Document extends AppModel {
 			$r[$d['Document']['id']] = $d['Document']['id'];
 		return $r;
 	}
+	
+	public function findMyDocuments ($id)
+	{
+		$docs = $this->find('all', array('conditions' => array('personne_id' => $id), 'recursive' => 0));
+		$modules = $this->Module->findModules($id);
+		$r = array();
+		foreach ($modules as $idModule => $m)
+		{
+			$r[$m]['module_id'] = $idModule;
+			foreach ($docs as $i => $d)
+			{
+				if ($d['Module']['id'] == $idModule)
+				{
+					$r[$m][] = $d['Document'];
+					unset($docs[$i]);
+				}
+			}
+		}
+		return $r;
+	}
 }
 ?>

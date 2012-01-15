@@ -31,5 +31,11 @@ jQuery(function($){
 	
 	// Pour les tableau triable	
 	$("table#sort").tablesorter({ sortList: [[1,0]] });
+	
+	// Changement des contenus des fichiers des modules (upload)
+	$('#modules').change(function(){
+		$('.active.module').removeClass('active').slideUp();
+		$('.module#'+$(this).val()).addClass('active').slideDown();
+	});
 
 });

@@ -39,7 +39,7 @@ img.right { margin-left : 20px; }
 	-o-border-radius: 5px 5px 0 0;
 	-webki-border-radius: 5px 5px 0 0;
 }
-
+#accordeon ul, #accordeonStage ul { list-style: none; padding: 0; margin: 0; }
 #accordeon h3, #accordeonStage h3 {
 	text-align: center;
 	cursor: pointer;
