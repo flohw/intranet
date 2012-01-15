@@ -32,8 +32,9 @@ img.right { margin-left : 20px; }
 .hero-unit img { float:left; margin-right:10px; }
 .container { padding-top:60px; }
 #container { margin-top:60px; }
+
 /* Sidebar */
-#accordeon h3.active, #accordeonStage h3.active {
+#accordeon h3.active, #accordeonStage h3.active { 
 	border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
 	-o-border-radius: 5px 5px 0 0;
@@ -114,6 +115,7 @@ table td.clearfix.error input { border-color: #EE5F5B; color: #B94A48; }
 	text-align: center;
 	font-size: 1.2em;
 }
+
 /* Pour les stages */
 blockquote h3 { color:#0088bb; }
 #accordeonStage h3 { text-align: left; padding-left:30px; padding-right:10px; }

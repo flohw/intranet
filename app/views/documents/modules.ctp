@@ -1,6 +1,6 @@
 <?php $this->title = 'Intranet | Gestion des documents des Modules'; ?>
 <div class="page-header">
-	<h1>Documents du module <?php echo $this->Form->input('module_id', array('label' => false, 'class' => 'input', 'options' => $modules, 'id' => 'modules', 'value' => $select)); ?></h1>
+	<h1>Documents du module <?php echo $this->Form->select(false, $modules, $select, array('id' => 'modules')); ?></h1>
 </div>
 
 <?php foreach ($docs as $mod => $doc): ?>

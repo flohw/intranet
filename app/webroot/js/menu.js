@@ -34,8 +34,11 @@ jQuery(function($){
 	
 	// Changement des contenus des fichiers des modules (upload)
 	$('#modules').change(function(){
-		$('.active.module').removeClass('active').slideUp();
-		$('.module#'+$(this).val()).addClass('active').slideDown();
+		if ($(this).val() != "")
+		{
+			$('.active.module').removeClass('active').slideUp();
+			$('.module#'+$(this).val()).addClass('active').slideDown();
+		}
 	});
 
 });

@@ -57,10 +57,10 @@ class DocumentsController extends AppController
 						array('typesWord' => $this->typesWord), array('typesExcel' => $this->typesExcel));
 		$d['docs'] = $this->Document->findMyDocuments($this->Auth->user('id'));
 		$d['modules'] = $this->Module->findModules($this->Auth->user('id'));
-		$i = 0;
+		$i = $first = 0;
 		foreach ($d['modules'] as $idm => $m) {
 			$first = ($i++ == 0) ? $idm : $first;
-			if ($idm == $id)
+			if ($idm == $id AND $id != 0)
 				$d['select'] = $id;
 		}
 		$d['select'] = (isset($d['select'])) ? $d['select'] : $first;
