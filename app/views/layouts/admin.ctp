@@ -5,7 +5,7 @@
 		<?php echo $this->Html->charset(); ?>
 		<?php echo $this->Html->css('style.css'); ?>
 		<?php echo $this->Html->css('bootstrap.css'); ?>
-		<?php echo $this->Html->css('jquery-ui.css'); ?>
+		<?php echo $this->Html->css('Aristo.css'); ?>
 		<?php echo $this->Html->css('zoombox.css'); ?>
 	</head>
 	<body>
@@ -44,6 +44,7 @@
 		<?php echo $this->Html->script('dropfile'); ?>
 		<?php echo $this->Html->script('hover'); ?>
 		<?php echo $this->Html->script('formulaire'); ?>
+		<?php echo $this->Html->script('timepicker'); ?>
 		<?php echo $scripts_for_layout; ?>
 	
 	</body> 

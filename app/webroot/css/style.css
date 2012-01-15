@@ -33,31 +33,23 @@ img.right { margin-left : 20px; }
 .container { padding-top:60px; }
 #container { margin-top:60px; }
 /* Sidebar */
-#accordeon h3:hover, #accordeonStage h3:hover { background: #FFFFFF; color: rgba(230, 143, 0, 0.75); }
-#accordeon div, #accordeonStage div { border: 1px solid #DDDDDD; border-top: 0; border-radius: 0 0 5px 5px; padding-top: 10px; }
 #accordeon h3.active, #accordeonStage h3.active {
-	background: #FFFFFF;
-	color: rgb(84, 69, 69);
-	border-bottom: 0;
 	border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
 	-o-border-radius: 5px 5px 0 0;
 	-webki-border-radius: 5px 5px 0 0;
 }
+
 #accordeon h3, #accordeonStage h3 {
 	text-align: center;
 	cursor: pointer;
-	border: 1px solid #DDDDDD;
 	margin-top: 7px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	-webki-border-radius: 5px;
 }
-/* autocomplete des messages */
-.ui-autocomplete { max-height: 100px; overflow-y: auto; overflow-x: hidden; padding-right: 20px; width: 200px; border: 1px solid #DDDDDD; }
-.ui-autocomplete.ui-menu { background-color: #DDDDDD; }/*  ui-widget ui-widget-content ui-corner-all */
-.ui-autocomplete .ui-menu-item { width: 100%; }
+
 /* barre de connexion */
 form .recherche { margin-left: 15px; }
 form select.input { margin-left: 150px; }
@@ -166,6 +158,7 @@ blockquote h3 { color:#0088bb; }
 	z-index: 9;
 }
 .dropfile img.delete { position: absolute; top: 0; right: 0; }
+
 /* Info bulle */
 .dropfile .infoFichier {
 	position: absolute;
@@ -198,6 +191,4 @@ h3.moyenne { text-align: center; }
 
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }
-.marge {
-margin-left: 6em;
-}
+.marge { margin-left: 6em; }
