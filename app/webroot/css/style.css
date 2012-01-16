@@ -32,6 +32,7 @@ img.right { margin-left : 20px; }
 .hero-unit img { float:left; margin-right:10px; }
 .container { padding-top:60px; }
 #container { margin-top:60px; }
+#acceuil { background-image: url(../img/header.png); min-height: 216px; opacity: 0.6; }
 
 /* Sidebar */
 #accordeon h3.active, #accordeonStage h3.active { 
