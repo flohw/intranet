@@ -46,16 +46,19 @@
 		<?php	echo $this->Form->input('titre', array('label' => 'Titre de l\'évènement',  'class' => 'input')); ?>
 				</div>
 				<div class="clearfix">
-		<?php 	echo $this->Form->input('date_debut', array('label' => 'Date de début', 'class' => 'input datepickers', 'type' => 'text', 'readonly' => 'readonly')); ?>
+		<?php 	echo $this->Form->input('date_debut', array('label' => 'Date de début', 'class' => 'input datepickers', 'id' => 'debutPersonne', 'type' => 'text', 'readonly' => 'readonly')); ?>
 				</div>
 				<div class="clearfix">
-		<?php	echo $this->Form->input('date_fin', array('label' => 'Date de fin', 'class' => 'input datepickers', 'type' => 'text', 'readonly' => 'readonly')); ?>
+		<?php	echo $this->Form->input('date_fin', array('label' => 'Date de fin', 'class' => 'input datepickers', 'id' => 'finPersonne', 'type' => 'text', 'readonly' => 'readonly')); ?>
 				</div>
 				<div class="clearfix">
 		<?php	echo $this->Form->input('type_evenement_id', array('label' => 'Catégorie', 'options' => $type, 'class' => 'input')); ?>
 				</div>
 				<div class="clearfix">
 		<?php	echo $this->Form->input('personnes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text')); ?>
+				</div>
+				<div class="clearfix">
+		<?php	echo $this->Form->input('contenu', array('label' => 'Description', 'class' => 'input', 'type' => 'textarea')); ?>
 				</div>
 				<div class="actions">
 		<?php	echo $this->Form->submit('Enregistrer', array('class' => 'btn primary')); ?>
@@ -70,16 +73,19 @@
 		<?php	echo $this->Form->input('titre', array('label' => 'Titre de l\'évènement',  'class' => 'input')); ?>
 				</div>
 				<div class="clearfix">
+		<?php 	echo $this->Form->input('date_debut', array('label' => 'Date de début', 'class' => 'input datepickers', 'id' => 'debutGroupe', 'type' => 'text', 'readonly' => 'readonly')); ?>
+				</div>
+				<div class="clearfix">
+		<?php	echo $this->Form->input('date_fin', array('label' => 'Date de fin', 'class' => 'input datepickers', 'id' => 'finGroupe', 'type' => 'text', 'readonly' => 'readonly')); ?>
+				</div>
+				<div class="clearfix">
 		<?php	echo $this->Form->input('type_evenement_id', array('label' => 'Catégorie', 'options' => $type, 'class' => 'input')); ?>
 				</div>
 				<div class="clearfix">
 		<?php	echo $this->Form->input('groupes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text')); ?>
 				</div>
 				<div class="clearfix">
-		<?php 	echo $this->Form->input('date_debut', array('label' => 'Date de début', 'class' => 'input', 'id' => 'dated', 'type' => 'text')); ?>
-				</div>
-				<div class="clearfix">
-		<?php	echo $this->Form->input('date_fin', array('label' => 'Date de fin', 'class' => 'input', 'id' => 'datef', 'type' => 'text')); ?>
+		<?php	echo $this->Form->input('contenu', array('label' => 'Description', 'class' => 'input', 'type' => 'textarea')); ?>
 				</div>
 				<div class="actions">
 		<?php	echo $this->Form->submit('Enregistrer', array('class' => 'btn primary')); ?>
@@ -157,40 +163,56 @@
 
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($) {
-  $.datepicker.setDefaults($.datepicker.regional['fr']);
-  $(".datepickers, #dated, #datef").datetimepicker({
-  	dateFormat: 'yy-mm-dd',
-  	minDate: 0,
-  	changeYear: true,
-  	changeMonth: true,
-  	yearRange: '-1y:+1y',
-  	prevText: '',
-  	nextText: '',
-  });
-  
-  function split( val ) { return val.split( /,\s*/ ); }
-  function extractLast( term ) { return split( term ).pop(); }
-  
-  var personnes = [<?php foreach ($personnes as $p) echo '"'.$p.'", '; ?>];
-  var groupes = [<?php
-  			foreach ($groupes as $s => $gr)
-  				foreach ($gr as $g)
-	  				echo '"'.$s.' - '.$g.'", '; ?>];
-  $("#EvenementGroupes")
-  	.bind( "keydown", function( event ) {
-		if ( event.keyCode === $.ui.keyCode.TAB &&
-			$( this ).data( "autocomplete" ).menu.active ) {
-				event.preventDefault();
-			}
+	
+	// DATEPICKERS
+	$.datepicker.setDefaults($.datepicker.regional['fr']);
+	$(".datepickers").datetimepicker({
+		dateFormat: 'yy-mm-dd',
+		minDate: 0,
+		changeYear: true,
+		changeMonth: true,
+		yearRange: '-1y:+1y',
+		prevText: '',
+		nextText: '',
+	});
+	// DATEPICKERS CHANGE
+	$('#debutPersonne').datetimepicker('option', 'onSelect', function(dateText, inst){
+		$('#finPersonne').datetimepicker('option', 'minDate', dateText);
+	});
+	$('#finPersonne').datetimepicker('option', 'onSelect', function(dateText, inst){
+		$('#debutPersonne').datetimepicker('option', 'maxDate', dateText);
+	});
+	$('#debutGroupe').datetimepicker('option', 'onSelect', function(dateText, inst){
+		$('#finGroupe').datetimepicker('option', 'minDate', dateText);
+	});
+	$('#finGroupe').datetimepicker('option', 'onSelect', function(dateText, inst){
+		$('#debutGroupe').datetimepicker('option', 'maxDate', dateText);
+	});
+	
+	// AUTOCOMPLETE
+	function split( val ) { return val.split( /,\s*/ ); }
+	function extractLast( term ) { return split( term ).pop(); }
+	
+	var personnes = [<?php foreach ($personnes as $p) echo '"'.$p.'", '; ?>];
+	var groupes = [<?php
+			foreach ($groupes as $s => $gr)
+				foreach ($gr as $g)
+					echo '"'.$s.' - '.$g.'", '; ?>];
+	$("#EvenementGroupes")
+		.bind( "keydown", function( event ) {
+			if ( event.keyCode === $.ui.keyCode.TAB &&
+				$( this ).data( "autocomplete" ).menu.active ) {
+					event.preventDefault();
+				}
 		})
 	.autocomplete({
-  		minLength: 0,
+		minLength: 0,
 		source: function( request, response ) {
 			response( $.ui.autocomplete.filter(
 				groupes, extractLast( request.term ) ) );
-			},
+		},
 		focus: function() {
-			return false;
+					return false;
 		},
 		select: function( event, ui ) {
 			var terms = split( this.value );
@@ -200,21 +222,21 @@ jQuery(function($) {
 			this.value = terms.join( ", " );
 			return false;
 		}
-  });
-  
-  $("#EvenementPersonnes")
-  	.bind( "keydown", function( event ) {
+	});
+	
+	$("#EvenementPersonnes")
+	.bind( "keydown", function( event ) {
 		if ( event.keyCode === $.ui.keyCode.TAB &&
 			$( this ).data( "autocomplete" ).menu.active ) {
 				event.preventDefault();
 			}
-		})
+	})
 	.autocomplete({
-  		minLength: 0,
+		minLength: 0,
 		source: function( request, response ) {
 			response( $.ui.autocomplete.filter(
 				personnes, extractLast( request.term ) ) );
-			},
+		},
 		focus: function() {
 			return false;
 		},
@@ -226,6 +248,6 @@ jQuery(function($) {
 			this.value = terms.join( ", " );
 			return false;
 		}
-  });
+	});
 });
 <?php echo $this->Html->scriptEnd(); ?>

@@ -471,9 +471,9 @@ INSERT INTO `type_evenements` VALUES(3, 'Soirée');
 
 
 
-INSERT INTO `evenements` VALUES(1, 'Noël', '2011-12-25 00:00:00', '2011-12-25 00:00:00', 3, 1);
-INSERT INTO `evenements` VALUES(2, 'Nouvelle Année', '2011-12-31 23:59:59', '2012-01-01 23:59:59', 3, 1);
-INSERT INTO `evenements` VALUES(3, 'Réunion de Rentrée', '2012-01-03 19:00:00', '2012-01-03 21:00:00', 3, 1);
+INSERT INTO `evenements` VALUES(1, 'Noël', '2011-12-25 00:00:00', '2011-12-25 00:00:00', 3, 1, 'Joyeux noël à tous !');
+INSERT INTO `evenements` VALUES(2, 'Nouvelle Année', '2011-12-31 23:59:59', '2012-01-01 23:59:59', 3, 1, 'Bonne année à tous !');
+INSERT INTO `evenements` VALUES(3, 'Réunion de Rentrée', '2012-01-03 19:00:00', '2012-01-03 21:00:00', 3, 1, 'La rentrée est là il faut mettre des choses au point !');
 
 
 

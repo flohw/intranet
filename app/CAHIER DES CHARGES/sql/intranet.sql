@@ -320,6 +320,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`evenements` (
   `date_fin` DATETIME NOT NULL ,
   `type_evenement_id` INT NOT NULL ,
   `personne_id` INT NOT NULL ,
+  `description` VARCHAR(250) NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_evenements_type_evenements1` (`type_evenement_id` ASC) ,
   INDEX `fk_evenements_personnes1` (`personne_id` ASC) ,
