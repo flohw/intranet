@@ -128,7 +128,7 @@
 								echo '<span class="label warning">À venir</span>';
 						?>
 					</td>
-					<td><?php echo $e['titre']; ?></td>
+					<td><?php echo $this->Html->link($e['titre'], array('action' => 'voir', $e['id'])); ?></td>
 					<td><?php echo $e['date_debut']; ?></td>
 					<td><?php echo $e['date_fin']; ?></td>
 					<td><?php echo $e['type_evenement']; ?></td>

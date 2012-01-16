@@ -180,7 +180,22 @@ class Evenement extends AppModel {
 			if (!(substr($e['date_debut'], 0, 10) <= date('Y-m-d') AND substr($e['date_fin'], 0, 10) >= date('Y-m-d')))
 				unset($events[$n]);
 		}
-/* 		debug($events); */
+		return $events;
+	}
+	
+	public function findEvenementByIdPers ($idEvent, $idPersonne)
+	{
+		$this->contain(array('Personne'));
+		$events = $this->findById($idEvent);
+		$idPers = array();
+		foreach ($events['Personne'] as $o => $p)
+		{
+			$idPers[] = $p['id'];
+			if (!in_array($idPersonne, $idPers))
+				$events = array();
+			else
+				$events['Personne'][$o] = $p['nom'].' '.$p['prenom'];
+		}
 		return $events;
 	}
 	

@@ -102,6 +102,17 @@ class EvenementsController extends AppController
 		$this->render('index');
 	}
 	
+	public function voir ($id)
+	{
+		$d['e'] = $this->Evenement->findEvenementByIdPers($id, $this->Auth->user('id'));
+		if (empty($d['e']))
+		{
+			$this->Session->setFlash('Vous n\'êtes pas convié à cet évènement ou il n\'existe pas', 'message');
+			$this->redirect($this->referer());
+		}
+		$this->set($d);
+	}
+	
 	public function supprimer ($id)
 	{
 		if ($this->Auth->user('statut_id') < $this->statuts['prof'])
@@ -121,6 +132,7 @@ class EvenementsController extends AppController
 		$this->Session->setFlash('L\'évènement a été supprimé !', 'message', array('class' => 'success'));
 		$this->redirect($this->referer());
 	}
+	
 
 }
 
