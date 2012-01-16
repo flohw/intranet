@@ -33,7 +33,7 @@
 	<li <?php echo ($this->action == 'groupe') ? 'class="active"' : null; ?>><a href="#groupe">Nouvel évènement par Groupe</a></li>
 <?php endif; ?>
 	<li <?php echo ($this->action == 'index' AND !isset($this->data)) ? 'class="active"' : null; ?>>
-		<a href="#liste">Tous les évènements</a></li>
+		<a href="#liste">Tous mes évènements</a></li>
 </ul>
 
 <div class="pill-content">
@@ -46,16 +46,16 @@
 		<?php	echo $this->Form->input('titre', array('label' => 'Titre de l\'évènement',  'class' => 'input')); ?>
 				</div>
 				<div class="clearfix">
+		<?php 	echo $this->Form->input('date_debut', array('label' => 'Date de début', 'class' => 'input datepickers', 'type' => 'text', 'readonly' => 'readonly')); ?>
+				</div>
+				<div class="clearfix">
+		<?php	echo $this->Form->input('date_fin', array('label' => 'Date de fin', 'class' => 'input datepickers', 'type' => 'text', 'readonly' => 'readonly')); ?>
+				</div>
+				<div class="clearfix">
 		<?php	echo $this->Form->input('type_evenement_id', array('label' => 'Catégorie', 'options' => $type, 'class' => 'input')); ?>
 				</div>
 				<div class="clearfix">
 		<?php	echo $this->Form->input('personnes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text')); ?>
-				</div>
-				<div class="clearfix">
-		<?php 	echo $this->Form->input('date_debut', array('label' => 'Date de début', 'class' => 'input datepickers', 'type' => 'text')); ?>
-				</div>
-				<div class="clearfix">
-		<?php	echo $this->Form->input('date_fin', array('label' => 'Date de fin', 'class' => 'input datepickers', 'type' => 'text')); ?>
 				</div>
 				<div class="actions">
 		<?php	echo $this->Form->submit('Enregistrer', array('class' => 'btn primary')); ?>
@@ -93,9 +93,11 @@
 			<thead>
 				<tr>
 					<th class="id">ID</th>
+					<th>Statut</th>
 					<th class="blue">Titre</th>
 					<th class="yellow">Début</th>
 					<th class="red">Fin</th>
+					<th class="purple">Type</th>
 					<th>Personnes concernées</th>
 					<?php
 						if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
@@ -108,9 +110,22 @@
 			<?php foreach ($evenements as $e): $e = current($e); ?>
 				<tr>
 					<td class="id"><?php echo $e['id']; ?></td>
+					<td>
+						<?php
+							$deb = substr($e['date_debut'], 0, 10);
+							$fin = substr($e['date_fin'], 0, 10);
+							if ($deb <= date('Y-m-d') AND $fin >= date('Y-m-d'))
+								echo '<span class="label success">Aujourd\'hui</span>';
+							elseif ($fin < date('Y-m-d'))
+								echo '<span class="label important">Passé</span>';
+							elseif ($deb > date('Y-m-d'))
+								echo '<span class="label warning">À venir</span>';
+						?>
+					</td>
 					<td><?php echo $e['titre']; ?></td>
 					<td><?php echo $e['date_debut']; ?></td>
 					<td><?php echo $e['date_fin']; ?></td>
+					<td><?php echo $e['type_evenement']; ?></td>
 					<td><?php echo $e['personnes']; ?></td>
 					<?php
 					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
@@ -142,13 +157,10 @@
 
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($) {
-  $(".datepickers, #dated, #datef").datepicker({
+  $.datepicker.setDefaults($.datepicker.regional['fr']);
+  $(".datepickers, #dated, #datef").datetimepicker({
   	dateFormat: 'yy-mm-dd',
-  	dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-  	dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
-  	monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-  	monthNamesShort: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aou', 'Sep', 'Oct', 'Nov', 'Dec'],
-  	firstDay: 1,
+  	minDate: 0,
   	changeYear: true,
   	changeMonth: true,
   	yearRange: '-1y:+1y',

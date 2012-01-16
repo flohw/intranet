@@ -80,7 +80,7 @@ class Evenement extends AppModel {
 			'offset' => '',
 			'finderQuery' => '',
 			'deleteQuery' => '',
-			'insertQuery' => ''
+			'insertQuery' => '',
 		)
 	);
 	
@@ -101,16 +101,18 @@ class Evenement extends AppModel {
 	// Pour l'affichage de tous les evenements (admin ou edition de l'evenement $idEvent)
 	public function findEvenement ($idEvent = null)
 	{
-		$this->contain(array('Personne'));
+		$this->contain(array('Personne', 'TypeEvenement'));
 		if (is_null($idEvent))
 			$ev = $this->find('all');
 		else
 			$ev = $this->find('all', array('conditions' => array('Evenement.id' => $idEvent)));
 		foreach ($ev as $k => $e)
 		{
+			$ev[$k]['Evenement']['type_evenement'] = $e['TypeEvenement']['nom'];
 			$ev[$k]['Evenement']['personnes'] = null;
 			foreach ($ev[$k]['Personne'] as $p)
-				$ev[$k]['Evenement']['personnes'] .= $p['login'].', ';
+				$ev[$k]['Evenement']['personnes'] .= $p['nom'].' '.$p['prenom'].', ';
+			
 			unset($ev[$k]['Personne']);
 		}
 		if (is_null($idEvent))
@@ -157,16 +159,36 @@ class Evenement extends AppModel {
 		return $r;
 	}
 	
+	public function findNotifsEvenementsDay ($loginPersonne, $idPersonne)
+	{
+		$events = $this->findNewEvenements($loginPersonne, $idPersonne);
+		foreach ($events as $n => $e)
+		{
+			$e = current($e);
+			if (!(substr($e['date_debut'], 0, 10) <= date('Y-m-d') AND substr($e['date_fin'], 0, 10) >= date('Y-m-d')))
+				unset($events[$n]);
+		}
+/* 		debug($events); */
+		return $events;
+	}
+	
 	public function afterFind ($result)
 	{
 		foreach ($result as $k => $r)
 		{
 			if (isset($result[$k]['Evenement']['date_debut']))
-				$result[$k]['Evenement']['date_debut'] = substr($r['Evenement']['date_debut'], 0, 10);
+				$result[$k]['Evenement']['date_debut'] = substr($r['Evenement']['date_debut'], 0, 16);
 			if (isset($result[$k]['Evenement']['date_fin']))
-				$result[$k]['Evenement']['date_fin'] = substr($r['Evenement']['date_fin'], 0, 10);
+				$result[$k]['Evenement']['date_fin'] = substr($r['Evenement']['date_fin'], 0, 16);
 		}
 		return $result;
+	}
+	
+	public function beforeSave($data)
+	{
+		$this->data['Evenement']['date_debut'] = trim($this->data['Evenement']['date_debut']);
+		$this->data['Evenement']['date_fin'] = trim($this->data['Evenement']['date_fin']);
+		return true;
 	}
 
 }

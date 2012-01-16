@@ -11,6 +11,7 @@ class EvenementsController extends AppController
 		if (isset($this->data) AND $this->Auth->user('statut_id') >= $this->statuts['prof'])
 		{
 			$personnes = explode(',', $this->data['Evenement']['personnes']);
+			//debug($this->data);
 			$personnes = $this->Evenement->Personne->findDisplayName($personnes);
 			if (!$personnes['all'])
 				$this->Session->setFlash('Certains utilisateurs n\'existent pas, vérifiez les noms', 'message');
@@ -43,7 +44,7 @@ class EvenementsController extends AppController
 		if ($this->Auth->user('statut_id') >= $this->statuts['admin'])
 			$d['evenements'] = $this->Evenement->findEvenement();
 		else
-			$d['evenements'] = $this->Evenement->findNewEvenements($this->Auth->user('login'), $this->Auth->user('id'));
+			$d['evenements'] = $this->Evenement->findNewEvenements($this->Auth->user('display'), $this->Auth->user('id'));
 		$d['personnes'] = $this->Evenement->Personne->find('list');
 		$d['groupes'] = $this->Evenement->Personne->Groupe->getGroupeList('list');
 		$d['type'] = $this->TypeEvenement->find('list');
