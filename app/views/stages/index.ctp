@@ -11,7 +11,7 @@
 </ul>
 
 <div class="pill-content">
-	<div id="accueil"  class="active">
+	<div id="accueil"  > <!-- class="active" -->
 		<div class="row">
 			<div class="span12">
 				<h3>Objectifs</h3>
@@ -58,30 +58,21 @@
 		</div>
 	</div>
 
-	<div id="offres">
+	<div id="offres" class="active">
 		<h3>L'IUT vous aide, et vous propose des offres de stage !</h3>
 		<div class="row">
 			<div class="span10">
 				<?php if (!empty($offres)): $i = 0; ?>
 				<div class="well" id="accordeonStage">
-				<?php foreach ($offres as $o):
-					if($i==0)
-						echo '<h3 class="active">'.$o['Stage']['entreprise'].'<span>'.$o['Stage']['ville'].'</span></h3>';
-					else
-						echo '<h3>'.$o['Stage']['entreprise'].'<span>'.$o['Stage']['ville'].'</span></h3>';
-				?>
-					<div>
-						<ul>
-							<li><?php echo $o['Stage']['description']; ?></li>
-						</ul>
-					</div>
-			    	<?php
-		    			$i++;
+				<?php
+					foreach ($offres as $o):
+						echo $this->element('offre', array('o' => $o, 'i' => $i));
+						$i++;
 					endforeach; 
 				?>
 				</div>
-				<?php endif; 
-				?>
+				<?php endif; ?><br />
+				<a href="#" class="btn small success" id="nouvelle">Nouvelle offre</a>
 			</div>
 			<div class="span6">
 				<h4>Fichiers Joints <span class="label notice">Note</span></h4>

@@ -40,10 +40,10 @@
 				echo '</td>';
 				echo '<td>'.$m['date_envoi'].'</td>';
 				echo '<td>';
-					echo $this->Html->link('Lire', array('action' => 'message', $m['id']), array('class' => 'btn info')).'&nbsp;';
+					echo $this->Html->link('Lire', array('action' => 'message', $m['id']), array('class' => 'btn small info')).'&nbsp;';
 					if ($m['supprime_dest'] == 0 AND $m['supprime_exp'] == 0)
-						echo $this->Html->link('Répondre', array('action' => 'repondre', $m['id']), array('class' => 'btn success')).'&nbsp;';
-				echo $this->Html->link('Supprimer', array('action' => 'supprimer', $m['id']), array('class' => 'btn danger'), 'Êtes vous sûr de vouloir supprimer cette conversation ?');
+						echo $this->Html->link('Répondre', array('action' => 'repondre', $m['id']), array('class' => 'btn small success')).'&nbsp;';
+				echo $this->Html->link('Supprimer', array('action' => 'supprimer', $m['id']), array('class' => 'btn small danger'), 'Êtes vous sûr de vouloir supprimer cette conversation ?');
 				echo '</td>';
 				echo '</tr>';
 			endforeach;

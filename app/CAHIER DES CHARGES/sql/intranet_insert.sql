@@ -485,10 +485,10 @@ INSERT INTO `stages` (`id`, `entreprise`, `ville`, `description`, `dispo`, `depa
 
 
 
-INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `date_ajout`) VALUES
-(1, 'TP1-Bases.pdf', 13, 1, '2012-01-12 20:13:35'),
-(2, 'TP2-Procedures.pdf', 13, 1, '2012-01-12 20:13:45'),
-(3, 'Traduction.pdf', 13, 1, '2012-01-12 20:13:58');
+INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `date_ajout`, `type_mime`) VALUES
+(1, 'TP1-Bases.pdf', 13, 1, '2012-01-12 20:13:35', 'application/pdf'),
+(2, 'TP2-Procedures.pdf', 13, 1, '2012-01-12 20:13:45', 'application/pdf'),
+(3, 'Traduction.pdf', 13, 1, '2012-01-12 20:13:58', 'application/pdf');
 
 
 
