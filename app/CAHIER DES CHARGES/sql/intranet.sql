@@ -441,6 +441,18 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`notes` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `intranet`.`utiles`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `intranet`.`utiles` ;
+
+CREATE  TABLE IF NOT EXISTS `intranet`.`utiles` (
+  `id` INT NOT NULL ,
+  `contenu` TEXT NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
