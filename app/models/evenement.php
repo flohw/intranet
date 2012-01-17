@@ -191,11 +191,12 @@ class Evenement extends AppModel {
 		foreach ($events['Personne'] as $o => $p)
 		{
 			$idPers[] = $p['id'];
-			if (!in_array($idPersonne, $idPers))
-				$events = array();
-			else
-				$events['Personne'][$o] = $p['nom'].' '.$p['prenom'];
+			$events['Personne'][$o] = $p['nom'].' '.$p['prenom'];
 		}
+		
+		if (!in_array($idPersonne, $idPers) AND $idPersonne != $events['Evenement']['personne_id'])
+			$events = array();
+		
 		return $events;
 	}
 	
