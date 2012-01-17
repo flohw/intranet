@@ -21,9 +21,17 @@ class Absence extends AppModel {
 			),
 			'notempty' => array (
 				'rule' => array ('verifDate'), 
-				'message' => 'Date invalide',
+				'message' => 'La date n\'est pas encore passée',
 				'allowEmpty' => false,
 				'required' => true,
+			),
+		),
+		'personne_id' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'required' => true,
+				'allowEmpty' => false,
+				'message' => 'Cette personne n\'existe pas',
 			),
 		),
 	);
@@ -40,6 +48,18 @@ class Absence extends AppModel {
 
 	public function verifDate ($check) {
 		return $check['date'] <= date('Y-m-d H:i:s');
+	}
+	
+	public function beforeValidate ()
+	{
+		$p = $this->Personne->find('first', array('conditions' => array('display' => $this->data['Absence']['personne_id'])));
+		$this->data['Absence']['personne_id'] = $p['Personne']['id'];
+		return true;
+	}
+	
+	public function beforeSave ()
+	{
+		return true;
 	}
 	
 	public function afterFind ($result)

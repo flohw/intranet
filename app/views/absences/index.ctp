@@ -26,7 +26,7 @@
 			echo '</div>';
 
 			echo '<div class="clearfix">';
-			echo $this->Form->input('personne_id', array('label' => 'Elève', 'class' => 'input'));
+			echo $this->Form->input('personne_id', array('label' => 'Elève', 'class' => 'input', 'type' => 'text', 'id' => 'personne'));
 			echo '</div>';
 
 			echo '<div class="actions">';
@@ -77,6 +77,14 @@ jQuery(function($) {
 		changeMonth: true,
 		yearRange: '-1y:+1y',
 		timeFormat: 'hh:mm',
+	});
+	
+	var availableNames = [];
+	<?php foreach ($personnes as $d): ?>
+		availableNames.push("<?php echo $d; ?>");
+	<?php endforeach; ?>
+	$("#personne").autocomplete({
+		source: availableNames,
 	});
 });
 <?php echo $this->Html->scriptEnd(); ?>
