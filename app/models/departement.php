@@ -32,18 +32,6 @@ class Departement extends AppModel {
 				'required' => true,
 			),
 		),
-		'abreviation' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'L\'abréviation est vide',
-				'allowEmpty' => false,
-				'required' => true,
-			),
-			'alphanumeric' => array(
-				'rule' => array('alphanumeric'),
-				'message' => 'L\'abréviation doit être une chaine de caractères',
-			),
-		),
 	);
 
 	var $hasMany = array(
