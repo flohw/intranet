@@ -5,8 +5,14 @@
 <div class="row">
 	<div class="span16">
 		<p>
-			Vous avez <strong><?php echo $this->Html->link(count($notifs['messages']),
-												array('controller' => 'messages', 'action' => 'index')); ?></strong> nouveaux messages, et <strong>
+			Vous avez <strong>
+			<?php
+				$nb = count($notifs['messages']);
+				if ($nb > 0)
+					echo $this->Html->link($nb, array('controller' => 'messages', 'action' => 'index'));
+				else
+					echo 'aucun';
+			?></strong> nouveaux messages, et <strong>
 			<?php
 				$nb = count($notifs['evenements']['evenementsDay']);
 				if($nb > 0)

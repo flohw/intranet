@@ -54,7 +54,7 @@ class Evenement extends AppModel {
 				'message' => 'La date de fin est avant la date de début !',
 			),
 		),
-		'contenu' => array(
+		'description' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				'allowEmpty' => false,

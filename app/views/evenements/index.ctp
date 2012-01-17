@@ -58,7 +58,7 @@
 		<?php	echo $this->Form->input('personnes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text')); ?>
 				</div>
 				<div class="clearfix">
-		<?php	echo $this->Form->input('contenu', array('label' => 'Description', 'class' => 'input', 'type' => 'textarea')); ?>
+		<?php	echo $this->Form->input('description', array('label' => 'Description', 'class' => 'input', 'type' => 'textarea')); ?>
 				</div>
 				<div class="actions">
 		<?php	echo $this->Form->submit('Enregistrer', array('class' => 'btn primary')); ?>
@@ -85,7 +85,7 @@
 		<?php	echo $this->Form->input('groupes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text')); ?>
 				</div>
 				<div class="clearfix">
-		<?php	echo $this->Form->input('contenu', array('label' => 'Description', 'class' => 'input', 'type' => 'textarea')); ?>
+		<?php	echo $this->Form->input('description', array('label' => 'Description', 'class' => 'input', 'type' => 'textarea')); ?>
 				</div>
 				<div class="actions">
 		<?php	echo $this->Form->submit('Enregistrer', array('class' => 'btn primary')); ?>
