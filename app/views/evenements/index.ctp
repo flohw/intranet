@@ -132,7 +132,15 @@
 					<td><?php echo $e['date_debut']; ?></td>
 					<td><?php echo $e['date_fin']; ?></td>
 					<td><?php echo $e['type_evenement']; ?></td>
-					<td><?php echo $e['personnes']; ?></td>
+					<?php $ex = explode(',', $e['personnes']);
+						$nb = count($ex)-1;
+						if ($nb == 0):
+							echo '<td><b>Aucune personne conviée à cet évènement</b></td>';
+						else:
+							echo '<td><b>'.$nb.' personne'.(($nb > 1) ? 's' : null).' conviée'.(($nb > 1) ? 's' : null).' à cet évènement</b></td>';
+						endif;
+					?>
+					<!--<td><?php //echo $e['personnes']; ?></td>-->
 					<?php
 					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
 					{
