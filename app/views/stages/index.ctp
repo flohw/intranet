@@ -72,6 +72,9 @@
 					?>
 				</div>
 				<?php
+				else:
+					echo 'Aucune offre proposée<br />';
+				endif;
 					echo $this->Form->create('Stage', array('id' => 'newOffre', 'enctype' => 'multipart/form-data',
 								'class' => 'ui-accordion-header ui-helper-reset ui-state-active ui-corner-top active'));
 					echo '<div class="clearfix">';
@@ -88,7 +91,6 @@
 					echo '<span class="input-append">(Word, Excel, PDF, Images)</span></div>';
 					echo $this->Form->submit('Enregistrer', array('class' => 'btn success'));
 					echo $this->Form->end();
-				endif;
 					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
 						echo '<br /><a href="#" class="btn small success" id="nouvelle">Nouvelle offre</a>';
 				?>
@@ -253,9 +255,11 @@
 </div>
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($){
+	// Bouton de nouvelle offre
 	$('#nouvelle').click(function(){
 		$(this).parent().find('#newOffre').slideToggle();
 	});
+	// Gestion erreurs evoi de formulaire
 	$('#newOffre').submit(function(){
 		var verif = true;
 		if ($('#entreprise').val().length == 0)
@@ -277,6 +281,36 @@ jQuery(function($){
 			verif = false;
 		}
 		return verif;
+	});
+	
+	// suppression
+	$('.supprimer').click(function(){
+		if (confirm('Êtes vous sûr de vouloir supprimer cette offre ?') === false)
+			return false;
+		var id		= $(this).attr('href');
+		var elem	= $(this).parent();
+		var xhr		= new XMLHttpRequest();
+		xhr.open('post', '<?php echo $this->Html->url(array('action' => 'supprimer')); ?>', true);
+		xhr.setRequestHeader('id', id.substr(1, id.length-1));
+		xhr.addEventListener('load', function(e){
+			var json = jQuery.parseJSON(e.target.responseText);
+			alert(json.content);
+			if (json.id)
+			{
+				elem.slideUp("slow", function(){
+					elem.parent().find('h3#titre'+json.id).slideUp("slow", function(){ $(this).remove(); });
+					console.log($('.supprimer').length);
+					if ($('.supprimer').length == 1)
+					{
+						elem.parent().remove();
+						$('#offres .span10').prepend('<p>Aucune offre proposée</p>');
+					}
+					$(this).remove();
+				});
+			}
+		});
+		xhr.send();
+		return false;
 	});
 });
 <?php echo $this->Html->scriptEnd(); ?>

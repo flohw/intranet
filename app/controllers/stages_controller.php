@@ -39,6 +39,29 @@ class StagesController extends AppController
 		$this->set($o);
 	}
 	
+	public function supprimer ()
+	{
+		$h = getallheaders();
+		foreach ($h as $k => $v)
+			$h[low($k)] = $v;
+		$this->layout = null;
+		$this->render(false);
+		$r = new stdClass();
+		if ($this->Auth->user('statut_id') < $this->statuts['prof'])
+			$r->content = 'Vous n\'avez pas le droit d\'accéder à cette page';
+		else
+		{
+			$fichier = $this->Stage->findById($h['id']);
+			$fichier = $fichier['Stage']['document'];
+			if (is_file('files/stages-offres/'.$fichier))
+				unlink('files/stages-offres/'.$fichier);
+			$this->Stage->delete($h['id']);
+			$r->content = 'Le stage a bien été supprimé';
+			$r->id = $h['id'];
+		}
+		return json_encode($r);
+	}
+	
 	// Projets tuteures 1A (tous)
 	function pt1()
 	{
