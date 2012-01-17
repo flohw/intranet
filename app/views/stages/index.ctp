@@ -11,7 +11,7 @@
 </ul>
 
 <div class="pill-content">
-	<div id="accueil"  > <!-- class="active" -->
+	<div id="accueil" class="active">
 		<div class="row">
 			<div class="span12">
 				<h3>Objectifs</h3>
@@ -58,7 +58,7 @@
 		</div>
 	</div>
 
-	<div id="offres" class="active">
+	<div id="offres">
 		<h3>L'IUT vous aide, et vous propose des offres de stage !</h3>
 		<div class="row">
 			<div class="span10">
@@ -68,11 +68,30 @@
 					foreach ($offres as $o):
 						echo $this->element('offre', array('o' => $o, 'i' => $i));
 						$i++;
-					endforeach; 
-				?>
+					endforeach;
+					?>
 				</div>
-				<?php endif; ?><br />
-				<a href="#" class="btn small success" id="nouvelle">Nouvelle offre</a>
+				<?php
+					echo $this->Form->create('Stage', array('id' => 'newOffre', 'enctype' => 'multipart/form-data',
+								'class' => 'ui-accordion-header ui-helper-reset ui-state-active ui-corner-top active'));
+					echo '<div class="clearfix">';
+					echo $this->Form->input('entreprise', array('id' => 'entreprise'));
+					echo '</div>';
+					echo '<div class="clearfix">';
+					echo $this->Form->input('ville', array('id' => 'ville'));
+					echo '</div>';
+					echo '<div class="clearfix">';
+					echo $this->Form->input('description', array('id' => 'description'));
+					echo '</div>';
+					echo '<div class="clearfix">';
+					echo $this->Form->input('fichier', array('type' => 'file'));
+					echo '<span class="input-append">(Word, Excel, PDF, Images)</span></div>';
+					echo $this->Form->submit('Enregistrer', array('class' => 'btn success'));
+					echo $this->Form->end();
+				endif;
+					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
+						echo '<br /><a href="#" class="btn small success" id="nouvelle">Nouvelle offre</a>';
+				?>
 			</div>
 			<div class="span6">
 				<h4>Fichiers Joints <span class="label notice">Note</span></h4>
@@ -232,3 +251,32 @@
 		</div>
 	</div>
 </div>
+<?php echo $this->Html->scriptStart(array('inline' => false)); ?>
+jQuery(function($){
+	$('#nouvelle').click(function(){
+		$(this).parent().find('#newOffre').slideToggle();
+	});
+	$('#newOffre').submit(function(){
+		var verif = true;
+		if ($('#entreprise').val().length == 0)
+		{
+			$('#entreprise').parent().addClass('error');
+			$('#entreprise').parent().append('<div class="error-message">Le nom de l\'entreprise doit être renseignée</div>');
+			verif = false;
+		}
+		if ($('#ville').val().length == 0)
+		{
+			$('#ville').parent().addClass('error');
+			$('#ville').parent().append('<div class="error-message">La ville doit être renseignée</div>');
+			verif = false;
+		}
+		if ($('#description').val().length == 0)
+		{
+			$('#description').parent().addClass('error');
+			$('#description').parent().append('<div class="error-message">Vous devez renseigner une description</div>');
+			verif = false;
+		}
+		return verif;
+	});
+});
+<?php echo $this->Html->scriptEnd(); ?>

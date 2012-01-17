@@ -191,6 +191,14 @@ table.notes tr.notes td { text-align: center; }
 table.notes tr.notes td.intitule { text-align: left; }
 h3.moyenne { text-align: center; }
 
+/* Offres */
+#newOffre { display: none; }
+#newOffre { margin-top: 10px; margin-bottom: 5px; padding-top: 10px; }
+#newOffre .btn { position: relative; bottom: 10px; left: 140px; margin-top: 10px; }
+#newOffre label { width: 140px; margin-right: 0px; }
+#newOffre input, #newOffre textarea, #newOffre select { margin-left: 30px; }
+#newOffre .error-message { font-size: small; margin-left: 170px; }
+#newOffre .input-append { margin-left: 170px; }
 
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }

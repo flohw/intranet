@@ -375,6 +375,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`stages` (
   `dispo` TINYINT(1)  NOT NULL ,
   `departements_id` INT NOT NULL ,
   `date_ajout` DATETIME NOT NULL ,
+  `document` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_offres_stage_departements1` (`departements_id` ASC) ,
   CONSTRAINT `fk_offres_stage_departements1`
