@@ -79,7 +79,7 @@
 <?php
 		if ($this->Paginator->counter(array('format' => '%pages%')) > 1)
 		{
-			$rec = (empty($this->data['Personne']['rech'])) ? '%' : $this->data['Personne']['rech'];
+			$rec = (empty($this->data['Personne']['rech']) AND !empty($this->data['Personne']['statut'])) ? '~' : $this->data['Personne']['rech'];
 			$id = (empty($this->data['Personne']['statut'])) ? null : $this->data['Personne']['statut'];
 			echo '<div class="pagination" id="paginator">'
 					.$this->Paginator->numbers(array('separator' => false, 'update' => '#contenuPersonnes',
@@ -87,6 +87,5 @@
 													'url' => array($rec, $id))).'</div>';
 		}
 	endif; ?>
-
 <?php echo $this->Js->writeBuffer(); ?>
 </div>
