@@ -22,8 +22,7 @@
 			?></strong> evenement<?php echo (($nb > 1) ? 's' : null); ?> aujourd'hui.
 			</p><br />
 			
-		<?php echo $this->Html->image("header.png", array("alt" => "Bonjour")); ?>
-		<h2 style="text-align: center;">Département informatique de Grenoble</h2>
+		<?php echo $this->Html->image("intranet.png", array("alt" => "Bonjour")); ?>
 
 	</div>
 </div>
