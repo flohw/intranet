@@ -21,7 +21,7 @@
 	</div>
 	<div class="span10">
 		<span class="label notice">Informations</span><br>
-		<h3 style="display:inline;">Description  </h3>
+		<h3 style="display:inline;">Description</h3>
 		<p><?php echo $e['Evenement']['description']; ?></p>	
 	</div>
 </div>
