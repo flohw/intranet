@@ -71,6 +71,13 @@ class Evenement extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'Createur' => array(
+			'className' => 'Personne',
+			'foreignKey' => 'personne_id',
+			'conditions' => '',
+			'fields' => 'prenom, nom',
+			'order' => ''
 		)
 	);
 
@@ -189,7 +196,7 @@ class Evenement extends AppModel {
 	
 	public function findEvenementByIdPers ($idEvent, $idPersonne)
 	{
-		$this->contain(array('Personne'));
+		$this->contain(array('Personne', 'TypeEvenement', 'Createur'));
 		$events = $this->findById($idEvent);
 		$idPers = array();
 		foreach ($events['Personne'] as $o => $p)
@@ -200,7 +207,8 @@ class Evenement extends AppModel {
 		
 		if (!in_array($idPersonne, $idPers) AND $idPersonne != $events['Evenement']['personne_id'])
 			$events = array();
-		
+		$events['Createur']['display'] = $events['Createur']['prenom'].' '.$events['Createur']['nom'];
+		unset($events['Createur']['prenom'], $events['Createur']['nom']);
 		return $events;
 	}
 	

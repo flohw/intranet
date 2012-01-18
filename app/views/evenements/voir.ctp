@@ -1,15 +1,17 @@
 <?php $this->title = 'Intranet | Evènements | '.$e['Evenement']['titre']; ?>
+
 <div class="page-header">
 	<h2>Evènement <small>- <?php echo $e['Evenement']['titre']; ?></small></h2>
 </div>
-
+<div class="titreCrea">
+	<h3 style="display:inline;">Créateur de l'évènement : </h3><?php echo $e['Createur']['display']; ?>
+</div>	
 <div class="row">
-
 	<div class="span6">
 	<span class="label important">Important</span><br>
 		<h3 style="display:inline;">Date de début : </h3><?php echo $e['Evenement']['date_debut']; ?><br />
 		<h3 style="display:inline;">Date de fin : </h3><?php echo $e['Evenement']['date_fin']; ?><br />
-		<h3 style="display:inline;">Type d'évènement : </h3><?php echo $e['Evenement']['type_evenement_id'] ?>
+		<h3 style="display:inline;">Type d'évènement : </h3><?php echo $e['TypeEvenement']['nom'] ?>
 		<h3>Personnes conviées :</h3>
 		<ul>
 		<?php
@@ -27,3 +29,4 @@
 <div class="actions">
 	<?php echo $this->Html->link('Retour', array('action' => 'index'), array('class' => 'btn success')); ?>
 </div>
+
