@@ -40,5 +40,12 @@ jQuery(function($){
 			$('.module#'+$(this).val()).addClass('active').slideDown();
 		}
 	});
+	
+	// Mise en forme paginator pour bootstrap 8-)
+	$('#paginator a').each(function(e){
+		$(this).wrap('<li>');
+	});
+	$('#paginator').find('.current').wrap('<li class="disabled"><a href="#">');
+	$('#paginator li').wrapAll('<ul>');
 
 });

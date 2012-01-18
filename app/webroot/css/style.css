@@ -200,6 +200,11 @@ h3.moyenne { text-align: center; }
 #newOffre .error-message { font-size: small; margin-left: 170px; }
 #newOffre .input-append { margin-left: 170px; }
 
+.annuaire { margin-top: 40px; }
+
+/* Pagination */
+.pagination { height: 30px; text-align: center; }
+
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }
 .marge { margin-left: 6em; }

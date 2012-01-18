@@ -12,8 +12,9 @@
 	echo '</fieldset>';
 	echo $this->Form->end();
 // Personnes trouvées
-	if (!empty($personne)):?>
-		<table class="zebra-striped" id="sort">
+	if (!empty($personne)):
+?>
+		<table class="zebra-striped annuaire" id="sort">
 			<thead>
 				<tr>
 					<th class="id">#</th>
@@ -73,4 +74,7 @@
 <?php	endforeach; ?>
 			</tbody>
 		</table>
-<?php endif; ?>
+<?php
+		if ($this->Paginator->counter(array('format' => '%pages%')) > 1)
+			echo '<div class="pagination" id="paginator">'.$this->Paginator->numbers(array('separator' => false)).'</div>';
+	endif; ?>
