@@ -122,11 +122,18 @@ class Evenement extends AppModel {
 		{
 			$ev[$k]['Evenement']['type_evenement'] = $e['TypeEvenement']['nom'];
 			$ev[$k]['Evenement']['personnes'] = null;
+			$i = 1;
 			foreach ($ev[$k]['Personne'] as $p)
-				$ev[$k]['Evenement']['personnes'] .= $p['nom'].' '.$p['prenom'].', ';
-			
+			{
+				$ev[$k]['Evenement']['personnes'] .= $p['nom'].' '.$p['prenom'];
+				if (count($ev[$k]['Personne']) != $i)
+					$ev[$k]['Evenement']['personnes'] .= ', ';
+				$i++;
+			}
+			$ev[$k]['Evenement']['nb_personnes'] = $i-1;
 			unset($ev[$k]['Personne']);
 		}
+		
 		if (is_null($idEvent))
 			return $ev;
 		else
@@ -145,6 +152,7 @@ class Evenement extends AppModel {
 			if (!in_array($loginPersonne, $personnes) AND $e['Evenement']['personne_id'] != $idPersonne)
 				unset($events[$k]);
 		}
+		
 		return $events;
 	}
 	

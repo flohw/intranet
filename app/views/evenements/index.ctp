@@ -132,12 +132,11 @@
 					<td><?php echo $e['date_debut']; ?></td>
 					<td><?php echo $e['date_fin']; ?></td>
 					<td><?php echo $e['type_evenement']; ?></td>
-					<?php $ex = explode(',', $e['personnes']);
-						$nb = count($ex)-1;
-						if ($nb == 0):
-							echo '<td><b>Aucune personne conviée à cet évènement</b></td>';
+					<?php
+						if ($e['nb_personnes'] == 0):
+							echo '<td><strong>Aucune</string> personne conviée à cet évènement</td>';
 						else:
-							echo '<td><b>'.$nb.' personne'.(($nb > 1) ? 's' : null).' conviée'.(($nb > 1) ? 's' : null).' à cet évènement</b></td>';
+							echo '<td><strong>'.$e['nb_personnes'].' personne'.(($e['nb_personnes'] > 1) ? 's' : null).'</strong> conviée'.(($e['nb_personnes'] > 1) ? 's' : null).' à cet évènement</td>';
 						endif;
 					?>
 					<!--<td><?php //echo $e['personnes']; ?></td>-->
