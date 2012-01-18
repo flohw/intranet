@@ -125,11 +125,14 @@ class PersonnesController extends AppController
 	{
 		$this->Personne->recursive = -1;
 		$d['personne'] = $this->paginate('Personne');
-		if (isset($this->data) OR !is_null($nom))
+		if (!is_null($nom))
 		{
-			if (!is_null($nom))
-				$this->data['Personne']['rech'] = $nom;
+			$this->data['Personne']['rech'] = ($nom == '~') ? '' : $nom;
 			$this->data['Personne']['statut'] = $statut;
+		}
+		if (isset($this->data))
+		{
+			
 			$st = $this->data['Personne']['statut'];
 			if (empty($this->data['Personne']['statut']))
 			{
