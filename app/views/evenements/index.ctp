@@ -4,7 +4,7 @@
 	if (empty($this->data))
 		{
 			if ($granted)
-				$this->title .= 'Ajouter un évènement';
+				$this->title .= 'Les évènements';
 			else
 				$this->title .= 'Liste des évènements';
 		}
@@ -17,7 +17,7 @@
 		if (empty($this->data))
 		{
 			if ($granted)
-				echo '<h1>Ajouter un évènement</h1>';
+				echo '<h1>Les évènements</h1>';
 			else
 				echo '<h1>Liste des évènements</h1>';
 		}
@@ -160,11 +160,11 @@
 			<?php endif; ?>
 			</tbody>
 		</table>
-	<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof']): ?>
-		<div class="actions">
-			<?php echo $this->Html->link('Nouvel évènement', array('action' => 'index'), array('class' => 'btn primary')); ?>
-		</div>
-	<?php endif; ?>
+	<?php // if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof']): ?>
+	<!--	<div class="actions">
+			<?php //echo $this->Html->link('Nouvel évènement', array('action' => 'index'), array('class' => 'btn primary')); ?>
+		</div> -->
+	<?php // endif; ?>
 	</div>
 </div>
 

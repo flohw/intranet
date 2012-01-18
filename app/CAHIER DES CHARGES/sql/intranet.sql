@@ -315,12 +315,12 @@ DROP TABLE IF EXISTS `intranet`.`evenements` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`evenements` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `titre` VARCHAR(255) NOT NULL ,
+  `titre` VARCHAR(35) NOT NULL ,
   `date_debut` DATETIME NOT NULL ,
   `date_fin` DATETIME NOT NULL ,
   `type_evenement_id` INT NOT NULL ,
   `personne_id` INT NOT NULL ,
-  `description` VARCHAR(250) NOT NULL ,
+  `description` TEXT NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_evenements_type_evenements1` (`type_evenement_id` ASC) ,
   INDEX `fk_evenements_personnes1` (`personne_id` ASC) ,

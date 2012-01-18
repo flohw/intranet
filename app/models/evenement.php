@@ -61,10 +61,6 @@ class Evenement extends AppModel {
 				'required' => true,
 				'message' => 'Vous devez préciser l\'évènement',
 			),
-			'length' => array(
-				'rule' => array('maxLength', 250),
-				'message' => 'Le message est trop long (250 caractères maximum)',
-			),
 		),
 	);
 
