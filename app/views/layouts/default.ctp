@@ -6,6 +6,7 @@
        <?php echo $this->Html->css('style.css'); ?>
     <?php echo $this->Html->css('bootstrap.css'); ?>
     <?php echo $this->Html->css('Aristo.css'); ?>
+    <?php echo $this->Html->script("jquery"); ?>
   </head>
     <body>
 
@@ -33,7 +34,6 @@
       </div>
     </footer> 
 
-      <?php echo $this->Html->script("jquery"); ?>
       <?php echo $this->Html->script("jquery-ui"); ?>
       <?php echo $this->Html->script("menu"); ?>
       <?php echo $this->Html->script("bootstrap-modal"); ?>

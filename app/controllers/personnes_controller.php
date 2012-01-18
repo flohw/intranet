@@ -4,6 +4,8 @@ class PersonnesController extends AppController
 	var $name = "Personnes";
 	var $uses = array('Personne', 'Statut');
 	var $paginate = array('Personne' => array('limit' => 10));
+	var $components = array('RequestHandler');
+	var $helpers = array('Paginator', 'Js');
 	
 	function beforeFilter() { $this->Auth->autoRedirect = false; parent::beforeFilter(); }
 	
@@ -119,12 +121,15 @@ class PersonnesController extends AppController
 	}
 	
 	// Annuaire des personnes enregistrées
-	function annuaire()
+	function annuaire($nom = null, $statut = null)
 	{
 		$this->Personne->recursive = -1;
 		$d['personne'] = $this->paginate('Personne');
-		if (isset($this->data))
+		if (isset($this->data) OR !is_null($nom))
 		{
+			if (!is_null($nom))
+				$this->data['Personne']['rech'] = $nom;
+			$this->data['Personne']['statut'] = $statut;
 			$st = $this->data['Personne']['statut'];
 			if (empty($this->data['Personne']['statut']))
 			{
@@ -133,7 +138,7 @@ class PersonnesController extends AppController
 					$st[$k] = $k;
 			}
 			$this->paginate = array('Personne' => array(
-				'limit' => 20,
+				'limit' => 10,
 				'conditions' => array(
 					'Personne.statut_id' => $st,
 					'OR' => array(
@@ -146,7 +151,7 @@ class PersonnesController extends AppController
 			if(empty($d['personne']))
 				$this->Session->setFlash('Aucun résultat n\'a été trouvé', 'message');
 		}
-
+		
 		$d['statuts'] = $this->Statut->find('list');
 		$this->set($d);
 	}

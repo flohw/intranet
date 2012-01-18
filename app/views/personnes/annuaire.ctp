@@ -1,4 +1,6 @@
-<?php $this->title = 'Intranet | Annuaire';
+<?php $this->title = 'Intranet | Annuaire'; ?>
+<div id="contenuPersonnes">
+<?php
 	echo $this->Form->create('Personne');
 		echo '<div class="clearfix">';
 		echo $this->Form->input('statut', array('label' => 'Statut', 'options' => $statuts, 'empty' => array('' => 'Tous'), 'class' => 'input'));
@@ -76,5 +78,15 @@
 		</table>
 <?php
 		if ($this->Paginator->counter(array('format' => '%pages%')) > 1)
-			echo '<div class="pagination" id="paginator">'.$this->Paginator->numbers(array('separator' => false)).'</div>';
+		{
+			$rec = (empty($this->data['Personne']['rech'])) ? '%' : $this->data['Personne']['rech'];
+			$id = (empty($this->data['Personne']['statut'])) ? null : $this->data['Personne']['statut'];
+			echo '<div class="pagination" id="paginator">'
+					.$this->Paginator->numbers(array('separator' => false, 'update' => '#contenuPersonnes',
+													'complete' => 'myComplete()',
+													'url' => array($rec, $id))).'</div>';
+		}
 	endif; ?>
+
+<?php echo $this->Js->writeBuffer(); ?>
+</div>

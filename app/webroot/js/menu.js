@@ -42,10 +42,15 @@ jQuery(function($){
 	});
 	
 	// Mise en forme paginator pour bootstrap 8-)
+	myComplete();
+
+});
+
+function myComplete()
+{
 	$('#paginator a').each(function(e){
 		$(this).wrap('<li>');
 	});
 	$('#paginator').find('.current').wrap('<li class="disabled"><a href="#">');
 	$('#paginator li').wrapAll('<ul>');
-
-});
+}
