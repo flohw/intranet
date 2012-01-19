@@ -114,7 +114,8 @@ class DocumentsController extends AppController
 	// Methode pour l'ipload de la fonction index (appelée en ajax)
 	function upload()
 	{
-		$this->layout = false;
+		$this->layout = null;
+		$this->render(false);
 		$h = getallheaders();
 		foreach ($h as $k => $v)
 			$h[low($k)] = $v;
