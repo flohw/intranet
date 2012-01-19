@@ -11,22 +11,37 @@ class StagesController extends AppController
 		{
 			$this->data['Stage']['departements_id'] = $this->Auth->user('departement_id');
 			$this->data['Stage']['date_ajout'] = date('Y-m-d H:i:s');
-			$this->data['Stage']['document'] =	Inflector::slug($this->data['Stage']['entreprise'], '-').'-'
-												.Inflector::slug($this->data['Stage']['ville'], '-').'-';
+			if (!empty($this->data['Stage']['fichier']['name']) AND !$this->data['Stage']['supprimer'])
+				$this->data['Stage']['document'] =	Inflector::slug($this->data['Stage']['entreprise'], '-').'-'
+													.Inflector::slug($this->data['Stage']['ville'], '-').'-';
+			elseif ($this->data['Stage']['supprimer'] == true)
+				$this->data['Stage']['document'] = '';
+			
 			$this->Stage->set($this->data);
 			if ($this->Stage->validates())
 			{
+				$oldDocument = $this->Stage->getDocument($this->Stage->id);
+				if (empty($this->data['Stage']['id']))
+					$this->Session->setFlash('Nouvelle offre enregistrée', 'message', array('class' => 'success'));
+				else
+					$this->Session->setFlash('L\'offre a bien été mise à jour', 'message', array('class' => 'success'));
 				$this->Stage->save();
-				$data = $this->data['Stage'];
-				$this->data['Stage'] = array();
-				$ext = explode('.', $data['fichier']['name']);
-				$ext = $ext[sizeof($ext)-1];
-				$this->data['Stage']['document'] = $data['document'].$this->Stage->id.'.'.$ext;
-				$this->data['Stage']['id'] = $this->Stage->id;
-				$this->Stage->save($this->data, false);
+				if (!empty($this->data['Stage']['fichier']['name']) AND !$this->data['Stage']['supprimer'])
+				{
+					if (is_file('files/stages-offres/'.$oldDocument))
+						unlink('files/stages-offres/'.$oldDocument);
+					$data = $this->data['Stage'];
+					$this->data['Stage'] = array();
+					$ext = explode('.', $data['fichier']['name']);
+					$ext = $ext[sizeof($ext)-1];
+					$this->data['Stage']['document'] = $data['document'].$this->Stage->id.'.'.$ext;
+					$this->data['Stage']['id'] = $this->Stage->id;
+					$this->Stage->save($this->data, false);
+					move_uploaded_file($data['fichier']['tmp_name'], 'files/stages-offres/'.$this->data['Stage']['document']);
+				}
+				elseif ($this->data['Stage']['supprimer'] == true AND is_file('files/stages-offres/'.$oldDocument))
+					unlink('files/stages-offres/'.$oldDocument);
 				
-				move_uploaded_file($data['fichier']['tmp_name'], 'files/stages-offres/'.$this->data['Stage']['document']);
-				$this->Session->setFlash('Nouvelle offre enregistrée', 'message', array('class' => 'success'));
 				$this->redirect(array('action' => 'index'));
 			}
 			else
@@ -60,6 +75,13 @@ class StagesController extends AppController
 			$r->id = $h['id'];
 		}
 		return json_encode($r);
+	}
+	
+	public function editer ($id)
+	{
+		$this->layout = null;
+		$this->render(false);
+		return json_encode($this->Stage->findById($id));
 	}
 	
 	// Projets tuteures 1A (tous)

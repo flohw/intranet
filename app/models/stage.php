@@ -1,7 +1,6 @@
 <?php
 class Stage extends AppModel {
 	var $name = 'Stage';
-	var $displayField = 'display';
 	var $validate = array(
 		'entreprise' => array(
 			'notempty' => array(
@@ -56,6 +55,13 @@ class Stage extends AppModel {
 			return false;
 		else
 			return true;
+	}
+	
+	public function getDocument ($id)
+	{
+		$this->recursive = -1;
+		$d = $this->find('first', array('conditions' => array('id' => $id), 'fields' => 'document'));
+		return $d['Stage']['document'];
 	}
 
 	public function beforeFind ()

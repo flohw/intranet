@@ -4,14 +4,14 @@
 </div>
 
 <ul class="tabs">
-	<li class="active"><a href="#accueil">Présentation</a></li>
-	<li><a href="#offres">Offres de Stage</a></li>
+	<li><a href="#accueil">Présentation</a></li> <!-- class="active" -->
+	<li class="active"><a href="#offres">Offres de Stage</a></li>
 	<li><a href="#dates">Dates Importantes</a></li>
 	<li><a href="#fichiers">Documents Utiles</a></li>
 </ul>
 
 <div class="pill-content">
-	<div id="accueil" class="active">
+	<div id="accueil"> <!-- class="active" -->
 		<div class="row">
 			<div class="span12">
 				<h3>Objectifs</h3>
@@ -58,7 +58,7 @@
 		</div>
 	</div>
 
-	<div id="offres">
+	<div id="offres" class="active">
 		<h3>L'IUT vous aide, et vous propose des offres de stage !</h3>
 		<div class="row">
 			<div class="span10">
@@ -77,6 +77,7 @@
 				endif;
 					echo $this->Form->create('Stage', array('id' => 'newOffre', 'enctype' => 'multipart/form-data',
 								'class' => 'ui-accordion-header ui-helper-reset ui-state-active ui-corner-top active'));
+					echo $this->Form->input('id', array('id' => 'idOffre'));
 					echo '<div class="clearfix">';
 					echo $this->Form->input('entreprise', array('id' => 'entreprise'));
 					echo '</div>';
@@ -86,7 +87,7 @@
 					echo '<div class="clearfix">';
 					echo $this->Form->input('description', array('id' => 'description'));
 					echo '</div>';
-					echo '<div class="clearfix">';
+					echo '<div class="clearfix" id="lastChild">';
 					echo $this->Form->input('fichier', array('type' => 'file'));
 					echo '<span class="input-append">(Word, Excel, PDF, Images)</span></div>';
 					echo $this->Form->submit('Enregistrer', array('class' => 'btn success'));
@@ -310,6 +311,37 @@ jQuery(function($){
 			}
 		});
 		xhr.send();
+		return false;
+	});
+	
+	// Edition
+	$('.editer').click(function(){
+		var adresse = '<?php echo $this->Html->url(array('controller' => 'stages', 'action' => 'editer')); ?>/'+$(this).attr('href').substr(1);
+		var input = '<?php echo $this->Form->input('Stage.supprimer', array('type' => 'checkbox', 'id' => 'supprimer')); ?>';
+		
+		$.ajax({
+			url: adresse,
+			success: function(data, textStatus) {
+				data = jQuery.parseJSON(data);
+				$('#idOffre').val(data.Stage.id);
+				$('#ville').val(data.Stage.ville);
+				$('#description').val(data.Stage.description);
+				$('#entreprise').val(data.Stage.entreprise);
+				$('#lastChild').after($('<div class="clearfix" id="supprimerCheck">').append(input+'<span class="input-append">(Supprime l\'ancien document)</span>'));
+				$('#supprimer').after('&nbsp;&nbsp;&nbsp;'+data.Stage.document);
+				$('#supprimer').change(function(){ $('#lastChild').slideToggle(); });
+				$('#lastChild').change(function(){
+					if ($('#lastChild input').val().length == 0)
+						$('#supprimerCheck').slideDown();
+					else
+						$('#supprimerCheck').slideUp();
+				});
+				$('#newOffre').slideDown();
+			}
+		});
+		$("#accordeonStage").accordion("option", "collapsible", true);
+		$('#accordeonStage').accordion('activate', false);
+		$("#accordeonStage").accordion("option", "collapsible", false);
 		return false;
 	});
 });

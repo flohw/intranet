@@ -12,8 +12,11 @@
 		echo '<span class="label success">Disponible</span>';
 ?>
 		<ul>
-			<li><?php echo $o['Stage']['description']; ?></li><li>&nbsp;</li>
-			<li><?php echo $this->Html->link($o['Stage']['document'], array('controller' => 'files', 'action' => 'stages-offres', $o['Stage']['document'])); ?></li>
+			<li><?php echo $o['Stage']['description']; ?></li>
+			<?php if (!empty($o['Stage']['document'])): ?>
+				<li>&nbsp;</li>
+				<li><?php echo $this->Html->link($o['Stage']['document'], array('controller' => 'files', 'action' => 'stages-offres', $o['Stage']['document'])); ?></li>
+			<?php endif; ?>
 		</ul>
 <?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof']): ?>
 		<br />
