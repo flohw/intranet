@@ -318,6 +318,8 @@ jQuery(function($){
 	$('.editer').click(function(){
 		var adresse = '<?php echo $this->Html->url(array('controller' => 'stages', 'action' => 'editer')); ?>/'+$(this).attr('href').substr(1);
 		var input = '<?php echo $this->Form->input('Stage.supprimer', array('type' => 'checkbox', 'id' => 'supprimer')); ?>';
+		$('#nouvelle').hide();
+		$('.editer').hide();
 		
 		$.ajax({
 			url: adresse,
@@ -327,15 +329,24 @@ jQuery(function($){
 				$('#ville').val(data.Stage.ville);
 				$('#description').val(data.Stage.description);
 				$('#entreprise').val(data.Stage.entreprise);
-				$('#lastChild').after($('<div class="clearfix" id="supprimerCheck">').append(input+'<span class="input-append">(Supprime l\'ancien document)</span>'));
-				$('#supprimer').after('&nbsp;&nbsp;&nbsp;'+data.Stage.document);
-				$('#supprimer').change(function(){ $('#lastChild').slideToggle(); });
-				$('#lastChild').change(function(){
-					if ($('#lastChild input').val().length == 0)
-						$('#supprimerCheck').slideDown();
-					else
+				if (data.Stage.document.length != 0)
+				{
+					$('#lastChild').hide();
+					$('#lastChild').before('<div class="clearfix"><label>Fichier</label><input type="text" value="'+data.Stage.document+'" readonly="readonly" /><span class="input-append" id="btnForm"><a href="#" id="editDoc" class="btn small info">Editer</a> - <a href="#" class="btn small danger" id="delDoc">Supprimer</a></span></div>');
+					$('#lastChild').after($('<div class="clearfix" id="supprimerCheck">').append(input));
+					$('#supprimerCheck').hide();
+					$('#editDoc').click(function(){
 						$('#supprimerCheck').slideUp();
-				});
+						$('#supprimer').attr('checked', false);
+						$('#lastChild').slideDown();
+						return false;
+					});
+					$('#delDoc').click(function(){
+						$('#lastChild').slideUp();
+						$('#supprimerCheck').slideDown();
+						return false;
+					});
+				}
 				$('#newOffre').slideDown();
 			}
 		});

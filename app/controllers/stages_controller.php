@@ -11,6 +11,7 @@ class StagesController extends AppController
 		{
 			$this->data['Stage']['departements_id'] = $this->Auth->user('departement_id');
 			$this->data['Stage']['date_ajout'] = date('Y-m-d H:i:s');
+			$this->data['Stage']['supprimer'] = (!isset($this->data['Stage']['supprimer'])) ? false : $this->data['Stage']['supprimer'];
 			if (!empty($this->data['Stage']['fichier']['name']) AND !$this->data['Stage']['supprimer'])
 				$this->data['Stage']['document'] =	Inflector::slug($this->data['Stage']['entreprise'], '-').'-'
 													.Inflector::slug($this->data['Stage']['ville'], '-').'-';
