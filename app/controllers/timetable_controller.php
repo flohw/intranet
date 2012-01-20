@@ -8,13 +8,13 @@
 		
 		public function batiment() { }
 		
+		public function salle ($salle)
+		{
+			$d['salle'] = $salle;
+			$d['etage'] = substr($salle, 0, 1);
+			$d['numSalle'] = substr($salle, 1);
+			$this->set($d);
+		}
+		
 		public function maintenance() { }
-
-		public function reglement() { }
-
-		public function docofficiels() { }
-
-		public function astuces() { }
-
-		public function universites() {}
 	}
