@@ -45,7 +45,7 @@ class EvenementsController extends AppController
 		else
 			$d['evenements'] = $this->Evenement->findNewEvenements($this->Auth->user('display'), $this->Auth->user('id'));
 		$d['personnes'] = $this->Evenement->Personne->find('list');
-		$d['groupes'] = $this->Evenement->Personne->Groupe->getGroupeList('list');
+		$d['groupes'] = $this->Evenement->Personne->Groupe->getGroupeList();
 		$d['type'] = $this->TypeEvenement->find('list');
 		$this->set($d);
 	}

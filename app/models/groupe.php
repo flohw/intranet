@@ -105,12 +105,14 @@ class Groupe extends AppModel {
 	{
 		$se = $this->Semestre->find('list');
 		$gr = $this->find('all', array('recursive' => -1));
+		$this->Personne->recursive = -1;
 		$r = array();
 		foreach ($se as $id => $s)
 		{
 			foreach ($gr as $k => $g)
 			{
-				if ($g['Groupe']['semestre_id'] == $id)
+				$p = $this->Personne->findAllByGroupeId($g['Groupe']['id']);
+				if ($g['Groupe']['semestre_id'] == $id AND !empty($p))
 				{
 					$r[$s][$g['Groupe']['id']] = $g['Groupe']['nom'];
 					unset($gr[$k]);

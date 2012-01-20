@@ -55,7 +55,7 @@
 		<?php	echo $this->Form->input('type_evenement_id', array('label' => 'Catégorie', 'options' => $type, 'class' => 'input')); ?>
 				</div>
 				<div class="clearfix">
-		<?php	echo $this->Form->input('personnes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text')); ?>
+		<?php	echo $this->Form->input('personnes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text', 'class' => 'xlarge')); ?>
 				</div>
 				<div class="clearfix">
 		<?php	echo $this->Form->input('description', array('label' => 'Description', 'class' => 'input', 'type' => 'textarea')); ?>
@@ -82,7 +82,7 @@
 		<?php	echo $this->Form->input('type_evenement_id', array('label' => 'Catégorie', 'options' => $type, 'class' => 'input')); ?>
 				</div>
 				<div class="clearfix">
-		<?php	echo $this->Form->input('groupes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text')); ?>
+		<?php	echo $this->Form->input('groupes', array('label' => 'Participants',  'class' => 'input', 'type' => 'text', 'class' => 'xlarge')); ?>
 				</div>
 				<div class="clearfix">
 		<?php	echo $this->Form->input('description', array('label' => 'Description', 'class' => 'input', 'type' => 'textarea')); ?>
@@ -215,26 +215,34 @@ jQuery(function($) {
 	.autocomplete({
 		minLength: 0,
 		source: function( request, response ) {
-			response( $.ui.autocomplete.filter(
-				groupes, extractLast( request.term ) ) );
+			response($.ui.autocomplete.filter(
+				groupes, extractLast(request.term)));
 		},
 		focus: function() {
 					return false;
 		},
-		select: function( event, ui ) {
-			var terms = split( this.value );
+		select: function(event, ui) {
+			var terms = split(this.value);
 			terms.pop();
-			terms.push( ui.item.value );
-			terms.push( "" );
-			this.value = terms.join( ", " );
+			terms.push(ui.item.value);
+			for (i = 0; i < groupes.length; i++)
+			{
+				if (ui.item.value == groupes[i])
+				{
+					delete groupes[i];
+					groupes.splice(i, 1);
+				}
+			}
+			terms.push("");
+			this.value = terms.join(", ");
 			return false;
 		}
 	});
 	
 	$("#EvenementPersonnes")
-	.bind( "keydown", function( event ) {
-		if ( event.keyCode === $.ui.keyCode.TAB &&
-			$( this ).data( "autocomplete" ).menu.active ) {
+	.bind("keydown", function( event ) {
+		if (event.keyCode === $.ui.keyCode.TAB &&
+			$(this).data("autocomplete").menu.active ) {
 				event.preventDefault();
 			}
 	})
@@ -250,9 +258,18 @@ jQuery(function($) {
 		select: function( event, ui ) {
 			var terms = split( this.value );
 			terms.pop();
-			terms.push( ui.item.value );
-			terms.push( "" );
+			terms.push(ui.item.value);
+			for (i = 0; i < personnes.length; i++)
+			{
+				if (ui.item.value == personnes[i])
+				{
+					delete personnes[i];
+					personnes.splice(i, 1);
+				}
+			}
+			terms.push("");
 			this.value = terms.join( ", " );
+			
 			return false;
 		}
 	});
