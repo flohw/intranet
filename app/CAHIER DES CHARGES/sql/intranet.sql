@@ -443,14 +443,53 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `intranet`.`utiles`
+-- Table `intranet`.`pages_statiques`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `intranet`.`utiles` ;
+DROP TABLE IF EXISTS `intranet`.`pages_statiques` ;
 
-CREATE  TABLE IF NOT EXISTS `intranet`.`utiles` (
+CREATE  TABLE IF NOT EXISTS `intranet`.`pages_statiques` (
   `id` INT NOT NULL ,
-  `contenu` TEXT NOT NULL ,
+  `contenu` LONGTEXT NOT NULL ,
+  `titre` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `intranet`.`documents_statiques`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `intranet`.`documents_statiques` ;
+
+CREATE  TABLE IF NOT EXISTS `intranet`.`documents_statiques` (
+  `id` INT NOT NULL ,
+  `nom` VARCHAR(255) NOT NULL ,
+  `type_mime` VARCHAR(70) NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `intranet`.`pages_statiques_documents_statiques`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `intranet`.`pages_statiques_documents_statiques` ;
+
+CREATE  TABLE IF NOT EXISTS `intranet`.`pages_statiques_documents_statiques` (
+  `id` INT NOT NULL ,
+  `pages_statique_id` INT NOT NULL ,
+  `documents_statique_id` INT NOT NULL ,
+  INDEX `fk_pages_statiques_has_documents_statiques_documents_statiques1` (`documents_statique_id` ASC) ,
+  INDEX `fk_pages_statiques_has_documents_statiques_pages_statiques1` (`pages_statique_id` ASC) ,
+  PRIMARY KEY (`id`) ,
+  CONSTRAINT `fk_pages_statiques_has_documents_statiques_pages_statiques1`
+    FOREIGN KEY (`pages_statique_id` )
+    REFERENCES `intranet`.`pages_statiques` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pages_statiques_has_documents_statiques_documents_statiques1`
+    FOREIGN KEY (`documents_statique_id` )
+    REFERENCES `intranet`.`documents_statiques` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 

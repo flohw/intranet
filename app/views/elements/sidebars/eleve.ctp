@@ -15,10 +15,10 @@
 		<div>
 		    	<ul>
 		    		<li><?php echo $this->Html->link('Convocations', array('controller' => 'evenements', 'action' => 'index')); ?></li>
-		    		<li><?php echo $this->Html->link('Règlement', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-		    		<li><?php echo $this->Html->link('Documents Officiels', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-		    		<li><?php echo $this->Html->link('Astuces', array('controller' => 'timetable', 'action' => 'astuces')); ?></li>
-		    		<li><?php echo $this->Html->link('Universités', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Règlement', array('controller' => 'statiques', 'action' => 'index', 'id' => 1)); ?></li>
+		    		<li><?php echo $this->Html->link('Documents Officiels', array('controller' => 'statiques', 'action' => 'index', 'id' => 2)); ?></li>
+		    		<li><?php echo $this->Html->link('Astuces', array('controller' => 'statiques', 'action' => 'index', 'id' => 3)); ?></li>
+		    		<li><?php echo $this->Html->link('Universités', array('controller' => 'statiques', 'action' => 'idnex', 'id' => 4)); ?></li>
 
 			</ul>
 		</div>
@@ -26,17 +26,17 @@
 	<h3>Et ensuite...</h3>
 		<div>
 		    	<ul>
-		    		<li><?php echo $this->Html->link('Poursuites à l\'étranger', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-		    		<li><?php echo $this->Html->link('Offres d\'emploi', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-		    		<li><?php echo $this->Html->link('Poursuites d\'études', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Poursuites à l\'étranger', array('controller' => 'statiques', 'action' => 'index', 'id' => 5)); ?></li>
+		    		<li><?php echo $this->Html->link('Offres d\'emploi', array('controller' => 'statiques', 'action' => 'index', 'id' => 6)); ?></li>
+		    		<li><?php echo $this->Html->link('Poursuites d\'études', array('controller' => 'statiques', 'action' => 'index', 'id' => 7)); ?></li>
 			</ul>
 		</div>
 
 	<h3>Vie Etudiante</h3>
 		<div>
 		    	<ul>
-		    		<li><?php echo $this->Html->link('Oedig', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
-		    		<li><?php echo $this->Html->link('Sport', array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+		    		<li><?php echo $this->Html->link('Oedig', array('controller' => 'statiques', 'action' => 'index', 'id' => 8)); ?></li>
+		    		<li><?php echo $this->Html->link('Sport', array('controller' => 'statiques', 'action' => 'index', 'id' => 9)); ?></li>
 			</ul>
 		</div>
 	</div>

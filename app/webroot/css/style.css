@@ -191,7 +191,7 @@ table.notes tr.notes td { text-align: center; }
 table.notes tr.notes td.intitule { text-align: left; }
 h3.moyenne { text-align: center; }
 
-/* Offres */
+/* Offres de stage */
 #newOffre { display: none; }
 #newOffre { margin-top: 10px; margin-bottom: 5px; padding-top: 10px; }
 #newOffre .btn { position: relative; bottom: 10px; left: 140px; margin-top: 10px; }
@@ -235,6 +235,11 @@ h3.moyenne { text-align: center; }
 */
 /* Pagination */
 .pagination { height: 30px; text-align: center; }
+
+/* Pages statiques */
+.page-header h1 span { display:inline-block; float:right; }
+form#pagesStatique .page-header input { margin-left: 10px; width: 600px; font-size: x-large; height: 30px;}
+form#pagesStatique textarea { margin-left: 0; }
 
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }

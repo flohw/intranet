@@ -521,3 +521,14 @@ INSERT INTO `documents_stages` (`id`, `nom`, `categorie`, `date_ajout`, `type_mi
 (26, 'dec 2007 - janv 2008 065.jpg', 'posters', '2012-01-12 17:03:24', 'image/jpeg', 30),
 (27, 'dec 2007 - janv 2008 066.jpg', 'posters', '2012-01-12 17:03:25', 'image/jpeg', 30),
 (28, 'dec 2007 - janv 2008 067.jpg', 'posters', '2012-01-12 17:03:26', 'image/jpeg', 30);
+
+INSERT INTO `pages_statiques` (`id`, `titre`, `contenu`) VALUES
+(1, 'Règlement', 'Contenu du règlement'),
+(2, 'Documents officiels', 'Contenu des documents'),
+(3, 'Trucs et astuces', 'Conte des trucs et astuces'),
+(4, 'Université', 'Contenu de l\'université'),
+(5, 'Poursuites à l\'étranger', 'Contenu poursuites à l\'étranger'),
+(6, 'Offres d\'enplois', 'Contenu offres d\'emplois'),
+(7, 'Poursuites d\'études', 'Contenu poursuites études'),
+(8, 'Oedig', 'Contenu oedig'),
+(9, 'Sport', 'Contenu sport');
