@@ -2,14 +2,8 @@
 class DocumentsController extends AppController
 {
 	var $name = 'Documents';
-	var $uses = array('Document', 'DocumentsStage', 'Module');
+	var $uses = array('Document', 'DocumentsStage', 'DocumentsStatique', 'Module', 'PagesStatique');
 	var $components = array('RequestHandler');
-	var $typesImages = array('image/png', 'image/gif', 'image/jpeg');
-	var $typesPDF = array('application/pdf');
-	var $typesWord = array('application/msword', 'application/vnd.oasis.opendocument.text');
-	var $typesExcel = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
-					'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
-	
 	
 	function beforeFilter()
 	{
@@ -120,11 +114,13 @@ class DocumentsController extends AppController
 		foreach ($h as $k => $v)
 			$h[low($k)] = $v;
 		$o = new stdClass();
-		$isModule = false;
+		$isStatique = $isModule = false;
 		$categorie = $h['x-param-folder'];
 		$folder = 'files/'.$categorie.'/';
 		if (preg_match('#files/modules/[A-Z0-1]+#', $folder))
 			$isModule = true;
+		elseif (preg_match('#files/documents/[0-9]+#', $folder))
+			$isStatique = true;
 		
 		if ($h['action'] == 'upload')
 		{
@@ -139,26 +135,42 @@ class DocumentsController extends AppController
 				$types = array_merge($types, $this->typesPDF, $this->typesWord, $this->typesExcel);
 			
 			// Verification existance fichier
-			$this->Module->recursive = $this->Document->recursive = $this->DocumentsStage->recursive = -1;
+			$this->PagesStatique->recursive = $this->Module->recursive = $this->Document->recursive = $this->DocumentsStage->recursive = -1;
 			$modele = 'Document';
-			if (!$isModule)
+			if (!$isModule AND !$isStatique)
 			{
 				$modele .= 'sStage';
 				$fichier = $this->$modele->find('first', array('conditions' => array('nom' => $h['x-file-name'],'categorie'=>$categorie)));
 			}
-			else
+			elseif ($isModule)
 			{
 				$moduleId = $this->Module->findById($h['x-param-module']);
 				$fichier = $this->$modele->find('first', array('conditions' => array('nom' => $h['x-file-name'], 'module_id' => $moduleId['Module']['id'])));
+				if (!is_dir($folder))
+					mkdir($folder);
+			}
+			elseif ($isStatique)
+			{
+				$modele .= 'sStatique';
+				$pageID = $this->PagesStatique->findById($h['x-param-page']);
+				$fichier = $this->$modele->find('first', array('conditions' => array('nom' => $h['x-file-name'])));
+				if (!empty($fichier))
+				{
+					$pid = array();
+					foreach ($fichier['PagesStatique'] as $p)
+						$pid[] = $p['id'];
+					if (!in_array($pageID['PagesStatique']['id'], $pid))
+						$fichier[$modele]['nom'] = null;
+				}
+				if (!is_dir($folder))
+					mkdir($folder);
 			}
 			if (!in_array($typeFichier, $types))
 				$o->error = 'Format non supporté ('.$typeFichier.')';
 			elseif ($fichier[$modele]['nom'] == $h['x-file-name'] AND !isset($h['x-param-value']))
 				$o->error = 'Le fichier existe déjà ('.$h['x-file-name'].')';
-			elseif (!in_array($folder, $acceptsFolders) AND !$isModule)
+			elseif (!in_array($folder, $acceptsFolders) AND !$isModule AND !$isStatique)
 				$o->error = 'Le dossier n\'existe pas ('.$folder.')';
-			elseif (!is_dir($folder) AND $isModule)
-				mkdir($folder);
 			else
 			{
 				// Si on remplace un fichier
@@ -182,10 +194,14 @@ class DocumentsController extends AppController
 					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierExcel.png', array('class' => 'place'));
 				
 				// Creation du document pour la bdd
-				if (!$isModule)
+				if (!$isModule AND !$isStatique)
 					$d[$modele]['categorie'] = $categorie;
-				else
+				elseif ($isModule)
 					$d[$modele]['module_id'] = $moduleId['Module']['id'];
+				elseif ($isStatique)
+				{
+					$d['PagesStatique']['id'] = $pageID['PagesStatique']['id'];
+				}
 				
 				$d[$modele]['nom'] = $h['x-file-name'];
 				$d[$modele]['date_ajout'] = date('Y-m-d H:i:s');
@@ -200,8 +216,10 @@ class DocumentsController extends AppController
 		elseif ($h['action'] == 'delete')
 		{
 			$modele = 'Document';
-			if (!$isModule)
+			if (!$isModule AND !$isStatique)
 				$modele .= 'sStage';
+			elseif ($isStatique)
+				$modele.= 'sStatique';
 			$this->$modele->delete($h['x-param-id']);
 			if (isset($h['x-param-value']) AND is_file(WWW_ROOT.$folder.$h['x-param-value']))
 				unlink(WWW_ROOT.$folder.$h['x-param-value']);

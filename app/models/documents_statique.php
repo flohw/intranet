@@ -12,7 +12,7 @@ class DocumentsStatique extends AppModel {
 	);
 
 	var $hasAndBelongsToMany = array(
-		'PagesStatiqe' => array(
+		'PagesStatique' => array(
 			'className' => 'PagesStatique',
 			'joinTable' => 'pages_statiques_documents_statiques',
 			'foreignKey' => 'documents_statique_id',

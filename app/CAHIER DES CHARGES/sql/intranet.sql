@@ -448,7 +448,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`pages_statiques` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`pages_statiques` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `contenu` LONGTEXT NOT NULL ,
   `titre` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`id`) )
@@ -461,7 +461,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`documents_statiques` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`documents_statiques` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `nom` VARCHAR(255) NOT NULL ,
   `type_mime` VARCHAR(70) NOT NULL ,
   PRIMARY KEY (`id`) )
@@ -474,7 +474,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `intranet`.`pages_statiques_documents_statiques` ;
 
 CREATE  TABLE IF NOT EXISTS `intranet`.`pages_statiques_documents_statiques` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `pages_statique_id` INT NOT NULL ,
   `documents_statique_id` INT NOT NULL ,
   INDEX `fk_pages_statiques_has_documents_statiques_documents_statiques1` (`documents_statique_id` ASC) ,

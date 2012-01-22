@@ -4,6 +4,11 @@ class AppController extends Controller
 	var $helpers = array('Html', 'Form', 'Session', 'Cache');
 	var $components = array('Session', 'Auth', 'Cookie');
 	var $statuts = array('admin' => 30, 'prof' => 20, 'eleve' => 10);
+	var $typesImages = array('image/png', 'image/gif', 'image/jpeg');
+	var $typesPDF = array('application/pdf');
+	var $typesWord = array('application/msword', 'application/vnd.oasis.opendocument.text');
+	var $typesExcel = array('application/excel', 'application/vnd.ms-excel', 'application/x-excel',
+					'application.x-msexcel', 'application/vnd.oasis.opendocument.spreadsheet');
 	// Pour la génération de mot de passe
 	var $caracteres = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
 							'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',

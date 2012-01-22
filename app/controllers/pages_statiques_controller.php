@@ -14,6 +14,10 @@
 				$this->Session->setFlash('Cette page n\'existe pas', 'message');
 				$this->redirect($this->referer());
 			}
+			$p['typesImages'] = $this->typesImages;
+			$p['typesPDF'] = $this->typesPDF;
+			$p['typesWord'] = $this->typesWord;
+			$p['typesExcel'] = $this->typesExcel;
 			$this->set($p);
 		}
 		
