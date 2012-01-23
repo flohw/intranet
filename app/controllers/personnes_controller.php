@@ -116,7 +116,7 @@ class PersonnesController extends AppController
 		}
 		$d['depts'] = $this->Personne->Departement->find('list');
 		$d['statuts'] = $this->Statut->find('list');
-		$d['groupes'] = $this->Personne->Groupe->getGroupeList();
+		$d['groupes'] = $this->Personne->Groupe->getGroupeList(true);
 		$this->set($d);
 	}
 	

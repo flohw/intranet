@@ -101,7 +101,7 @@ class Groupe extends AppModel {
 		
 		return $res;
 	}
-	public function getGroupeList ()
+	public function getGroupeList ($all = false)
 	{
 		$se = $this->Semestre->find('list');
 		$gr = $this->find('all', array('recursive' => -1));
@@ -112,10 +112,21 @@ class Groupe extends AppModel {
 			foreach ($gr as $k => $g)
 			{
 				$p = $this->Personne->findAllByGroupeId($g['Groupe']['id']);
-				if ($g['Groupe']['semestre_id'] == $id AND !empty($p))
+				if (!$all)
 				{
-					$r[$s][$g['Groupe']['id']] = $g['Groupe']['nom'];
-					unset($gr[$k]);
+					if ($g['Groupe']['semestre_id'] == $id AND !empty($p))
+					{
+						$r[$s][$g['Groupe']['id']] = $g['Groupe']['nom'];
+						unset($gr[$k]);
+					}
+				}
+				else
+				{
+					if ($g['Groupe']['semestre_id'] == $id)
+					{
+						$r[$s][$g['Groupe']['id']] = $g['Groupe']['nom'];
+						unset($gr[$k]);
+					}
 				}
 			}
 		}
