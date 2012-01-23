@@ -7,6 +7,7 @@
     <?php echo $this->Html->css('bootstrap.css'); ?>
     <?php echo $this->Html->css('Aristo.css'); ?>
     <?php echo $this->Html->script("jquery"); ?>
+   <?php echo $this->Html->meta('/favicon.png','/favicon.png', array('type' => 'icon')); ?>
   </head>
     <body>
 

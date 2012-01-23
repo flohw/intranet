@@ -3,4 +3,3 @@
 - Finir les insert pour une belle et réelle présentation
 - Le Prezi de présentation
 - Le rapport du projet
-- Les fichiers
