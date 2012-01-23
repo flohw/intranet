@@ -16,7 +16,7 @@
 				$this->Session->setFlash('Ce groupe n\'existe pas', 'message');
 				$this->redirect(array('action' => 'index', $this->Auth->user('groupe_id')));
 			}
-			$d['groupes'] = $this->Groupe->getGroupeList();
+			$d['groupes'] = $this->Groupe->getGroupeList(true);
 			$d['membres'] = $this->Groupe->Personne->findAllByGroupeId($groupeID);
 			$d['groupeID'] = $groupeID;
 			$this->set($d);
