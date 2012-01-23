@@ -94,6 +94,8 @@ class ModulesController extends AppController
 		}
 		elseif ($id != null)
 			$this->data = $this->LibelleModule->find('first', array('conditions' => array('LibelleModule.id' => $id)));
+		$d['modules'] = $this->LibelleModule->find('list');
+		$this->set($d);
 	}
 	
 	public function affecter ()

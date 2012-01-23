@@ -39,6 +39,10 @@ class Module extends AppModel {
 				'rule' => array('numeric'),
 				'message' => 'Le coefficient doit être un nombre',
 			),
+			'zero' => array(
+				'rule' => array('comparison', '>', 0),
+				'message' => 'le coefficient ne peut pas être égal à zéro',
+			),
 		),
 		'volume_horaire' => array(
 			'notempty' => array(
@@ -46,6 +50,10 @@ class Module extends AppModel {
 				'message' => 'Le volume horaire est vide',
 				'allowEmpty' => false,
 				'required' => true,
+			),
+			'zero' => array(
+				'rule' => array('comparison', '>', 0),
+				'message' => 'Le volume horaire ne peut pas être égal à zéro',
 			),
 		),
 	);
