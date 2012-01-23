@@ -225,6 +225,7 @@ h3.moyenne { text-align: center; }
 .page-header h1 span { display:inline-block; float:right; }
 form#pagesStatique .page-header input { margin-left: 10px; width: 600px; font-size: x-large; height: 30px;}
 form#pagesStatique textarea { margin-left: 0; }
+table thead th.action { width: 200px; }
 
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }

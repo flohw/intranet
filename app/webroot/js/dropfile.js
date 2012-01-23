@@ -55,10 +55,10 @@
 					alert(json.error);
 					return false;
 				}
-				addDelButton(zone, o.image, file.name);			// Ajout du bouton de suppression
 				if (o.complete(json))
 					return true;
 				if (o.clone && !replace && index == files.length - 1) {
+					addDelButton(zone, o.image, file.name);			// Ajout du bouton de suppression
 					zone.clone().text('').insertAfter(zone).dropfile(o);
 					zone.data('value', null);
 				}
