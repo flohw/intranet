@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 3.3.9.2
 -- http://www.phpmyadmin.net
 --
@@ -27,26 +27,27 @@ INSERT INTO `semestres` VALUES(10, 'Licence Pro');
 
 
 
-INSERT INTO `groupes` VALUES(1, 'A1', 15, 1);
-INSERT INTO `groupes` VALUES(2, 'A2', 15, 1);
-INSERT INTO `groupes` VALUES(3, 'B1', 15, 1);
-INSERT INTO `groupes` VALUES(4, 'B2', 15, 1);
-INSERT INTO `groupes` VALUES(5, 'C1', 15, 1);
-INSERT INTO `groupes` VALUES(6, 'C2', 15, 1);
-INSERT INTO `groupes` VALUES(7, 'D1', 15, 1);
-INSERT INTO `groupes` VALUES(8, 'D2', 15, 1);
+INSERT INTO `groupes` VALUES(1, 'A1', 15, 3);
+INSERT INTO `groupes` VALUES(2, 'A2', 15, 3);
+INSERT INTO `groupes` VALUES(3, 'B1', 15, 3);
+INSERT INTO `groupes` VALUES(4, 'B2', 15, 3);
+INSERT INTO `groupes` VALUES(5, 'C1', 15, 3);
+INSERT INTO `groupes` VALUES(6, 'C2', 15, 3);
+INSERT INTO `groupes` VALUES(7, 'D1', 15, 3);
+INSERT INTO `groupes` VALUES(8, 'D2', 15, 3);
+INSERT INTO `groupes` VALUES(9, 'Administrateurs', 15, 3);
+INSERT INTO `groupes` VALUES(10, 'Enseignants', 15, 3);
 
-INSERT INTO `groupes` VALUES(9, 'A1', 15, 2);
+/*INSERT INTO `groupes` VALUES(9, 'A1', 15, 2);
 INSERT INTO `groupes` VALUES(10, 'A2', 15, 2);
 INSERT INTO `groupes` VALUES(11, 'B1', 15, 2);
 INSERT INTO `groupes` VALUES(12, 'B2', 15, 2);
 INSERT INTO `groupes` VALUES(13, 'C1', 15, 2);
 INSERT INTO `groupes` VALUES(14, 'C2', 15, 2);
 INSERT INTO `groupes` VALUES(15, 'D1', 15, 2);
-INSERT INTO `groupes` VALUES(16, 'D2', 15, 2);
+INSERT INTO `groupes` VALUES(16, 'D2', 15, 2);*/
 
-INSERT INTO `groupes` VALUES(17, 'Administrateurs', 15, 1);
-INSERT INTO `groupes` VALUES(18, 'Enseignants', 15, 1);
+
 
 
 
@@ -137,28 +138,31 @@ INSERT INTO `statuts` VALUES(20, 'Enseignant');
 INSERT INTO `statuts` VALUES(30, 'Administrateur');
 
 
+-- personnes (id, nom, prenom, adresse, date_naissance, telephone, bureau, email, statut_id, departement_id, groupe_id, 
+-- mot_de_passe, login, last_login)
+/*INSERT INTO `personnes` VALUES(1, 'ADMIN', 'Administrateur', 'administrateur', '2008-11-12', '0101010101', '', 'admin@admin.ad', 30, 1, 9, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin', '2011-12-20 17:00:49'); /*mdp : admin*/
 
-INSERT INTO `personnes` VALUES(1, 'ADMIN', 'Administrateur', 'administrateur', '2008-11-12', '0101010101', '', 'admin@admin.ad', 30, 1, 6, '8055d7dc075c825fe6511bb16cd78fc94a7d8d66', 'admin', '2011-12-20 17:00:49'); /*mdp : admin*/
+/*INSERT INTO `personnes` VALUES(2, 'ELEVE', 'Eleve', 'aze', '1981-01-01', '0101010101', '', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve', '2011-12-20 16:46:56'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(2, 'ELEVE', 'Eleve', 'aze', '1981-01-01', '0101010101', '', 'eleve@eleve.el', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'eleve', '2011-12-20 16:46:56'); /*mdp : eleve*/
-
-INSERT INTO `personnes` VALUES(3, 'PROF', 'Prof', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'prof@prof.pro', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof', '2011-12-20 16:35:30'); /*mdp : prof*/
+/*INSERT INTO `personnes` VALUES(3, 'PROF', 'Prof', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'prof@prof.pro', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'prof', '2011-12-20 16:35:30'); mdp : prof*/ 
 
 /*ADMIN*/
 
-INSERT INTO `personnes` VALUES(4, 'VASSOILE', 'Marc', '10 rue du Lac Grenoble 38000', '1980-04-12', '0664531627', '', 'vassoile.marc@iut2.fr', 30, 1, 17, 'ba282cee005c8d1e72ae796aadf82c8fc3a92226', 'vassoim', '2010-12-20 15:00:00'); /*mdp : vassoilm2*/
+INSERT INTO `personnes` VALUES(4, 'VASSOILE', 'Marc', '10 rue du Lac Grenoble 38000', '1980-04-12', '0664531627', '', 'vassoile.marc@iut2.fr', 30, 1, 9, 'ba282cee005c8d1e72ae796aadf82c8fc3a92226', 'vassoim', '2010-12-20 15:00:00'); /*mdp : vassoilm2*/
+
+
 
 /*ELEVES*/
 
 INSERT INTO `personnes` VALUES(5, 'PARRENO', 'Florian', '654 route de chantecler 38070 Saint Quentin Fallavier', '1991-08-12', '0678931627', '', 'parreno.florian@iut2.fr', 10, 1, 1, '8ab1235a988641d8aac200155d4dde0999ff6318', 'parrenof', '2010-12-20 15:00:00'); /*mdp : florian*/
 
-INSERT INTO `personnes` VALUES(6, 'PAULI', 'Marie', '8 Allée des fleurs 38000 Grenoble', '1992-02-15', '0678934567', '', 'pauli.marie@iut2.fr', 10, 1, 1, '072b5a53c998070e5395dba1375c6b991699f978', 'paulim', '2010-12-20 15:00:00'); /*mdp : mushisama*/
+INSERT INTO `personnes` VALUES(6, 'PAULI', 'Marie', '8 Allée des fleurs 38000 Grenoble', '1992-02-15', '0678934567', '', 'pauli.marie@iut2.fr', 10, 1, 3, '072b5a53c998070e5395dba1375c6b991699f978', 'paulim', '2010-12-20 15:00:00'); /*mdp : mushisama*/
 
-INSERT INTO `personnes` VALUES(7, 'LANDRISCINA', 'Dorian', '12 chemin des vignes', '1992-11-25', '0675628627', '', 'landriscina.dorian@iut2.fr', 10, 1, 1, '22d8dd753c9dd5147623bdf0834ed8ad097639d4', 'landrisd', '2010-12-20 15:00:00'); /*mdp : dodoletombeur*/
+INSERT INTO `personnes` VALUES(7, 'LANDRISCINA', 'Dorian', '39 rue Vaugauthier 38590 Sillans', '1992-11-25', '0675628627', '', 'landriscina.dorian@iut2.fr', 10, 1, 1, '22d8dd753c9dd5147623bdf0834ed8ad097639d4', 'landrisd', '2010-12-20 15:00:00'); /*mdp : dodoletombeur*/
 
 INSERT INTO `personnes` VALUES(8, 'MISTRI', 'Aurelie', '90 rue du dauphiné 38000 Grenoble', '1992-01-28', '0789901627', '', 'mistri.aurelie@iut2.fr', 10, 1, 1, 'cc8b85a78285e4fbca442ef02644a06f4ea5010b', 'mistria', '2010-12-20 15:00:00'); /*mdp : fautfairequoi*/
 
-INSERT INTO `personnes` VALUES(9, 'MONNIER', 'Alexandra', '5 rue du platane Saint Martin D\'Hères', '1992-08-29', '0623097654', '', 'alexandra.monnier@iut2.fr', 10, 1, 1, '50d68802aae0791bad09451d61cc39d2356fe3fe', 'monnieal', '2010-12-20 15:00:00'); /*mdp : alexlabikeuse*/
+INSERT INTO `personnes` VALUES(9, 'MONNIER', 'Alexandra', '5 rue du platane Saint Martin D\'Hères', '1992-08-29', '0623097654', '', 'alexandra.monnier@iut2.fr', 10, 1, 3, '50d68802aae0791bad09451d61cc39d2356fe3fe', 'monnieal', '2010-12-20 15:00:00'); /*mdp : alexlabikeuse*/
 
 INSERT INTO `personnes` VALUES(10, 'MARTINEZ', 'Pierre Julien', '66 rue du vercors 38000 Grenoble', '1992-08-18', '0673786534', '', 'martinez.pierrejulien@iut2.fr', 10, 1, 1, '54c87bffe256effed7c3c7ee7bc7680e8b64b33b', 'mapierre', '2010-12-20 15:00:00'); /*mdp : legendpj*/
 
@@ -169,61 +173,155 @@ INSERT INTO `personnes` VALUES(38, 'MALLARONI-CONSENTINO', 'Hugo', '1 rue de la 
 INSERT INTO `personnes` VALUES(39, 'DOMINGUEZ', 'Jp', 'Tatooine', '1992-02-20', '0678787877', '', 'hazkaal@gmail.com', 10, 1, 2, '8c76002fe114060cfda2abc178d2574789daa208', 'dominjp', '2010-12-20 15:00:00'); /*mdp : <trololo8le8piju>*/
 
 INSERT INTO `personnes` VALUES(41, 'DAGNIAUX', 'Quentin', '326A Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-03-10', '', '0686497105', 'darkideo@gmail.com', 10, 1, 6, '', 'dagniauq', '2010-12-20 15:00:00'); /*mdp : dagniauxq*/
+
+INSERT INTO `personnes` VALUES(48, 'HUBERT', 'Pierre', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'hubertpi@gmail.com', 10, 1, 1, '', 'hubertpi', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(49, 'POSSYLKINE', 'Anton', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'anton@gmail.com', 10, 1, 1, '', 'possylka', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(50, 'ROHAUT', 'Ludovic', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ludo@gmail.com', 10, 1, 1, '', 'rohautl', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(51, 'SALINAS', 'Cedric', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ced@gmail.com', 10, 1, 1, '', 'salinasc', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(52, 'SZPIEG', 'Loic', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'loic@gmail.com', 10, 1, 1, '', 'szpiegl', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(53, 'AKLI', 'Sofiane', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'so@gmail.com', 10, 1, 2, '', 'aklis', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(54, 'ARRAIS', 'Mathieu', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'mat@gmail.com', 10, 1, 2, '', 'arraism', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(55, 'BERAUDO', 'Valentin', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'val@gmail.com', 10, 1, 2, '', 'beraudov', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(56, 'CALABRO', 'Anthony', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'cala@gmail.com', 10, 1, 2, '', 'calabroa', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(57, 'DESLANDES', 'Titouan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'tit@gmail.com', 10, 1, 2, '', 'deslandesti', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(58, 'ESPIE-CAULLET', 'Jonathan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'jon@gmail.com', 10, 1, 2, '', 'espiecaulj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(59, 'GAILLARD', 'Jeremy', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'jere@gmail.com', 10, 1, 2, '', 'gaillardj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(60, 'GENON-CATALOT', 'Bertrand', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ber@gmail.com', 10, 1, 2, '', 'genoncatab', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(61, 'GOURHAND', 'Maeva', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'maeva@gmail.com', 10, 1, 2, '', 'gourhandm', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(62, 'GUILBAUD', 'Benoit', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ben@gmail.com', 10, 1, 2, '', 'guilbaudb', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(63, 'GIRARD', 'Sylvain', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sylv@gmail.com', 10, 1, 2, '', 'girards', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(64, 'BERTHIER-DELACOUR', 'Joachim', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'joa@gmail.com', 10, 1, 3, '', 'berthierj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(65, 'HIMMICH', 'Samir', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'himmichs', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(66, 'LAFOREST', 'Yann', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'yann@gmail.com', 10, 1, 3, '', 'laforesty', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(67, 'LENNOZ-GRATIN', 'Sidi', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'lennozgs', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(68, 'MAHIKIAN', 'Nicolas', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'mahikian', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(69, 'PACALET', 'Xavier', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'pacalex', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(70, 'PIPARD', 'Fabien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'pipardf', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(71, 'PLANCHER', 'Nans', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'planchen', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(72, 'RIBES', 'Gael', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'ribesg', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(73, 'SALIMI', 'Alexandre', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'salimia', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(74, 'BOUVIER', 'Julien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'bouvierj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(75, 'CELCE', 'Thibaud', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'celceth', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(76, 'CRUMIERE', 'Vivien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'crumierv', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(77, 'DE LAUZUN', 'Maxime', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'delauzum', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(78, 'DESPREZ', 'Jerome', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'desprej', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(79, 'DONZELLE', 'Thomas', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'donzellt', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(80, 'EYNARD', 'Edouard', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'eynarde', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(81, 'GALAVIELLE', 'Jonathan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'galavielj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(82, 'GINOUX', 'Pierre-Henri', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'ginouxp', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(83, 'SENSIER', 'Antoine', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'sensiera', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(84, 'SERVIERE', 'Vincent', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'servierv', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(85, 'LAFAY', 'Julie', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ju@gmail.com', 10, 1, 5, '', 'lafayj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(86, 'MOREL', 'Gabriel', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'gab@gmail.com', 10, 1, 7, '', 'morelg', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+INSERT INTO `personnes` VALUES(87, 'BRIOT', 'Julien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'julien@gmail.com', 10, 1, 8, '', 'briotj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+
+
 /*PROFS*/
 
-INSERT INTO `personnes` VALUES(12, 'BELKHATIR', 'Noureddine', '20 route de l\'IUT', '1981-01-22', '0101010101', '151', 'belkhatir.nourredine@iut2.fr', 20, 1, 18, '97ab7b75e32207c0c1bc8f044a788d403f67c562', 'nourbel', '2010-12-01 15:00:00'); /*mdp : chefdep*/
+INSERT INTO `personnes` VALUES(12, 'BELKHATIR', 'Noureddine', '20 route de l\'IUT', '1981-01-22', '0101010101', '101', 'belkhatir.nourredine@iut2.fr', 20, 1, 10, '97ab7b75e32207c0c1bc8f044a788d403f67c562', 'nourbel', '2010-12-01 15:00:00'); /*mdp : chefdep*/
 
-INSERT INTO `personnes` VALUES(13, 'BLANCHON', 'Hervé', '20 route de l\'IUT', '1981-01-22', '0101010101', '', 'blanchon.herve@iut2.fr', 20, 1, 18, 'fc5e9c8431b89f5a839ca264c466dc3f43ea60bf', 'blanchonh', '2010-12-01 15:00:00'); /*mdp : vecteur*/
+INSERT INTO `personnes` VALUES(13, 'BLANCHON', 'Hervé', '20 route de l\'IUT', '1981-01-22', '0101010101', '105', 'blanchon.herve@iut2.fr', 20, 1, 10, 'fc5e9c8431b89f5a839ca264c466dc3f43ea60bf', 'blanchonh', '2010-12-01 15:00:00'); /*mdp : vecteur*/
 
-INSERT INTO `personnes` VALUES(14, 'BLANCO-LAINE', 'Gaëlle', '20 route de l\'IUT', '1981-01-22', '0101010101', '', 'blancolaine.gaelle@iut2.fr', 20, 1, 18, '715d9bf5e707a2122eba3039baa0ec35ff079406', 'blancog', '2010-12-01 15:00:00'); /*mdp : chefdeprojet*/
+INSERT INTO `personnes` VALUES(14, 'BLANCO-LAINE', 'Gaëlle', '20 route de l\'IUT', '1981-01-22', '0101010101', '106', 'blancolaine.gaelle@iut2.fr', 20, 1, 10, '715d9bf5e707a2122eba3039baa0ec35ff079406', 'blancog', '2010-12-01 15:00:00'); /*mdp : chefdeprojet*/
 
-INSERT INTO `personnes` VALUES(15, 'BONNAUD', 'Laurent', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'bonnaud.laurent@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bonnaudl', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(15, 'BONNAUD', 'Laurent', '20 place Doyen Gosse', '1981-01-22', '0101010101', '116', 'bonnaud.laurent@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bonnaudl', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(16, 'BRUNET-MANQUAT', 'Francis', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'brunetmanquat.francis@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'brunetmf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(16, 'BRUNET-MANQUAT', 'Francis', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'brunetmanquat.francis@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'brunetmf', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(17, 'CARAVEL ', 'Marie-Claude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'caravel.marieclaude@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'caravel', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(17, 'CARAVEL ', 'Marie-Claude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'caravel.marieclaude@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'caravel', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(18, 'CHASTEL', 'Frédéric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'chastel.frederic@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'chastelf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(18, 'CHASTEL', 'Frédéric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '320F', 'chastel.frederic@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'chastelf', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(19, 'CHEVALLET', 'Jean-Pierre', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'chevallet.jeanpierre@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'jpchevallet', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(19, 'CHEVALLET', 'Jean-Pierre', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'chevallet.jeanpierre@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'jpchevallet', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(20, 'COAT', 'Françoise', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'coat.francoise@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'coatfr', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(20, 'COAT', 'Françoise', '20 place Doyen Gosse', '1981-01-22', '0101010101', '108', 'coat.francoise@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'coatfr', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(21, 'COLLOMBET', 'Caryn', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'collombet.caryn@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'colloc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(21, 'COLLOMBET', 'Caryn', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'collombet.caryn@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'colloc', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(22, 'CORSET', 'Franck', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'corset.franck@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'corsetf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(22, 'CORSET', 'Franck', '20 place Doyen Gosse', '1981-01-22', '0101010101', '105', 'corset.franck@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'corsetf', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(23, 'CULET', 'Annie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'culet.annie@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'culeta', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(23, 'CULET', 'Annie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '114', 'culet.annie@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'culeta', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(24, 'FONTENAS', 'Eric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'fontenas.eric@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'fontenae', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(24, 'FONTENAS', 'Eric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'fontenas.eric@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'fontenae', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(25, 'GATUMEL', 'Mathieu', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'gatumel.mathieu@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gatumelm', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(25, 'GATUMEL', 'Mathieu', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'gatumel.mathieu@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gatumelm', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(26, 'GEROT', 'Cédric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'gerot.cedric@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gerotc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(26, 'GEROT', 'Cédric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '113', 'gerot.cedric@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gerotc', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(27, 'GOULIAN', 'Jérôme', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'goulian.jerome@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'goulianj', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(27, 'GOULIAN', 'Jérôme', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'goulian.jerome@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'goulianj', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(28, 'HAMON', 'Agnès', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'hamon.agnes@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'hamona', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(28, 'HAMON', 'Agnès', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'hamon.agnes@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'hamona', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(29, 'JOYCE', 'Laura', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'joyce.laura@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'joycel', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(29, 'JOYCE', 'Laura', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'joyce.laura@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'joycel', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(30, 'LAURILLAU', 'Yann', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'laurillau.yann@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'laurilly', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(30, 'LAURILLAU', 'Yann', '20 place Doyen Gosse', '1981-01-22', '0101010101', '107', 'laurillau.yann@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'laurilly', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(31, 'LEJEUNE', 'Anne', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'lejeune.anne@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'lejeuna', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(31, 'LEJEUNE', 'Anne', '20 place Doyen Gosse', '1981-01-22', '0101010101', '114', 'lejeune.anne@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'lejeuna', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(32, 'MARTIN', 'Philippe', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'martin.philippe@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'martinp', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(32, 'MARTIN', 'Philippe', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'martin.philippe@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'martinp', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(33, 'MONTANVERT', 'Annick', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'montanvert.annick@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'montana', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(33, 'MONTANVERT', 'Annick', '20 place Doyen Gosse', '1981-01-22', '0101010101', '107', 'montanvert.annick@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'montana', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(34, 'PESTY', 'Sylvie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'pesty.sylvie@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'pestys', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(34, 'PESTY', 'Sylvie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'pesty.sylvie@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'pestys', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(35, 'RACAULT', 'Laëtitia', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'racault.laeticia@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'racaultl', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(35, 'RACAULT', 'Laëtitia', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'racault.laeticia@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'racaultl', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(36, 'ROISIN', 'Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'roisin.cecile@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'roisinc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(36, 'ROISIN', 'Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', '105', 'roisin.cecile@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'roisinc', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(37, 'SIMONET', 'Ana', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'simonet.ana@iut2.fr', 20, 1, 18, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'simona', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(37, 'SIMONET', 'Ana', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'simonet.ana@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'simona', '2010-12-01 15:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(40, 'FRONT', 'Agnès', '6 rue de la Jouvence 38000 Grenoble', '1971-12-20', '0654632788', '', 'front.agnes@iut2.fr', 20, 1, 18, '4fe11351445d96fa63c0f7c55a5f7dd93283e434', 'fronta', '2001-12-11 00:00:00'); /*mdp : profomglmac*/
+INSERT INTO `personnes` VALUES(40, 'FRONT', 'Agnès', '6 rue de la Jouvence 38000 Grenoble', '1971-12-20', '0654632788', '108', 'front.agnes@iut2.fr', 20, 1, 10, '4fe11351445d96fa63c0f7c55a5f7dd93283e434', 'fronta', '2001-12-11 00:00:00'); /*mdp : profomglmac*/
+
+INSERT INTO `personnes` VALUES(42, 'BERTOLINO', 'Pascal', '20 place Doyen Gosse', '1981-01-22', '0101010101', '116', 'bertolino.pascal@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bertolip', '2010-12-01 15:00:00'); /*mdp : prof*/
+
+INSERT INTO `personnes` VALUES(43, 'DUPUY-CHESSA', 'Sophie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'Sophie.Dupuy-Chessa@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'dupuycs', '2010-12-01 15:00:00'); /*mdp : prof*/
+
+INSERT INTO `personnes` VALUES(44, 'KOENIG', 'Anne-Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', '320F', 'Anne-Cécile.Koenig@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'koenigac', '2010-12-01 15:00:00'); /*mdp : prof*/
+
+INSERT INTO `personnes` VALUES(45, 'MAIGNAN', 'Aude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'maignan.aude@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'maignana', '2010-12-01 15:00:00'); /*mdp : prof*/
+
+INSERT INTO `personnes` VALUES(46, 'BOUZNIF', 'Marwane', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'bouznif.marwane@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bouznifm', '2010-12-01 15:00:00'); /*mdp : prof*/
+
+INSERT INTO `personnes` VALUES(47, 'PEROTTO', 'Anne-Lise', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'perrotto.anne-lise@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'perrottoal', '2010-12-01 15:00:00'); /*mdp : prof*/
 
 
 
@@ -304,8 +402,16 @@ INSERT INTO `modules_personnes` (`id`, `module_id`, `personne_id`) VALUES
 (79, 35, 21),
 (80, 34, 29),
 (81, 35, 29),
-(82, 36, 20),
-(83, 37, 14);
+(82, 37, 20),
+(83, 36, 14),
+(84, 27, 15),
+(85, 28, 15),
+(86, 29, 27),
+(87, 29, 46),
+(88, 30, 46),
+(89, 34, 47),
+(90, 35, 47);
+
 
 
 
@@ -470,21 +576,163 @@ INSERT INTO `type_evenements` VALUES(2, 'Convocation');
 INSERT INTO `type_evenements` VALUES(3, 'Soirée');
 
 
+-- Contenu de la table `evenements`
+--
 
-INSERT INTO `evenements` VALUES(1, 'Noël', '2011-12-25 00:00:00', '2011-12-25 00:00:00', 3, 1, 'Joyeux noël à tous !');
-INSERT INTO `evenements` VALUES(2, 'Nouvelle Année', '2011-12-31 23:59:59', '2012-01-01 23:59:59', 3, 1, 'Bonne année à tous !');
-INSERT INTO `evenements` VALUES(3, 'Réunion de Rentrée', '2012-01-03 19:00:00', '2012-01-03 21:00:00', 3, 1, 'La rentrée est là il faut mettre des choses au point !');
+INSERT INTO `evenements` (`id`, `titre`, `date_debut`, `date_fin`, `type_evenement_id`, `personne_id`, `description`) VALUES
+(4, 'Demonstration projet tuteuré', '2012-01-27 10:30:00', '2012-01-27 11:00:00', 2, 14, 'Convocation pour la démonstration du projet tuteuré.'),
+(5, 'Semaine projet tuteuré', '2012-01-23 15:40:00', '2012-01-27 11:30:00', 1, 24, 'Semaine consacrée au projet tuteuré.'),
+(6, 'RDV projet tuteuré', '2012-01-24 10:00:00', '2012-01-24 11:00:00', 1, 16, 'Réunion pour une mise au point concernant le projet tuteuré.'),
+(7, 'Soirée Professeurs', '2012-01-28 22:45:00', '2012-01-29 05:00:00', 3, 16, 'Soirée conviviale entre professeurs, ambiance bon-enfant =)');
+
+--
+-- Contenu de la table `evenements_personnes`
+--
+
+INSERT INTO `evenements_personnes` (`id`, `evenement_id`, `personne_id`) VALUES
+(5, 4, 5),
+(6, 4, 6),
+(7, 4, 7),
+(8, 4, 8),
+(9, 4, 9),
+(10, 4, 10),
+(11, 4, 16),
+(12, 4, 24),
+(13, 5, 5),
+(14, 5, 7),
+(15, 5, 8),
+(16, 5, 10),
+(17, 5, 11),
+(18, 5, 38),
+(19, 5, 48),
+(20, 5, 49),
+(21, 5, 50),
+(22, 5, 51),
+(23, 5, 52),
+(24, 5, 39),
+(25, 5, 53),
+(26, 5, 54),
+(27, 5, 55),
+(28, 5, 56),
+(29, 5, 57),
+(30, 5, 58),
+(31, 5, 59),
+(32, 5, 60),
+(33, 5, 61),
+(34, 5, 62),
+(35, 5, 63),
+(36, 5, 6),
+(37, 5, 9),
+(38, 5, 64),
+(39, 5, 65),
+(40, 5, 66),
+(41, 5, 67),
+(42, 5, 68),
+(43, 5, 69),
+(44, 5, 70),
+(45, 5, 71),
+(46, 5, 72),
+(47, 5, 73),
+(48, 5, 74),
+(49, 5, 75),
+(50, 5, 76),
+(51, 5, 77),
+(52, 5, 78),
+(53, 5, 79),
+(54, 5, 80),
+(55, 5, 81),
+(56, 5, 82),
+(57, 5, 83),
+(58, 5, 84),
+(59, 5, 85),
+(60, 5, 41),
+(61, 5, 86),
+(62, 5, 87),
+(63, 5, 12),
+(64, 5, 13),
+(65, 5, 14),
+(66, 5, 15),
+(67, 5, 16),
+(68, 5, 17),
+(69, 5, 18),
+(70, 5, 19),
+(71, 5, 20),
+(72, 5, 21),
+(73, 5, 22),
+(74, 5, 23),
+(75, 5, 24),
+(76, 5, 25),
+(77, 5, 26),
+(78, 5, 27),
+(79, 5, 28),
+(80, 5, 29),
+(81, 5, 30),
+(82, 5, 31),
+(83, 5, 32),
+(84, 5, 33),
+(85, 5, 34),
+(86, 5, 35),
+(87, 5, 36),
+(88, 5, 37),
+(89, 5, 40),
+(90, 5, 42),
+(91, 5, 43),
+(92, 5, 44),
+(93, 5, 45),
+(94, 5, 46),
+(95, 5, 47),
+(96, 6, 5),
+(97, 6, 6),
+(98, 6, 7),
+(99, 6, 8),
+(100, 6, 9),
+(101, 6, 10),
+(102, 6, 16),
+(103, 7, 12),
+(104, 7, 13),
+(105, 7, 14),
+(106, 7, 15),
+(107, 7, 16),
+(108, 7, 17),
+(109, 7, 18),
+(110, 7, 19),
+(111, 7, 20),
+(112, 7, 21),
+(113, 7, 22),
+(114, 7, 23),
+(115, 7, 24),
+(116, 7, 25),
+(117, 7, 26),
+(118, 7, 27),
+(119, 7, 28),
+(120, 7, 29),
+(121, 7, 30),
+(122, 7, 31),
+(123, 7, 32),
+(124, 7, 33),
+(125, 7, 34),
+(126, 7, 35),
+(127, 7, 36),
+(128, 7, 37),
+(129, 7, 40),
+(130, 7, 42),
+(131, 7, 43),
+(132, 7, 44),
+(133, 7, 45),
+(134, 7, 46),
+(135, 7, 47);
 
 
 
 INSERT INTO `stages` (`id`, `entreprise`, `ville`, `description`, `dispo`, `departements_id`, `date_ajout`, `document`) VALUES
-(1, 'Apple', 'New-York City', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 0, 1, '2011-12-06 14:11:34', 'doc.pdf'),
-(2, 'Schneider', 'Grenoble', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 0, 1, '2011-12-06 14:12:00', 'doc.pdf'),
-(3, 'IUT2', 'Grenoble', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ', 0, 1, '2011-12-06 14:13:13', 'doc.pdf'),
-(4, 'Credit agricole', 'Lyon', 'te velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 0, 1, '2011-12-06 14:13:35', 'doc.pdf');
+(1, 'Areva', 'Val de Marne', 'Areva est un groupe industriel français spécialisé dans les métiers du nucléaire. Cette entreprise est présente au niveau international avec un réseau commercial dans 100 pays et une présence industrielle dans 43 pays.', 0, 1, '2012-01-23 14:11:34', 'Stage-AREVA.pdf'),
+(2, 'Atos', 'Paris', 'Atos est le premier acteur européen dans les SSII et l\'un des dix plus grands au niveau mondial3 et le leader en France du paiement sécurisé en ligne pour les entreprises.', 0, 1, '2012-01-24 14:12:00', 'Stage-ATOS.pdf'),
+(3, 'Orange', 'Hauts de Seine', 'Orange poursuit sa croissance et dans le cadre de notre expansion nationale, nous recherchons: Développeur informatique reporting H/F', 0, 1, '2011-12-06 15:01:10', 'Stage-Orange.pdf'),
+(4, 'Cloud Solutions', 'Austin (Etats-Unis)', 'Cloud Solutions, LLC  helps organizations and companies understand, evaluate, test, configure, and implement cloud solutions.', 0, 1, '2011-12-06 10:23:33', 'Stage-Cloud-Solutions.pdf'),
+(5, 'Innovacs', 'Grenoble', 'Innovacs, (Innovation, Connaissances et Société) est une structure fédérative de recherche (SFR) née dans le cadre de Grenoble Université de l\'Innovation. Elle regroupe l\'ensemble des acteurs du site grenoblois souhaitant travailler sur les questions relatives à l\'Innovation, autour de trois grands enjeux sociétaux de référence issus de l\'Opération Campus : Planète durable, l\'Information et la Santé.', 0, 1, '2011-12-05 09:23:33', 'Stage-Innovacs.pdf');
 
 
-
+/*
 INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `date_ajout`, `type_mime`) VALUES
 (1, 'TP1-Bases.pdf', 13, 1, '2012-01-12 20:13:35', 'application/pdf'),
 (2, 'TP2-Procedures.pdf', 13, 1, '2012-01-12 20:13:45', 'application/pdf'),
@@ -520,7 +768,7 @@ INSERT INTO `documents_stages` (`id`, `nom`, `categorie`, `date_ajout`, `type_mi
 (25, 'dec 2007 - janv 2008 064.jpg', 'posters', '2012-01-12 17:03:23', 'image/jpeg', 30),
 (26, 'dec 2007 - janv 2008 065.jpg', 'posters', '2012-01-12 17:03:24', 'image/jpeg', 30),
 (27, 'dec 2007 - janv 2008 066.jpg', 'posters', '2012-01-12 17:03:25', 'image/jpeg', 30),
-(28, 'dec 2007 - janv 2008 067.jpg', 'posters', '2012-01-12 17:03:26', 'image/jpeg', 30);
+(28, 'dec 2007 - janv 2008 067.jpg', 'posters', '2012-01-12 17:03:26', 'image/jpeg', 30);*/
 
 INSERT INTO `pages_statiques` (`id`, `titre`, `contenu`) VALUES
 (1, 'Règlement', 'Contenu du règlement'),
@@ -532,3 +780,490 @@ INSERT INTO `pages_statiques` (`id`, `titre`, `contenu`) VALUES
 (7, 'Poursuites d\'études', 'Contenu poursuites études'),
 (8, 'Oedig', 'Contenu oedig'),
 (9, 'Sport', 'Contenu sport');
+
+
+INSERT INTO `notes` (`id`, `personne_id`, `type_module_id`, `module_id`, `note`, `coefficient`) VALUES
+(1, 48, 1, 30, 11, 15),
+(2, 7, 1, 30, 15, 15),
+(3, 11, 1, 30, 10, 15),
+(4, 38, 1, 30, 4, 15),
+(5, 10, 1, 30, 16, 15),
+(6, 8, 1, 30, 12, 15),
+(7, 5, 1, 30, 18, 15),
+(8, 49, 1, 30, 2, 15),
+(9, 50, 1, 30, 11, 15),
+(10, 51, 1, 30, 1, 15),
+(11, 52, 1, 30, 17, 15),
+(12, 48, 1, 24, 12, 15),
+(13, 7, 1, 24, 13, 15),
+(14, 11, 1, 24, 10, 15),
+(15, 38, 1, 24, 12, 15),
+(16, 10, 1, 24, 14, 15),
+(17, 8, 1, 24, 15, 15),
+(18, 5, 1, 24, 10, 15),
+(19, 49, 1, 24, 11, 15),
+(20, 50, 1, 24, 12, 15),
+(21, 51, 1, 24, 10, 15),
+(22, 52, 1, 24, 11, 15),
+(23, 48, 2, 24, 12, 5),
+(24, 7, 2, 24, 13, 5),
+(25, 11, 2, 24, 14, 5),
+(26, 38, 2, 24, 15, 5),
+(27, 10, 2, 24, 10, 5),
+(28, 8, 2, 24, 4, 5),
+(29, 5, 2, 24, 10, 5),
+(30, 49, 2, 24, 15, 5),
+(31, 50, 2, 24, 14, 5),
+(32, 51, 2, 24, 10, 5),
+(33, 52, 2, 24, 15, 5),
+(34, 48, 3, 24, 12, 12),
+(35, 7, 3, 24, 15, 12),
+(36, 11, 3, 24, 14, 12),
+(37, 38, 3, 24, 15, 12),
+(38, 10, 3, 24, 16, 12),
+(39, 8, 3, 24, 10, 12),
+(40, 5, 3, 24, 12, 12),
+(41, 49, 3, 24, 14, 12),
+(42, 50, 3, 24, 10, 12),
+(43, 51, 3, 24, 10, 12),
+(44, 52, 3, 24, 10, 12),
+(45, 48, 1, 25, 12, 13),
+(46, 7, 1, 25, 14, 13),
+(47, 11, 1, 25, 10, 13),
+(48, 38, 1, 25, 11, 13),
+(49, 10, 1, 25, 12, 13),
+(50, 8, 1, 25, 11, 13),
+(51, 5, 1, 25, 12, 13),
+(52, 49, 1, 25, 11, 13),
+(53, 50, 1, 25, 10, 13),
+(54, 51, 1, 25, 12, 13),
+(55, 52, 1, 25, 14, 13),
+(56, 48, 2, 25, 15, 6),
+(57, 7, 2, 25, 10, 6),
+(58, 11, 2, 25, 12, 6),
+(59, 38, 2, 25, 12, 6),
+(60, 10, 2, 25, 12, 6),
+(61, 8, 2, 25, 12, 6),
+(62, 5, 2, 25, 13, 6),
+(63, 49, 2, 25, 14, 6),
+(64, 50, 2, 25, 10, 6),
+(65, 51, 2, 25, 12, 6),
+(66, 52, 2, 25, 12, 6),
+(67, 48, 3, 25, 12, 14),
+(68, 7, 3, 25, 12, 14),
+(69, 11, 3, 25, 10, 14),
+(70, 38, 3, 25, 11, 14),
+(71, 10, 3, 25, 16, 14),
+(72, 8, 3, 25, 12, 14),
+(73, 5, 3, 25, 18, 14),
+(74, 49, 3, 25, 10, 14),
+(75, 50, 3, 25, 10, 14),
+(76, 51, 3, 25, 10, 14),
+(77, 52, 3, 25, 10, 14),
+(78, 48, 4, 25, 10, 16),
+(79, 7, 4, 25, 18, 16),
+(80, 11, 4, 25, 10, 16),
+(81, 38, 4, 25, 10, 16),
+(82, 10, 4, 25, 19, 16),
+(83, 8, 4, 25, 10, 16),
+(84, 5, 4, 25, 19, 16),
+(85, 49, 4, 25, 10, 16),
+(86, 50, 4, 25, 10, 16),
+(87, 51, 4, 25, 10, 16),
+(88, 52, 4, 25, 18, 16),
+(89, 48, 1, 26, 12, 9),
+(90, 7, 1, 26, 18, 9),
+(91, 11, 1, 26, 12, 9),
+(92, 38, 1, 26, 12, 9),
+(93, 10, 1, 26, 12, 9),
+(94, 8, 1, 26, 12, 9),
+(95, 5, 1, 26, 12, 9),
+(96, 49, 1, 26, 12, 9),
+(97, 50, 1, 26, 12, 9),
+(98, 51, 1, 26, 12, 9),
+(99, 52, 1, 26, 12, 9),
+(100, 48, 2, 26, 12, 8),
+(101, 7, 2, 26, 12, 8),
+(102, 11, 2, 26, 13, 8),
+(103, 38, 2, 26, 10, 8),
+(104, 10, 2, 26, 10, 8),
+(105, 8, 2, 26, 14, 8),
+(106, 5, 2, 26, 12, 8),
+(107, 49, 2, 26, 11, 8),
+(108, 50, 2, 26, 10, 8),
+(109, 51, 2, 26, 11, 8),
+(110, 52, 2, 26, 11, 8),
+(111, 48, 3, 26, 12, 13),
+(112, 7, 3, 26, 17, 13),
+(113, 11, 3, 26, 14, 13),
+(114, 38, 3, 26, 12, 13),
+(115, 10, 3, 26, 14, 13),
+(116, 8, 3, 26, 18, 13),
+(117, 5, 3, 26, 10, 13),
+(118, 49, 3, 26, 11, 13),
+(119, 50, 3, 26, 11, 13),
+(120, 51, 3, 26, 11, 13),
+(121, 52, 3, 26, 11, 13),
+(122, 48, 1, 27, 13, 11),
+(123, 7, 1, 27, 13, 11),
+(124, 11, 1, 27, 13, 11),
+(125, 38, 1, 27, 13, 11),
+(126, 10, 1, 27, 13, 11),
+(127, 8, 1, 27, 13, 11),
+(128, 5, 1, 27, 13, 11),
+(129, 49, 1, 27, 13, 11),
+(130, 50, 1, 27, 13, 11),
+(131, 51, 1, 27, 13, 11),
+(132, 52, 1, 27, 13, 11),
+(133, 48, 1, 28, 12, 12),
+(134, 7, 1, 28, 12, 12),
+(135, 11, 1, 28, 12, 12),
+(136, 38, 1, 28, 12, 12),
+(137, 10, 1, 28, 12, 12),
+(138, 8, 1, 28, 12, 12),
+(139, 5, 1, 28, 12, 12),
+(140, 49, 1, 28, 12, 12),
+(141, 50, 1, 28, 12, 12),
+(142, 51, 1, 28, 1, 12),
+(143, 52, 1, 28, 2, 12),
+(144, 48, 2, 27, 14, 17),
+(145, 7, 2, 27, 14, 17),
+(146, 11, 2, 27, 14, 17),
+(147, 38, 2, 27, 14, 17),
+(148, 10, 2, 27, 14, 17),
+(149, 8, 2, 27, 14, 17),
+(150, 5, 2, 27, 14, 17),
+(151, 49, 2, 27, 14, 17),
+(152, 50, 2, 27, 14, 17),
+(153, 51, 2, 27, 14, 17),
+(154, 52, 2, 27, 14, 17),
+(155, 48, 3, 27, 12, 12),
+(156, 7, 3, 27, 14, 12),
+(157, 11, 3, 27, 14, 12),
+(158, 38, 3, 27, 14, 12),
+(159, 10, 3, 27, 14, 12),
+(160, 8, 3, 27, 14, 12),
+(161, 5, 3, 27, 14, 12),
+(162, 49, 3, 27, 14, 12),
+(163, 50, 3, 27, 14, 12),
+(164, 51, 3, 27, 14, 12),
+(165, 52, 3, 27, 14, 12),
+(166, 48, 2, 28, 12, 8),
+(167, 7, 2, 28, 8, 8),
+(168, 11, 2, 28, 10, 8),
+(169, 38, 2, 28, 14, 8),
+(170, 10, 2, 28, 14, 8),
+(171, 8, 2, 28, 14, 8),
+(172, 5, 2, 28, 14, 8),
+(173, 49, 2, 28, 15, 8),
+(174, 50, 2, 28, 15, 8),
+(175, 51, 2, 28, 15, 8),
+(176, 52, 2, 28, 15, 8),
+(177, 48, 3, 28, 20, 18),
+(178, 7, 3, 28, 19, 18),
+(179, 11, 3, 28, 19, 18),
+(180, 38, 3, 28, 19, 18),
+(181, 10, 3, 28, 19, 18),
+(182, 8, 3, 28, 19, 18),
+(183, 5, 3, 28, 19, 18),
+(184, 49, 3, 28, 19, 18),
+(185, 50, 3, 28, 19, 18),
+(186, 51, 3, 28, 19, 18),
+(187, 52, 3, 28, 19, 18),
+(188, 48, 1, 29, 12, 20),
+(189, 7, 1, 29, 14, 20),
+(190, 11, 1, 29, 13, 20),
+(191, 38, 1, 29, 13, 20),
+(192, 10, 1, 29, 13, 20),
+(193, 8, 1, 29, 13, 20),
+(194, 5, 1, 29, 13, 20),
+(195, 49, 1, 29, 13, 20),
+(196, 50, 1, 29, 13, 20),
+(197, 51, 1, 29, 13, 20),
+(198, 52, 1, 29, 13, 20),
+(199, 48, 2, 29, 11, 19),
+(200, 7, 2, 29, 11, 19),
+(201, 11, 2, 29, 12, 19),
+(202, 38, 2, 29, 12, 19),
+(203, 10, 2, 29, 12, 19),
+(204, 8, 2, 29, 12, 19),
+(205, 5, 2, 29, 12, 19),
+(206, 49, 2, 29, 12, 19),
+(207, 50, 2, 29, 12, 19),
+(208, 51, 2, 29, 12, 19),
+(209, 52, 2, 29, 12, 19),
+(210, 48, 3, 29, 12, 18),
+(211, 7, 3, 29, 12, 18),
+(212, 11, 3, 29, 10, 18),
+(213, 38, 3, 29, 10, 18),
+(214, 10, 3, 29, 10, 18),
+(215, 8, 3, 29, 10, 18),
+(216, 5, 3, 29, 10, 18),
+(217, 49, 3, 29, 10, 18),
+(218, 50, 3, 29, 10, 18),
+(219, 51, 3, 29, 10, 18),
+(220, 52, 3, 29, 10, 18),
+(221, 48, 2, 30, 12, 17),
+(222, 7, 2, 30, 13, 17),
+(223, 11, 2, 30, 10, 17),
+(224, 38, 2, 30, 10, 17),
+(225, 10, 2, 30, 11, 17),
+(226, 8, 2, 30, 11, 17),
+(227, 5, 2, 30, 11, 17),
+(228, 49, 2, 30, 11, 17),
+(229, 50, 2, 30, 11, 17),
+(230, 51, 2, 30, 11, 17),
+(231, 52, 2, 30, 11, 17),
+(232, 48, 3, 30, 12, 16),
+(233, 7, 3, 30, 14, 16),
+(234, 11, 3, 30, 10, 16),
+(235, 38, 3, 30, 10, 16),
+(236, 10, 3, 30, 10, 16),
+(237, 8, 3, 30, 12, 16),
+(238, 5, 3, 30, 12, 16),
+(239, 49, 3, 30, 12, 16),
+(240, 50, 3, 30, 12, 16),
+(241, 51, 3, 30, 12, 16),
+(242, 52, 3, 30, 12, 16),
+(243, 48, 4, 30, 17, 22),
+(244, 7, 4, 30, 17, 22),
+(245, 11, 4, 30, 15, 22),
+(246, 38, 4, 30, 15, 22),
+(247, 10, 4, 30, 15, 22),
+(248, 8, 4, 30, 15, 22),
+(249, 5, 4, 30, 15, 22),
+(250, 49, 4, 30, 15, 22),
+(251, 50, 4, 30, 15, 22),
+(252, 51, 4, 30, 15, 22),
+(253, 52, 4, 30, 15, 22),
+(254, 48, 1, 31, 11, 20),
+(255, 7, 1, 31, 17, 20),
+(256, 11, 1, 31, 14, 20),
+(257, 38, 1, 31, 15, 20),
+(258, 10, 1, 31, 14, 20),
+(259, 8, 1, 31, 10, 20),
+(260, 5, 1, 31, 11, 20),
+(261, 49, 1, 31, 12, 20),
+(262, 50, 1, 31, 12, 20),
+(263, 51, 1, 31, 10, 20),
+(264, 52, 1, 31, 11, 20),
+(265, 48, 2, 31, 12, 21),
+(266, 7, 2, 31, 15, 21),
+(267, 11, 2, 31, 14, 21),
+(268, 38, 2, 31, 12, 21),
+(269, 10, 2, 31, 13, 21),
+(270, 8, 2, 31, 14, 21),
+(271, 5, 2, 31, 10, 21),
+(272, 49, 2, 31, 11, 21),
+(273, 50, 2, 31, 13, 21),
+(274, 51, 2, 31, 11, 21),
+(275, 52, 2, 31, 10, 21),
+(276, 48, 3, 31, 12, 23),
+(277, 7, 3, 31, 16, 23),
+(278, 11, 3, 31, 14, 23),
+(279, 38, 3, 31, 10, 23),
+(280, 10, 3, 31, 12, 23),
+(281, 8, 3, 31, 12, 23),
+(282, 5, 3, 31, 10, 23),
+(283, 49, 3, 31, 15, 23),
+(284, 50, 3, 31, 17, 23),
+(285, 51, 3, 31, 14, 23),
+(286, 52, 3, 31, 10, 23),
+(287, 48, 1, 32, 12, 10),
+(288, 7, 1, 32, 10, 10),
+(289, 11, 1, 32, 12, 10),
+(290, 38, 1, 32, 10, 10),
+(291, 10, 1, 32, 10, 10),
+(292, 8, 1, 32, 12, 10),
+(293, 5, 1, 32, 9, 10),
+(294, 49, 1, 32, 8, 10),
+(295, 50, 1, 32, 7, 10),
+(296, 51, 1, 32, 6, 10),
+(297, 52, 1, 32, 5, 10),
+(298, 48, 1, 33, 10, 10),
+(299, 7, 1, 33, 14, 10),
+(300, 11, 1, 33, 10, 10),
+(301, 38, 1, 33, 10, 10),
+(302, 10, 1, 33, 11, 10),
+(303, 8, 1, 33, 12, 10),
+(304, 5, 1, 33, 11, 10),
+(305, 49, 1, 33, 11, 10),
+(306, 50, 1, 33, 10, 10),
+(307, 51, 1, 33, 10, 10),
+(308, 52, 1, 33, 10, 10),
+(309, 48, 2, 32, 11, 10),
+(310, 7, 2, 32, 13, 10),
+(311, 11, 2, 32, 10, 10),
+(312, 38, 2, 32, 14, 10),
+(313, 10, 2, 32, 11, 10),
+(314, 8, 2, 32, 10, 10),
+(315, 5, 2, 32, 10, 10),
+(316, 49, 2, 32, 11, 10),
+(317, 50, 2, 32, 12, 10),
+(318, 51, 2, 32, 11, 10),
+(319, 52, 2, 32, 10, 10),
+(320, 48, 2, 33, 11, 10),
+(321, 7, 2, 33, 13, 10),
+(322, 11, 2, 33, 10, 10),
+(323, 38, 2, 33, 12, 10),
+(324, 10, 2, 33, 11, 10),
+(325, 8, 2, 33, 12, 10),
+(326, 5, 2, 33, 12, 10),
+(327, 49, 2, 33, 10, 10),
+(328, 50, 2, 33, 9, 10),
+(329, 51, 2, 33, 8, 10),
+(330, 52, 2, 33, 7, 10),
+(331, 48, 3, 32, 12, 11),
+(332, 7, 3, 32, 11, 11),
+(333, 11, 3, 32, 11, 11),
+(334, 38, 3, 32, 10, 11),
+(335, 10, 3, 32, 12, 11),
+(336, 8, 3, 32, 9, 11),
+(337, 5, 3, 32, 4, 11),
+(338, 49, 3, 32, 10, 11),
+(339, 50, 3, 32, 11, 11),
+(340, 51, 3, 32, 11, 11),
+(341, 52, 3, 32, 11, 11),
+(342, 48, 3, 33, 12, 11),
+(343, 7, 3, 33, 9, 11),
+(344, 11, 3, 33, 10, 11),
+(345, 38, 3, 33, 11, 11),
+(346, 10, 3, 33, 10, 11),
+(347, 8, 3, 33, 11, 11),
+(348, 5, 3, 33, 12, 11),
+(349, 49, 3, 33, 11, 11),
+(350, 50, 3, 33, 10, 11),
+(351, 51, 3, 33, 12, 11),
+(352, 52, 3, 33, 10, 11),
+(353, 48, 1, 34, 10, 7),
+(354, 7, 1, 34, 12, 7),
+(355, 11, 1, 34, 10, 7),
+(356, 38, 1, 34, 11, 7),
+(357, 10, 1, 34, 12, 7),
+(358, 8, 1, 34, 14, 7),
+(359, 5, 1, 34, 10, 7),
+(360, 49, 1, 34, 9, 7),
+(361, 50, 1, 34, 8, 7),
+(362, 51, 1, 34, 12, 7),
+(363, 52, 1, 34, 11, 7),
+(364, 48, 1, 35, 10, 8),
+(365, 7, 1, 35, 10, 8),
+(366, 11, 1, 35, 10, 8),
+(367, 38, 1, 35, 10, 8),
+(368, 10, 1, 35, 10, 8),
+(369, 8, 1, 35, 10, 8),
+(370, 5, 1, 35, 10, 8),
+(371, 49, 1, 35, 10, 8),
+(372, 50, 1, 35, 10, 8),
+(373, 51, 1, 35, 10, 8),
+(374, 52, 1, 35, 10, 8),
+(375, 48, 2, 34, 11, 7),
+(376, 7, 2, 34, 11, 7),
+(377, 11, 2, 34, 11, 7),
+(378, 38, 2, 34, 11, 7),
+(379, 10, 2, 34, 11, 7),
+(380, 8, 2, 34, 11, 7),
+(381, 5, 2, 34, 11, 7),
+(382, 49, 2, 34, 11, 7),
+(383, 50, 2, 34, 11, 7),
+(384, 51, 2, 34, 11, 7),
+(385, 52, 2, 34, 11, 7),
+(386, 48, 2, 35, 14, 9),
+(387, 7, 2, 35, 15, 9),
+(388, 11, 2, 35, 14, 9),
+(389, 38, 2, 35, 14, 9),
+(390, 10, 2, 35, 12, 9),
+(391, 8, 2, 35, 10, 9),
+(392, 5, 2, 35, 12, 9),
+(393, 49, 2, 35, 12, 9),
+(394, 50, 2, 35, 12, 9),
+(395, 51, 2, 35, 10, 9),
+(396, 52, 2, 35, 11, 9),
+(397, 48, 3, 34, 12, 6),
+(398, 7, 3, 34, 13, 6),
+(399, 11, 3, 34, 12, 6),
+(400, 38, 3, 34, 10, 6),
+(401, 10, 3, 34, 11, 6),
+(402, 8, 3, 34, 12, 6),
+(403, 5, 3, 34, 14, 6),
+(404, 49, 3, 34, 10, 6),
+(405, 50, 3, 34, 10, 6),
+(406, 51, 3, 34, 14, 6),
+(407, 52, 3, 34, 12, 6),
+(408, 48, 3, 35, 12, 4),
+(409, 7, 3, 35, 12, 4),
+(410, 11, 3, 35, 12, 4),
+(411, 38, 3, 35, 12, 4),
+(412, 10, 3, 35, 12, 4),
+(413, 8, 3, 35, 12, 4),
+(414, 5, 3, 35, 12, 4),
+(415, 49, 3, 35, 12, 4),
+(416, 50, 3, 35, 12, 4),
+(417, 51, 3, 35, 12, 4),
+(418, 52, 3, 35, 12, 4),
+(419, 48, 1, 36, 12, 14),
+(420, 7, 1, 36, 7, 14),
+(421, 11, 1, 36, 10, 14),
+(422, 38, 1, 36, 12, 14),
+(423, 10, 1, 36, 11, 14),
+(424, 8, 1, 36, 5, 14),
+(425, 5, 1, 36, 6, 14),
+(426, 49, 1, 36, 0, 14),
+(427, 50, 1, 36, 2, 14),
+(428, 51, 1, 36, 0, 14),
+(429, 52, 1, 36, 7, 14),
+(430, 48, 2, 36, 17, 18),
+(431, 7, 2, 36, 17, 18),
+(432, 11, 2, 36, 14, 18),
+(433, 38, 2, 36, 15, 18),
+(434, 10, 2, 36, 16, 18),
+(435, 8, 2, 36, 14, 18),
+(436, 5, 2, 36, 15, 18),
+(437, 49, 2, 36, 10, 18),
+(438, 50, 2, 36, 11, 18),
+(439, 51, 2, 36, 17, 18),
+(440, 52, 2, 36, 15, 18),
+(441, 48, 3, 36, 12, 15),
+(442, 7, 3, 36, 12, 15),
+(443, 11, 3, 36, 12, 15),
+(444, 38, 3, 36, 11, 15),
+(445, 10, 3, 36, 10, 15),
+(446, 8, 3, 36, 11, 15),
+(447, 5, 3, 36, 10, 15),
+(448, 49, 3, 36, 7, 15),
+(449, 50, 3, 36, 18, 15),
+(450, 51, 3, 36, 14, 15),
+(451, 52, 3, 36, 11, 15),
+(452, 48, 1, 37, 10, 12),
+(453, 7, 1, 37, 15, 12),
+(454, 11, 1, 37, 11, 12),
+(455, 38, 1, 37, 10, 12),
+(456, 10, 1, 37, 12, 12),
+(457, 8, 1, 37, 14, 12),
+(458, 5, 1, 37, 15, 12),
+(459, 49, 1, 37, 11, 12),
+(460, 50, 1, 37, 12, 12),
+(461, 51, 1, 37, 10, 12),
+(462, 52, 1, 37, 10, 12),
+(463, 48, 2, 37, 14, 11),
+(464, 7, 2, 37, 12, 11),
+(465, 11, 2, 37, 14, 11),
+(466, 38, 2, 37, 12, 11),
+(467, 10, 2, 37, 11, 11),
+(468, 8, 2, 37, 10, 11),
+(469, 5, 2, 37, 12, 11),
+(470, 49, 2, 37, 13, 11),
+(471, 50, 2, 37, 14, 11),
+(472, 51, 2, 37, 15, 11),
+(473, 52, 2, 37, 14, 11),
+(474, 48, 3, 37, 14, 12),
+(475, 7, 3, 37, 18, 12),
+(476, 11, 3, 37, 10, 12),
+(477, 38, 3, 37, 12, 12),
+(478, 10, 3, 37, 14, 12),
+(479, 8, 3, 37, 13, 12),
+(480, 5, 3, 37, 11, 12),
+(481, 49, 3, 37, 11, 12),
+(482, 50, 3, 37, 11, 12),
+(483, 51, 3, 37, 12, 12),
+(484, 52, 3, 37, 11, 12);
