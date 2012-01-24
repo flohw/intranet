@@ -21,7 +21,7 @@ class DocumentsController extends AppController
 	// affichage des documents mis en ligne par un prof donne
 	function lister() 
 	{
-		if ($this->Auth->user('statut_id') >= $this->statuts['prof'])
+		if ($this->Auth->user('statut_id') < $this->statuts['prof'])
 		{
 			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page', 'message');
 			$this->redirect($this->referer());
@@ -30,7 +30,7 @@ class DocumentsController extends AppController
 		$d['documentsStage'] = $this->DocumentsStage->find('all', array(
 			'recursive' => -1, 
 			'order' => array('DocumentsStage.categorie ASC'), 
-			'conditions' => array('personne_id' => $id)));
+			'conditions' => array('personne_id' => $this->Auth->user('id'))));
 		
 		$d['documents'] = $this->Document->find('all', array(
 			'order' => array('Document.module_id DESC'), 
