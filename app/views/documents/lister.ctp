@@ -14,8 +14,9 @@
 			{
 				if ($module!=$d['Module']['abreviation'])
 				{
+					echo '</ul>';
 					$module = $d['Module']['abreviation'];
-					echo '</br><li><strong>'.$module.'</strong></li>';
+					echo '<strong>'.$module.'</strong><ul>';
 				}
 
 				echo '<li>'.$this->Html->link($d['Document']['nom'], array('action' => 'presenter', $d['Document']['module_id'])).'</li>';
@@ -33,17 +34,20 @@
 			{
 				if ($categorie!=$d['DocumentsStage']['categorie'])
 				{
+					echo '</ul>';
 					$categorie = $d['DocumentsStage']['categorie'];
 
-					if ($d['DocumentsStage']['categorie']=="posters") $action = "ppp";
-					else if ($d['DocumentsStage']['categorie']=="PPP") $action = "ppp";
-					else if ($d['DocumentsStage']['categorie']=="PT1A") $action = "pt1";
-					else if ($d['DocumentsStage']['categorie']=="PT2A") $action = "pt2";
-					else if ($d['DocumentsStage']['categorie']=="PT2A-rapports") $action = "pt2";
-					else if ($d['DocumentsStage']['categorie']=="stages-offres") $action = "";
-					else if ($d['DocumentsStage']['categorie']=="stages-utiles") $action = "";
+					if ($categorie=="posters") $action = "ppp";
+					else if ($categorie=="PPP") $action = "ppp";
+					else if ($categorie=="PT1A") $action = "pt1";
+					else if ($categorie=="PT2A") $action = "pt2";
+					else if ($categorie=="PT2A-rapports") $action = "pt2";
+					else if ($categorie=="stages-offres") $action = "";
+					else if ($categorie=="stages-utiles") $action = "";
 
-					echo '</br><li><strong>'.$categorie.'</strong></li>';
+					if ($categorie=="stages-offres") echo '<strong>Infos stages</strong><ul>';
+					else if ($categorie=="stages-utiles") echo '<strong>Documents des stages</strong><ul>';
+					else echo '<strong>'.ucwords($categorie).'</strong><ul>';
 				}
 
 				echo '<li>'.$this->Html->link($d['DocumentsStage']['nom'], array('controller' => 'stages', 'action' => $action)).'</li>';
