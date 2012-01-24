@@ -732,14 +732,71 @@ INSERT INTO `stages` (`id`, `entreprise`, `ville`, `description`, `dispo`, `depa
 (5, 'Innovacs', 'Grenoble', 'Innovacs, (Innovation, Connaissances et Société) est une structure fédérative de recherche (SFR) née dans le cadre de Grenoble Université de l\'Innovation. Elle regroupe l\'ensemble des acteurs du site grenoblois souhaitant travailler sur les questions relatives à l\'Innovation, autour de trois grands enjeux sociétaux de référence issus de l\'Opération Campus : Planète durable, l\'Information et la Santé.', 0, 1, '2011-12-05 09:23:33', 'Stage-Innovacs.pdf');
 
 
+
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `type_mime`, `date_ajout`) VALUES
+(1, 'cours01.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:46'),
+(2, 'cours02.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:46'),
+(3, 'cours03.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:47'),
+(4, 'cours04.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:47'),
+(5, 'cours05.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:48'),
+(6, 'cours06.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:48'),
+(7, 'cours07.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:49'),
+(8, 'cours08.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:49'),
+(9, 'Interpreteur-etape1.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:50'),
+(10, 'Interpreteur-etape2.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:50'),
+(11, 'Interpreteur-etape3et4.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:51'),
+(12, 'Interpreteur-Extensions.pdf', 13, 24, 'application/pdf', '2012-01-24 13:00:51'),
+(13, 'tp01.pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:29'),
+(14, 'tp02.pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:30'),
+(15, 'tp03.pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:30'),
+(16, 'tp03-suite.pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:31'),
+(17, 'tp04.pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:31'),
+(18, 'tp04-suite.pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:32'),
+(19, 'tp05.pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:32'),
+(20, 'tp06(1).pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:33'),
+(21, 'tp06-grille-évaluation.ods', 13, 24, 'application/vnd.oasis.opendocument.spreadsheet', '2012-01-24 13:01:33'),
+(22, 'tp06-svn(4).pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:34'),
+(23, '2009-2010asr4-12octobre.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:15'),
+(24, '2009-2010asr4-12octobre-corr.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:16'),
+(25, '2010-2011asr4-16octobre.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:16'),
+(26, '2010-2011asr4-16octobreCorr.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:17'),
+(27, 'asr4-ethernet.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:39'),
+(28, 'asr4-intro.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:39'),
+(29, 'asr4-ip.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:40'),
+(30, 'asr4-tcp.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:40'),
+(31, 'asr4-vlan.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:41'),
+(32, 'asr4-td.pdf', 15, 26, 'application/pdf', '2012-01-24 13:04:05'),
+(33, 'planningASR4.pdf', 15, 26, 'application/pdf', '2012-01-24 13:04:06'),
+(34, 'cours00.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:36'),
+(35, 'cours01.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:36'),
+(36, 'cours02.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:37'),
+(37, 'cours03.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:37'),
+(38, 'cours04.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:38'),
+(39, 'cours05.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:38'),
+(40, 'cours01.pdf', 15, 28, 'application/pdf', '2012-01-24 13:05:06'),
+(41, 'cours02.pdf', 15, 28, 'application/pdf', '2012-01-24 13:05:06'),
+(42, 'cours03.pdf', 15, 28, 'application/pdf', '2012-01-24 13:05:07'),
+(43, 'cours04.pdf', 15, 28, 'application/pdf', '2012-01-24 13:05:07'),
+(44, 'Cahier des charges.pdf', 14, 36, 'application/pdf', '2012-01-24 13:06:45'),
+(45, 'Collignon_Schopfel_Cahier_des_Charges.pdf', 14, 36, 'application/pdf', '2012-01-24 13:06:45'),
+(46, 'Gestion de projet de système d’information.pdf', 14, 36, 'application/pdf', '2012-01-24 13:07:14'),
+(50, 'CM  chap 1 - Les SI - 1 par page .pdf', 20, 37, 'application/pdf', '2012-01-24 13:08:25'),
+(51, 'CM  chap 2 - Les 4 dimensions des SI - 1 par page.pdf', 20, 37, 'application/pdf', '2012-01-24 13:08:26'),
+(52, 'CM  chap 3 - Les SI en entreprise - 1 par page.pdf', 20, 37, 'application/pdf', '2012-01-24 13:08:26'),
+(57, 'Bezier.jpg', 24, 31, 'image/jpeg', '2012-01-24 13:10:18'),
+(58, 'cours-alg-lineaire etudiant.pdf', 24, 31, 'application/pdf', '2012-01-24 13:10:19'),
+(59, 'grec.jpg', 24, 31, 'image/jpeg', '2012-01-24 13:10:19'),
+(60, 'Traçage segment et cercle.pdf', 24, 31, 'application/pdf', '2012-01-24 13:10:20'),
+(61, 'docVP.pdf', 23, 29, 'application/pdf', '2012-01-24 13:11:17'),
+(62, 'Traduction_LC_Java.pdf', 23, 29, 'application/pdf', '2012-01-24 13:11:18'),
+(63, 'UML.pdf', 23, 29, 'application/pdf', '2012-01-24 13:11:18'),
+(65, 'Projet-Gervosou S3D-10-11.pdf', 23, 30, 'application/pdf', '2012-01-24 13:11:46');
+
+
 /*
-INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `date_ajout`, `type_mime`) VALUES
-(1, 'TP1-Bases.pdf', 13, 1, '2012-01-12 20:13:35', 'application/pdf'),
-(2, 'TP2-Procedures.pdf', 13, 1, '2012-01-12 20:13:45', 'application/pdf'),
-(3, 'Traduction.pdf', 13, 1, '2012-01-12 20:13:58', 'application/pdf');
-
-
-
 INSERT INTO `documents_stages` (`id`, `nom`, `categorie`, `date_ajout`, `type_mime`, `personne_id`) VALUES
 (1, '2A-AS-GD-Reunion-Stage-11-12.pdf', 'stages-utiles', '2012-01-12 17:01:50', 'application/pdf', 30),
 (2, 'CO-Fiche_de_presentation-11-12.pdf', 'stages-utiles', '2012-01-12 17:01:51', 'application/pdf', 30),
@@ -780,6 +837,59 @@ INSERT INTO `pages_statiques` (`id`, `titre`, `contenu`) VALUES
 (7, 'Poursuites d\'études', 'Contenu poursuites études'),
 (8, 'Oedig', 'Contenu oedig'),
 (9, 'Sport', 'Contenu sport');
+
+
+
+INSERT INTO `messages` (`id`, `titre`, `date_envoi`, `fichier`, `personne_id`, `destinataire_id`, `supprime_dest`, `supprime_exp`, `lu_dest`, `lu_exp`) VALUES
+(2, 'push !!!', '2012-01-24 13:28:18', 'message_4f1eb1f2ddfcc.xml', 9, 7, 0, 0, 1, 0),
+(3, 'etudes à l''étranger', '2012-01-24 13:31:17', 'message_4f1eb2a5da21c.xml', 7, 29, 0, 0, 1, 0),
+(4, 'soirée de samedi', '2012-01-24 13:32:41', 'message_4f1eb2f9efef8.xml', 16, 32, 0, 0, 0, 1),
+(5, 'ajout doc', '2012-01-24 13:33:39', 'message_4f1eb333c8b6f.xml', 29, 4, 0, 0, 1, 0),
+(6, 'cours asr', '2012-01-24 13:35:28', 'message_4f1eb3a08a9c4.xml', 7, 30, 0, 0, 0, 1);
+
+
+INSERT INTO `absences` (`id`, `date`, `justification`, `personne_id`) VALUES
+(1, '2012-01-09 08:31:00', '', 82),
+(2, '2012-01-12 13:00:00', 'medecin', 84),
+(3, '2012-01-06 13:00:00', '', 68),
+(4, '2012-01-04 16:30:00', 'conduite', 83),
+(5, '2011-12-14 10:00:00', '', 78);
+
+
+INSERT INTO `documents_stages` (`id`, `nom`, `personne_id`, `categorie`, `date_ajout`, `type_mime`) VALUES
+(4, 'Guide-Redaction-Rapport-DUT-11-12.pdf', 30, 'stages-utiles', '2012-01-24 13:52:36', 'application/pdf'),
+(5, '2A-AS-GD-Reunion-Stage-11-12.pdf', 30, 'stages-utiles', '2012-01-24 13:52:36', 'application/pdf'),
+(6, 'CO-Fiche_de_presentation-11-12.pdf', 30, 'stages-utiles', '2012-01-24 13:52:37', 'application/pdf'),
+(7, 'Entreprises-10-11.pdf', 30, 'stages-offres', '2012-01-24 13:52:55', 'application/pdf'),
+(8, 'Liste-Entreprises-09-10.pdf', 30, 'stages-offres', '2012-01-24 13:52:55', 'application/pdf'),
+(9, 'Calendrier PT1A 2011.pdf', 30, 'PT1A', '2012-01-24 13:53:11', 'application/pdf'),
+(10, 'Document Etudiant PT1A 2011.pdf', 30, 'PT1A', '2012-01-24 13:53:11', 'application/pdf'),
+(11, 'Fiche type évaluation PT1A.pdf', 30, 'PT1A', '2012-01-24 13:53:12', 'application/pdf'),
+(12, 'Notes  PT1A s1+s2d 2011.pdf', 30, 'PT1A', '2012-01-24 13:53:12', 'application/pdf'),
+(13, 'Pages_De_Présentation.doc', 30, 'PT1A', '2012-01-24 13:53:13', 'application/msword'),
+(14, 'Calendrier PT2A 2011 s4.pdf', 30, 'PT2A', '2012-01-24 13:53:26', 'application/pdf'),
+(15, 'Calendrier PT2A 2011 s4D.pdf', 30, 'PT2A', '2012-01-24 13:53:26', 'application/pdf'),
+(16, 'Document Etudiant PT2A 2011-2012.pdf', 30, 'PT2A', '2012-01-24 13:53:26', 'application/pdf'),
+(17, 'Fiche 1 sujet étudiant 2011.pdf', 30, 'PT2A', '2012-01-24 13:53:27', 'application/pdf'),
+(18, 'Fiche 2 prepa soutenance 2011.doc', 30, 'PT2A', '2012-01-24 13:53:27', 'application/msword'),
+(19, 'GROUPE PT2A s3 sept 2011.pdf', 30, 'PT2A', '2012-01-24 13:53:28', 'application/pdf'),
+(20, 'Pages_De_Présentation.doc', 30, 'PT2A', '2012-01-24 13:53:28', 'application/msword'),
+(21, 'planning soutenance janv 2012.xls', 30, 'PT2A', '2012-01-24 13:53:29', 'application/vnd.ms-excel'),
+(22, 'Note Etudiants PPP 2012.pdf', 30, 'PPP', '2012-01-24 13:53:49', 'application/pdf'),
+(23, 'PromoPrec_Intratek.pdf', 30, 'PPP', '2012-01-24 13:53:50', 'application/pdf'),
+(24, 'AnnuaireDiplomes2004.pdf', 30, 'PPP', '2012-01-24 13:54:19', 'application/pdf'),
+(25, 'Diplômés2005.pdf', 30, 'PPP', '2012-01-24 13:54:20', 'application/pdf'),
+(26, 'GrilleAnalyse.pdf', 30, 'PPP', '2012-01-24 13:54:20', 'application/pdf'),
+(27, 'dec 2007 - janv 2008 062.jpg', 30, 'posters', '2012-01-24 13:54:33', 'image/jpeg'),
+(28, 'dec 2007 - janv 2008 063.jpg', 30, 'posters', '2012-01-24 13:54:34', 'image/jpeg'),
+(29, 'dec 2007 - janv 2008 065.jpg', 30, 'posters', '2012-01-24 13:54:35', 'image/jpeg'),
+(30, 'dec 2007 - janv 2008 066.jpg', 30, 'posters', '2012-01-24 13:54:35', 'image/jpeg'),
+(31, 'dec 2007 - janv 2008 067.jpg', 30, 'posters', '2012-01-24 13:54:36', 'image/jpeg'),
+(32, 'dec 2007 - janv 2008 068.jpg', 30, 'posters', '2012-01-24 13:54:37', 'image/jpeg'),
+(33, 'dec 2007 - janv 2008 070.jpg', 30, 'posters', '2012-01-24 13:54:37', 'image/jpeg'),
+(34, 'dec 2007 - janv 2008 071.jpg', 30, 'posters', '2012-01-24 13:54:38', 'image/jpeg'),
+(35, 'dec 2007 - janv 2008 073.jpg', 30, 'posters', '2012-01-24 13:54:39', 'image/jpeg');
+
 
 
 INSERT INTO `notes` (`id`, `personne_id`, `type_module_id`, `module_id`, `note`, `coefficient`) VALUES
