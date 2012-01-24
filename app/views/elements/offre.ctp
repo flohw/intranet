@@ -7,9 +7,9 @@
 	<div>
 <?php
 	if ($o['Stage']['dispo'] == 1)
-		echo '<span class="label warning">Non disponible</span>';
-	else
 		echo '<span class="label success">Disponible</span>';
+	else
+		echo '<span class="label warning">Non disponible</span>';
 ?>
 		<ul>
 			<li><?php echo $o['Stage']['description']; ?></li>

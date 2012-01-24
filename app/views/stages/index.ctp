@@ -90,6 +90,9 @@
 					echo '<div class="clearfix" id="lastChild">';
 					echo $this->Form->input('fichier', array('type' => 'file'));
 					echo '<span class="input-append">(Word, Excel, PDF, Images)</span></div>';
+					echo '<div class="clearfix">';
+					echo $this->Form->input('dispo', array('label' => 'Disponible', 'id' => 'dispo'));
+					echo '</div>';
 					echo $this->Form->submit('Enregistrer', array('class' => 'btn success'));
 					echo $this->Form->end();
 					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
@@ -329,6 +332,8 @@ jQuery(function($){
 				$('#ville').val(data.Stage.ville);
 				$('#description').val(data.Stage.description);
 				$('#entreprise').val(data.Stage.entreprise);
+				if (data.Stage.dispo == 1)
+					$('#dispo').attr('checked', 'checked');
 				if (data.Stage.document.length != 0)
 				{
 					$('#lastChild').hide();
