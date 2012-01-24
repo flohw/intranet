@@ -17,6 +17,22 @@ class DocumentsController extends AppController
 			}
 		}
 	}
+
+	// affichage des documents mis en ligne par un prof donne
+	function lister($id=null) 
+	{
+		if ($id==null) { $id = $this->Auth->user('id'); }
+
+		$d['documentsStage'] = $this->DocumentsStage->find('all', array(
+			'recursive' => -1, 
+			'order' => array('DocumentsStage.categorie ASC'), 
+			'conditions' => array('personne_id' => $id)));
+		$d['documents'] = $this->Document->find('all', array(
+			'order' => array('Document.module_id DESC'), 
+			'conditions'=> array('personne_id' => $id)));
+		$this->set($d);
+	}
+
 	// Affichage des documents mis en ligne par les professeurs + Upload
 	function index ()
 	{

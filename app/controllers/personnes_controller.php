@@ -99,7 +99,7 @@ class PersonnesController extends AppController
 				$this->Personne->set($this->data);
 				$this->Personne->save();
 				$this->Session->setFlash('Modifications enregistrées.', 'message', array('class' => 'success'));
-				$this->redirect(array('action' => 'annuaire'));
+				$this->redirect(array('controller' => 'groupes', 'action' => 'index', $this->data['Personne']['groupe_id']));
 			}
 			else
 			{
