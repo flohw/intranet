@@ -25,7 +25,7 @@
 					<th class="red">E-mail</th>
 					<th class="orange">Téléphone</th>
 					<th class="green">Bureau</th>
-					<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin'])
+					<?php if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
 						echo '<th id="actions" class="purple">Actions</th>';
 					?>
 				</tr>
