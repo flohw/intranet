@@ -13,12 +13,10 @@
 <div class="pill-content">
 	<div id="ajouter" class="active">
 	<?php 
-
 			echo $this->Form->create('Absence');
 			echo $this->Form->input('id');
 			echo '<div class="clearfix">';
-			echo $this->Form->input('date', array('class' => 'input', 'label' => 'Date de l\'absence (aaaa-mm-jj)',
-													'id' => 'datepicker', 'type' => 'text', 'readonly' => 'readonly'));
+			echo $this->Form->input('date', array('class' => 'input', 'label' => 'Date de l\'absence (aaaa-mm-jj)', 'id' => 'datepicker', 'type' => 'text', 'readonly' => 'readonly'));
 			echo '</div>';
 
 			echo '<div class="clearfix">';
@@ -26,7 +24,15 @@
 			echo '</div>';
 
 			echo '<div class="clearfix">';
-			echo $this->Form->input('personne_id', array('label' => 'Elève', 'class' => 'input', 'type' => 'text', 'id' => 'personne'));
+				if (isset($this->data['modif']))
+					echo $this->Form->input('personne_id', array(
+						'label' => 'Elève', 
+						'class' => 'input', 
+						'type' => 'text', 
+						'id' => 'personne',
+						'readonly' => 'readonly'));
+				else
+					echo $this->Form->input('personne_id', array('label' => 'Elève', 'class' => 'input', 'type' => 'text', 'id' => 'personne'));
 			echo '</div>';
 
 			echo '<div class="actions">';
