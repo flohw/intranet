@@ -28,6 +28,7 @@
 			</tr>
 		</thead>
 		<tbody>
+<?php if (!empty($p['DocumentsStatique'])): ?>
 <?php foreach ($p['DocumentsStatique'] as $doc): ?>
 		<tr>
 			<td class="id"><?php echo $doc['id']; ?></td>
@@ -42,6 +43,9 @@
 			</td>
 		</tr>
 <?php endforeach; ?>
+<?php else: ?>
+	<tr><td class="id"></td><td>Aucun document</td><td></td></tr>
+<?php endif; ?>
 		</tbody>
 	</table>
 	
@@ -63,6 +67,8 @@
 					var href = $(tr).find(':nth-child(3) a:first-child').attr('href');
 					$(tr).find(':nth-child(3) a:first-child').attr('href', href+'/'+page+'/'+json.name);
 					$('#sort tbody').append(tr);
+					if ($('#sort tbody tr:first-child td:nth-child(2)').text() == 'Aucun document')
+						$('#sort tbody tr:first-child').remove();
 					return true;
 				},
 		});

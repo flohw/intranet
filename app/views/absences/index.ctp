@@ -71,7 +71,6 @@
 jQuery(function($) {
 	$.datepicker.setDefaults($.datepicker.regional['fr']);
 	$("#datepicker").datetimepicker({
-		minDate: 0,
 		dateFormat: 'yy-mm-dd',
 		changeYear: true,
 		changeMonth: true,

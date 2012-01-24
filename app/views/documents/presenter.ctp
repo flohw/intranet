@@ -34,6 +34,7 @@
 					<th class="id">ID</th>
 					<th class="blue headerSortDown">Nom</th>
 					<th class="yellow" id="Auteur">Auteur</th>
+					<th class="green">Date d'ajout</th>
 					<th class="red" id="fichier">Fichier(lien)</th>
 				</tr>
 			</thead>
@@ -43,6 +44,7 @@
 				<td class="id"><?php echo $d['Document']['id']; ?></td>
 				<td><?php echo $nom; ?></td>
 				<td><?php echo $d['Personne']['nom'].' '.$d['Personne']['prenom']; ?></td>
+				<td><?php echo $d['Document']['date_ajout']; ?></td>
 				<td>
 					<?php echo $this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'modules', $abre['Module']['abreviation'], $nom), array('class' => 'btn small info')); ?>
 				<?php

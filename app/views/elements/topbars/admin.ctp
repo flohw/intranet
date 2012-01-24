@@ -9,7 +9,8 @@
                 		<li><?php echo $this->Html->link('Les semestres', array('controller' => 'semestres', 'action' => 'index')); ?></li>
                 		<li><?php echo $this->Html->link('Les départements', array('controller' => 'departements', 'action' => 'editer')); ?></li>
                 		<li><?php echo $this->Html->link('Créer un module', array('controller' => 'modules', 'action' => 'editer')); ?></li>
-                                                <li><?php echo $this->Html->link('Créer un type de module', array('controller' => 'modules', 'action' => 'edittype')); ?></li>
+                		<li><?php echo $this->Html->link('Créer un type de module', array('controller' => 'modules', 'action' => 'edittype')); ?></li>
+                		<li><?php echo $this->Html->link('Les libellés de modules', array('controller' => 'modules', 'action' => 'editmod')); ?></li>
                 	</ul>
                 </li>
                 <li class="menu">
@@ -17,7 +18,6 @@
                 	<ul class="menu-dropdown">
                 		<li><?php echo $this->Html->link('Editer un compte', array('controller' => 'personnes', 'action' => 'annuaire')); ?></li>
                 		<li><?php echo $this->Html->link('Ajouter un compte', array('controller' => 'personnes', 'action' => 'edition')); ?></li>
-                		<li><?php echo $this->Html->link('Editer un groupe', array('controller' => 'groupes', 'action' => 'index')); ?></li>
                 		<li><?php echo $this->Html->link('Ajouter un groupe', array('controller' => 'groupes', 'action' => 'editer')); ?></li>
                 	</ul>
                 </li>

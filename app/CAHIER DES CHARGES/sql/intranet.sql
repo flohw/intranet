@@ -418,7 +418,7 @@ CREATE  TABLE IF NOT EXISTS `intranet`.`notes` (
   `personne_id` INT NOT NULL ,
   `type_module_id` INT NOT NULL ,
   `module_id` INT NOT NULL ,
-  `note` INT NOT NULL ,
+  `note` FLOAT NOT NULL ,
   `coefficient` INT NOT NULL ,
   INDEX `fk_notes_personnes1` (`personne_id` ASC) ,
   PRIMARY KEY (`id`) ,
