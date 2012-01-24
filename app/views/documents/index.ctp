@@ -198,9 +198,13 @@
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($){
 	
+	$('.pill-content>div').each(function(index, element){
+		$(this).append('<h5>* Formats pris en charge : Jpeg, Word, Excel, Png, Gif, Pdg</h5>');
+	});
+	
 	$('.dropfile').dropfile({
 		script: '<?php echo $this->Html->url(array('action' => 'upload')); ?>',
-		image: '<?php echo '/'.IMAGES_URL.'/delete.png'; ?>',
+		image: '<?php echo IMAGES_URL.'/delete.png'; ?>',
 	});
 	
 	$('a[href=#delete]').live('click', function(){

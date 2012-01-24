@@ -4,14 +4,14 @@
 </div>
 
 <ul class="tabs">
-	<li><a href="#accueil">Présentation</a></li> <!-- class="active" -->
-	<li class="active"><a href="#offres">Offres de Stage</a></li>
+	<li class="active"><a href="#accueil">Présentation</a></li>
+	<li><a href="#offres">Offres de Stage</a></li>
 	<li><a href="#dates">Dates Importantes</a></li>
 	<li><a href="#fichiers">Documents Utiles</a></li>
 </ul>
 
 <div class="pill-content">
-	<div id="accueil"> <!-- class="active" -->
+	<div id="accueil" class="active">
 		<div class="row">
 			<div class="span12">
 				<h3>Objectifs</h3>
@@ -58,7 +58,7 @@
 		</div>
 	</div>
 
-	<div id="offres" class="active">
+	<div id="offres">
 		<h3>L'IUT vous aide, et vous propose des offres de stage !</h3>
 		<div class="row">
 			<div class="span10">

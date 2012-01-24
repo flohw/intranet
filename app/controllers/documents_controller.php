@@ -142,6 +142,7 @@ class DocumentsController extends AppController
 		foreach ($h as $k => $v)
 			$h[low($k)] = $v;
 		$o = new stdClass();
+		$h['x-file-name'] = utf8_encode($h['x-file-name']);
 		$isStatique = $isModule = false;
 		$categorie = $h['x-param-folder'];
 		$folder = 'files/'.$categorie.'/';
@@ -213,13 +214,13 @@ class DocumentsController extends AppController
 				App::import('Helper', 'Html');
 				$html = new HtmlHelper();
 				if (in_array($typeFichier, $this->typesImages))
-					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierImage.png', array('class' => 'place'));
+					$o->content = $html->image('icones/fichierImage.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $this->typesPDF))
-					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierPDF.png', array('class' => 'place'));
+					$o->content = $html->image('icones/fichierPDF.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $this->typesWord))
-					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierWord.png', array('class' => 'place'));
+					$o->content = $html->image('icones/fichierWord.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $this->typesExcel))
-					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierExcel.png', array('class' => 'place'));
+					$o->content = $html->image('icones/fichierExcel.png', array('class' => 'place'));
 				
 				// Creation du document pour la bdd
 				if (!$isModule AND !$isStatique)
