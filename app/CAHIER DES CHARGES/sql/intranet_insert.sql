@@ -38,17 +38,6 @@ INSERT INTO `groupes` VALUES(8, 'D2', 15, 3);
 INSERT INTO `groupes` VALUES(9, 'Administrateurs', 15, 3);
 INSERT INTO `groupes` VALUES(10, 'Enseignants', 15, 3);
 
-/*INSERT INTO `groupes` VALUES(9, 'A1', 15, 2);
-INSERT INTO `groupes` VALUES(10, 'A2', 15, 2);
-INSERT INTO `groupes` VALUES(11, 'B1', 15, 2);
-INSERT INTO `groupes` VALUES(12, 'B2', 15, 2);
-INSERT INTO `groupes` VALUES(13, 'C1', 15, 2);
-INSERT INTO `groupes` VALUES(14, 'C2', 15, 2);
-INSERT INTO `groupes` VALUES(15, 'D1', 15, 2);
-INSERT INTO `groupes` VALUES(16, 'D2', 15, 2);*/
-
-
-
 
 
 INSERT INTO `libelle_modules` VALUES(1, 'Algorithmique et programmation');
@@ -725,11 +714,12 @@ INSERT INTO `evenements_personnes` (`id`, `evenement_id`, `personne_id`) VALUES
 
 
 INSERT INTO `stages` (`id`, `entreprise`, `ville`, `description`, `dispo`, `departements_id`, `date_ajout`, `document`) VALUES
-(1, 'Areva', 'Val de Marne', 'Areva est un groupe industriel français spécialisé dans les métiers du nucléaire. Cette entreprise est présente au niveau international avec un réseau commercial dans 100 pays et une présence industrielle dans 43 pays.', 0, 1, '2012-01-23 14:11:34', 'Stage-AREVA.pdf'),
-(2, 'Atos', 'Paris', 'Atos est le premier acteur européen dans les SSII et l\'un des dix plus grands au niveau mondial3 et le leader en France du paiement sécurisé en ligne pour les entreprises.', 0, 1, '2012-01-24 14:12:00', 'Stage-ATOS.pdf'),
-(3, 'Orange', 'Hauts de Seine', 'Orange poursuit sa croissance et dans le cadre de notre expansion nationale, nous recherchons: Développeur informatique reporting H/F', 0, 1, '2011-12-06 15:01:10', 'Stage-Orange.pdf'),
-(4, 'Cloud Solutions', 'Austin (Etats-Unis)', 'Cloud Solutions, LLC  helps organizations and companies understand, evaluate, test, configure, and implement cloud solutions.', 0, 1, '2011-12-06 10:23:33', 'Stage-Cloud-Solutions.pdf'),
-(5, 'Innovacs', 'Grenoble', 'Innovacs, (Innovation, Connaissances et Société) est une structure fédérative de recherche (SFR) née dans le cadre de Grenoble Université de l\'Innovation. Elle regroupe l\'ensemble des acteurs du site grenoblois souhaitant travailler sur les questions relatives à l\'Innovation, autour de trois grands enjeux sociétaux de référence issus de l\'Opération Campus : Planète durable, l\'Information et la Santé.', 0, 1, '2011-12-05 09:23:33', 'Stage-Innovacs.pdf');
+(1, 'Areva', 'Val de Marne', 'Areva est un groupe industriel français spécialisé dans les métiers du nucléaire. Cette entreprise est présente au niveau international avec un réseau commercial dans 100 pays et une présence industrielle dans 43 pays.', 0, 1, '2012-01-24 14:04:38', 'Areva-Val-de-Marne-1.pdf'),
+(2, 'Atos', 'Paris', 'Atos est le premier acteur européen dans les SSII et l''un des dix plus grands au niveau mondial3 et le leader en France du paiement sécurisé en ligne pour les entreprises.', 0, 1, '2012-01-24 14:06:41', 'Atos-Paris-2.pdf'),
+(3, 'Orange', 'Hauts de Seine', 'Orange poursuit sa croissance et dans le cadre de notre expansion nationale, nous recherchons: Développeur informatique reporting H/F', 0, 1, '2012-01-24 14:07:06', 'Orange-Hauts-de-Seine-3.pdf'),
+(4, 'Cloud Solutions', 'Austin (Etats-Unis)', 'Cloud Solutions, LLC  helps organizations and companies understand, evaluate, test, configure, and implement cloud solutions.', 0, 1, '2012-01-24 14:07:23', 'Cloud-Solutions-Austin-Etats-Unis-4.pdf'),
+(5, 'Innovacs', 'Grenoble', 'Innovacs, (Innovation, Connaissances et Société) est une structure fédérative de recherche (SFR) née dans le cadre de Grenoble Université de l''Innovation. Elle regroupe l''ensemble des acteurs du site grenoblois souhaitant travailler sur les questions relatives à l''Innovation, autour de trois grands enjeux sociétaux de référence issus de l''Opération Campus : Planète durable, l''Information et la Santé.', 0, 1, '2012-01-24 14:07:43', 'Innovacs-Grenoble-5.pdf');
+
 
 
 
@@ -796,36 +786,6 @@ INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `type_mime`, `
 (65, 'Projet-Gervosou S3D-10-11.pdf', 23, 30, 'application/pdf', '2012-01-24 13:11:46');
 
 
-/*
-INSERT INTO `documents_stages` (`id`, `nom`, `categorie`, `date_ajout`, `type_mime`, `personne_id`) VALUES
-(1, '2A-AS-GD-Reunion-Stage-11-12.pdf', 'stages-utiles', '2012-01-12 17:01:50', 'application/pdf', 30),
-(2, 'CO-Fiche_de_presentation-11-12.pdf', 'stages-utiles', '2012-01-12 17:01:51', 'application/pdf', 30),
-(3, 'Guide-Redaction-Rapport-DUT-10-11.doc', 'stages-utiles', '2012-01-12 17:01:52', 'application/msword', 30),
-(4, 'Liste-Tuteurs-S4D-11-12.pdf', 'stages-utiles', '2012-01-12 17:01:53', 'application/pdf', 30),
-(5, 'Entreprises-10-11.pdf', 'stages-offres', '2012-01-12 17:02:11', 'application/pdf', 30),
-(6, 'Liste-Entreprises-09-10.pdf', 'stages-offres', '2012-01-12 17:02:11', 'application/pdf', 30),
-(7, 'Rapport_FreeZic.pdf', 'PT2A-rapports', '2012-01-12 17:02:21', 'application/pdf', 30),
-(8, 'Fiche 2 prepa soutenance 2011.doc', 'PT2A', '2012-01-12 17:02:39', 'application/msword', 30),
-(9, 'Grille évaluation PT2A 2010.pdf', 'PT2A', '2012-01-12 17:02:40', 'application/pdf', 30),
-(10, 'Pages_De_Présentation.doc', 'PT2A', '2012-01-12 17:02:41', 'application/msword', 30),
-(11, 'Document Etudiant PT2A 2011-2012.pdf', 'PT2A', '2012-01-12 17:02:42', 'application/pdf', 30),
-(12, 'Fiche 1 sujet étudiant 2011.doc', 'PT2A', '2012-01-12 17:02:42', 'application/msword', 30),
-(13, 'Calendrier PT2A 2011 s4.pdf', 'PT1A', '2012-01-12 17:02:55', 'application/pdf', 30),
-(14, 'Document Etudiant PT1A 2011.pdf', 'PT1A', '2012-01-12 17:02:56', 'application/pdf', 30),
-(15, 'Fiche type évaluation PT1A.pdf', 'PT1A', '2012-01-12 17:02:57', 'application/pdf', 30),
-(16, 'Notes PT1A com s1+s2D sept 2010-janv 2011.pdf', 'PT1A', '2012-01-12 17:02:57', 'application/pdf', 30),
-(17, 'Note Etudiants PPP 2012.pdf', 'PPP', '2012-01-12 17:03:09', 'application/pdf', 30),
-(18, 'GrilleAnalyse.doc', 'PPP', '2012-01-12 17:03:09', 'application/msword', 30),
-(19, 'dec 2007 - janv 2008 068.jpg', 'posters', '2012-01-12 17:03:17', 'image/jpeg', 30),
-(20, 'dec 2007 - janv 2008 070.jpg', 'posters', '2012-01-12 17:03:18', 'image/jpeg', 30),
-(21, 'dec 2007 - janv 2008 071.jpg', 'posters', '2012-01-12 17:03:20', 'image/jpeg', 30),
-(22, 'dec 2007 - janv 2008 073.jpg', 'posters', '2012-01-12 17:03:21', 'image/jpeg', 30),
-(23, 'dec 2007 - janv 2008 062.jpg', 'posters', '2012-01-12 17:03:22', 'image/jpeg', 30),
-(24, 'dec 2007 - janv 2008 063.jpg', 'posters', '2012-01-12 17:03:23', 'image/jpeg', 30),
-(25, 'dec 2007 - janv 2008 064.jpg', 'posters', '2012-01-12 17:03:23', 'image/jpeg', 30),
-(26, 'dec 2007 - janv 2008 065.jpg', 'posters', '2012-01-12 17:03:24', 'image/jpeg', 30),
-(27, 'dec 2007 - janv 2008 066.jpg', 'posters', '2012-01-12 17:03:25', 'image/jpeg', 30),
-(28, 'dec 2007 - janv 2008 067.jpg', 'posters', '2012-01-12 17:03:26', 'image/jpeg', 30);*/
 
 INSERT INTO `pages_statiques` (`id`, `titre`, `contenu`) VALUES
 (1, 'Règlement', 'Contenu du règlement'),
@@ -833,7 +793,7 @@ INSERT INTO `pages_statiques` (`id`, `titre`, `contenu`) VALUES
 (3, 'Trucs et astuces', 'Conte des trucs et astuces'),
 (4, 'Université', 'Contenu de l\'université'),
 (5, 'Poursuites à l\'étranger', 'Contenu poursuites à l\'étranger'),
-(6, 'Offres d\'enplois', 'Contenu offres d\'emplois'),
+(6, 'Offres d\'emplois', 'Contenu offres d\'emplois'),
 (7, 'Poursuites d\'études', 'Contenu poursuites études'),
 (8, 'Oedig', 'Contenu oedig'),
 (9, 'Sport', 'Contenu sport');
@@ -845,7 +805,9 @@ INSERT INTO `messages` (`id`, `titre`, `date_envoi`, `fichier`, `personne_id`, `
 (3, 'etudes à l''étranger', '2012-01-24 13:31:17', 'message_4f1eb2a5da21c.xml', 7, 29, 0, 0, 1, 0),
 (4, 'soirée de samedi', '2012-01-24 13:32:41', 'message_4f1eb2f9efef8.xml', 16, 32, 0, 0, 0, 1),
 (5, 'ajout doc', '2012-01-24 13:33:39', 'message_4f1eb333c8b6f.xml', 29, 4, 0, 0, 1, 0),
-(6, 'cours asr', '2012-01-24 13:35:28', 'message_4f1eb3a08a9c4.xml', 7, 30, 0, 0, 0, 1);
+(6, 'cours asr', '2012-01-24 13:35:28', 'message_4f1eb3a08a9c4.xml', 7, 30, 0, 0, 0, 1),
+(7, 'rdv projet tuteuré', '2012-01-24 14:43:48', 'message_4f1ec3a4b2e3f.xml', 10, 16, 0, 0, 0, 1);
+
 
 
 INSERT INTO `absences` (`id`, `date`, `justification`, `personne_id`) VALUES
@@ -891,6 +853,173 @@ INSERT INTO `documents_stages` (`id`, `nom`, `personne_id`, `categorie`, `date_a
 (35, 'dec 2007 - janv 2008 073.jpg', 30, 'posters', '2012-01-24 13:54:39', 'image/jpeg');
 
 
+
+INSERT INTO `documents_statiques` (`id`, `nom`, `type_mime`) VALUES
+(1, 'ADIL 16-11-11.doc', 'application/msword'),
+(2, 'BRL INGENIERIE  13 décembre 2011.doc', 'application/msword'),
+(3, 'Ds2jl Informatique 22-11-11.doc', 'application/msword'),
+(4, 'KERCIA Développeur Web Technologies Open Source.doc', 'application/msword'),
+(5, 'MGPARTNERS 13 décembre 2011.doc', 'application/msword'),
+(6, 'STE COGNIZANT 29-11-11.doc', 'application/msword'),
+(7, 'ModulesMESSI-MIAM-SIMO-2011-2012-3.pdf', 'application/pdf'),
+(8, 'RDE-LicPro-MESSI -sept 11.pdf', 'application/pdf'),
+(9, 'RDE-LicPro-MIAM -sept 11.pdf', 'application/pdf'),
+(10, 'RDE-LicPro-SIMO -sept 11.pdf', 'application/pdf'),
+(11, 'Reglement des Etudes-DUT-07-08.doc', 'application/msword'),
+(12, 'TAB MCC 2011-2012 - MESSI.pdf', 'application/pdf'),
+(13, 'Arrete-lp-1999.pdf', 'application/pdf'),
+(14, 'PPN DUT INFO CNESER 19 07 05.pdf', 'application/pdf'),
+(15, '00_infos_etudiants.doc', 'application/msword'),
+(16, 'ComeToOxfordBrookesIUT2.pdf', 'application/pdf'),
+(17, 'UCAS_notes.doc', 'application/msword'),
+(18, 'ProgDUTinfo2pages.pdf', 'application/pdf'),
+(19, 'Promotion2010.pdf', 'application/pdf'),
+(20, 'Stands Forum PE.pdf', 'application/pdf'),
+(21, 'TRAITEMENT DES ADMISSIONS SUR PASSERELLE.pdf', 'application/pdf'),
+(22, 'CirculaireACDI.pdf', 'application/pdf'),
+(23, 'DevenirEtudiants2008.pdf', 'application/pdf'),
+(24, 'EtudesPromo2009.pdf', 'application/pdf'),
+(25, 'PrésentationsAmphi.pdf', 'application/pdf'),
+(26, 'Procédure de gestion des dossiers de candidature_2012.pdf', 'application/pdf'),
+(27, 'trucsEtAstucesMachinesLinux.pdf', 'application/pdf'),
+(33, 'asr_systeme_03.gif', 'image/gif'),
+(34, 'asr_systeme_04.gif', 'image/gif'),
+(35, 'asr_systeme_05.gif', 'image/gif'),
+(36, 'asr_systeme_01.gif', 'image/gif'),
+(37, 'asr_systeme_02.gif', 'image/gif'),
+(38, 'droit_01.gif', 'image/gif'),
+(39, 'droit_02.gif', 'image/gif'),
+(40, 'droit_03.gif', 'image/gif'),
+(41, 'droit_04.gif', 'image/gif'),
+(42, 'mat_01.gif', 'image/gif'),
+(43, 'mat_02.gif', 'image/gif'),
+(44, 'omgl_30_01.gif', 'image/gif'),
+(45, 'omgl_30_02.gif', 'image/gif'),
+(46, 'omgl_30_03.gif', 'image/gif'),
+(47, 'charte_info_2009-2010.pdf', 'application/pdf'),
+(48, 'installationPortablesLP.pdf', 'application/pdf'),
+(49, 'ADIL 16-11-11.doc', 'application/msword'),
+(50, 'BRL INGENIERIE  13 décembre 2011.doc', 'application/msword'),
+(51, 'Ds2jl Informatique 22-11-11.doc', 'application/msword'),
+(52, 'KERCIA Développeur Web Technologies Open Source.doc', 'application/msword'),
+(53, 'MGPARTNERS 13 décembre 2011.doc', 'application/msword'),
+(54, 'STE COGNIZANT 29-11-11.doc', 'application/msword'),
+(55, 'Procédure de gestion des dossiers de candidature_2012.pdf', 'application/pdf'),
+(56, 'ProgDUTinfo2pages.pdf', 'application/pdf'),
+(57, 'Promotion2010.pdf', 'application/pdf'),
+(58, 'Stands Forum PE.pdf', 'application/pdf'),
+(59, 'TRAITEMENT DES ADMISSIONS SUR PASSERELLE.pdf', 'application/pdf'),
+(60, 'CirculaireACDI.pdf', 'application/pdf'),
+(61, 'DevenirEtudiants2008.pdf', 'application/pdf'),
+(62, 'EtudesPromo2009.pdf', 'application/pdf'),
+(63, 'PrésentationsAmphi.pdf', 'application/pdf'),
+(64, 'ComeToOxfordBrookesIUT2.pdf', 'application/pdf'),
+(65, 'UCAS_notes.doc', 'application/msword'),
+(66, '00_infos_etudiants.doc', 'application/msword'),
+(67, 'Arrete-lp-1999.pdf', 'application/pdf'),
+(68, 'PPN DUT INFO CNESER 19 07 05.pdf', 'application/pdf'),
+(69, 'ModulesMESSI-MIAM-SIMO-2011-2012-3.pdf', 'application/pdf'),
+(70, 'RDE-LicPro-MESSI -sept 11.pdf', 'application/pdf'),
+(71, 'RDE-LicPro-MIAM -sept 11.pdf', 'application/pdf'),
+(72, 'RDE-LicPro-SIMO -sept 11.pdf', 'application/pdf'),
+(73, 'Reglement des Etudes-DUT-07-08.doc', 'application/msword'),
+(74, 'TAB MCC 2011-2012 - MESSI.pdf', 'application/pdf'),
+(75, 'rentréeLP2011.pdf', 'application/pdf'),
+(76, 'rentréeRN2011.pdf', 'application/pdf'),
+(77, 'rentreeS1d.pdf', 'application/pdf'),
+(78, 'livret09-10.pdf', 'application/pdf'),
+(79, 'livret2011-2012 AS.pdf', 'application/pdf'),
+(80, 'Livret_Accueil_etudiant_LP_11-12.pdf', 'application/pdf'),
+(81, 'trucsEtAstucesMachinesLinux.pdf', 'application/pdf'),
+(82, 'installationPortablesLP.pdf', 'application/pdf'),
+(83, 'charte_info_2009-2010.pdf', 'application/pdf'),
+(84, 'asr_systeme_01.gif', 'image/gif'),
+(85, 'asr_systeme_02.gif', 'image/gif'),
+(86, 'asr_systeme_03.gif', 'image/gif'),
+(87, 'asr_systeme_04.gif', 'image/gif'),
+(88, 'asr_systeme_05.gif', 'image/gif'),
+(89, 'droit_01.gif', 'image/gif'),
+(90, 'droit_02.gif', 'image/gif'),
+(91, 'droit_03.gif', 'image/gif'),
+(92, 'droit_04.gif', 'image/gif'),
+(93, 'maths_mars_01.gif', 'image/gif'),
+(94, 'maths_mars_02.gif', 'image/gif'),
+(95, 'omgl_50_01.gif', 'image/gif'),
+(96, 'omgl_50_02.gif', 'image/gif'),
+(97, 'omgl_50_03.gif', 'image/gif'),
+(98, 'omgl_50_04.gif', 'image/gif'),
+(99, 'omgl_50_05.gif', 'image/gif'),
+(100, 'omgl_50_06.gif', 'image/gif'),
+(101, 'omgl_50_07.gif', 'image/gif'),
+(102, 'omgl_50_08.gif', 'image/gif'),
+(103, 'omgl_50_09.gif', 'image/gif'),
+(104, 'omgl_50_10.gif', 'image/gif'),
+(105, 'omgl_50_11.gif', 'image/gif'),
+(106, 'omgl_50_12.gif', 'image/gif');
+
+--
+-- Dumping data for table `pages_statiques_documents_statiques`
+--
+
+INSERT INTO `pages_statiques_documents_statiques` (`id`, `pages_statique_id`, `documents_statique_id`) VALUES
+(1, 6, 49),
+(2, 6, 50),
+(3, 6, 51),
+(4, 6, 52),
+(5, 6, 53),
+(6, 6, 54),
+(7, 7, 55),
+(8, 7, 56),
+(9, 7, 57),
+(10, 7, 58),
+(11, 7, 59),
+(12, 7, 60),
+(13, 7, 61),
+(14, 7, 62),
+(15, 7, 63),
+(16, 5, 64),
+(17, 5, 65),
+(18, 5, 66),
+(19, 2, 67),
+(20, 2, 68),
+(21, 1, 69),
+(22, 1, 70),
+(23, 1, 71),
+(24, 1, 72),
+(25, 1, 73),
+(26, 1, 74),
+(27, 2, 75),
+(28, 2, 76),
+(29, 2, 77),
+(30, 2, 78),
+(31, 2, 79),
+(32, 2, 80),
+(33, 3, 81),
+(34, 3, 82),
+(35, 2, 83),
+(36, 8, 84),
+(37, 8, 85),
+(38, 8, 86),
+(39, 8, 87),
+(40, 8, 88),
+(41, 8, 89),
+(42, 8, 90),
+(43, 8, 91),
+(44, 8, 92),
+(45, 8, 93),
+(46, 8, 94),
+(47, 8, 95),
+(48, 8, 96),
+(49, 8, 97),
+(50, 8, 98),
+(51, 8, 99),
+(52, 8, 100),
+(53, 8, 101),
+(54, 8, 102),
+(55, 8, 103),
+(56, 8, 104),
+(57, 8, 105),
+(58, 8, 106);
 
 INSERT INTO `notes` (`id`, `personne_id`, `type_module_id`, `module_id`, `note`, `coefficient`) VALUES
 (1, 48, 1, 30, 11, 15),
