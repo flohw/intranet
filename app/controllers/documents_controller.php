@@ -44,7 +44,7 @@ class DocumentsController extends AppController
 		if (isset($this->data))
 		{
 			$this->Document->set($this->data);
-			if ($this->Document->validates())
+			if ($this->Document->verifFichierAffectation($this->data['Document']['fichier']))
 			{
 				move_uploaded_file($this->data['Document']['fichier']['tmp_name'],
 									WWW_ROOT.'files/'.$this->data['Document']['pt'].'/affectation.pdf');
@@ -55,6 +55,13 @@ class DocumentsController extends AppController
 		}
 		$d = array_merge(array('typesImages' => $this->typesImages), array('typesPDF' => $this->typesPDF),
 						array('typesWord' => $this->typesWord), array('typesExcel' => $this->typesExcel));
+		$d['filePT1A'] = $d['filePT2A'] = $d['filePPP'] = false;
+		if (is_file(WWW_ROOT.'files/PT1A/affectation.pdf'))
+			$d['filePT1A'] = true;
+		if (is_file(WWW_ROOT.'files/PT2A/affectation.pdf'))
+			$d['filePT2A'] = true;
+		if (is_file(WWW_ROOT.'files/PPP/affectation.pdf'))
+			$d['filePPP'] = true;
 		$d['docStageUtile'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages-utiles')));
 		$d['docStageOffres'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages-offres')));
 		$d['docPT1A'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT1A')));

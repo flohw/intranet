@@ -125,7 +125,7 @@ blockquote h3 { color:#0088bb; }
 /* Pour les documents */
 .dropfile {
 	border: 3px dashed #CDCACA;
-	margin-top: 50px;
+	margin-top: 80px;
 	color: #ABA9A9;
 	display: block;
 	float: left;
@@ -161,14 +161,13 @@ blockquote h3 { color:#0088bb; }
 	z-index: 9;
 }
 .dropfile img.delete { position: absolute; top: 0; right: 0; }
-
 /* Info bulle */
 .dropfile .infoFichier {
 	position: absolute;
-	top: -50px;
+	top: -80px;
 	left: 0;
 	display: inline-block;
-	height: 30px;
+	height: 60px;
 	width: 118px;
 	padding: 5px;
 	opacity: 0.80;
@@ -179,6 +178,10 @@ blockquote h3 { color:#0088bb; }
 	text-align: center;
 	vertical-align: middle;
 }
+.pill-content>div h5 { clear: both; color: red; }
+div.module h5 { clear: both; color: red; }
+h5.infoFichier { clear: both; color: red; }
+span.infoAff { margin-left: 50px; color: red; }
 
 /* lien edition dans liste */
 li small.edit { font-size: x-small; }

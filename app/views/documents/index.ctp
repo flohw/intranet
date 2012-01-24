@@ -2,7 +2,6 @@
 <div class="page-header">
 	<h1>Gestion des documents des Stages et Projets</h1>
 </div>
-
 <ul class="tabs">
 	<li class="active"><a href="#stages-utiles">Stages (docs utiles)</a></li>
 	<li><a href="#stages-offres">Stages (offres)</a></li>
@@ -62,7 +61,8 @@
 		<h3>Affectations des groupes</h3>
 		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
 		<?php echo $this->Form->hidden('pt', array('value' => 'PT1A')); ?>
-		<?php echo $this->Form->text('fichier', array('label' => 'Fichier des affectations', 'type' => 'file', 'class' => 'input')); ?>
+		<?php echo $this->Form->text('fichier', array('label' => false, 'type' => 'file', 'class' => 'input')); ?>
+		<?php if ($filePT1A) echo '<span class="infoAff">Le fichier a déjà été enregistré : '.$this->Html->link('ici', array('controller' => 'files', 'action' => 'PT1A', 'affectation.pdf')).'</span>'; ?>
 		<?php echo $this->Form->submit('Envoyer', array('class' => 'btn primary')); ?>
 		<?php echo $this->Form->end(); ?>
 		
@@ -89,6 +89,7 @@
 	</div>
 	<!-- PT2A -->
 	<div id="PT2A">
+		<?php if ($filePT2A) echo '<span class="infoAff">Le fichier a déjà été enregistré : '.$this->Html->link('ici', array('controller' => 'stages', 'action' => 'pt1')).'</span>'; ?>
 		<h3>Affectations des groupes</h3>
 		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
 		<?php echo $this->Form->hidden('pt', array('value' => 'PT2A')); ?>
@@ -140,6 +141,7 @@
 	</div>
 	<!-- PPP -->
 	<div id="PPP">
+		<?php if ($filePPP) echo '<span class="infoAff">Le fichier a déjà été enregistré : '.$this->Html->link('ici', array('controller' => 'stages', 'action' => 'pt1')).'</span>'; ?>
 		<h3>Affectations des groupes</h3>
 		<?php echo $this->Form->create('Document', array('type' => 'file')); ?>
 		<?php echo $this->Form->hidden('pt', array('value' => 'PPP')); ?>
@@ -195,6 +197,7 @@
 
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($){
+	
 	$('.dropfile').dropfile({
 		script: '<?php echo $this->Html->url(array('action' => 'upload')); ?>',
 		image: '<?php echo '/'.IMAGES_URL.'/delete.png'; ?>',

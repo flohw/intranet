@@ -2,6 +2,7 @@
 class Document extends AppModel {
 	var $name = 'Document';
 	var $displayField = 'nom';
+	
 	var $validate = array(
 		'fichier' => array(
 			'verifFichier' => array(
@@ -31,6 +32,13 @@ class Document extends AppModel {
 	public function beforeSave ()
 	{
 		$this->data['Document']['date_ajout'] = date('Y-m-d H:i:s');
+		return true;
+	}
+	
+	public function verifFichierAffectation ($check)
+	{
+		if ($check['type'] != 'application/pdf')
+			return false;
 		return true;
 	}
 		

@@ -1,6 +1,6 @@
 (function($) {
 	var o = {
-		message:'Déposez vos fichiers ici',
+		message:'Déposez vos fichiers ici *',
 		script:	'upload.php',
 		clone:	true,
 		complete: function (json) { return false; },
