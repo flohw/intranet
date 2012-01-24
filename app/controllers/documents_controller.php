@@ -19,17 +19,22 @@ class DocumentsController extends AppController
 	}
 
 	// affichage des documents mis en ligne par un prof donne
-	function lister($id=null) 
+	function lister() 
 	{
-		if ($id==null) { $id = $this->Auth->user('id'); }
-
+		if ($this->Auth->user('statut_id') < $this->statuts['prof'])
+		{
+			$this->Session->setFlash('Vous n\'avez pas le droit d\'accéder à cette page', 'message');
+			$this->redirect($this->referer());
+		}
+		
 		$d['documentsStage'] = $this->DocumentsStage->find('all', array(
 			'recursive' => -1, 
 			'order' => array('DocumentsStage.categorie ASC'), 
-			'conditions' => array('personne_id' => $id)));
+			'conditions' => array('personne_id' => $this->Auth->user('id'))));
+		
 		$d['documents'] = $this->Document->find('all', array(
 			'order' => array('Document.module_id DESC'), 
-			'conditions'=> array('personne_id' => $id)));
+			'conditions'=> array('personne_id' => $this->Auth->user('id'))));
 		$this->set($d);
 	}
 
@@ -39,7 +44,7 @@ class DocumentsController extends AppController
 		if (isset($this->data))
 		{
 			$this->Document->set($this->data);
-			if ($this->Document->validates())
+			if ($this->Document->verifFichierAffectation($this->data['Document']['fichier']))
 			{
 				move_uploaded_file($this->data['Document']['fichier']['tmp_name'],
 									WWW_ROOT.'files/'.$this->data['Document']['pt'].'/affectation.pdf');
@@ -50,6 +55,13 @@ class DocumentsController extends AppController
 		}
 		$d = array_merge(array('typesImages' => $this->typesImages), array('typesPDF' => $this->typesPDF),
 						array('typesWord' => $this->typesWord), array('typesExcel' => $this->typesExcel));
+		$d['filePT1A'] = $d['filePT2A'] = $d['filePPP'] = false;
+		if (is_file(WWW_ROOT.'files/PT1A/affectation.pdf'))
+			$d['filePT1A'] = true;
+		if (is_file(WWW_ROOT.'files/PT2A/affectation.pdf'))
+			$d['filePT2A'] = true;
+		if (is_file(WWW_ROOT.'files/PPP/affectation.pdf'))
+			$d['filePPP'] = true;
 		$d['docStageUtile'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages-utiles')));
 		$d['docStageOffres'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'stages-offres')));
 		$d['docPT1A'] = $this->DocumentsStage->find('all', array('conditions' => array('categorie' => 'PT1A')));
@@ -130,6 +142,7 @@ class DocumentsController extends AppController
 		foreach ($h as $k => $v)
 			$h[low($k)] = $v;
 		$o = new stdClass();
+		$h['x-file-name'] = utf8_encode($h['x-file-name']);
 		$isStatique = $isModule = false;
 		$categorie = $h['x-param-folder'];
 		$folder = 'files/'.$categorie.'/';
@@ -201,13 +214,13 @@ class DocumentsController extends AppController
 				App::import('Helper', 'Html');
 				$html = new HtmlHelper();
 				if (in_array($typeFichier, $this->typesImages))
-					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierImage.png', array('class' => 'place'));
+					$o->content = $html->image('icones/fichierImage.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $this->typesPDF))
-					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierPDF.png', array('class' => 'place'));
+					$o->content = $html->image('icones/fichierPDF.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $this->typesWord))
-					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierWord.png', array('class' => 'place'));
+					$o->content = $html->image('icones/fichierWord.png', array('class' => 'place'));
 				elseif (in_array($typeFichier, $this->typesExcel))
-					$o->content = $html->image('/'.IMAGES_URL.'icones/fichierExcel.png', array('class' => 'place'));
+					$o->content = $html->image('icones/fichierExcel.png', array('class' => 'place'));
 				
 				// Creation du document pour la bdd
 				if (!$isModule AND !$isStatique)

@@ -4,14 +4,14 @@
 </div>
 
 <ul class="tabs">
-	<li><a href="#accueil">Présentation</a></li> <!-- class="active" -->
-	<li class="active"><a href="#offres">Offres de Stage</a></li>
+	<li class="active"><a href="#accueil">Présentation</a></li>
+	<li><a href="#offres">Offres de Stage</a></li>
 	<li><a href="#dates">Dates Importantes</a></li>
 	<li><a href="#fichiers">Documents Utiles</a></li>
 </ul>
 
 <div class="pill-content">
-	<div id="accueil"> <!-- class="active" -->
+	<div id="accueil" class="active">
 		<div class="row">
 			<div class="span12">
 				<h3>Objectifs</h3>
@@ -58,7 +58,7 @@
 		</div>
 	</div>
 
-	<div id="offres" class="active">
+	<div id="offres">
 		<h3>L'IUT vous aide, et vous propose des offres de stage !</h3>
 		<div class="row">
 			<div class="span10">
@@ -90,6 +90,9 @@
 					echo '<div class="clearfix" id="lastChild">';
 					echo $this->Form->input('fichier', array('type' => 'file'));
 					echo '<span class="input-append">(Word, Excel, PDF, Images)</span></div>';
+					echo '<div class="clearfix">';
+					echo $this->Form->input('dispo', array('label' => 'Disponible', 'id' => 'dispo'));
+					echo '</div>';
 					echo $this->Form->submit('Enregistrer', array('class' => 'btn success'));
 					echo $this->Form->end();
 					if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
@@ -329,6 +332,8 @@ jQuery(function($){
 				$('#ville').val(data.Stage.ville);
 				$('#description').val(data.Stage.description);
 				$('#entreprise').val(data.Stage.entreprise);
+				if (data.Stage.dispo == 1)
+					$('#dispo').attr('checked', 'checked');
 				if (data.Stage.document.length != 0)
 				{
 					$('#lastChild').hide();

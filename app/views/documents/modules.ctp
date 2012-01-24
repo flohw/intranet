@@ -39,6 +39,10 @@
 
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($){
+	$('.module').each(function(index, element){
+		$(this).append('<h5>* Formats pris en charge : Pdf, Word, Excel, Open Office, Jpeg, Png, Gif</h5>');
+	});
+	
 	$('.dropfile').dropfile({
 		script: '<?php echo $this->Html->url(array('action' => 'upload')); ?>',
 		image: '<?php echo '/'.IMAGES_URL.'/delete.png'; ?>',

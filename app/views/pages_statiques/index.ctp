@@ -53,6 +53,7 @@
 	<div class="dropfile" data-folder="documents/<?php echo $p['PagesStatique']['id']; ?>" data-page="<?php echo $p['PagesStatique']['id']; ?>"></div>
 	<?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 	jQuery(function($){
+		$('table').after($('<h5/>', { 'class': 'infoFichier', text: '* Formats pris en charge : Pdf, Word, Excel, Open Office, Jpeg, Png, Gif' }));
 		var page = '<?php echo $p['PagesStatique']['id']; ?>';
 		var buttons = '<?php echo $this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'documents'), array('class' => 'btn info small'));
 			if ($this->Session->read('Auth.Personne.statut_id') >= $statutsID['prof'])
