@@ -46,7 +46,7 @@ class ModulesController extends AppController
 			{
 				$this->Module->saveAll();
 				$this->Session->setFlash('Module enregistré !', 'message', array('class' => 'success'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'index', $this->data['Module']['semestre_id']));
 			}
 			else
 				$this->Session->setFlash('Le module n\'a pas pu être enregistré', 'message');

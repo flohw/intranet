@@ -1,5 +1,6 @@
 jQuery(function($){
-	$('#bureau').hide();
+	if ($('#PersonneStatutID').val() < 20)
+		$('#bureau').hide();
 	$('#ajouter').click(function(){
 		var valide = true;
 		$('.note').each(function(index){

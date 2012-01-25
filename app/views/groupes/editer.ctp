@@ -16,7 +16,7 @@
 		<?php echo $this->Form->input('nom', array('label' => 'Nom du groupe', 'class' => 'input')); ?>
 	</div>
 	<div class="clearfix">
-		<?php echo $this->Form->input('semestre_id', array('label' => 'Pour le semstre', 'class' => 'input', 'options' => $semestres)); ?>
+		<?php echo $this->Form->input('semestre_id', array('label' => 'Pour le semestre', 'class' => 'input', 'options' => $semestres)); ?>
 	</div>
 	<div class="clearfix">
 		<?php echo $this->Form->input('nb_max_eleves', array('label' => 'Nombre d\'élèves', 'class' => 'input')); ?>
