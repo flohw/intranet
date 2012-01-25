@@ -11,9 +11,10 @@
 	</h1>
 </div>
 
-<h3>Etage : <?php echo (($etage == 'S')) ? 'Sous-sol' : 'Etage '.$etage; ?></h3>
+
 <div class="row">
 	<div class="span8">
+	<h3>Etage : <?php echo (($etage == 'S')) ? 'Sous-sol' : 'Etage '.$etage; ?></h3>
 		<ul  class="media-grid">
 			<li><a href="#">
 			<?php 
@@ -38,23 +39,23 @@
 		</ul>	
 	</div>
 	<div class="span8">
+	<h3>Emploi du temps de cette salle </h3>
 	<ul  class="media-grid">
-		<?php echo('<li>'.$this->Html->link($html->image('photos/edt.png', array(														'alt' => 'emploi du temps',													'width' => '500px',														'height' => '300px')), 
+		<?php echo('<li class="mouse">'.$this->Html->link($html->image('photos/edt.png', array(														'alt' => 'emploi du temps',													'width' => '500px',														'height' => '300px')), 
 								array(
 							'controller' => 'img',
-							 'action' => 'photos', 'edt.png'), array('escape' => false, 'class' => 'zoombox zgallery1',)).
-			     '</li>');
+							 'action' => 'photos', 'edt.png'), array('escape' => false, 'class' => 'zoombox zgallery1',)).'</li>');
 		?>
 	</ul>	
 	</div>
 </div>
-<!--
-JQuery (function() {
-	$('.work .meta').hide();
-	    $('.work').live('mouseenter', function() { // mousein
-	            $(this).find('.meta').stop().fadeTo(350,1);
-	    }).live('mouseleave', function() { // mouseout
-	            $(this).find('.meta').stop().fadeTo(350,0);
+<?php echo $this->Html->scriptStart(array('inline' => false)); ?>
+jQuery (function($) {
+	    $('.mouse img').live('mouseenter', function() { 
+	            $(this).stop().fadeTo(350,0.5);
+	    }).live('mouseleave', function() { 
+	            $(this).stop().fadeTo(350,1);
 	    });
 });
--->
+
+<?php echo $this->Html->scriptEnd(); ?>
