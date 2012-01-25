@@ -6,6 +6,7 @@
 <div class="row">
 	<div class="span8">
 		<span class="label important">Modules</span></br>
+		<?php if (!empty($documents)): ?>
 		<ul>
 		<?php
 			$module = "";
@@ -23,9 +24,13 @@
 			}
 		?>
 		</ul>
+		<?php else: ?>
+		<h4>Aucun document mis en ligne</h4>
+		<?php endif; ?>
 	</div>
 	<div class="span8">
 		<span class="label notice">Stages</span></br>
+		<?php if(!empty($documentsStage)): ?>
 		<ul>
 		<?php
 			$categorie = ""; $action = "";
@@ -54,5 +59,8 @@
 			}
 		?>
 		</ul>
+		<?php else: ?>
+		<h4>Aucun document de stage mis en ligne</h4>
+		<?php endif; ?>
 	</div>
 </div>
