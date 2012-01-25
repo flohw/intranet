@@ -207,7 +207,8 @@ class Evenement extends AppModel {
 		
 		if (!in_array($idPersonne, $idPers) AND $idPersonne != $events['Evenement']['personne_id'])
 			$events = array();
-		$events['Createur']['display'] = $events['Createur']['prenom'].' '.$events['Createur']['nom'];
+		if (!empty($events))
+			$events['Createur']['display'] = $events['Createur']['prenom'].' '.$events['Createur']['nom'];
 		unset($events['Createur']['prenom'], $events['Createur']['nom']);
 		return $events;
 	}
