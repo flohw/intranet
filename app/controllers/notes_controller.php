@@ -43,6 +43,7 @@
 			}
 			
 			$module = $this->Note->Module->ModulesTypeModule->find('first', array('conditions' => array('module_id' => $idModule, 'type_module_id' => $idTypeModule)));
+			
 			if (empty($module))
 			{
 				$this->Session->setFlash('Ce module n\'est pas associé à ce type de module ou n\'existe pas', 'message');
@@ -79,6 +80,11 @@
 			}
 			else
 				$this->data = $this->Note->findNotes($idGroupe, $idModule, $idTypeModule);
+			$this->Note->Module->recursive = $this->Note->Module->TypeModule->recursive = -1;
+			$type = $this->Note->Module->TypeModule->findById($idTypeModule);
+			$module = $this->Note->Module->findById($idModule);
+			
+			$d['titre'] = $module['Module']['abreviation'].' ('.$type['TypeModule']['nom'].')';
 			$this->set($d);
 		}
 		

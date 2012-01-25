@@ -31,11 +31,11 @@
     <div class="clearfix">
         <?php echo $this->Form->input('telephone', array('class' => 'input', 'label' => 'Telephone')); ?>
     </div>
-        <div class="clearfix" id="bureau">
+    <div class="clearfix" id="bureau">
         <?php echo $this->Form->input('bureau', array('class' => 'input', 'label' => 'Bureau')); ?>
     </div>
     <div class="clearfix">
-        <?php echo $this->Form->input('date_naissance', array('class' => 'input', 'label' => 'Date de Naissance', 'id' => 'datepicker', 'type' => 'text')); ?>
+        <?php echo $this->Form->input('date_naissance', array('class' => 'input', 'label' => 'Date de Naissance', 'id' => 'datepicker', 'type' => 'text', 'readonly' => 'readonly')); ?>
     </div>
     <div class="clearfix">
         <?php echo $this->Form->input('adresse', array('class' => 'input xlarge', 'label' => 'Adresse')); ?>

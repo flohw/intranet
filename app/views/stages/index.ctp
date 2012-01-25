@@ -263,6 +263,24 @@ jQuery(function($){
 	$('#nouvelle').click(function(){
 		$(this).parent().find('#newOffre').slideToggle();
 	});
+	// Bouton annuler
+	$('#newOffre div.submit').append('<?php echo $this->Html->link('Annuler', '#', array('id' => 'annuler', 'class' => 'btn danger')); ?>');
+	$('#annuler').css({ fontWeight: 'normal', marginLeft: '30px', color: 'white' });
+	$('#annuler').click(function(){
+		$('#idOffre').val('');
+		$('#ville').val('');
+		$('#description').val('');
+		$('#entreprise').val('');
+		$('#dispo').attr('checked', false);
+		$('#rappelFichier').remove();
+		$('#supprimerCheck').remove();
+		$('#editDock').remove();
+		$('#delDoc').remove();
+		$('#newOffre').slideUp();
+		$('#nouvelle').show();
+		$('.editer').show();
+		return false;
+	});
 	// Gestion erreurs evoi de formulaire
 	$('#newOffre').submit(function(){
 		var verif = true;

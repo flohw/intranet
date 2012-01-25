@@ -3,7 +3,7 @@
 	<h1>Affecter un module</h1>
 </div>
 
-<?php echo $this->Form->create('ModulesTypeModule', array('url' => $this->Html->url(array('action' => 'affectertype')))); ?>
+<?php echo $this->Form->create('ModulesTypeModule', array('url' => $this->Html->url(array('action' => 'affectertype'), true))); ?>
 	
 	<div class="clearfix">
 	<?php echo $this->Form->input('module_id', array('label' => 'Module', 'class' => 'input', 'options' => $modules)); ?>
