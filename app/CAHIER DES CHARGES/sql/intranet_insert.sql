@@ -52,9 +52,9 @@ INSERT INTO `libelle_modules` VALUES(8, 'Connaissances et compétences compléme
 
 
 /*S1*/
-INSERT INTO `modules` VALUES(1, 'AP1', 'Initiation à l''algorithmique', 20, 200, 1, 1);
-INSERT INTO `modules` VALUES(2, 'AP2', 'Algorithmique et structures de données statiques', 20, 200, 1, 1);
-INSERT INTO `modules` VALUES(3, 'ASR1', 'Comprendre et utiliser un système d''exploitation et un réseau', 20, 30, 2, 1);
+INSERT INTO `modules` VALUES(1, 'AP1', 'Initiation à l''algorithmique', 200, 20, 1, 1);
+INSERT INTO `modules` VALUES(2, 'AP2', 'Algorithmique et structures de données statiques', 200, 20, 1, 1);
+INSERT INTO `modules` VALUES(3, 'ASR1', 'Comprendre et utiliser un système d''exploitation et un réseau', 120, 30, 2, 1);
 INSERT INTO `modules` VALUES(4, 'ASR2', 'Architecture - Codages et circuits logiques\r\n\r\n', 56, 900, 2, 1);
 INSERT INTO `modules` VALUES(5, 'OMGL1', 'Base de données', 30, 300, 3, 1);
 INSERT INTO `modules` VALUES(6, 'MAT1', 'Logique', 20, 120, 4, 1);
@@ -79,20 +79,20 @@ INSERT INTO `modules` VALUES(22, 'EGO1', 'Droit général', 25, 120, 6, 2);
 INSERT INTO `modules` VALUES(23, 'EGO2', 'Fonctionnement de l\'entreprise', 20, 150, 6, 2);
 
 /*S3*/
-INSERT INTO `modules` VALUES(24, 'AP6', 'Développement et réutilisation Objet', 30, 200, 1, 3);
-INSERT INTO `modules` VALUES(25, 'C-INF1', 'Projet de développement et réutilisation objet', 20, 100, 1, 3);
-INSERT INTO `modules` VALUES(26, 'ASR4', 'Réseaux TCP/IP sur Ethernet', 20, 150, 2, 3);
-INSERT INTO `modules` VALUES(27, 'ASR5', 'Système d\'exploitation - fonctionnement du noyau', 32, 180, 2, 3);
-INSERT INTO `modules` VALUES(28, 'C-INF2', 'Système d\'exploitation - programmation concurrente', 32, 180, 2, 3);
-INSERT INTO `modules` VALUES(29, 'OMGL3-1', 'Conception des systèmes orientés objets', 50, 210, 3, 3);
-INSERT INTO `modules` VALUES(30, 'OMGL3-2', 'Projet conception de systèmes orientés objets', 30, 110, 3, 3);
-INSERT INTO `modules` VALUES(31, 'MAT5', 'Algèbre linéaire', 24, 120, 4, 3);
-INSERT INTO `modules` VALUES(32, 'EC3', 'Préparation à l\'insertion professionnelle', 10, 50, 5, 3);
-INSERT INTO `modules` VALUES(33, 'EC4', 'Culture et société - initiation', 10, 50, 5, 3);
-INSERT INTO `modules` VALUES(34, 'LAN3', 'Anglais de communication - niveau 2', 10, 50, 5, 3);
-INSERT INTO `modules` VALUES(35, 'LAN4', 'Anglais de spécialité - approfondissement', 10, 50, 5, 3);
-INSERT INTO `modules` VALUES(36, 'EGO5', 'Gestion de projets de SI', 25, 120, 6, 3);
-INSERT INTO `modules` VALUES(37, 'EGO6', 'Gestion des SI', 20, 150, 6, 3);
+INSERT INTO `modules` VALUES(24, 'AP6', 'Développement et réutilisation Objet', 200, 30, 1, 3);
+INSERT INTO `modules` VALUES(25, 'C-INF1', 'Projet de développement et réutilisation objet', 100, 20, 1, 3);
+INSERT INTO `modules` VALUES(26, 'ASR4', 'Réseaux TCP/IP sur Ethernet', 150, 20, 2, 3);
+INSERT INTO `modules` VALUES(27, 'ASR5', 'Système d\'exploitation - fonctionnement du noyau', 180, 32, 2, 3);
+INSERT INTO `modules` VALUES(28, 'C-INF2', 'Système d\'exploitation - programmation concurrente', 210, 30, 2, 3);
+INSERT INTO `modules` VALUES(29, 'OMGL3-1', 'Conception des systèmes orientés objets', 210, 50, 3, 3);
+INSERT INTO `modules` VALUES(30, 'OMGL3-2', 'Projet conception de systèmes orientés objets', 200, 55, 3, 3);
+INSERT INTO `modules` VALUES(31, 'MAT5', 'Algèbre linéaire', 120, 24, 4, 3);
+INSERT INTO `modules` VALUES(32, 'EC3', 'Préparation à l\'insertion professionnelle', 50, 10, 5, 3);
+INSERT INTO `modules` VALUES(33, 'EC4', 'Culture et société - initiation', 60, 15, 5, 3);
+INSERT INTO `modules` VALUES(34, 'LAN3', 'Anglais de communication - niveau 2', 60, 15, 5, 3);
+INSERT INTO `modules` VALUES(35, 'LAN4', 'Anglais de spécialité - approfondissement', 55, 20, 5, 3);
+INSERT INTO `modules` VALUES(36, 'EGO5', 'Gestion de projets de SI', 120, 25, 6, 3);
+INSERT INTO `modules` VALUES(37, 'EGO6', 'Gestion des SI', 150, 20, 6, 3);
 
 
 /*S4*/
@@ -137,180 +137,177 @@ INSERT INTO `statuts` VALUES(30, 'Administrateur');
 
 /*ADMIN*/
 
-INSERT INTO `personnes` VALUES(4, 'VASSOILE', 'Marc', '10 rue du Lac Grenoble 38000', '1980-04-12', '0664531627', '', 'vassoile.marc@iut2.fr', 30, 1, 9, 'ba282cee005c8d1e72ae796aadf82c8fc3a92226', 'vassoim', '2010-12-20 15:00:00'); /*mdp : vassoilm2*/
-
-
-
+INSERT INTO `personnes` VALUES(4, 'VASSOILE', 'Marc', '10 rue du Lac Grenoble 38000', '1980-04-12', '0664531627', '', 'vassoile.marc@iut2.fr', 30, 1, 9, 'ba282cee005c8d1e72ae796aadf82c8fc3a92226', 'vassoim', '2012-01-24 20:00:00'); /*mdp : vassoilm2*/
 /*ELEVES*/
 
-INSERT INTO `personnes` VALUES(5, 'PARRENO', 'Florian', '654 route de chantecler 38070 Saint Quentin Fallavier', '1991-08-12', '0678931627', '', 'parreno.florian@iut2.fr', 10, 1, 1, '8ab1235a988641d8aac200155d4dde0999ff6318', 'parrenof', '2010-12-20 15:00:00'); /*mdp : florian*/
+INSERT INTO `personnes` VALUES(5, 'PARRENO', 'Florian', '654 route de chantecler 38070 Saint Quentin Fallavier', '1991-08-12', '0678931627', '', 'parreno.florian@iut2.fr', 10, 1, 1, '8ab1235a988641d8aac200155d4dde0999ff6318', 'parrenof', '2012-01-24 20:00:00'); /*mdp : florian*/
 
-INSERT INTO `personnes` VALUES(6, 'PAULI', 'Marie', '8 Allée des fleurs 38000 Grenoble', '1992-02-15', '0678934567', '', 'pauli.marie@iut2.fr', 10, 1, 3, '072b5a53c998070e5395dba1375c6b991699f978', 'paulim', '2010-12-20 15:00:00'); /*mdp : mushisama*/
+INSERT INTO `personnes` VALUES(6, 'PAULI', 'Marie', '8 Allée des fleurs 38000 Grenoble', '1992-02-15', '0678934567', '', 'pauli.marie@iut2.fr', 10, 1, 3, '072b5a53c998070e5395dba1375c6b991699f978', 'paulim', '2012-01-24 20:00:00'); /*mdp : mushisama*/
 
-INSERT INTO `personnes` VALUES(7, 'LANDRISCINA', 'Dorian', '39 rue Vaugauthier 38590 Sillans', '1992-11-25', '0675628627', '', 'landriscina.dorian@iut2.fr', 10, 1, 1, '22d8dd753c9dd5147623bdf0834ed8ad097639d4', 'landrisd', '2010-12-20 15:00:00'); /*mdp : dodoletombeur*/
+INSERT INTO `personnes` VALUES(7, 'LANDRISCINA', 'Dorian', '39 rue Vaugauthier 38590 Sillans', '1992-11-25', '0675628627', '', 'landriscina.dorian@iut2.fr', 10, 1, 1, '22d8dd753c9dd5147623bdf0834ed8ad097639d4', 'landrisd', '2012-01-24 20:00:00'); /*mdp : dodoletombeur*/
 
-INSERT INTO `personnes` VALUES(8, 'MISTRI', 'Aurelie', '90 rue du dauphiné 38000 Grenoble', '1992-01-28', '0789901627', '', 'mistri.aurelie@iut2.fr', 10, 1, 1, 'cc8b85a78285e4fbca442ef02644a06f4ea5010b', 'mistria', '2010-12-20 15:00:00'); /*mdp : fautfairequoi*/
+INSERT INTO `personnes` VALUES(8, 'MISTRI', 'Aurelie', '90 rue du dauphiné 38000 Grenoble', '1992-01-28', '0789901627', '', 'mistri.aurelie@iut2.fr', 10, 1, 1, 'cc8b85a78285e4fbca442ef02644a06f4ea5010b', 'mistria', '2012-01-24 20:00:00'); /*mdp : fautfairequoi*/
 
-INSERT INTO `personnes` VALUES(9, 'MONNIER', 'Alexandra', '5 rue du platane Saint Martin D\'Hères', '1992-08-29', '0623097654', '', 'alexandra.monnier@iut2.fr', 10, 1, 3, '50d68802aae0791bad09451d61cc39d2356fe3fe', 'monnieal', '2010-12-20 15:00:00'); /*mdp : alexlabikeuse*/
+INSERT INTO `personnes` VALUES(9, 'MONNIER', 'Alexandra', '5 rue du platane Saint Martin D\'Hères', '1992-08-29', '0623097654', '', 'alexandra.monnier@iut2.fr', 10, 1, 3, '50d68802aae0791bad09451d61cc39d2356fe3fe', 'monnieal', '2012-01-24 20:00:00'); /*mdp : alexlabikeuse*/
 
-INSERT INTO `personnes` VALUES(10, 'MARTINEZ', 'Pierre Julien', '66 rue du vercors 38000 Grenoble', '1992-08-18', '0673786534', '', 'martinez.pierrejulien@iut2.fr', 10, 1, 1, '54c87bffe256effed7c3c7ee7bc7680e8b64b33b', 'mapierre', '2010-12-20 15:00:00'); /*mdp : legendpj*/
+INSERT INTO `personnes` VALUES(10, 'MARTINEZ', 'Pierre Julien', '66 rue du vercors 38000 Grenoble', '1992-08-18', '0673786534', '', 'martinez.pierrejulien@iut2.fr', 10, 1, 1, '54c87bffe256effed7c3c7ee7bc7680e8b64b33b', 'mapierre', '2012-01-24 20:00:00'); /*mdp : legendpj*/
 
-INSERT INTO `personnes` VALUES(11, 'LOUVETON', 'Joffrey', '38 rue Général Férrié', '1991-11-03', '0637345692', '', 'hello@joff.me', 10, 1, 1, '821c212bc5dcb219afea62be602c08c7754c1f2a', 'louvetoj', '2010-12-20 15:00:00');  /*mdp : jojobpm*/
+INSERT INTO `personnes` VALUES(11, 'LOUVETON', 'Joffrey', '38 rue Général Férrié', '1991-11-03', '0637345692', '', 'hello@joff.me', 10, 1, 1, '821c212bc5dcb219afea62be602c08c7754c1f2a', 'louvetoj', '2012-01-24 20:00:00');  /*mdp : jojobpm*/
 
-INSERT INTO `personnes` VALUES(38, 'MALLARONI-CONSENTINO', 'Hugo', '1 rue de la resistance', '1992-01-20', '0657463524', '', 'mallaroni.hugo@iut2.upmf-grenoble.fr ', 10, 1, 1, '11994b0f821efbed3e4aeb9df97b3759ec529f2b', 'mallaroh', '2010-12-20 15:00:00'); /*mdp : hugosecretaire*/
+INSERT INTO `personnes` VALUES(38, 'MALLARONI-CONSENTINO', 'Hugo', '1 rue de la resistance', '1992-01-20', '0657463524', '', 'mallaroni.hugo@iut2.upmf-grenoble.fr ', 10, 1, 1, '11994b0f821efbed3e4aeb9df97b3759ec529f2b', 'mallaroh', '2012-01-24 20:00:00'); /*mdp : hugosecretaire*/
 
-INSERT INTO `personnes` VALUES(39, 'DOMINGUEZ', 'Jp', 'Tatooine', '1992-02-20', '0678787877', '', 'hazkaal@gmail.com', 10, 1, 2, '8c76002fe114060cfda2abc178d2574789daa208', 'dominjp', '2010-12-20 15:00:00'); /*mdp : <trololo8le8piju>*/
+INSERT INTO `personnes` VALUES(39, 'DOMINGUEZ', 'Jp', 'Tatooine', '1992-02-20', '0678787877', '', 'hazkaal@gmail.com', 10, 1, 2, '8c76002fe114060cfda2abc178d2574789daa208', 'dominjp', '2012-01-24 20:00:00'); /*mdp : <trololo8le8piju>*/
 
-INSERT INTO `personnes` VALUES(41, 'DAGNIAUX', 'Quentin', '326A Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-03-10', '', '0686497105', 'darkideo@gmail.com', 10, 1, 6, '', 'dagniauq', '2010-12-20 15:00:00'); /*mdp : dagniauxq*/
+INSERT INTO `personnes` VALUES(41, 'DAGNIAUX', 'Quentin', '326A Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-03-10', '', '0686497105', 'darkideo@gmail.com', 10, 1, 6, '', 'dagniauq', '2012-01-24 20:00:00'); /*mdp : dagniauxq*/
 
-INSERT INTO `personnes` VALUES(48, 'HUBERT', 'Pierre', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'hubertpi@gmail.com', 10, 1, 1, '', 'hubertpi', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(48, 'HUBERT', 'Pierre', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'hubertpi@gmail.com', 10, 1, 1, '', 'hubertpi', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(49, 'POSSYLKINE', 'Anton', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'anton@gmail.com', 10, 1, 1, '', 'possylka', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(49, 'POSSYLKINE', 'Anton', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'anton@gmail.com', 10, 1, 1, '', 'possylka', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(50, 'ROHAUT', 'Ludovic', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ludo@gmail.com', 10, 1, 1, '', 'rohautl', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(50, 'ROHAUT', 'Ludovic', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ludo@gmail.com', 10, 1, 1, '', 'rohautl', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(51, 'SALINAS', 'Cedric', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ced@gmail.com', 10, 1, 1, '', 'salinasc', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(51, 'SALINAS', 'Cedric', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ced@gmail.com', 10, 1, 1, '', 'salinasc', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(52, 'SZPIEG', 'Loic', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'loic@gmail.com', 10, 1, 1, '', 'szpiegl', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(52, 'SZPIEG', 'Loic', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'loic@gmail.com', 10, 1, 1, '', 'szpiegl', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(53, 'AKLI', 'Sofiane', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'so@gmail.com', 10, 1, 2, '', 'aklis', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(53, 'AKLI', 'Sofiane', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'so@gmail.com', 10, 1, 2, '', 'aklis', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(54, 'ARRAIS', 'Mathieu', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'mat@gmail.com', 10, 1, 2, '', 'arraism', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(54, 'ARRAIS', 'Mathieu', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'mat@gmail.com', 10, 1, 2, '', 'arraism', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(55, 'BERAUDO', 'Valentin', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'val@gmail.com', 10, 1, 2, '', 'beraudov', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(55, 'BERAUDO', 'Valentin', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'val@gmail.com', 10, 1, 2, '', 'beraudov', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(56, 'CALABRO', 'Anthony', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'cala@gmail.com', 10, 1, 2, '', 'calabroa', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(56, 'CALABRO', 'Anthony', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'cala@gmail.com', 10, 1, 2, '', 'calabroa', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(57, 'DESLANDES', 'Titouan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'tit@gmail.com', 10, 1, 2, '', 'deslandesti', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(57, 'DESLANDES', 'Titouan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'tit@gmail.com', 10, 1, 2, '', 'deslandesti', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(58, 'ESPIE-CAULLET', 'Jonathan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'jon@gmail.com', 10, 1, 2, '', 'espiecaulj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(58, 'ESPIE-CAULLET', 'Jonathan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'jon@gmail.com', 10, 1, 2, '', 'espiecaulj', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(59, 'GAILLARD', 'Jeremy', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'jere@gmail.com', 10, 1, 2, '', 'gaillardj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(59, 'GAILLARD', 'Jeremy', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'jere@gmail.com', 10, 1, 2, '', 'gaillardj', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(60, 'GENON-CATALOT', 'Bertrand', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ber@gmail.com', 10, 1, 2, '', 'genoncatab', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(60, 'GENON-CATALOT', 'Bertrand', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ber@gmail.com', 10, 1, 2, '', 'genoncatab', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(61, 'GOURHAND', 'Maeva', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'maeva@gmail.com', 10, 1, 2, '', 'gourhandm', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(61, 'GOURHAND', 'Maeva', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'maeva@gmail.com', 10, 1, 2, '', 'gourhandm', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(62, 'GUILBAUD', 'Benoit', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ben@gmail.com', 10, 1, 2, '', 'guilbaudb', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(62, 'GUILBAUD', 'Benoit', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ben@gmail.com', 10, 1, 2, '', 'guilbaudb', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(63, 'GIRARD', 'Sylvain', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sylv@gmail.com', 10, 1, 2, '', 'girards', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(63, 'GIRARD', 'Sylvain', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sylv@gmail.com', 10, 1, 2, '', 'girards', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(64, 'BERTHIER-DELACOUR', 'Joachim', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'joa@gmail.com', 10, 1, 3, '', 'berthierj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(64, 'BERTHIER-DELACOUR', 'Joachim', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'joa@gmail.com', 10, 1, 3, '', 'berthierj', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(65, 'HIMMICH', 'Samir', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'himmichs', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(65, 'HIMMICH', 'Samir', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'himmichs', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(66, 'LAFOREST', 'Yann', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'yann@gmail.com', 10, 1, 3, '', 'laforesty', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(66, 'LAFOREST', 'Yann', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'yann@gmail.com', 10, 1, 3, '', 'laforesty', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(67, 'LENNOZ-GRATIN', 'Sidi', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'lennozgs', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(67, 'LENNOZ-GRATIN', 'Sidi', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'lennozgs', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(68, 'MAHIKIAN', 'Nicolas', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'mahikian', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(68, 'MAHIKIAN', 'Nicolas', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'mahikian', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(69, 'PACALET', 'Xavier', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'pacalex', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(69, 'PACALET', 'Xavier', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'pacalex', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(70, 'PIPARD', 'Fabien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'pipardf', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(70, 'PIPARD', 'Fabien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'pipardf', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(71, 'PLANCHER', 'Nans', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'planchen', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(71, 'PLANCHER', 'Nans', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'planchen', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(72, 'RIBES', 'Gael', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'ribesg', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(72, 'RIBES', 'Gael', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'ribesg', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(73, 'SALIMI', 'Alexandre', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'salimia', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(73, 'SALIMI', 'Alexandre', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 3, '', 'salimia', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(74, 'BOUVIER', 'Julien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'bouvierj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(74, 'BOUVIER', 'Julien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'bouvierj', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(75, 'CELCE', 'Thibaud', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'celceth', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(75, 'CELCE', 'Thibaud', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'celceth', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(76, 'CRUMIERE', 'Vivien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'crumierv', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(76, 'CRUMIERE', 'Vivien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'crumierv', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(77, 'DE LAUZUN', 'Maxime', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'delauzum', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(77, 'DE LAUZUN', 'Maxime', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'delauzum', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(78, 'DESPREZ', 'Jerome', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'desprej', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(78, 'DESPREZ', 'Jerome', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'desprej', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(79, 'DONZELLE', 'Thomas', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'donzellt', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(79, 'DONZELLE', 'Thomas', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'donzellt', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(80, 'EYNARD', 'Edouard', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'eynarde', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(80, 'EYNARD', 'Edouard', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'eynarde', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(81, 'GALAVIELLE', 'Jonathan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'galavielj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(81, 'GALAVIELLE', 'Jonathan', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'galavielj', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(82, 'GINOUX', 'Pierre-Henri', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'ginouxp', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(82, 'GINOUX', 'Pierre-Henri', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'ginouxp', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(83, 'SENSIER', 'Antoine', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'sensiera', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(83, 'SENSIER', 'Antoine', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'sensiera', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(84, 'SERVIERE', 'Vincent', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'servierv', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(84, 'SERVIERE', 'Vincent', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'sam@gmail.com', 10, 1, 4, '', 'servierv', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(85, 'LAFAY', 'Julie', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ju@gmail.com', 10, 1, 5, '', 'lafayj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(85, 'LAFAY', 'Julie', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'ju@gmail.com', 10, 1, 5, '', 'lafayj', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(86, 'MOREL', 'Gabriel', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'gab@gmail.com', 10, 1, 7, '', 'morelg', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(86, 'MOREL', 'Gabriel', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'gab@gmail.com', 10, 1, 7, '', 'morelg', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
-INSERT INTO `personnes` VALUES(87, 'BRIOT', 'Julien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'julien@gmail.com', 10, 1, 8, '', 'briotj', '2010-12-20 15:00:00'); /*mdp : eleve*/
+INSERT INTO `personnes` VALUES(87, 'BRIOT', 'Julien', '326B Résidence Condillac 1251 Rue des Universités 38400 St Martin D\'Hères', '1992-04-10', '', '0686447105', 'julien@gmail.com', 10, 1, 8, '', 'briotj', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
 
 /*PROFS*/
 
-INSERT INTO `personnes` VALUES(12, 'BELKHATIR', 'Noureddine', '20 route de l\'IUT', '1981-01-22', '0101010101', '101', 'belkhatir.nourredine@iut2.fr', 20, 1, 10, '97ab7b75e32207c0c1bc8f044a788d403f67c562', 'nourbel', '2010-12-01 15:00:00'); /*mdp : chefdep*/
+INSERT INTO `personnes` VALUES(12, 'BELKHATIR', 'Noureddine', '20 route de l\'IUT', '1981-01-22', '0101010101', '101', 'belkhatir.nourredine@iut2.fr', 20, 1, 10, '97ab7b75e32207c0c1bc8f044a788d403f67c562', 'nourbel', '2012-01-24 20:00:00'); /*mdp : chefdep*/
 
-INSERT INTO `personnes` VALUES(13, 'BLANCHON', 'Hervé', '20 route de l\'IUT', '1981-01-22', '0101010101', '105', 'blanchon.herve@iut2.fr', 20, 1, 10, 'fc5e9c8431b89f5a839ca264c466dc3f43ea60bf', 'blanchonh', '2010-12-01 15:00:00'); /*mdp : vecteur*/
+INSERT INTO `personnes` VALUES(13, 'BLANCHON', 'Hervé', '20 route de l\'IUT', '1981-01-22', '0101010101', '105', 'blanchon.herve@iut2.fr', 20, 1, 10, 'fc5e9c8431b89f5a839ca264c466dc3f43ea60bf', 'blanchonh', '2012-01-24 20:00:00'); /*mdp : vecteur*/
 
-INSERT INTO `personnes` VALUES(14, 'BLANCO-LAINE', 'Gaëlle', '20 route de l\'IUT', '1981-01-22', '0101010101', '106', 'blancolaine.gaelle@iut2.fr', 20, 1, 10, '715d9bf5e707a2122eba3039baa0ec35ff079406', 'blancog', '2010-12-01 15:00:00'); /*mdp : chefdeprojet*/
+INSERT INTO `personnes` VALUES(14, 'BLANCO-LAINE', 'Gaëlle', '20 route de l\'IUT', '1981-01-22', '0101010101', '106', 'blancolaine.gaelle@iut2.fr', 20, 1, 10, '715d9bf5e707a2122eba3039baa0ec35ff079406', 'blancog', '2012-01-24 20:00:00'); /*mdp : chefdeprojet*/
 
-INSERT INTO `personnes` VALUES(15, 'BONNAUD', 'Laurent', '20 place Doyen Gosse', '1981-01-22', '0101010101', '116', 'bonnaud.laurent@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bonnaudl', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(15, 'BONNAUD', 'Laurent', '20 place Doyen Gosse', '1981-01-22', '0101010101', '116', 'bonnaud.laurent@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bonnaudl', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(16, 'BRUNET-MANQUAT', 'Francis', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'brunetmanquat.francis@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'brunetmf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(16, 'BRUNET-MANQUAT', 'Francis', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'brunetmanquat.francis@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'brunetmf', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(17, 'CARAVEL ', 'Marie-Claude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'caravel.marieclaude@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'caravel', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(17, 'CARAVEL ', 'Marie-Claude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'caravel.marieclaude@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'caravel', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(18, 'CHASTEL', 'Frédéric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '320F', 'chastel.frederic@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'chastelf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(18, 'CHASTEL', 'Frédéric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '320F', 'chastel.frederic@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'chastelf', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(19, 'CHEVALLET', 'Jean-Pierre', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'chevallet.jeanpierre@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'jpchevallet', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(19, 'CHEVALLET', 'Jean-Pierre', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'chevallet.jeanpierre@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'jpchevallet', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(20, 'COAT', 'Françoise', '20 place Doyen Gosse', '1981-01-22', '0101010101', '108', 'coat.francoise@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'coatfr', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(20, 'COAT', 'Françoise', '20 place Doyen Gosse', '1981-01-22', '0101010101', '108', 'coat.francoise@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'coatfr', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(21, 'COLLOMBET', 'Caryn', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'collombet.caryn@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'colloc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(21, 'COLLOMBET', 'Caryn', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'collombet.caryn@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'colloc', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(22, 'CORSET', 'Franck', '20 place Doyen Gosse', '1981-01-22', '0101010101', '105', 'corset.franck@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'corsetf', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(22, 'CORSET', 'Franck', '20 place Doyen Gosse', '1981-01-22', '0101010101', '105', 'corset.franck@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'corsetf', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(23, 'CULET', 'Annie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '114', 'culet.annie@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'culeta', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(23, 'CULET', 'Annie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '114', 'culet.annie@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'culeta', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(24, 'FONTENAS', 'Eric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'fontenas.eric@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'fontenae', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(24, 'FONTENAS', 'Eric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'fontenas.eric@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'fontenae', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(25, 'GATUMEL', 'Mathieu', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'gatumel.mathieu@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gatumelm', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(25, 'GATUMEL', 'Mathieu', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'gatumel.mathieu@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gatumelm', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(26, 'GEROT', 'Cédric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '113', 'gerot.cedric@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gerotc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(26, 'GEROT', 'Cédric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '113', 'gerot.cedric@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gerotc', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(27, 'GOULIAN', 'Jérôme', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'goulian.jerome@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'goulianj', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(27, 'GOULIAN', 'Jérôme', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'goulian.jerome@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'goulianj', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(28, 'HAMON', 'Agnès', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'hamon.agnes@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'hamona', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(28, 'HAMON', 'Agnès', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'hamon.agnes@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'hamona', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(29, 'JOYCE', 'Laura', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'joyce.laura@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'joycel', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(29, 'JOYCE', 'Laura', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'joyce.laura@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'joycel', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(30, 'LAURILLAU', 'Yann', '20 place Doyen Gosse', '1981-01-22', '0101010101', '107', 'laurillau.yann@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'laurilly', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(30, 'LAURILLAU', 'Yann', '20 place Doyen Gosse', '1981-01-22', '0101010101', '107', 'laurillau.yann@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'laurilly', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(31, 'LEJEUNE', 'Anne', '20 place Doyen Gosse', '1981-01-22', '0101010101', '114', 'lejeune.anne@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'lejeuna', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(31, 'LEJEUNE', 'Anne', '20 place Doyen Gosse', '1981-01-22', '0101010101', '114', 'lejeune.anne@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'lejeuna', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(32, 'MARTIN', 'Philippe', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'martin.philippe@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'martinp', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(32, 'MARTIN', 'Philippe', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'martin.philippe@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'martinp', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(33, 'MONTANVERT', 'Annick', '20 place Doyen Gosse', '1981-01-22', '0101010101', '107', 'montanvert.annick@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'montana', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(33, 'MONTANVERT', 'Annick', '20 place Doyen Gosse', '1981-01-22', '0101010101', '107', 'montanvert.annick@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'montana', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(34, 'PESTY', 'Sylvie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'pesty.sylvie@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'pestys', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(34, 'PESTY', 'Sylvie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'pesty.sylvie@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'pestys', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(35, 'RACAULT', 'Laëtitia', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'racault.laeticia@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'racaultl', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(35, 'RACAULT', 'Laëtitia', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'racault.laeticia@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'racaultl', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(36, 'ROISIN', 'Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', '105', 'roisin.cecile@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'roisinc', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(36, 'ROISIN', 'Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', '105', 'roisin.cecile@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'roisinc', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(37, 'SIMONET', 'Ana', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'simonet.ana@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'simona', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(37, 'SIMONET', 'Ana', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'simonet.ana@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'simona', '2012-01-24 20:00:00'); /*mdp : prof*/
 
 INSERT INTO `personnes` VALUES(40, 'FRONT', 'Agnès', '6 rue de la Jouvence 38000 Grenoble', '1971-12-20', '0654632788', '108', 'front.agnes@iut2.fr', 20, 1, 10, '4fe11351445d96fa63c0f7c55a5f7dd93283e434', 'fronta', '2001-12-11 00:00:00'); /*mdp : profomglmac*/
 
-INSERT INTO `personnes` VALUES(42, 'BERTOLINO', 'Pascal', '20 place Doyen Gosse', '1981-01-22', '0101010101', '116', 'bertolino.pascal@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bertolip', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(42, 'BERTOLINO', 'Pascal', '20 place Doyen Gosse', '1981-01-22', '0101010101', '116', 'bertolino.pascal@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bertolip', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(43, 'DUPUY-CHESSA', 'Sophie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'Sophie.Dupuy-Chessa@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'dupuycs', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(43, 'DUPUY-CHESSA', 'Sophie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'Sophie.Dupuy-Chessa@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'dupuycs', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(44, 'KOENIG', 'Anne-Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', '320F', 'Anne-Cécile.Koenig@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'koenigac', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(44, 'KOENIG', 'Anne-Cécile', '20 place Doyen Gosse', '1981-01-22', '0101010101', '320F', 'Anne-Cécile.Koenig@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'koenigac', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(45, 'MAIGNAN', 'Aude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'maignan.aude@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'maignana', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(45, 'MAIGNAN', 'Aude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'maignan.aude@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'maignana', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(46, 'BOUZNIF', 'Marwane', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'bouznif.marwane@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bouznifm', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(46, 'BOUZNIF', 'Marwane', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'bouznif.marwane@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bouznifm', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(47, 'PEROTTO', 'Anne-Lise', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'perrotto.anne-lise@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'perrottoal', '2010-12-01 15:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(47, 'PEROTTO', 'Anne-Lise', '20 place Doyen Gosse', '1981-01-22', '0101010101', '', 'perrotto.anne-lise@iut2.upmf-grenoble.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'perrottoal', '2012-01-24 20:00:00'); /*mdp : prof*/
 
 
 
@@ -569,10 +566,10 @@ INSERT INTO `type_evenements` VALUES(3, 'Soirée');
 --
 
 INSERT INTO `evenements` (`id`, `titre`, `date_debut`, `date_fin`, `type_evenement_id`, `personne_id`, `description`) VALUES
-(4, 'Demonstration projet tuteuré', '2012-01-27 10:30:00', '2012-01-27 11:00:00', 2, 14, 'Convocation pour la démonstration du projet tuteuré.'),
-(5, 'Semaine projet tuteuré', '2012-01-23 15:40:00', '2012-01-27 11:30:00', 1, 24, 'Semaine consacrée au projet tuteuré.'),
+(4, 'Demonstration projet tuteuré', '2012-01-27 10:30:00', '2012-01-27 11:00:00', 2, 24, 'Convocation pour la démonstration du projet tuteuré.'),
+(5, 'Semaine projet tuteuré', '2012-01-23 15:40:00', '2012-01-27 11:30:00', 1, 14, 'Semaine consacrée au projet tuteuré.'),
 (6, 'RDV projet tuteuré', '2012-01-24 10:00:00', '2012-01-24 11:00:00', 1, 16, 'Réunion pour une mise au point concernant le projet tuteuré.'),
-(7, 'Soirée Professeurs', '2012-01-28 22:45:00', '2012-01-29 05:00:00', 3, 16, 'Soirée conviviale entre professeurs, ambiance bon-enfant =)');
+(7, 'Soirée Professeurs', '2012-01-28 22:45:00', '2012-01-29 05:00:00', 3, 16, 'Soirée conviviale entre professeurs, ambiance bon-enfant !!');
 
 --
 -- Contenu de la table `evenements_personnes`
@@ -714,11 +711,11 @@ INSERT INTO `evenements_personnes` (`id`, `evenement_id`, `personne_id`) VALUES
 
 
 INSERT INTO `stages` (`id`, `entreprise`, `ville`, `description`, `dispo`, `departements_id`, `date_ajout`, `document`) VALUES
-(1, 'Areva', 'Val de Marne', 'Areva est un groupe industriel français spécialisé dans les métiers du nucléaire. Cette entreprise est présente au niveau international avec un réseau commercial dans 100 pays et une présence industrielle dans 43 pays.', 0, 1, '2012-01-24 14:04:38', 'Areva-Val-de-Marne-1.pdf'),
+(1, 'Areva', 'Val de Marne', 'Areva est un groupe industriel français spécialisé dans les métiers du nucléaire. Cette entreprise est présente au niveau international avec un réseau commercial dans 100 pays et une présence industrielle dans 43 pays.', 1, 1, '2012-01-24 14:04:38', 'Areva-Val-de-Marne-1.pdf'),
 (2, 'Atos', 'Paris', 'Atos est le premier acteur européen dans les SSII et l''un des dix plus grands au niveau mondial3 et le leader en France du paiement sécurisé en ligne pour les entreprises.', 0, 1, '2012-01-24 14:06:41', 'Atos-Paris-2.pdf'),
-(3, 'Orange', 'Hauts de Seine', 'Orange poursuit sa croissance et dans le cadre de notre expansion nationale, nous recherchons: Développeur informatique reporting H/F', 0, 1, '2012-01-24 14:07:06', 'Orange-Hauts-de-Seine-3.pdf'),
-(4, 'Cloud Solutions', 'Austin (Etats-Unis)', 'Cloud Solutions, LLC  helps organizations and companies understand, evaluate, test, configure, and implement cloud solutions.', 0, 1, '2012-01-24 14:07:23', 'Cloud-Solutions-Austin-Etats-Unis-4.pdf'),
-(5, 'Innovacs', 'Grenoble', 'Innovacs, (Innovation, Connaissances et Société) est une structure fédérative de recherche (SFR) née dans le cadre de Grenoble Université de l''Innovation. Elle regroupe l''ensemble des acteurs du site grenoblois souhaitant travailler sur les questions relatives à l''Innovation, autour de trois grands enjeux sociétaux de référence issus de l''Opération Campus : Planète durable, l''Information et la Santé.', 0, 1, '2012-01-24 14:07:43', 'Innovacs-Grenoble-5.pdf');
+(3, 'Orange', 'Hauts de Seine', 'Orange poursuit sa croissance et dans le cadre de notre expansion nationale, nous recherchons: Développeur informatique reporting H/F', 1, 1, '2012-01-24 14:07:06', 'Orange-Hauts-de-Seine-3.pdf'),
+(4, 'Cloud Solutions', 'Austin (Etats-Unis)', 'Cloud Solutions, LLC  helps organizations and companies understand, evaluate, test, configure, and implement cloud solutions.', 1, 1, '2012-01-24 14:07:23', 'Cloud-Solutions-Austin-Etats-Unis-4.pdf'),
+(5, 'Innovacs', 'Grenoble', 'Innovacs, (Innovation, Connaissances et Société) est une structure fédérative de recherche (SFR) née dans le cadre de Grenoble Université de l''Innovation. Elle regroupe l''ensemble des acteurs du site grenoblois souhaitant travailler sur les questions relatives à l''Innovation, autour de trois grands enjeux sociétaux de référence issus de l''Opération Campus : Planète durable, l''Information et la Santé.', 1, 1, '2012-01-24 14:07:43', 'Innovacs-Grenoble-5.pdf');
 
 
 
@@ -801,12 +798,12 @@ INSERT INTO `pages_statiques` (`id`, `titre`, `contenu`) VALUES
 
 
 INSERT INTO `messages` (`id`, `titre`, `date_envoi`, `fichier`, `personne_id`, `destinataire_id`, `supprime_dest`, `supprime_exp`, `lu_dest`, `lu_exp`) VALUES
-(2, 'push !!!', '2012-01-24 13:28:18', 'message_4f1eb1f2ddfcc.xml', 9, 7, 0, 0, 1, 0),
-(3, 'etudes à l''étranger', '2012-01-24 13:31:17', 'message_4f1eb2a5da21c.xml', 7, 29, 0, 0, 1, 0),
-(4, 'soirée de samedi', '2012-01-24 13:32:41', 'message_4f1eb2f9efef8.xml', 16, 32, 0, 0, 0, 1),
-(5, 'ajout doc', '2012-01-24 13:33:39', 'message_4f1eb333c8b6f.xml', 29, 4, 0, 0, 1, 0),
-(6, 'cours asr', '2012-01-24 13:35:28', 'message_4f1eb3a08a9c4.xml', 7, 30, 0, 0, 0, 1),
-(7, 'rdv projet tuteuré', '2012-01-24 14:43:48', 'message_4f1ec3a4b2e3f.xml', 10, 16, 0, 0, 0, 1);
+(2, 'Push !!!', '2012-01-24 13:28:18', 'message_4f1eb1f2ddfcc.xml', 9, 7, 0, 0, 1, 0),
+(3, 'Etudes à l''étranger', '2012-01-24 13:31:17', 'message_4f1eb2a5da21c.xml', 7, 29, 0, 0, 1, 0),
+(4, 'Soirée de samedi', '2012-01-24 13:32:41', 'message_4f1eb2f9efef8.xml', 16, 32, 0, 0, 0, 1),
+(5, 'Ajout de documents', '2012-01-24 13:33:39', 'message_4f1eb333c8b6f.xml', 29, 4, 0, 0, 1, 0),
+(6, 'Cours d\'ASR', '2012-01-24 13:35:28', 'message_4f1eb3a08a9c4.xml', 7, 30, 0, 0, 0, 1),
+(7, 'RDV projet tuteuré', '2012-01-24 14:43:48', 'message_4f1ec3a4b2e3f.xml', 10, 16, 0, 0, 1, 1);
 
 
 

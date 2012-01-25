@@ -12,7 +12,7 @@
 					echo $this->Html->link($nb, array('controller' => 'messages', 'action' => 'index'));
 				else
 					echo 'aucun';
-			?></strong> nouveaux messages, et <strong>
+			?></strong> nouveau<?php echo (($nb > 1) ? 'x' : null); ?> message<?php echo (($nb > 1) ? 's' : null); ?>, et <strong>
 			<?php
 				$nb = count($notifs['evenements']['evenementsDay']);
 				if($nb > 0)
