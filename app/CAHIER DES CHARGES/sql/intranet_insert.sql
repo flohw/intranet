@@ -137,10 +137,10 @@ INSERT INTO `statuts` VALUES(30, 'Administrateur');
 
 /*ADMIN*/
 
-INSERT INTO `personnes` VALUES(4, 'VASSOILE', 'Marc', '10 rue du Lac Grenoble 38000', '1980-04-12', '0664531627', '', 'vassoile.marc@iut2.fr', 30, 1, 9, 'ba282cee005c8d1e72ae796aadf82c8fc3a92226', 'vassoim', '2012-01-24 20:00:00'); /*mdp : vassoilm2*/
+INSERT INTO `personnes` VALUES(4, 'VASSOILE', 'Marc', '10 rue du Lac Grenoble 38000', '1980-04-12', '0664531627', '', 'vassoile.marc@iut2.fr', 30, 1, 9, '04de5acc21acb7a741465f1d203f38a5c2697123', 'vassoim', '2012-01-24 20:00:00'); /*mdp : administrateur*/
 /*ELEVES*/
 
-INSERT INTO `personnes` VALUES(5, 'PARRENO', 'Florian', '654 route de chantecler 38070 Saint Quentin Fallavier', '1991-08-12', '0678931627', '', 'parreno.florian@iut2.fr', 10, 1, 1, '8ab1235a988641d8aac200155d4dde0999ff6318', 'parrenof', '2012-01-24 20:00:00'); /*mdp : florian*/
+INSERT INTO `personnes` VALUES(5, 'PARRENO', 'Florian', '654 route de chantecler 38070 Saint Quentin Fallavier', '1991-08-12', '0678931627', '', 'parreno.florian@iut2.fr', 10, 1, 1, '2429035a4c60f2b59a9ea9c0658a0c08cf5c90a8', 'parrenof', '2012-01-24 20:00:00'); /*mdp : eleve*/
 
 INSERT INTO `personnes` VALUES(6, 'PAULI', 'Marie', '8 Allée des fleurs 38000 Grenoble', '1992-02-15', '0678934567', '', 'pauli.marie@iut2.fr', 10, 1, 3, '072b5a53c998070e5395dba1375c6b991699f978', 'paulim', '2012-01-24 20:00:00'); /*mdp : mushisama*/
 
@@ -786,15 +786,15 @@ INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `type_mime`, `
 
 
 INSERT INTO `pages_statiques` (`id`, `titre`, `contenu`) VALUES
-(1, 'Règlement', 'Contenu du règlement'),
-(2, 'Documents officiels', 'Contenu des documents'),
-(3, 'Trucs et astuces', 'Conte des trucs et astuces'),
-(4, 'Université', 'Contenu de l\'université'),
-(5, 'Poursuites à l\'étranger', 'Contenu poursuites à l\'étranger'),
-(6, 'Offres d\'emplois', 'Contenu offres d\'emplois'),
-(7, 'Poursuites d\'études', 'Contenu poursuites études'),
-(8, 'Oedig', 'Contenu oedig'),
-(9, 'Sport', 'Contenu sport');
+(1, 'Règlement', 'Vous trouverez ici les documents concernant le règlement en vigueur à l\'IUT 2 de Grenoble. Merci de le lire attentivement.'),
+(2, 'Documents officiels', 'Tous ces documents pourront vous être utiles pour votre scolarité.'),
+(3, 'Trucs et astuces', 'Vous trouverez ici certains trucs et certaines astuces vont facilitant la vie ou vous aidant dans votre scolarité.'),
+(4, 'Universités', 'Tout ce qui concerne l\'université, l\'UPMF ainsi que d\'autres universités de la région Grenobloise.'),
+(5, 'Poursuites à l\'étranger', 'Vous pourrez vous tenir informé des poursuites à l\'étranger qui vous attendent.'),
+(6, 'Offres d\'emploi', 'L\'IUT vous fait part des quelques offres d\'emploi.'),
+(7, 'Poursuites d\'études', 'Dans cette catégorie, vous trouverez toutes les informations concdernant vos poursuites d\' études.'),
+(8, 'Oedig', 'Organisation Etudiante du Départment Informatique de Grenoble.'),
+(9, 'Sport', 'Toutes les informations relatives au Sport se trouvent ici.');
 
 
 
