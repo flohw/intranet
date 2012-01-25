@@ -396,7 +396,8 @@ INSERT INTO `modules_personnes` (`id`, `module_id`, `personne_id`) VALUES
 (87, 29, 46),
 (88, 30, 46),
 (89, 34, 47),
-(90, 35, 47);
+(90, 35, 47),
+(91, 26, 30);
 
 
 
@@ -746,17 +747,6 @@ INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `type_mime`, `
 (20, 'tp06(1).pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:33'),
 (21, 'tp06-grille-évaluation.ods', 13, 24, 'application/vnd.oasis.opendocument.spreadsheet', '2012-01-24 13:01:33'),
 (22, 'tp06-svn(4).pdf', 13, 24, 'application/pdf', '2012-01-24 13:01:34'),
-(23, '2009-2010asr4-12octobre.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:15'),
-(24, '2009-2010asr4-12octobre-corr.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:16'),
-(25, '2010-2011asr4-16octobre.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:16'),
-(26, '2010-2011asr4-16octobreCorr.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:17'),
-(27, 'asr4-ethernet.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:39'),
-(28, 'asr4-intro.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:39'),
-(29, 'asr4-ip.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:40'),
-(30, 'asr4-tcp.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:40'),
-(31, 'asr4-vlan.pdf', 15, 26, 'application/pdf', '2012-01-24 13:03:41'),
-(32, 'asr4-td.pdf', 15, 26, 'application/pdf', '2012-01-24 13:04:05'),
-(33, 'planningASR4.pdf', 15, 26, 'application/pdf', '2012-01-24 13:04:06'),
 (34, 'cours00.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:36'),
 (35, 'cours01.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:36'),
 (36, 'cours02.pdf', 15, 27, 'application/pdf', '2012-01-24 13:04:37'),
@@ -780,7 +770,18 @@ INSERT INTO `documents` (`id`, `nom`, `personne_id`, `module_id`, `type_mime`, `
 (61, 'docVP.pdf', 23, 29, 'application/pdf', '2012-01-24 13:11:17'),
 (62, 'Traduction_LC_Java.pdf', 23, 29, 'application/pdf', '2012-01-24 13:11:18'),
 (63, 'UML.pdf', 23, 29, 'application/pdf', '2012-01-24 13:11:18'),
-(65, 'Projet-Gervosou S3D-10-11.pdf', 23, 30, 'application/pdf', '2012-01-24 13:11:46');
+(65, 'Projet-Gervosou S3D-10-11.pdf', 23, 30, 'application/pdf', '2012-01-24 13:11:46'),
+(66, '2010-2011asr4-16octobre.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(67, '2010-2011asr4-16octobreCorr.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(68, 'asr4-ethernet.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(69, 'asr4-intro.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(70, 'asr4-ip.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(71, 'asr4-tcp.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(72, 'asr4-td.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(73, 'asr4-vlan.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(74, 'planningASR4.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(75, '2009-2010asr4-12octobre.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46'),
+(76, '2009-2010asr4-12octobre-corr.pdf', 30, 26, 'application/pdf', '2012-01-24 13:00:46');
 
 
 
