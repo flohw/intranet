@@ -17,4 +17,6 @@
 		}
 		
 		public function maintenance() { }
+
+		public function index() {	}
 	}
