@@ -1,5 +1,3 @@
 - Faire des tests sur TOUTES les vues
-- Finir l'affichage des pages statiques pour tout le monde, et gérer les droits correctement
-- Finir les insert pour une belle et réelle présentation
 - Le Prezi de présentation
 - Le rapport du projet

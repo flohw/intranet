@@ -1,15 +1,14 @@
-<?php $this->title = 'Intranet | Plan interactif | Salle '.$salle; ?>
+<?php $this->title = 'Intranet | Plan interactif | '.$numSalle; ?>
 
 <div class="page-header">
 	<h1>
 	<?php 
-		if(preg_match('#^[0-9]#', $numSalle))
-			echo 'Salle '.$numSalle.'</h1>';
-		elseif (preg_match('#^S#', $numSalle))
-			echo 'Salle '.$numSalle.'</h1>';
+		if(preg_match('#^[0-9]#', $numSalle) OR  preg_match('#^S[1-9]+#', $numSalle))
+			echo 'Salle '.$numSalle;
 		else
-			echo $numSalle.'</h1>'; 
+			echo $numSalle; 
 	?>
+	</h1>
 </div>
 
 <h3>Etage : <?php echo (($etage == 'S')) ? 'Sous-sol' : 'Etage '.$etage; ?></h3>
@@ -18,7 +17,7 @@
 		<ul  class="media-grid">
 			<li><a href="#">
 			<?php 
-				if (($etage == '1' OR $etage == '2') AND substr($numSalle, 1,2) == 'A')
+				if (($etage == '1' OR $etage == '2') AND substr($numSalle, 0,1) == 'A')
 					$img = 'amphi';
 				elseif ($etage == '0' AND preg_match('#^[A-Z]#', $numSalle)) {
 					if ($numSalle == 'Pole Informatique')
@@ -30,7 +29,7 @@
 					elseif ($numSalle == 'Accueil')
 						$img = 'accueil';
 				}
-				elseif ($etage == 'S' AND preg_match('#^[A-Z]#', $numSalle))
+				elseif ($etage == 'S' AND preg_match('#^C#', $numSalle))
 					$img = 'cafet';
 				else 
 					$img = 'salle'; 
@@ -39,10 +38,23 @@
 		</ul>	
 	</div>
 	<div class="span8">
-		<ul  class="media-grid">
-			<li><a href="#">
-			<?php echo $this->Html->image('photos/edt.png', array('class' =>'thumbnail', 'style' => 'display:block; width:400px; height:280px;')); 
-			?></a></li>
-		</ul>	
+	<ul  class="media-grid">
+		<?php echo('<li>'.$this->Html->link($html->image('photos/edt.png', array(														'alt' => 'emploi du temps',													'width' => '500px',														'height' => '300px')), 
+								array(
+							'controller' => 'img',
+							 'action' => 'photos', 'edt.png'), array('escape' => false, 'class' => 'zoombox zgallery1',)).
+			     '</li>');
+		?>
+	</ul>	
 	</div>
 </div>
+<!--
+JQuery (function() {
+	$('.work .meta').hide();
+	    $('.work').live('mouseenter', function() { // mousein
+	            $(this).find('.meta').stop().fadeTo(350,1);
+	    }).live('mouseleave', function() { // mouseout
+	            $(this).find('.meta').stop().fadeTo(350,0);
+	    });
+});
+-->
