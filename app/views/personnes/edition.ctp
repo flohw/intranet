@@ -49,6 +49,7 @@
 </span>
 <?php echo $this->Html->scriptStart(array('inline' => false)); ?>
 jQuery(function($) {
+	$('#bureau').hide();
   $("#datepicker").datepicker({
   	dateFormat: 'yy-mm-dd',
   	defaultDate: '1981-01-01',
