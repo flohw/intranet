@@ -251,7 +251,7 @@ INSERT INTO `personnes` VALUES(14, 'BLANCO-LAINE', 'Gaëlle', '20 route de l\'IU
 
 INSERT INTO `personnes` VALUES(15, 'BONNAUD', 'Laurent', '20 place Doyen Gosse', '1981-01-22', '0101010101', '116', 'bonnaud.laurent@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'bonnaudl', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(16, 'BRUNET-MANQUAT', 'Francis', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'brunetmanquat.francis@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'brunetmf', '2012-01-24 20:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(16, 'BRUNET-MANQUAT', 'Francis', '20 place Doyen Gosse', '1981-01-22', '0101010101', '112', 'brunetmanquat.francis@iut2.fr', 20, 1, 10, '2f78d97e823488d90523aa898a4ab5ec31bf535a', 'brunetmf', '2012-01-24 20:00:00'); /*mdp : macintosh*/
 
 INSERT INTO `personnes` VALUES(17, 'CARAVEL ', 'Marie-Claude', '20 place Doyen Gosse', '1981-01-22', '0101010101', '106', 'caravel.marieclaude@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'caravel', '2012-01-24 20:00:00'); /*mdp : prof*/
 
@@ -267,7 +267,7 @@ INSERT INTO `personnes` VALUES(22, 'CORSET', 'Franck', '20 place Doyen Gosse', '
 
 INSERT INTO `personnes` VALUES(23, 'CULET', 'Annie', '20 place Doyen Gosse', '1981-01-22', '0101010101', '114', 'culet.annie@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'culeta', '2012-01-24 20:00:00'); /*mdp : prof*/
 
-INSERT INTO `personnes` VALUES(24, 'FONTENAS', 'Eric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'fontenas.eric@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'fontenae', '2012-01-24 20:00:00'); /*mdp : prof*/
+INSERT INTO `personnes` VALUES(24, 'FONTENAS', 'Eric', '20 place Doyen Gosse', '1981-01-22', '0101010101', '111', 'fontenas.eric@iut2.fr', 20, 1, 10, 'c1e646a25bb84936e1240b783743433c56e9a7b0', 'fontenae', '2012-01-24 20:00:00'); /*mdp : matrice*/
 
 INSERT INTO `personnes` VALUES(25, 'GATUMEL', 'Mathieu', '20 place Doyen Gosse', '1981-01-22', '0101010101', '117', 'gatumel.mathieu@iut2.fr', 20, 1, 10, 'd38810aae30df0fc35f59778cac5ed708a4533ac', 'gatumelm', '2012-01-24 20:00:00'); /*mdp : prof*/
 
