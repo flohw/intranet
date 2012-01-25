@@ -355,7 +355,7 @@ jQuery(function($){
 				if (data.Stage.document.length != 0)
 				{
 					$('#lastChild').hide();
-					$('#lastChild').before('<div class="clearfix"><label>Fichier</label><input type="text" value="'+data.Stage.document+'" readonly="readonly" /><span class="input-append" id="btnForm"><a href="#" id="editDoc" class="btn small info">Editer</a> - <a href="#" class="btn small danger" id="delDoc">Supprimer</a></span></div>');
+					$('#lastChild').before('<div class="clearfix"><label>Fichier</label><input type="text" value="'+data.Stage.document+'" readonly="readonly" /><span class="input-append" id="btnForm"><a href="#" id="editDoc" class="btn small info" style="color:white; font-weight:normal;"<>Editer</a> - <a href="#" class="btn small danger" id="delDoc" style="color:white; font-weight:normal;">Supprimer</a></span></div>');
 					$('#lastChild').after($('<div class="clearfix" id="supprimerCheck">').append(input));
 					$('#supprimerCheck').hide();
 					$('#editDoc').click(function(){

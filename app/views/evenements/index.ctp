@@ -27,13 +27,13 @@
 </div>
 
 <ul class="tabs">
+	<li <?php echo ($this->action == 'index' AND !isset($this->data)) ? 'class="active"' : null; ?>>
+		<a href="#liste">Tous mes évènements</a></li>
 <?php
 	if ($granted): ?>
 	<li  <?php echo ($this->action == 'index' AND isset($this->data)) ? 'class="active"' : null; ?>><a href="#simple">Nouvel évènement par Personne</a></li>
 	<li <?php echo ($this->action == 'groupe') ? 'class="active"' : null; ?>><a href="#groupe">Nouvel évènement par Groupe</a></li>
 <?php endif; ?>
-	<li <?php echo ($this->action == 'index' AND !isset($this->data)) ? 'class="active"' : null; ?>>
-		<a href="#liste">Tous mes évènements</a></li>
 </ul>
 
 <div class="pill-content">
