@@ -103,7 +103,7 @@
 		<?php
 			foreach ($docpost as $d):
 				$nom = $d['DocumentsStage']['nom'];
-				echo('<li>'.$this->Html->link(
+				echo('<li  class="mouseppp">'.$this->Html->link(
 					$html->image('/files/posters/'.$nom, array(														'alt' => $nom,													'width' => '200px',												'height' => '200px')), 
 							array(
 							'controller' => 'files',
@@ -113,3 +113,13 @@
 		?>
 		</ul>
 	</div>
+<?php echo $this->Html->scriptStart(array('inline' => false)); ?>
+jQuery (function($) {
+	    $('.mouseppp img').live('mouseenter', function() { 
+	            $(this).stop().fadeTo(350,0.5);
+	    }).live('mouseleave', function() { 
+	            $(this).stop().fadeTo(350,1);
+	    });
+});
+
+<?php echo $this->Html->scriptEnd(); ?>

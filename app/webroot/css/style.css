@@ -187,11 +187,12 @@ span.infoAff { margin-left: 50px; color: red; }
 li small.edit { font-size: x-small; }
 
 /* Notes */
+table.notes {width:700px; margin-left:150px;}
 table.notes th { text-align: center; }
 table.notes td.module, table.notes td.moyenne { text-align: center; vertical-align: middle; }
 table.notes td.moyenne { border-right: 1px solid #DDDDDD; }
 table.notes tr.notes td { text-align: center; }
-table.notes tr.notes td.intitule { text-align: left; }
+table.notes tr.notes td.intitule { text-align: center; }
 h3.moyenne { text-align: center; }
 
 /* Offres de stage */
@@ -230,6 +231,9 @@ form#pagesStatique .page-header input { margin-left: 10px; width: 600px; font-si
 form#pagesStatique textarea { margin-left: 0; }
 table thead th.action { width: 200px; }
 
+/*loupe*/
+.mouse a {background:url(../img/loupe500.png); }
+.mouseppp a {background:url(../img/loupe200.png); }
 /* A SUPPRIMER A LA FIN DU PROJET */
 .cake-debug { position: relative; top: 40px; }
 .marge { margin-left: 6em; }

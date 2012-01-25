@@ -14,7 +14,6 @@
 		</tr>
 		<tr class="yellow">
 			<th>Note</th>
-			<th>Coefficient</th>
 			<th>Intitulé</th>
 		</tr>
 	</thead>
@@ -27,10 +26,9 @@
 		<?php foreach ($n['Note'] as $notes): ?>
 		<tr class="notes">
 			<?php if (isset($notes['note']) AND isset($notes['coefficient'])): ?>
-				<td><?php echo $notes['note']; ?></td>
-				<td><?php echo $notes['coefficient']; ?></td>
+				<td><strong><?php echo $notes['note']; ?></strong> (<?php echo $notes['coefficient']; ?>)</td>
 			<?php else: ?>
-				<td>Pas de note</td><td>Pas de note</td>
+				<td>Pas de note</td>
 			<?php endif; ?>
 			<td class="intitule"><?php echo $notes['nom']; ?></td>
 		</tr>
