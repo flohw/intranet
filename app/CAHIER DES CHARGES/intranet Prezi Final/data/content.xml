@@ -1,0 +1,3132 @@
+<zuiprezi>
+  <version>4</version>
+  <zui-table>
+    <settings>
+      <autoplay>
+        <delay>4000</delay>
+      </autoplay>
+      <bounds x="-1309639.2674438478" y="-668648.2545166016" width="2619278.5348876957" height="1337296.5090332031"/>
+    </settings>
+    <object id="147" type="button" x="0" y="0" r="0" s="2119.328857421875">
+      <type>invisible</type>
+      <size>
+        <w>1204.9079754601223</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="7" type="button" x="-373286.95" y="344140.7" r="0" s="224.00982666015625" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>1569.1268456375838</w>
+        <h>609</h>
+      </size>
+    </object>
+    <object id="16" type="image" x="-307205.65" y="391903.3" r="0" s="129.22775268554688">
+      <source w="200" h="180">
+        9100-css-logo-medium-s-.png
+        <url>9100-css-logo-medium-s-.png</url>
+      </source>
+    </object>
+    <object id="24" type="image" x="-478433.55" y="354416.15" r="0" s="144.23658752441406">
+      <source w="800" h="600">
+        network.jpg
+        <url>network.jpg</url>
+      </source>
+    </object>
+    <object id="9" type="label" x="-393657.45" y="282519.15" r="0" s="703.6983032226563" class="head">
+      <textfield>
+        <x>-176.75</x>
+        <y>-15.4</y>
+        <text><![CDATA[Réalisation de l'intranet de l'IUT2]]></text>
+        <annotations>r0-35 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="17" type="image" x="-267795.7" y="391911.55" r="0" s="56.9467887878418">
+      <source w="600" h="388">
+        HTML-5-logo.jpg
+        <url>HTML-5-logo.jpg</url>
+      </source>
+    </object>
+    <object id="8" type="label" x="-1126685.05" y="-190029.05" r="0" s="56.317588806152344" class="head">
+      <textfield>
+        <x>-126.7</x>
+        <y>-42.35</y>
+        <text><![CDATA[Marie PAULIAlexandra MONNIERAurelie MISTRI]]></text>
+        <annotations>r0-44 { color: #322c69; }
+r0-12 { align: left; }
+r12-30 { align: left; }
+r30-44 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="10" type="label" x="-1143050.65" y="-190031.25" r="0" s="56.317588806152344" class="head">
+      <textfield>
+        <x>-149.9</x>
+        <y>-42.35</y>
+        <text><![CDATA[         Florian PARRENOPierre Julien MARTINEZ    Dorian LANDRISCINA]]></text>
+        <annotations>r0-70 { color: #322c69; }
+r0-25 { align: left; }
+r25-48 { align: left; }
+r48-70 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="18" type="image" x="-379663.7" y="391949.6" r="0" s="46.66506576538086">
+      <source w="523" h="384">
+        jquery_logo.png
+        <url>jquery_logo.png</url>
+      </source>
+    </object>
+    <object id="19" type="image" x="-229131.45" y="391909.85" r="0" s="110.21988677978516">
+      <source w="310" h="163">
+        php.jpg
+        <url>php.jpg</url>
+      </source>
+    </object>
+    <object id="20" type="image" x="-342388.85" y="391967.8" r="0" s="135.58802795410156">
+      <source w="180" h="180">
+        cake-logo.png
+        <url>cake-logo.png</url>
+      </source>
+    </object>
+    <object id="4" type="button" x="-849466.6" y="-95080.75" r="-4.8217826507378075e-18" s="139.4429168701172">
+      <type>invisible</type>
+      <size>
+        <w>574.1249999999997</w>
+        <h>380.7249999999999</h>
+      </size>
+    </object>
+    <object id="2" type="label" x="-311328.85" y="317533.9" r="9.42581310096908" s="524.8272996657226" class="head">
+      <textfield>
+        <x>-149</x>
+        <y>-15.4</y>
+        <text><![CDATA[Projet Tuteuré 2ème Année]]></text>
+        <annotations>r0-25 { color: #318bff; }
+r0-25 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="44" type="image" x="-811649.8" y="-91827.5" r="0" s="81.0325698852539">
+      <source w="945" h="361">
+        intra_ext.png
+        <url>intra_ext.png</url>
+      </source>
+    </object>
+    <object id="6" type="label" x="-849916.85" y="-116750.75" r="-5.962501528753918e-18" s="225.53065490722656" class="head">
+      <textfield>
+        <x>-56.55</x>
+        <y>-15.4</y>
+        <text><![CDATA[Sommaire]]></text>
+        <annotations>r0-8 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="11" type="label" x="-874183.2" y="-111474.8" r="0" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-64.5</x>
+        <y>-15.4</y>
+        <text><![CDATA[Introduction]]></text>
+        <annotations>r0-12 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="12" type="label" x="-863103.25" y="-91825.1" r="-5.962501026719118e-18" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-204.05</x>
+        <y>-15.75</y>
+        <text><![CDATA[Présentation du FrameWork CakePHP]]></text>
+        <annotations>r0-33 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="15" type="label" x="-863668.2" y="-101548.15" r="-5.962501026719118e-18" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-197.7</x>
+        <y>-15.75</y>
+        <text><![CDATA[Analyse de l'intranet de l'IUT2 actuel]]></text>
+        <annotations>r0-38 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="23" type="label" x="-869714.1" y="-96809.65" r="-5.962502227543195e-18" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-121.1</x>
+        <y>-15.75</y>
+        <text><![CDATA[Diagramme de Classes]]></text>
+        <annotations>r0-20 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="28" type="label" x="-869667.55" y="-87223.5" r="0" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-120.85</x>
+        <y>-15.75</y>
+        <text><![CDATA[Répartition des tâches]]></text>
+        <annotations>r0-22 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="34" type="label" x="-869500.15" y="-77990.05" r="-5.962502227543195e-18" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-123</x>
+        <y>-15.75</y>
+        <text><![CDATA[Difficultés rencontrées]]></text>
+        <annotations>r0-23 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="37" type="label" x="-874460.45" y="-73588.45" r="-5.962502227543195e-18" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-61</x>
+        <y>-15.75</y>
+        <text><![CDATA[Conclusion]]></text>
+        <annotations>r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="48" type="shape" x="-1074528.75" y="-162647.25" r="26.96169170503485" s="87.91800206680736" class="line1">
+      <geom type="arrow">
+        <sp>-454.0902342915916 0</sp>
+        <ep>454.0902342915916 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="49" type="button" x="-1150197.35" y="-203979" r="0" s="90.3162841796875" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>800.9</w>
+        <h>448.6722222222222</h>
+      </size>
+    </object>
+    <object id="154" type="image" x="-1148468.05" y="-202211.65" r="0" s="52.75878143310547">
+      <source w="940" h="250">
+        intranet.png
+        <url>intranet.png</url>
+      </source>
+    </object>
+    <object id="50" type="label" x="-1150237.65" y="-217847.55" r="0" s="172.31936645507813" class="head">
+      <textfield>
+        <x>-171.85</x>
+        <y>-15.45</y>
+        <text><![CDATA[Projet Tuteuré 2ème Année]]></text>
+        <annotations>r0-25 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="51" type="label" x="-1149961.6" y="-212785.45" r="0" s="102.52911376953125" class="strong">
+      <textfield>
+        <x>-149.75</x>
+        <y>-15.75</y>
+        <text><![CDATA[Département Informatique ]]></text>
+        <annotations>r0-26 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="52" type="label" x="-1149970.4" y="-210047.5" r="0" s="102.52911376953125" class="strong">
+      <textfield>
+        <x>-116.45</x>
+        <y>-15.75</y>
+        <text><![CDATA[de l'IUT2 de Grenoble]]></text>
+        <annotations>r0-21 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="54" type="label" x="-1072306.25" y="-168260.4" r="26.5202644814777" s="172.31927941265448" class="strong">
+      <textfield>
+        <x>-131.7</x>
+        <y>-15.75</y>
+        <text><![CDATA[Mais quel sujet choisir ?]]></text>
+        <annotations>r0-25 { color: #318bff; }
+r0-25 { align: left; }</annotations>
+        <w>263.4</w>
+        <h>31.45</h>
+      </textfield>
+    </object>
+    <object id="59" type="button" x="-989028.05" y="-118518.8" r="0" s="90.3162841796875" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>1034</w>
+        <h>571.9930555555552</h>
+      </size>
+    </object>
+    <object id="64" type="label" x="-990311.95" y="-144804.55" r="0" s="226.7000732421875" class="head">
+      <textfield>
+        <x>-74.3</x>
+        <y>-15.45</y>
+        <text><![CDATA[Introduction]]></text>
+        <annotations>r0-12 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="146" type="button" x="-1015789.9" y="-124851.85" r="0" s="27.71981430053711">
+      <type>invisible</type>
+      <size>
+        <w>842.2711009174312</w>
+        <h>600.05</h>
+      </size>
+    </object>
+    <object id="119" type="image" x="-1015866.65" y="-123310.5" r="-0.11268954734450574" s="19.927820602262354">
+      <source w="549" h="515">
+        jeu.gif
+        <url>jeu.gif</url>
+      </source>
+    </object>
+    <object id="65" type="label" x="-1015865.25" y="-130477.5" r="0" s="57.79578399658203" class="strong">
+      <textfield>
+        <x>-53.5</x>
+        <y>-15.75</y>
+        <text><![CDATA[Un jeu... ?]]></text>
+        <annotations>r0-11 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="3" type="label" x="-989762.55" y="-130436.1" r="0" s="51.56447982788086" class="strong">
+      <textfield>
+        <x>-56</x>
+        <y>-15.75</y>
+        <text><![CDATA[Un site... ?]]></text>
+        <annotations>r0-12 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="14" type="label" x="-965835.75" y="-130436.1" r="0" s="51.56447982788086" class="strong">
+      <textfield>
+        <x>-133.7</x>
+        <y>-15.75</y>
+        <text><![CDATA[Un logiciel de gestion... ?]]></text>
+        <annotations>r0-27 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="157" type="button" x="-987196.9" y="-77770.6" r="0" s="24.401826858520508">
+      <type>invisible</type>
+      <size>
+        <w>1936</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="45" type="label" x="-990310.55" y="-77558.8" r="0" s="142.7803497314453" class="strong">
+      <textfield>
+        <x>-77.9</x>
+        <y>-15.75</y>
+        <text><![CDATA[Un Intranet !!!]]></text>
+        <annotations>r0-15 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="47" type="label" x="-970540.4" y="-77019.5" r="-0.12125800872481887" s="142.7804558610877" class="head">
+      <textfield>
+        <x>-39.95</x>
+        <y>-15.45</y>
+        <text><![CDATA[Oui !!!]]></text>
+        <annotations>r0-7 { color: #f00; }
+r0-7 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="55" type="label" x="-318865.4" y="354465.65" r="0" s="1087.119140625" class="strong">
+      <textfield>
+        <x>-39.4</x>
+        <y>-15.75</y>
+        <text><![CDATA[Merci !]]></text>
+        <annotations>r0-7 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="57" type="shape" x="-990888.8" y="-75235.6" r="-0.12125802304788373" s="70.74652684303527" class="line4">
+      <geom type="line">
+        <sp>-179.07143162099686 0</sp>
+        <ep>179.07143162099686 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="69" type="button" x="-993211.1" y="-73043.45" r="-0.12125791165532313" s="0.0849481339260162">
+      <type>invisible</type>
+      <size>
+        <w>1627.1203931203931</w>
+        <h>883.3</h>
+      </size>
+    </object>
+    <object id="63" type="label" x="-959252.3" y="-35089.85" r="0" s="0.44566723704338074" class="strong">
+      <textfield>
+        <x>-90.45</x>
+        <y>-15.75</y>
+        <text><![CDATA[Mais comment ?]]></text>
+        <annotations>r0-14 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="66" type="label" x="-993187.95" y="-73069.6" r="-0.121257975262942" s="0.11819595491090035" class="head">
+      <textfield>
+        <x>-217.55</x>
+        <y>-15.45</y>
+        <text><![CDATA[Pour l'IUT2, sur le modèle actuel...]]></text>
+        <annotations>r0-36 { color: #5b28e0; }
+r0-36 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="68" type="shape" x="-959157.25" y="-35091.85" r="0" s="0.3119620680809021" class="line4">
+      <geom type="arrow">
+        <sp>-140.2870062545944 0</sp>
+        <ep>140.2870062545944 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="323" type="button" x="5852.2" y="-115311.45" r="0" s="97.66876220703125" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>884.3499999999999</w>
+        <h>654.7000000000002</h>
+      </size>
+    </object>
+    <object id="73" type="label" x="20353.5" y="-116090.1" r="0" s="111.27177429199219" class="head">
+      <textfield>
+        <x>-44.4</x>
+        <y>-15.45</y>
+        <text><![CDATA[Modèle]]></text>
+        <annotations>r0-6 { color: #ff8000; }
+r0-6 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="74" type="label" x="32350.3" y="-95629.1" r="0.0000023459001555177807" s="79.47981262207038" class="head">
+      <textfield>
+        <x>-70.8</x>
+        <y>-15.45</y>
+        <text><![CDATA[Controlleur]]></text>
+        <annotations>r0-11 { color: #ff8000; }
+r0-11 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="75" type="label" x="8895.35" y="-95629.1" r="0.0000023458996701984193" s="155.7804107666017" class="head">
+      <textfield>
+        <x>-26.35</x>
+        <y>-15.45</y>
+        <text><![CDATA[Vue]]></text>
+        <annotations>r0-3 { color: #ff8000; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="84" type="shape" x="24935.2" y="-105312.95" r="-118.40208985877749" s="94.44282712948426">
+      <geom type="arrow">
+        <sp>-50.46082659893059 7.529534348925782</sp>
+        <ep>50.46082659893059 7.529534348925782</ep>
+        <b>-15.059068697851565</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="85" type="shape" x="20312.05" y="-91581.2" r="-175.06579202193035" s="90.48169175232022">
+      <geom type="arrow">
+        <sp>-50.46082659893059 7.529534348925782</sp>
+        <ep>50.46082659893059 7.529534348925782</ep>
+        <b>-15.059068697851565</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="86" type="shape" x="29578.75" y="-107491.45" r="62.81992480610298" s="94.65792830573658">
+      <geom type="arrow">
+        <sp>-50.46082659893059 7.529534348925782</sp>
+        <ep>50.46082659893059 7.529534348925782</ep>
+        <b>-15.059068697851565</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="87" type="button" x="8894.8" y="-95932" r="49.05551199317657" s="103.19620477973297" class="circle">
+      <type>circle</type>
+      <size>
+        <w>119.2</w>
+        <h>119.2</h>
+      </size>
+    </object>
+    <object id="88" type="button" x="20289.05" y="-116087.1" r="49.05551936726522" s="103.19441556114351" class="circle">
+      <type>circle</type>
+      <size>
+        <w>119.2</w>
+        <h>119.2</h>
+      </size>
+    </object>
+    <object id="89" type="button" x="32352" y="-95630.55" r="49.05551199317657" s="103.19620477973297" class="circle">
+      <type>circle</type>
+      <size>
+        <w>119.2</w>
+        <h>119.2</h>
+      </size>
+    </object>
+    <object id="79" type="label" x="-874071.95" y="-82501.55" r="-5.962502227543195e-18" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-65.1</x>
+        <y>-15.75</y>
+        <text><![CDATA[Réalisations]]></text>
+        <annotations>r0-12 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="121" type="image" x="-966220.75" y="-123508.4" r="-0.11268951360444704" s="17.081452029290087">
+      <source w="800" h="626">
+        logiciel_gestion.png
+        <url>logiciel_gestion.png</url>
+      </source>
+    </object>
+    <object id="123" type="image" x="-989157" y="-123507.95" r="-0.11268959095991228" s="27.709524343531157">
+      <source w="370" h="370">
+        sites.jpg
+        <url>sites.jpg</url>
+      </source>
+    </object>
+    <object id="149" type="button" x="-1013672.2" y="-107044.8" r="0" s="31.14514923095703">
+      <type>invisible</type>
+      <size>
+        <w>921.2848432055748</w>
+        <h>554.6000000000001</h>
+      </size>
+    </object>
+    <object id="125" type="image" x="-1015805.1" y="-105002.4" r="-0.11268954734450574" s="19.927820602262354">
+      <source w="549" h="515">
+        jeu.gif
+        <url>jeu.gif</url>
+      </source>
+    </object>
+    <object id="126" type="shape" x="-1015889.35" y="-113911.05" r="90" s="16.27771759033203" class="line3">
+      <geom type="arrow">
+        <sp>-206.1920019664002 0</sp>
+        <ep>206.1920019664002 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="127" type="shape" x="-1015709.5" y="-104885.65" r="-44.991898152436555" s="63.80868117305883" class="line2">
+      <geom type="line">
+        <sp>124.89273647814753 0</sp>
+        <ep>-124.89273647814753 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="128" type="shape" x="-1015891.55" y="-105108.9" r="42.52868430220727" s="63.80869487258967" class="line2">
+      <geom type="line">
+        <sp>-125.45135511424338 0</sp>
+        <ep>125.45135511424338 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="130" type="label" x="-1015598.2" y="-104646.95" r="0" s="172.31936645507813" class="body">
+      <textfield>
+        <x>-29.5</x>
+        <y>-17.85</y>
+        <text><![CDATA[NON]]></text>
+        <annotations>r0-3 { color: #f00; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="131" type="image" x="-989206.65" y="-105072.55" r="-0.11268959095991228" s="27.709524343531157">
+      <source w="370" h="370">
+        sites.jpg
+        <url>sites.jpg</url>
+      </source>
+    </object>
+    <object id="132" type="shape" x="-989317.55" y="-114143.4" r="90" s="16.27771759033203" class="line3">
+      <geom type="arrow">
+        <sp>-206.1920019664002 0</sp>
+        <ep>206.1920019664002 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="133" type="shape" x="-989227.55" y="-105043.45" r="-44.98037148448403" s="63.808670792512935" class="line2">
+      <geom type="line">
+        <sp>112.32413048915068 0</sp>
+        <ep>-112.32413048915068 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="134" type="shape" x="-989242.65" y="-105271.25" r="42.52868430220727" s="63.80869487258967" class="line2">
+      <geom type="line">
+        <sp>-112.22533877856084 0</sp>
+        <ep>112.22533877856084 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="135" type="label" x="-989025.65" y="-104879.2" r="0" s="172.31936645507813" class="body">
+      <textfield>
+        <x>-29.5</x>
+        <y>-17.85</y>
+        <text><![CDATA[NON]]></text>
+        <annotations>r0-3 { color: #f00; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="136" type="label" x="-1015604.25" y="-114397.8" r="-0.11268951510285385" s="29.487634472055454" class="strong">
+      <textfield>
+        <x>-134.25</x>
+        <y>-15.75</y>
+        <text><![CDATA[Il y en a beaucoup trop...]]></text>
+        <annotations>r0-26 { color: #000; }
+r0-26 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="137" type="label" x="-989139.35" y="-114445.6" r="-0.11268951510285385" s="29.487634472055454" class="strong">
+      <textfield>
+        <x>-117.4</x>
+        <y>-15.75</y>
+        <text><![CDATA[Pas de grand intérêt...]]></text>
+        <annotations>r0-23 { color: #000; }
+r0-23 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="138" type="image" x="-966386.55" y="-104882.7" r="-0.11268951360444704" s="17.081452029290087">
+      <source w="800" h="626">
+        logiciel_gestion.png
+        <url>logiciel_gestion.png</url>
+      </source>
+    </object>
+    <object id="139" type="shape" x="-966383.9" y="-114080" r="90" s="16.27771759033203" class="line3">
+      <geom type="arrow">
+        <sp>-206.1920019664002 0</sp>
+        <ep>206.1920019664002 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="142" type="label" x="-965574.15" y="-101168.6" r="0" s="87.9179916381836" class="body">
+      <textfield>
+        <x>-65</x>
+        <y>-17.85</y>
+        <text><![CDATA[Peut-être...]]></text>
+        <annotations>r0-12 { color: #f00; }
+r0-12 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="150" type="button" x="-990315.45" y="-107039.7" r="0" s="31.14514923095703">
+      <type>invisible</type>
+      <size>
+        <w>921.2848432055748</w>
+        <h>554.6000000000001</h>
+      </size>
+    </object>
+    <object id="151" type="button" x="-967029.8" y="-107039.7" r="0" s="31.14514923095703">
+      <type>invisible</type>
+      <size>
+        <w>921.2848432055748</w>
+        <h>554.6000000000001</h>
+      </size>
+    </object>
+    <object id="152" type="button" x="-989953.75" y="-124850.75" r="0" s="27.71981430053711">
+      <type>invisible</type>
+      <size>
+        <w>842.2711009174312</w>
+        <h>600.05</h>
+      </size>
+    </object>
+    <object id="153" type="button" x="-965344.5" y="-124752.1" r="0" s="27.71981430053711">
+      <type>invisible</type>
+      <size>
+        <w>802.4427752293578</w>
+        <h>607.1875</h>
+      </size>
+    </object>
+    <object id="155" type="image" x="-1175698" y="-193254.75" r="0" s="56.9178352355957">
+      <source w="150" h="150">
+        _iut2.jpg
+        <url>_iut2.jpg</url>
+      </source>
+    </object>
+    <object id="156" type="shape" x="-989159.7" y="-90181.65" r="90" s="82.98713684082031" class="line1">
+      <geom type="arrow">
+        <sp>-82.31999046131583 0</sp>
+        <ep>82.31999046131583 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="1" type="button" x="-993213.05" y="-73037.1" r="-7.938677417449763e-10" s="0.15223626792430878" class="roundrect">
+      <type>roundrect</type>
+      <size>
+        <w>705.3000000000001</w>
+        <h>361.0499999999999</h>
+      </size>
+    </object>
+    <object id="270" type="image" x="-993238.4" y="-73047.3" r="-0.03732622766613139" s="0.03775157835499537">
+      <source w="1366" h="768">
+        accueilintraactuel.png
+        <url>accueilintraactuel.png</url>
+        <mask x="0" y="9" w="1366" h="759"/>
+      </source>
+    </object>
+    <object id="159" type="label" x="-993250.15" y="-73069.6" r="1.406423703459517e-9" s="0.17194603383541107" class="strong">
+      <textfield>
+        <x>-85.4</x>
+        <y>-15.75</y>
+        <text><![CDATA[Mais pour qui ?]]></text>
+        <annotations>r0-15 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="160" type="shape" x="-993224.9" y="-73069.6" r="1.4064235892172287e-9" s="0.043863799422979355" class="line4">
+      <geom type="arrow">
+        <sp>-213.00300203135492 0</sp>
+        <ep>213.00300203135492 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="35" type="button" x="-350598.95" y="-409302.25" r="62.35322303714343" s="285.5151019639134">
+      <type>invisible</type>
+      <size>
+        <w>837.8</w>
+        <h>595</h>
+      </size>
+    </object>
+    <object id="29" type="button" x="-347323.9" y="-413809.35" r="62.353236220767414" s="194.09536408467073" class="circle">
+      <type>circle</type>
+      <size>
+        <w>799.0999999999999</w>
+        <h>799.0999999999999</h>
+      </size>
+    </object>
+    <object id="30" type="label" x="-306535.65" y="-435173.95" r="62.35323439770564" s="637.4806815809378" class="head">
+      <textfield>
+        <x>-67.3</x>
+        <y>-15.45</y>
+        <text><![CDATA[L'existant ]]></text>
+        <annotations>r0-11 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="5" type="button" x="-359567" y="-444078.85" r="62.35323360456378" s="86.26032108529947">
+      <type>invisible</type>
+      <size>
+        <w>640.2777777777777</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="31" type="button" x="-359253.45" y="-444712.5" r="62.3532281294232" s="62.210416830976925" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="32" type="button" x="-328450.15" y="-385898.15" r="62.3532281294232" s="62.210416830976925" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="33" type="shape" x="-383247.55" y="-397204.9" r="62.35323439770564" s="318.7403407904689" class="line4">
+      <geom type="line">
+        <sp>-80.675 14.8375</sp>
+        <ep>80.675 14.8375</ep>
+        <b>-29.674999999999997</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="0" type="label" x="-344921.8" y="-452399.95" r="62.35323489253271" s="133.6115997389544" class="head">
+      <textfield>
+        <x>-80.8</x>
+        <y>-15.45</y>
+        <text><![CDATA[Les manques]]></text>
+        <annotations>r0-11 { color: #ff8000; }
+r0-11 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="53" type="button" x="-329110.4" y="-386637.5" r="62.35323360456378" s="86.26032108529947">
+      <type>invisible</type>
+      <size>
+        <w>640.2777777777777</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="60" type="label" x="-360171.45" y="-448642.65" r="62.35323946013691" s="58.81640816741495" class="strong">
+      <textfield>
+        <x>-202.45</x>
+        <y>-125.55</y>
+        <text><![CDATA[Messagerie intégréeInterface attractive et intuitiveNotificationsAnnuaire interneAjout de documents par les élèves]]></text>
+        <annotations>r0-20 { bullet: true; }
+r0-20 { align: left; }
+r21-55 { bullet: true; }
+r21-55 { align: left; }
+r56-70 { bullet: true; }
+r56-70 { align: left; }
+r71-88 { bullet: true; }
+r71-88 { align: left; }
+r89-122 { bullet: true; }
+r89-122 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="67" type="label" x="-314676.4" y="-393478.5" r="62.35323489253271" s="133.6115997389544" class="head">
+      <textfield>
+        <x>-90.65</x>
+        <y>-15.45</y>
+        <text><![CDATA[Les problèmes]]></text>
+        <annotations>r0-13 { color: #ff8000; }
+r0-13 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="70" type="label" x="-330333.4" y="-387054.45" r="62.35323946013691" s="58.81640816741495" class="strong">
+      <textfield>
+        <x>-212.7</x>
+        <y>-166.7</y>
+        <text><![CDATA[Navigation parfois difficileMauvaise présentationCouleurs et design laissant à désirerBeaucoup de liens vers l'extérieurBeaucoup de fenêtres intempestivesDes fonctionnalités inutilisées]]></text>
+        <annotations>r0-29 { bullet: true; }
+r0-29 { align: left; }
+r30-52 { bullet: true; }
+r30-52 { align: left; }
+r53-91 { bullet: true; }
+r53-91 { align: left; }
+r92-127 { bullet: true; }
+r92-127 { align: left; }
+r128-163 { bullet: true; }
+r128-163 { align: left; }
+r164-196 { bullet: true; }
+r164-196 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="264" type="button" x="-839322.3" y="-456938.75" r="0.07521037675086627" s="321.20706384514165">
+      <type>invisible</type>
+      <size>
+        <w>1183.8000000000002</w>
+        <h>545.75</h>
+      </size>
+    </object>
+    <object id="9_22277386" type="shape" x="-846204.55" y="-500842.5" r="-75.52480252694292" s="96.3449164010727">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="10_22277386" type="shape" x="-836320.9" y="-512248.65" r="-48.00785368440525" s="97.2747303899495">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="11_22277386" type="shape" x="-829525.1" y="-499330.6" r="-23.722514988467868" s="101.2742022008748">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="12_22277386" type="shape" x="-821779.6" y="-512791.35" r="21.56966697167853" s="96.11091401759548">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="209" type="shape" x="-982119.9" y="-437592.85" r="-101.65732797340571" s="96.34491008506605">
+      <geom type="line">
+        <sp>-76.57721459241573 38.1125</sp>
+        <ep>76.57721459241574 38.1125</ep>
+        <b>-76.225</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="210" type="shape" x="-978659" y="-452403.75" r="-76.11421355840486" s="97.2747442384529">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="212" type="shape" x="-966088.3" y="-459733" r="-6.5366723866831355" s="96.11096646234364">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="329" type="button" x="-791998.6" y="-414001.3" r="0.063421626511565" s="95.14565765447789">
+      <type>invisible</type>
+      <size>
+        <w>1181.8181818181818</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="213" type="shape" x="-830389.1" y="-432734.9" r="-51.72709126432261" s="96.34493145442485">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="214" type="shape" x="-816743.4" y="-439182.9" r="-24.21018300508464" s="97.27474343155593">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="215" type="shape" x="-818422.1" y="-424624.55" r="0.0752063488511196" s="101.27420375950163">
+      <geom type="line">
+        <sp>-131.79709684510445 0</sp>
+        <ep>131.79709684510448 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="216" type="shape" x="-804138.1" y="-436201.05" r="23.40318046812281" s="96.110955426683">
+      <geom type="line">
+        <sp>84.15169715704967 21.55000000000002</sp>
+        <ep>-84.15169715704967 21.549999999999976</ep>
+        <b>43.099999999999994</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="221" type="shape" x="-800532.8" y="-425604.3" r="-51.72709468074217" s="96.36666634538223">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="222" type="shape" x="-786883.5" y="-432053.95" r="-24.210189629627923" s="97.29669022778442">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="223" type="shape" x="-798400.6" y="-417505.3" r="0.0752054093862127" s="101.29706144302803">
+      <geom type="line">
+        <sp>-35.422096845104456 0</sp>
+        <ep>35.422096845104456 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="224" type="shape" x="-773356.85" y="-426681.6" r="45.367351805189415" s="96.13264968860179">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="225" type="shape" x="-977195.7" y="-416350.25" r="-103.63113305489965" s="97.67394104762033">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="226" type="shape" x="-973315.65" y="-431335.05" r="-76.11421116929321" s="98.61656315503427">
+      <geom type="line">
+        <sp>-81.1327241127376 35.1</sp>
+        <ep>81.1327241127376 35.1</ep>
+        <b>-70.2</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="227" type="shape" x="-961132.05" y="-423041.95" r="-51.82881706078662" s="102.67123292540579">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="228" type="shape" x="-960635" y="-438778.45" r="-6.536673206005951" s="97.43679289515497">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="233" type="shape" x="-964055.2" y="-447410.15" r="-51.84789059960405" s="101.27421264885352" class="line3">
+      <geom type="line">
+        <sp>-118.71362290613644 0</sp>
+        <ep>118.71362290613644 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="234" type="shape" x="-933144.35" y="-410728.4" r="-51.72709126432261" s="96.34493145442485">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="235" type="shape" x="-919498.5" y="-417176.4" r="-24.21018300508464" s="97.27474343155593">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="236" type="shape" x="-918493.05" y="-402614.35" r="0.0752063488511196" s="101.27420375950163">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="237" type="shape" x="-905974.45" y="-411805.7" r="45.36737012877364" s="96.11102709644311">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="242" type="shape" x="-720234.65" y="-459484.6" r="19.854524702873725" s="96.34485176561846">
+      <geom type="line">
+        <sp>-69.37448472924589 20.437500000000004</sp>
+        <ep>69.37448472924589 20.437500000000004</ep>
+        <b>-40.87500000000001</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="243" type="shape" x="-708064.55" y="-453269.05" r="20.81811750127114" s="97.27470598675363">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="244" type="shape" x="-717033.85" y="-441789.15" r="45.49144936593877" s="101.27416765356404">
+      <geom type="line">
+        <sp>-151.37556714438327 0</sp>
+        <ep>151.37556714438327 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="245" type="shape" x="-702305.85" y="-439906.05" r="90.39565428790515" s="96.1109798962327">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="250" type="shape" x="-805915.3" y="-408561.45" r="-51.72709126432261" s="96.34493145442485">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="251" type="shape" x="-792269.55" y="-415009.45" r="-24.21018300508464" s="97.27474343155593">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="252" type="shape" x="-793948.55" y="-400451.05" r="0.0752063488511196" s="101.27420375950163">
+      <geom type="line">
+        <sp>-131.79709684510445 0</sp>
+        <ep>131.79709684510448 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="253" type="shape" x="-779664.15" y="-412027.5" r="23.40318046812281" s="96.110955426683">
+      <geom type="line">
+        <sp>84.15169715704967 21.55000000000002</sp>
+        <ep>-84.15169715704967 21.549999999999976</ep>
+        <b>43.099999999999994</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="254" type="shape" x="-776058.65" y="-401431.1" r="-51.72709468074217" s="96.36666634538223">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="255" type="shape" x="-762410.05" y="-407880.5" r="-24.210189629627923" s="97.29669022778442">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="256" type="shape" x="-761404.1" y="-393315.35" r="0.0752054093862127" s="101.29706144302803">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="257" type="shape" x="-748882.65" y="-402508.55" r="45.367351805189415" s="96.13264968860179">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="258" type="shape" x="-778121" y="-417601" r="0.0752054093862127" s="101.29706144302803">
+      <geom type="line">
+        <sp>-77.13604842255222 0</sp>
+        <ep>77.13604842255222 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="259" type="shape" x="-964309.6" y="-447996.9" r="-51.72710368347185" s="840.7089821878167">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="260" type="shape" x="-845226.4" y="-506875.95" r="-24.21017619090004" s="848.8226938772902">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="261" type="shape" x="-836462.15" y="-377195.4" r="0.07520222285116496" s="883.7221357169535">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="262" type="shape" x="-727224.85" y="-457397.55" r="45.36737394459618" s="838.6676771717282">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="263" type="label" x="-830784.5" y="-464258.4" r="0.07520951809534464" s="583.4559470006054" class="head">
+      <textfield>
+        <x>-86.3</x>
+        <y>-15.45</y>
+        <text><![CDATA[Brainstorming]]></text>
+        <annotations>r0-13 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="265" type="shape" x="-851173.2" y="-245648.8" r="-90.00289098122879" s="224.7506716728177" class="line3">
+      <geom type="arrow">
+        <sp>-531.6847693432665 0</sp>
+        <ep>531.6847693432665 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="276" type="shape" x="-891035.45" y="-425790.5" r="-51.72709126432261" s="96.34493145442485">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="277" type="shape" x="-877389.45" y="-432238.65" r="-24.21018300508464" s="97.27474343155593">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="278" type="shape" x="-876384.2" y="-417676.7" r="0.07520575029912496" s="101.27420375811292">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="279" type="shape" x="-863865.65" y="-426867.8" r="45.36737012877364" s="96.11102709644311">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="280" type="shape" x="-751078.25" y="-475313.5" r="-7.592767407500298" s="96.34487491136306">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="281" type="shape" x="-736794.45" y="-470439.05" r="19.924159391785466" s="97.27473472331847">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="282" type="shape" x="-746212.65" y="-459287.55" r="44.20953271755956" s="101.27420521976451">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="283" type="shape" x="-730828.1" y="-457167.05" r="89.50169047403327" s="96.1109575997162">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="284" type="label" x="-720588.5" y="-455899.45" r="45.42106283834323" s="107.13442564822066" class="strong">
+      <textfield>
+        <x>-28</x>
+        <y>-15.75</y>
+        <text><![CDATA[PHP ]]></text>
+        <annotations>r0-3 { color: #333; }
+ r0-4 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="285" type="label" x="-718475.15" y="-449245.95" r="45.42106283834323" s="107.13442564822066" class="strong">
+      <textfield>
+        <x>-30.35</x>
+        <y>-15.75</y>
+        <text><![CDATA[C,C++]]></text>
+        <annotations>r0-5 { color: #333; }
+r0-5 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="286" type="label" x="-709441.4" y="-448523.65" r="45.42106283834323" s="107.13442564822066" class="strong">
+      <textfield>
+        <x>-23.65</x>
+        <y>-15.75</y>
+        <text><![CDATA[Java]]></text>
+        <annotations>r0-4 { color: #333; }
+r0-4 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="287" type="label" x="-711151.7" y="-441813.85" r="45.42106283834323" s="107.13442564822066" class="strong">
+      <textfield>
+        <x>-21.7</x>
+        <y>-15.75</y>
+        <text><![CDATA[Ada]]></text>
+        <annotations>r0-3 { color: #333; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="288" type="label" x="-738059.8" y="-469125.6" r="45.42106283834323" s="107.13442564822066" class="strong">
+      <textfield>
+        <x>-17.7</x>
+        <y>-15.75</y>
+        <text><![CDATA[Sql]]></text>
+        <annotations>r0-3 { color: #333; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="289" type="label" x="-730392.95" y="-457602.9" r="45.42106283834323" s="107.13442564822066" class="strong">
+      <textfield>
+        <x>-33.95</x>
+        <y>-15.75</y>
+        <text><![CDATA[HTML]]></text>
+        <annotations>r0-4 { color: #333; }
+r0-4 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="290" type="label" x="-751664.6" y="-473534.4" r="45.42106283834323" s="107.13442564822066" class="strong">
+      <textfield>
+        <x>-20.8</x>
+        <y>-15.75</y>
+        <text><![CDATA[CSS]]></text>
+        <annotations>r0-3 { color: #333; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="291" type="label" x="-741498.75" y="-461647.45" r="45.42106283834323" s="107.13442564822066" class="strong">
+      <textfield>
+        <x>-54.5</x>
+        <y>-15.75</y>
+        <text><![CDATA[JavaScript]]></text>
+        <annotations>r0-10 { color: #333; }
+r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="303" type="button" x="-724626.15" y="-440186.45" r="45.42079456689673" s="0.21069451152182153">
+      <type>invisible</type>
+      <size>
+        <w>1064.8870860927154</w>
+        <h>528.2499999999998</h>
+      </size>
+    </object>
+    <object id="293" type="shape" x="-724674.5" y="-440226.65" r="-6.417607015037647" s="0.4423645057271924">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="294" type="shape" x="-724609.3" y="-440203.1" r="21.099306937811274" s="0.44663357749599597">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="295" type="shape" x="-724653.6" y="-440152.55" r="45.38469130825832" s="0.4649971465193694">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="296" type="shape" x="-724583.35" y="-440141.5" r="90.67683723367585" s="0.4412901743496321">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="297" type="label" x="-724616.3" y="-440192.3" r="45.42106684438007" s="0.4357496365506117" class="strong">
+      <textfield>
+        <x>-24.3</x>
+        <y>-15.75</y>
+        <text><![CDATA[PHP]]></text>
+        <annotations>r0-3 { color: #333; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="298" type="label" x="-724667.55" y="-440218.05" r="45.43468238795268" s="0.43503401925652696" class="strong">
+      <textfield>
+        <x>-33.95</x>
+        <y>-15.75</y>
+        <text><![CDATA[HTML]]></text>
+        <annotations>r0-4 { color: #333; }
+r0-4 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="299" type="label" x="-724601.3" y="-440152.2" r="45.43467786198642" s="0.4328941197684568" class="strong">
+      <textfield>
+        <x>-17.7</x>
+        <y>-15.75</y>
+        <text><![CDATA[Sql]]></text>
+        <annotations>r0-3 { color: #333; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="300" type="label" x="-724664.25" y="-440185.35" r="45.43464652935863" s="0.4343198604409154" class="strong">
+      <textfield>
+        <x>-20.8</x>
+        <y>-15.75</y>
+        <text><![CDATA[CSS]]></text>
+        <annotations>r0-3 { color: #333; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="302" type="image" x="-724633.15" y="-440179.55" r="45.42104440399818" s="0.1211703719485498">
+      <source w="225" h="225">
+        idee-ampoule.jpeg
+        <url>idee-ampoule.jpeg</url>
+      </source>
+    </object>
+    <object id="301" type="label" x="-724622.15" y="-440142.6" r="45.43472104607129" s="0.4336065930785769" class="strong">
+      <textfield>
+        <x>-54.5</x>
+        <y>-15.75</y>
+        <text><![CDATA[JavaScript]]></text>
+        <annotations>r0-10 { color: #333; }
+r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="304" type="label" x="-873111.1" y="-106473.1" r="0" s="78.93572235107422" class="strong">
+      <textfield>
+        <x>-78.1</x>
+        <y>-15.75</y>
+        <text><![CDATA[Brainstorming]]></text>
+        <annotations>r0-13 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="309" type="label" x="-731303.9" y="-480345.85" r="45.42105308749347" s="201.49138340439418" class="head">
+      <textfield>
+        <x>-122.55</x>
+        <y>-15.45</y>
+        <text><![CDATA[Quels langages... ?]]></text>
+        <annotations>r0-19 { color: #5b28e0; }
+r0-19 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="310" type="label" x="-813396.25" y="-395948.35" r="0.059926629370582955" s="201.48102145918426" class="head">
+      <textfield>
+        <x>-113.4</x>
+        <y>-15.45</y>
+        <text><![CDATA[Les nouveautés...]]></text>
+        <annotations>r0-17 { color: #5b28e0; }
+r0-17 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="311" type="label" x="-940105.85" y="-463275.95" r="-51.835362420143596" s="201.15853593638442" class="head">
+      <textfield>
+        <x>-126.2</x>
+        <y>-15.45</y>
+        <text><![CDATA[Quelle technique...?]]></text>
+        <annotations>r0-20 { color: #5b28e0; }
+r0-20 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="312" type="label" x="-972393.5" y="-451720.55" r="-51.81360585359359" s="132.51414158866973" class="strong">
+      <textfield>
+        <x>-30.5</x>
+        <y>-15.75</y>
+        <text><![CDATA[Objet]]></text>
+        <annotations>r0-5 { color: #333; }
+r0-5 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="313" type="label" x="-964074.45" y="-431326.2" r="-51.81360585359359" s="132.51414158866973" class="strong">
+      <textfield>
+        <x>-59.5</x>
+        <y>-15.75</y>
+        <text><![CDATA[Procédural]]></text>
+        <annotations>r0-10 { color: #333; }
+r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="314" type="label" x="-976998.8" y="-439911.6" r="-51.81360585359359" s="132.51414158866973" class="strong">
+      <textfield>
+        <x>-27.6</x>
+        <y>-15.75</y>
+        <text><![CDATA[MVC]]></text>
+        <annotations>r0-3 { color: #333; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="315" type="button" x="-952516.3" y="-457427.75" r="-51.57649568014202" s="0.07678369603500611">
+      <type>invisible</type>
+      <size>
+        <w>1064.8870860927154</w>
+        <h>528.2499999999998</h>
+      </size>
+    </object>
+    <object id="316" type="shape" x="-952528.4" y="-457408.3" r="-103.41490230469303" s="0.16121153075698932">
+      <geom type="line">
+        <sp>-75.26356050324831 40.225</sp>
+        <ep>75.26356050324833 40.225</ep>
+        <b>-80.45</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="317" type="shape" x="-952522.95" y="-457432.95" r="-75.89799720939963" s="0.16276745788186334">
+      <geom type="line">
+        <sp>-81.1327241127376 35.75</sp>
+        <ep>81.1327241127376 35.75</ep>
+        <b>-71.5</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="318" type="shape" x="-952502.85" y="-457419.2" r="-51.61260351677987" s="0.16945960569011878">
+      <geom type="line">
+        <sp>-159.0441936902089 0</sp>
+        <ep>159.04419369020894 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="319" type="shape" x="-952501.7" y="-457445.2" r="-6.320455496277022" s="0.16082003089636882">
+      <geom type="line">
+        <sp>94.38757169501739 40.800000000000026</sp>
+        <ep>-94.38757169501741 40.799999999999976</ep>
+        <b>81.6</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="321" type="label" x="-952522.9" y="-457409.55" r="-51.56261752648065" s="0.1585400877226502" class="strong">
+      <textfield>
+        <x>-30.5</x>
+        <y>-15.75</y>
+        <text><![CDATA[Objet]]></text>
+        <annotations>r0-5 { color: #333; }
+r0-5 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="324" type="image" x="-952501.45" y="-457434.9" r="-51.57624185143223" s="0.044158291719991166">
+      <source w="225" h="225">
+        idee-ampoule.jpeg
+        <url>idee-ampoule.jpeg</url>
+      </source>
+    </object>
+    <object id="327" type="label" x="-952515.2" y="-457428.85" r="-51.56261752648065" s="0.1585400877226502" class="strong">
+      <textfield>
+        <x>-27.6</x>
+        <y>-15.75</y>
+        <text><![CDATA[MVC]]></text>
+        <annotations>r0-3 { color: #333; }
+r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="328" type="label" x="-821958.1" y="-430561.6" r="0.05906266197753273" s="107.12887161626614" class="strong">
+      <textfield>
+        <x>-89.55</x>
+        <y>-15.75</y>
+        <text><![CDATA[Une messagerie ]]></text>
+        <annotations>r0-15 { color: #333; }
+r0-15 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="330" type="label" x="-809441.85" y="-434856.15" r="0.05906266197753273" s="107.12887161626614" class="strong">
+      <textfield>
+        <x>-68.3</x>
+        <y>-15.75</y>
+        <text><![CDATA[Un annuaire]]></text>
+        <annotations>r0-11 { color: #333; }
+r0-11 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="331" type="label" x="-793454.75" y="-422977.2" r="0.05906266197753273" s="107.12887161626614" class="strong">
+      <textfield>
+        <x>-91.55</x>
+        <y>-15.75</y>
+        <text><![CDATA[Des notifications]]></text>
+        <annotations>r0-17 { color: #333; }
+r0-17 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="332" type="label" x="-777616.45" y="-426968.85" r="0.05906266197753273" s="107.12887161626614" class="strong">
+      <textfield>
+        <x>-44.25</x>
+        <y>-15.75</y>
+        <text><![CDATA[Un plan]]></text>
+        <annotations>r0-7 { color: #333; }
+r0-7 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="333" type="label" x="-800502.3" y="-404211.6" r="0.05906266197753273" s="107.12887161626614" class="strong">
+      <textfield>
+        <x>-73.2</x>
+        <y>-15.75</y>
+        <text><![CDATA[De la couleur]]></text>
+        <annotations>r0-13 { color: #333; }
+r0-13 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="334" type="label" x="-786627.05" y="-409762.35" r="0.05906266197753273" s="107.12887161626614" class="strong">
+      <textfield>
+        <x>-89.35</x>
+        <y>-15.75</y>
+        <text><![CDATA[De l'accessibilité]]></text>
+        <annotations>r0-18 { color: #333; }
+r0-18 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="335" type="label" x="-763711.6" y="-397268.45" r="-0.019716020770999414" s="107.12155785587503" class="strong">
+      <textfield>
+        <x>-139.75</x>
+        <y>-15.75</y>
+        <text><![CDATA[L'upload par Drag & Drop]]></text>
+        <annotations>r0-24 { color: #333; }
+r0-24 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="336" type="label" x="-756761.25" y="-404262.65" r="0.05906266197753273" s="107.12887161626614" class="strong">
+      <textfield>
+        <x>-84.75</x>
+        <y>-15.75</y>
+        <text><![CDATA[Agenda partagé]]></text>
+        <annotations>r0-14 { color: #333; }
+r0-14 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="341" type="button" x="4953.4" y="-436822.65" r="62.76761481877747" s="259.0163005474449">
+      <type>invisible</type>
+      <size>
+        <w>930.95</w>
+        <h>565.05</h>
+      </size>
+    </object>
+    <object id="339" type="button" x="7050.5" y="-431578.85" r="62.7676156092665" s="89.17160631762623" class="roundrect">
+      <type>roundrect</type>
+      <size>
+        <w>2119.0996240601503</w>
+        <h>1295.95</h>
+      </size>
+    </object>
+    <object id="338" type="image" x="7063.35" y="-431592.95" r="62.76761448472738" s="160.04640381334283">
+      <source w="1072" h="651">
+        Diagrammedeclasse.png
+        <url>Diagrammedeclasse.png</url>
+      </source>
+    </object>
+    <object id="202" type="button" x="377584.5" y="-138127.9" r="0" s="229.33409118652344">
+      <type>invisible</type>
+      <size>
+        <w>1056.85</w>
+        <h>598.45</h>
+      </size>
+    </object>
+    <object id="201" type="image" x="378031.7" y="-138294.05" r="0" s="179.43601989746094">
+      <source w="1366" h="768">
+        TEST_repart.png
+        <url>TEST_repart.png</url>
+      </source>
+    </object>
+    <object id="340" type="label" x="65528.3" y="-461595.65" r="62.76761262842947" s="479.37679297545435" class="head">
+      <textfield>
+        <x>-137.65</x>
+        <y>-15.45</y>
+        <text><![CDATA[Diagramme de classes]]></text>
+        <annotations>r0-20 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="342" type="shape" x="-187382.7" y="-461816.75" r="-1.2479351789346949" s="348.99506971579245" class="line1">
+      <geom type="arrow">
+        <sp>-236.61561163547333 0</sp>
+        <ep>236.61561163547333 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="346" type="label" x="-53197.5" y="-400904.7" r="62.90289974978292" s="345.1756944692094" class="strong">
+      <textfield>
+        <x>-199.9</x>
+        <y>-15.75</y>
+        <text><![CDATA[Après de nombreuses modifications...]]></text>
+        <annotations>r0-36 { color: #965432; }
+r0-36 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="348" type="button" x="-46112.5" y="-123950.4" r="0" s="159.80601501464844">
+      <type>invisible</type>
+      <size>
+        <w>1310.8088068181803</w>
+        <h>753.1365869641194</h>
+      </size>
+    </object>
+    <object id="349" type="image" x="-116380.9" y="-164645.4" r="0" s="144.06512451171875">
+      <source w="180" h="180">
+        cakePHP.png
+        <url>cakePHP.png</url>
+      </source>
+    </object>
+    <object id="350" type="label" x="-46719.95" y="-164642.65" r="0" s="471.3440856933594" class="head">
+      <textfield>
+        <x>-89.7</x>
+        <y>-15.45</y>
+        <text><![CDATA[Le Framework]]></text>
+        <annotations>r0-12 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="351" type="image" x="27474.65" y="-164645.4" r="0" s="144.06512451171875">
+      <source w="180" h="180">
+        cakePHP.png
+        <url>cakePHP.png</url>
+      </source>
+    </object>
+    <object id="352" type="shape" x="20689.6" y="-96201.35" r="8.044371456851946" s="94.44282212974088">
+      <geom type="arrow">
+        <sp>-50.46082659893059 7.529534348925782</sp>
+        <ep>50.46082659893059 7.529534348925782</ep>
+        <b>-15.059068697851565</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="353" type="shape" x="18456.95" y="-129339.25" r="-78.74947148781354" s="94.44281473896667">
+      <geom type="arrow">
+        <sp>-50.46082659893059 7.529534348925782</sp>
+        <ep>50.46082659893059 7.529534348925782</ep>
+        <b>-15.059068697851565</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="354" type="shape" x="23421" y="-128053.45" r="102.47254335031111" s="94.65792904029111">
+      <geom type="arrow">
+        <sp>-50.46082659893059 7.529534348925782</sp>
+        <ep>50.46082659893059 7.529534348925782</ep>
+        <b>-15.059068697851565</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="359" type="shape" x="143295.75" y="-126368.15" r="0" s="240.4816436767578" class="line1">
+      <geom type="arrow">
+        <sp>-338.24999490952746 0</sp>
+        <ep>338.24999490952746 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="26" type="image" x="-882044.05" y="-101550.7" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="27" type="image" x="-882043.25" y="-106477.6" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="36" type="image" x="-882044.05" y="-111451.25" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="38" type="image" x="-882043.25" y="-96813.3" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="39" type="image" x="-882041.95" y="-91828.6" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="40" type="image" x="-882042.45" y="-87226.65" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="41" type="image" x="-882048.35" y="-82504.5" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="42" type="image" x="-882041.6" y="-77994.45" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="43" type="image" x="-882041.9" y="-73590.7" r="-4.821782715605868e-18" s="32.11259078979492">
+      <source w="88" h="81">
+        puce2.png
+        <url>puce2.png</url>
+      </source>
+    </object>
+    <object id="46" type="shape" x="-564115.75" y="-406677.65" r="-7.575915378227946" s="348.92871678705444" class="line3">
+      <geom type="arrow">
+        <sp>-277.19311484362476 0</sp>
+        <ep>277.19311484362476 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="56" type="shape" x="-54718.2" y="-255801.15" r="-60.00304671082526" s="545.0315225256174" class="line3">
+      <geom type="arrow">
+        <sp>135.18242095712094 22.100000000000033</sp>
+        <ep>-135.18242095712094 22.09999999999997</ep>
+        <b>44.2</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="58" type="label" x="5340.55" y="-138814" r="0" s="143.68692016601563" class="head">
+      <textfield>
+        <x>-163.1</x>
+        <y>-15.45</y>
+        <text><![CDATA[Modèle - Vue - Controleur]]></text>
+        <annotations>r0-25 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="61" type="label" x="-9801.35" y="-112640" r="0" s="71.8434066772461" class="strong">
+      <textfield>
+        <x>-205.45</x>
+        <y>-84.35</y>
+        <text><![CDATA[Mais qu'est-ce que c'est ce "èmvécé" ?Et quel en est l'intérêt ?]]></text>
+        <annotations>r0-39 { align: left; }
+r41-68 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="71" type="label" x="378087.25" y="-194230.1" r="0" s="578.8916625976563" class="head">
+      <textfield>
+        <x>-154.65</x>
+        <y>-15.45</y>
+        <text><![CDATA[La répartition des tâches]]></text>
+        <annotations>r0-25 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="76" type="label" x="140425.65" y="-134222.55" r="0" s="416.7052307128906" class="strong">
+      <textfield>
+        <x>-107.65</x>
+        <y>-15.75</y>
+        <text><![CDATA[Mais, qui fait quoi ?]]></text>
+        <annotations>r0-21 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="78" type="shape" x="626312" y="-127136.55" r="0.000831972620790488" s="240.48164370211055" class="line1">
+      <geom type="arrow">
+        <sp>-374.90528723545066 0</sp>
+        <ep>374.90528723545066 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="80" type="label" x="624679.35" y="-135564" r="0" s="416.7052307128906" class="strong">
+      <textfield>
+        <x>-90.95</x>
+        <y>-15.75</y>
+        <text><![CDATA[Allez, au travail !]]></text>
+        <annotations>r0-19 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="81" type="button" x="925428.5" y="-117259.75" r="0" s="276.0628356933594">
+      <type>invisible</type>
+      <size>
+        <w>1280.7592105263157</w>
+        <h>660.325</h>
+      </size>
+    </object>
+    <object id="82" type="label" x="920320.3" y="-187068.35" r="0" s="960.7377319335938" class="head">
+      <textfield>
+        <x>-101.5</x>
+        <y>-15.45</y>
+        <text><![CDATA[Les Réalisations]]></text>
+        <annotations>r0-16 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="83" type="button" x="833182.45" y="-93363.2" r="0" s="157.6463623046875" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>962.2072580645162</w>
+        <h>775.6875</h>
+      </size>
+    </object>
+    <object id="90" type="button" x="1004055.7" y="-93066.3" r="0" s="157.6463623046875" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>1172.6375000000007</w>
+        <h>773.20625</h>
+      </size>
+    </object>
+    <object id="92" type="label" x="832507.5" y="-149652.75" r="0" s="416.7052307128906" class="head">
+      <textfield>
+        <x>-114.6</x>
+        <y>-15.45</y>
+        <text><![CDATA[Plusieurs ajouts...]]></text>
+        <annotations>r0-19 { color: #322c69; }
+r0-19 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="93" type="label" x="1003929.6" y="-149653.05" r="0" s="416.7052307128906" class="head">
+      <textfield>
+        <x>-158.1</x>
+        <y>-15.45</y>
+        <text><![CDATA[Quelques modifications...]]></text>
+        <annotations>r0-25 { color: #322c69; }
+r0-25 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="94" type="label" x="816496.65" y="-110868.6" r="0" s="245.0861358642578" class="strong">
+      <textfield>
+        <x>-77.65</x>
+        <y>-207.9</y>
+        <text><![CDATA[Plan interactifMessagerieAnnuaireÉvènementsGroupesNotifications]]></text>
+        <annotations>r4-20 { align: left; }
+r21-32 { align: left; }
+r33-42 { align: left; }
+r43-54 { align: left; }
+r55-63 { align: left; }
+r64-77 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="95" type="label" x="976303.15" y="-88051.85" r="0" s="245.0861358642578" class="strong">
+      <textfield>
+        <x>-121.2</x>
+        <y>-207.9</y>
+        <text><![CDATA[AccueilAffichage des postersOffres de stagesAffichage des projetsAbsencesAffichage des modulesUpload de documentsNotes]]></text>
+        <annotations>r0-8 { align: left; }
+r9-31 { align: left; }
+r32-49 { align: left; }
+r50-72 { align: left; }
+r73-82 { align: left; }
+r83-105 { align: left; }
+r106-126 { align: left; }
+r127-132 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="98" type="button" x="881684.45" y="-108152" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="96" type="image" x="881682.85" y="-108132.8" r="0" s="0.20192590355873108">
+      <source w="1366" h="768">
+        plan.png
+        <url>plan.png</url>
+      </source>
+    </object>
+    <object id="184" type="image" x="881684.7" y="-107804.55" r="0" s="0.19862154126167297">
+      <source w="1366" h="768">
+        messagerie_1.png
+        <url>messagerie_1.png</url>
+      </source>
+    </object>
+    <object id="185" type="image" x="882263.85" y="-107803.6" r="0" s="0.1999463438987732">
+      <source w="1366" h="768">
+        messagerie_2.png
+        <url>messagerie_2.png</url>
+      </source>
+    </object>
+    <object id="305" type="image" x="882254.85" y="-108132.8" r="0" s="0.1997969001531601">
+      <source w="1366" h="768">
+        salle.png
+        <url>salle.png</url>
+      </source>
+    </object>
+    <object id="97" type="label" x="881682.85" y="-108232.25" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-27.75</x>
+        <y>-15.45</y>
+        <text><![CDATA[Plan]]></text>
+        <annotations>r0-4 { color: #322c69; }
+r0-4 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="99" type="button" x="881684.7" y="-107823.3" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="101" type="label" x="881684.7" y="-107909.85" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-70.95</x>
+        <y>-15.45</y>
+        <text><![CDATA[Messagerie]]></text>
+        <annotations>r0-10 { color: #322c69; }
+r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="102" type="button" x="881683.6" y="-107496.15" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="190" type="image" x="881683.6" y="-107477.15" r="0" s="0.1967473328113556">
+      <source w="1366" h="768">
+        annuaire.png
+        <url>annuaire.png</url>
+      </source>
+    </object>
+    <object id="197" type="image" x="881683.15" y="-107146.4" r="0" s="0.20814356207847595">
+      <source w="1366" h="768">
+        event.png
+        <url>event.png</url>
+      </source>
+    </object>
+    <object id="198" type="image" x="882269.05" y="-107142.9" r="0" s="0.2100328654050827">
+      <source w="1366" h="768">
+        event_2.png
+        <url>event_2.png</url>
+      </source>
+    </object>
+    <object id="104" type="label" x="881684.7" y="-107579.45" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-56.9</x>
+        <y>-15.45</y>
+        <text><![CDATA[Annuaire]]></text>
+        <annotations>r0-8 { color: #322c69; }
+r0-8 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="105" type="button" x="881683.15" y="-107165.85" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="107" type="label" x="881684.45" y="-107246.45" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-76</x>
+        <y>-15.45</y>
+        <text><![CDATA[Évènements]]></text>
+        <annotations>r0-10 { color: #322c69; }
+r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="108" type="button" x="881683.6" y="-106837.4" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="205" type="image" x="881681.8" y="-106818.6" r="0" s="0.20516885817050934">
+      <source w="1366" h="768">
+        groupes.png
+        <url>groupes.png</url>
+      </source>
+    </object>
+    <object id="110" type="label" x="881681.8" y="-106920.6" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-53.4</x>
+        <y>-15.45</y>
+        <text><![CDATA[Groupes]]></text>
+        <annotations>r0-7 { color: #322c69; }
+r0-7 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="111" type="button" x="881689.75" y="-106510.1" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="206" type="image" x="881689.75" y="-106484.95" r="0" s="0.2019745409488678">
+      <source w="1366" h="768">
+        notifications.png
+        <url>notifications.png</url>
+      </source>
+    </object>
+    <object id="113" type="label" x="881690" y="-106587.35" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-78.4</x>
+        <y>-15.45</y>
+        <text><![CDATA[Notifications]]></text>
+        <annotations>r0-13 { color: #322c69; }
+r0-13 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="322" type="button" x="-92058.55" y="-115584.5" r="0" s="97.66876220703125" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>884.3</w>
+        <h>649.2000000000003</h>
+      </size>
+    </object>
+    <object id="181" type="label" x="-92556.3" y="-140368.15" r="0" s="147.80650329589844" class="head">
+      <textfield>
+        <x>-125.75</x>
+        <y>-15.45</y>
+        <text><![CDATA[CakePHP en général]]></text>
+        <annotations>r0-18 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="187" type="button" x="882262.75" y="-107826.05" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="188" type="label" x="882262.75" y="-107909.6" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-70.95</x>
+        <y>-15.45</y>
+        <text><![CDATA[Messagerie]]></text>
+        <annotations>r0-10 { color: #322c69; }
+r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="189" type="shape" x="881973.45" y="-107828.35" r="0" s="0.35601523518562317" class="line3">
+      <geom type="arrow">
+        <sp>-321.45961433204366 0</sp>
+        <ep>321.45961433204366 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="191" type="button" x="882269.05" y="-107164.1" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>821.1281163434903</w>
+        <h>619.7</h>
+      </size>
+    </object>
+    <object id="194" type="shape" x="881973.45" y="-107168.7" r="0" s="0.35601523518562317" class="line3">
+      <geom type="arrow">
+        <sp>-321.45961433204366 0</sp>
+        <ep>321.45961433204366 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="13" type="button" x="1045766.05" y="-102897.3" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="180" type="image" x="1045766.05" y="-102882.75" r="0" s="0.15363851189613342">
+      <source w="1366" h="768">
+        accueil.png
+        <url>accueil.png</url>
+      </source>
+    </object>
+    <object id="62" type="label" x="1045761.3" y="-102959.7" r="0" s="1.242601752281189" class="head">
+      <textfield>
+        <x>-47</x>
+        <y>-15.45</y>
+        <text><![CDATA[Accueil]]></text>
+        <annotations>r0-7 { color: #322c69; }
+r0-7 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="72" type="button" x="1045766.35" y="-102662.7" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="100" type="button" x="1045765.6" y="-102429" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="230" type="image" x="1045764.85" y="-102416.35" r="0" s="0.14913727343082428">
+      <source w="1366" h="768">
+        offres.png
+        <url>offres.png</url>
+      </source>
+    </object>
+    <object id="112" type="label" x="1045764.85" y="-102488.4" r="0" s="0.8875727653503418" class="head">
+      <textfield>
+        <x>-106.6</x>
+        <y>-15.45</y>
+        <text><![CDATA[Offres de stages]]></text>
+        <annotations>r0-16 { color: #322c69; }
+r0-16 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="114" type="button" x="1045765.25" y="-102193.1" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="195" type="image" x="1045765.6" y="-102180.1" r="0" s="0.15006352961063385">
+      <source w="1366" h="768">
+        _affichage_projet.png
+        <url>_affichage_projet.png</url>
+      </source>
+    </object>
+    <object id="115" type="label" x="1045765.6" y="-102252.5" r="0" s="0.7397176027297974" class="head">
+      <textfield>
+        <x>-135.5</x>
+        <y>-15.45</y>
+        <text><![CDATA[Affichage des projets]]></text>
+        <annotations>r0-21 { color: #322c69; }
+r0-21 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="116" type="button" x="1045765.6" y="-101958.45" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="118" type="label" x="1045766.95" y="-102017.85" r="0" s="1.242601752281189" class="head">
+      <textfield>
+        <x>-62.25</x>
+        <y>-15.45</y>
+        <text><![CDATA[Absences]]></text>
+        <annotations>r0-8 { color: #322c69; }
+r0-8 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="120" type="button" x="1045760.6" y="-101720.8" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>816.6640581717452</w>
+        <h>562.875</h>
+      </size>
+    </object>
+    <object id="211" type="image" x="1045760.6" y="-101708.15" r="0" s="0.1430094838142395">
+      <source w="1366" h="768">
+        modules.png
+        <url>modules.png</url>
+      </source>
+    </object>
+    <object id="124" type="label" x="1045761.2" y="-101776.6" r="0" s="0.6810832023620605" class="head">
+      <textfield>
+        <x>-141.75</x>
+        <y>-15.45</y>
+        <text><![CDATA[Affichage des modules]]></text>
+        <annotations>r0-21 { color: #322c69; }
+r0-21 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="129" type="button" x="1046179.25" y="-102664.6" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="141" type="shape" x="1045972.6" y="-102666.15" r="0" s="0.2542966306209564" class="line3">
+      <geom type="arrow">
+        <sp>-321.45961433204366 0</sp>
+        <ep>321.45961433204366 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="143" type="button" x="1046185.5" y="-102194.3" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="145" type="shape" x="1045972.6" y="-102195" r="0" s="0.2542966306209564" class="line3">
+      <geom type="arrow">
+        <sp>-321.45961433204366 0</sp>
+        <ep>321.45961433204366 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="158" type="label" x="1045765.05" y="-102722.85" r="0" s="0.6810832023620605" class="head">
+      <textfield>
+        <x>-138.65</x>
+        <y>-15.45</y>
+        <text><![CDATA[Affichage des posters]]></text>
+        <annotations>r0-21 { color: #322c69; }
+r0-21 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="162" type="label" x="1046178.95" y="-102722.6" r="0" s="0.6810832023620605" class="head">
+      <textfield>
+        <x>-138.65</x>
+        <y>-15.45</y>
+        <text><![CDATA[Affichage des posters]]></text>
+        <annotations>r0-21 { color: #322c69; }
+r0-21 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="163" type="label" x="1046185.5" y="-102255.4" r="0" s="0.7397176027297974" class="head">
+      <textfield>
+        <x>-135.5</x>
+        <y>-15.45</y>
+        <text><![CDATA[Affichage des projets]]></text>
+        <annotations>r0-21 { color: #322c69; }
+r0-21 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="164" type="button" x="1045765.05" y="-101489.4" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>802.4281163434903</w>
+        <h>568.2500000000001</h>
+      </size>
+    </object>
+    <object id="161" type="image" x="1045762.85" y="-101480.8" r="0" s="0.1482170671224594">
+      <source w="1366" h="768">
+        _upload.png
+        <url>_upload.png</url>
+      </source>
+    </object>
+    <object id="167" type="label" x="1045765.8" y="-101547.85" r="0" s="0.6810832023620605" class="head">
+      <textfield>
+        <x>-130.55</x>
+        <y>-15.45</y>
+        <text><![CDATA[Upload de documents]]></text>
+        <annotations>r0-19 { color: #322c69; }
+r0-19 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="168" type="button" x="1046182.2" y="-102427.4" r="0" s="0.2627284824848175">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="117" type="image" x="1046182.35" y="-102414" r="0" s="0.14918167889118195">
+      <source w="1366" h="768">
+        _offre2.png
+        <url>_offre2.png</url>
+      </source>
+    </object>
+    <object id="170" type="label" x="1046181.7" y="-102485.45" r="0" s="0.8636581897735596" class="head">
+      <textfield>
+        <x>-106.6</x>
+        <y>-15.45</y>
+        <text><![CDATA[Offres de stages]]></text>
+        <annotations>r0-16 { color: #322c69; }
+r0-16 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="171" type="shape" x="1045972.6" y="-102426.3" r="0" s="0.2542966306209564" class="line3">
+      <geom type="arrow">
+        <sp>-321.45961433204366 0</sp>
+        <ep>321.45961433204366 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="172" type="label" x="1010736.9" y="-48344.55" r="0" s="496.24395751953125" class="body">
+      <textfield>
+        <x>-2</x>
+        <y>-17.85</y>
+        <text><![CDATA[]]></text>
+        <annotations/>
+      </textfield>
+    </object>
+    <object id="179" type="image" x="1045766.95" y="-101942.7" r="0" s="0.14446893334388733">
+      <source w="1366" h="768">
+        absences.png
+        <url>absences.png</url>
+      </source>
+    </object>
+    <object id="182" type="image" x="1046185.3" y="-102181.3" r="0" s="0.14809267222881317">
+      <source w="1366" h="768">
+        aff_proj2.png
+        <url>aff_proj2.png</url>
+      </source>
+    </object>
+    <object id="196" type="button" x="1045766.75" y="-101252.85" r="0" s="0.2700032889842987">
+      <type>invisible</type>
+      <size>
+        <w>802.4281163434903</w>
+        <h>568.2500000000001</h>
+      </size>
+    </object>
+    <object id="166" type="image" x="1045769.75" y="-101242.2" r="0" s="0.1433848887681961">
+      <source w="1366" h="768">
+        _notes.png
+        <url>_notes.png</url>
+      </source>
+    </object>
+    <object id="203" type="label" x="1045766.75" y="-101310.7" r="0" s="0.953515887260437" class="head">
+      <textfield>
+        <x>-37.2</x>
+        <y>-15.45</y>
+        <text><![CDATA[Notes]]></text>
+        <annotations>r0-5 { color: #322c69; }
+r0-5 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="231" type="shape" x="944993.05" y="113493.15" r="90" s="369.0753479003906" class="line3">
+      <geom type="arrow">
+        <sp>-337.53748018554853 0</sp>
+        <ep>337.53748018554853 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="232" type="button" x="933032.2" y="368026.35" r="0" s="276.0628356933594">
+      <type>invisible</type>
+      <size>
+        <w>1247.0740131578946</w>
+        <h>741.4359375000001</h>
+      </size>
+    </object>
+    <object id="238" type="label" x="924947.1" y="283499.6" r="0" s="960.7377319335938" class="head">
+      <textfield>
+        <x>-88.75</x>
+        <y>-15.45</y>
+        <text><![CDATA[Les difficultés]]></text>
+        <annotations>r0-15 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="398" type="shape" x="589554.5" y="344504.5" r="-2.2453471517918686e-13" s="369.0753479003906" class="line3">
+      <geom type="arrow">
+        <sp>407.0854040317723 0</sp>
+        <ep>-407.0854040317723 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="399" type="label" x="597098.1" y="332136.3" r="0" s="481.6570129394531" class="strong">
+      <textfield>
+        <x>-266.95</x>
+        <y>-15.75</y>
+        <text><![CDATA[Tout compte fait, c'était vraiment bien ce projet !]]></text>
+        <annotations>r0-51 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="240" type="button" x="243512.8" y="346330.45" r="0" s="334.4181213378906" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>1115.9</w>
+        <h>665.4000000000001</h>
+      </size>
+    </object>
+    <object id="401" type="shape" x="-70357.3" y="338615.6" r="-2.385681152823092e-13" s="245.7433624267578" class="line4">
+      <geom type="arrow">
+        <sp>475.16668948138266 0</sp>
+        <ep>-475.1666894813827 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="402" type="label" x="247843.95" y="257819.1" r="0" s="1348.6396484375" class="head">
+      <textfield>
+        <x>-67.9</x>
+        <y>-15.45</y>
+        <text><![CDATA[Conclusion]]></text>
+        <annotations>r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="22" type="button" x="853288.6" y="353681.05" r="0" s="221.8616180419922">
+      <type>invisible</type>
+      <size>
+        <w>679.4450396825396</w>
+        <h>457.3875</h>
+      </size>
+    </object>
+    <object id="25" type="button" x="1021354.1" y="353874.05" r="0" s="221.8616180419922">
+      <type>invisible</type>
+      <size>
+        <w>668.4537698412698</w>
+        <h>459.425</h>
+      </size>
+    </object>
+    <object id="77" type="label" x="848284.7" y="317023.1" r="0" s="558.9520874023438" class="strong">
+      <textfield>
+        <x>-77.45</x>
+        <y>-15.75</y>
+        <text><![CDATA[...non résolues]]></text>
+        <annotations>r0-15 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="103" type="label" x="1000840.1" y="316985.9" r="0" s="558.9520874023438" class="strong">
+      <textfield>
+        <x>-53.05</x>
+        <y>-15.75</y>
+        <text><![CDATA[...résolues]]></text>
+        <annotations>r0-11 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="106" type="label" x="-120918.05" y="-94802.5" r="0" s="89.65550231933594" class="body">
+      <textfield>
+        <x>-65.2</x>
+        <y>-17.85</y>
+        <text><![CDATA[Framework]]></text>
+        <annotations>r0-9 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="122" type="label" x="-72054.6" y="-125336.35" r="0" s="89.65550231933594" class="body">
+      <textfield>
+        <x>-48.1</x>
+        <y>-17.85</y>
+        <text><![CDATA[PHP 5.3]]></text>
+        <annotations>r0-7 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="140" type="label" x="-110591.6" y="-118058.4" r="0" s="89.65550231933594" class="body">
+      <textfield>
+        <x>-78</x>
+        <y>-17.85</y>
+        <text><![CDATA[Orienté Objet]]></text>
+        <annotations>r0-13 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="144" type="label" x="-102518.7" y="-102889.15" r="0" s="89.65550231933594" class="body">
+      <textfield>
+        <x>-30.05</x>
+        <y>-17.85</y>
+        <text><![CDATA[MVC]]></text>
+        <annotations>r0-3 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="148" type="label" x="-73234.9" y="-110678.5" r="0" s="89.65550231933594" class="body">
+      <textfield>
+        <x>-129.1</x>
+        <y>-17.85</y>
+        <text><![CDATA[Développement rapide]]></text>
+        <annotations>r0-20 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="165" type="label" x="-70325.6" y="-90340.95" r="0" s="89.65550231933594" class="body">
+      <textfield>
+        <x>-96.65</x>
+        <y>-17.85</y>
+        <text><![CDATA[Grande flexibilité]]></text>
+        <annotations>r0-18 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="169" type="label" x="-108267.6" y="-130374.55" r="0" s="89.65550231933594" class="body">
+      <textfield>
+        <x>-231.15</x>
+        <y>-17.85</y>
+        <text><![CDATA[Gestion des connexions et droits d'accès]]></text>
+        <annotations>r0-40 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="364" type="button" x="245583.25" y="486867.05" r="0" s="262.1772766113281">
+      <type>invisible</type>
+      <size>
+        <w>835.0148648648649</w>
+        <h>500.4500000000005</h>
+      </size>
+    </object>
+    <object id="363" type="shape" x="249709.8" y="506137.75" r="0" s="213.96218872070313" class="poly3">
+      <geom type="poly">
+        <p x="-329.775" y="-202.65"/>
+        <p x="329.775" y="-202.65"/>
+        <p x="329.775" y="202.65"/>
+        <p x="-329.775" y="202.65"/>
+        <t>-1</t>
+        <r>0</r>
+      </geom>
+    </object>
+    <object id="362" type="image" x="249367.3" y="505553.55" r="0" s="98.24089813232422">
+      <source w="1366" h="768">
+        accueilintralenotre.png
+        <url>accueilintralenotre.png</url>
+      </source>
+    </object>
+    <object id="21" type="label" x="248430" y="440931.35" r="0" s="239.5322723388672" class="body">
+      <textfield>
+        <x>-375</x>
+        <y>-17.85</y>
+        <text><![CDATA[Vous en voulez plus ? RDV : http://www.asvf-montagne.tk/intranet]]></text>
+        <annotations>r0-64 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="177" type="image" x="956238.35" y="337234.05" r="0" s="121.6028823852539">
+      <source w="88" h="81">
+        _puce2.png
+        <url>_puce2.png</url>
+      </source>
+    </object>
+    <object id="178" type="label" x="1024085.4" y="337236.1" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-155.55</x>
+        <y>-17.85</y>
+        <text><![CDATA[Apprentissage de CakePHP]]></text>
+        <annotations>r0-24 { color: #437314; }
+r0-24 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="192" type="image" x="956237.55" y="352634.55" r="0" s="121.6028823852539">
+      <source w="88" h="81">
+        _puce2.png
+        <url>_puce2.png</url>
+      </source>
+    </object>
+    <object id="200" type="label" x="996016.05" y="352636.75" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-72.3</x>
+        <y>-17.85</y>
+        <text><![CDATA[Notifications]]></text>
+        <annotations>r0-13 { color: #437314; }
+r0-13 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="204" type="image" x="956215.4" y="368721.35" r="0" s="121.6028823852539">
+      <source w="88" h="81">
+        _puce2.png
+        <url>_puce2.png</url>
+      </source>
+    </object>
+    <object id="207" type="label" x="998235.95" y="368723.3" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-78.95</x>
+        <y>-17.85</y>
+        <text><![CDATA[Plan interactif]]></text>
+        <annotations>r0-15 { color: #437314; }
+r0-15 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="208" type="image" x="956194.6" y="383756.8" r="0" s="121.6028823852539">
+      <source w="88" h="81">
+        _puce2.png
+        <url>_puce2.png</url>
+      </source>
+    </object>
+    <object id="219" type="label" x="996107.8" y="383759.05" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-72.7</x>
+        <y>-17.85</y>
+        <text><![CDATA[Drag & Drop]]></text>
+        <annotations>r0-11 { color: #437314; }
+r0-11 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="241" type="label" x="838088.9" y="352638.45" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-96.95</x>
+        <y>-17.85</y>
+        <text><![CDATA[Emploi du temps]]></text>
+        <annotations>r0-15 { color: #437314; }
+r0-15 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="183" type="button" x="940979.3" y="441465.85" r="0" s="153.51312255859375">
+      <type>invisible</type>
+      <size>
+        <w>1028.5313596491228</w>
+        <h>555.5999999999999</h>
+      </size>
+    </object>
+    <object id="247" type="label" x="930455" y="433545.05" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-110.55</x>
+        <y>-17.85</y>
+        <text><![CDATA[Adaptation Android]]></text>
+        <annotations>r0-18 { color: #437314; }
+r0-18 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="174" type="image" x="875507.55" y="433553.5" r="0" s="201.35850524902344">
+      <source w="64" h="67">
+        petite_puce.png
+        <url>petite_puce.png</url>
+      </source>
+    </object>
+    <object id="249" type="label" x="835155.55" y="383098.1" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-88.15</x>
+        <y>-17.85</y>
+        <text><![CDATA[Google Agenda]]></text>
+        <annotations>r0-13 { color: #437314; }
+r0-13 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="267" type="label" x="857684.5" y="337258.9" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-155.05</x>
+        <y>-17.85</y>
+        <text><![CDATA[De nombreux désaccords...]]></text>
+        <annotations>r0-25 { color: #437314; }
+r0-25 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="269" type="label" x="829252.9" y="367333.55" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-70.7</x>
+        <y>-17.85</y>
+        <text><![CDATA[Messagerie ]]></text>
+        <annotations>r0-11 { color: #437314; }
+r0-11 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="271" type="image" x="-993213.3" y="-73038.8" r="-0.12125800736375969" s="0.03745117974990673">
+      <source w="1366" h="768">
+        intranet_actuel.png
+        <url>intranet_actuel.png</url>
+        <mask x="0" y="0" w="1349" h="768"/>
+      </source>
+    </object>
+    <object id="274" type="image" x="-993186.65" y="-73025.8" r="-0.034672170938149886" s="0.03725675058060357">
+      <source w="1366" h="768">
+        modules_intra.png
+        <url>modules_intra.png</url>
+        <mask x="0" y="0" w="1346" h="768"/>
+      </source>
+    </object>
+    <object id="91" type="image" x="1045765.05" y="-102651.8" r="0" s="0.15126770734786987">
+      <source w="1366" h="768">
+        _affich_posters.png
+        <url>_affich_posters.png</url>
+      </source>
+    </object>
+    <object id="109" type="image" x="1046179.25" y="-102649.5" r="0" s="0.14802441000938416">
+      <source w="1366" h="768">
+        _affich_posters2.png
+        <url>_affich_posters2.png</url>
+      </source>
+    </object>
+    <object id="173" type="label" x="944973.2" y="414305.25" r="0" s="558.9520874023438" class="strong">
+      <textfield>
+        <x>-105.4</x>
+        <y>-15.75</y>
+        <text><![CDATA[...manque de temps]]></text>
+        <annotations>r0-18 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="175" type="image" x="875504.7" y="448247.2" r="0" s="201.35850524902344">
+      <source w="64" h="67">
+        petite_puce.png
+        <url>petite_puce.png</url>
+      </source>
+    </object>
+    <object id="176" type="image" x="875504.7" y="462314.15" r="0" s="201.35850524902344">
+      <source w="64" h="67">
+        petite_puce.png
+        <url>petite_puce.png</url>
+      </source>
+    </object>
+    <object id="186" type="image" x="789862.95" y="382658.6" r="0" s="274.0257568359375">
+      <source w="33" h="30">
+        croix.jpg
+        <url>croix.jpg</url>
+      </source>
+    </object>
+    <object id="199" type="image" x="789846.85" y="367862.3" r="0" s="274.0257568359375">
+      <source w="33" h="30">
+        croix.jpg
+        <url>croix.jpg</url>
+      </source>
+    </object>
+    <object id="217" type="image" x="789846.85" y="353674.65" r="0" s="274.0257568359375">
+      <source w="33" h="30">
+        croix.jpg
+        <url>croix.jpg</url>
+      </source>
+    </object>
+    <object id="218" type="image" x="789846.85" y="337228.9" r="0" s="274.0257568359375">
+      <source w="33" h="30">
+        croix.jpg
+        <url>croix.jpg</url>
+      </source>
+    </object>
+    <object id="220" type="label" x="906118.85" y="447834.2" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-38.35</x>
+        <y>-17.85</y>
+        <text><![CDATA[Forum]]></text>
+        <annotations>r0-5 { color: #437314; }
+r0-5 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="377" type="image" x="996105.55" y="441413.8" r="0" s="126.54534912109375">
+      <source w="264" h="276">
+        sablier.jpg
+        <url>sablier.jpg</url>
+      </source>
+    </object>
+    <object id="229" type="label" x="946824.25" y="461908.2" r="0" s="337.159912109375" class="body">
+      <textfield>
+        <x>-159.15</x>
+        <y>-17.85</y>
+        <text><![CDATA[Intranet pluri-départemental]]></text>
+        <annotations>r0-28 { color: #437314; }
+r0-28 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="248" type="button" x="899810.85" y="368131.55" r="0" s="53.31466293334961" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="266" type="button" x="908512.8" y="363410.65" r="0" s="14.395973205566406" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="268" type="button" x="891531.45" y="363410.65" r="0" s="14.395973205566406" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="272" type="shape" x="900398.6" y="376027.75" r="0.22141371299010934" s="144.25206891943793" class="line2">
+      <geom type="line">
+        <sp>-48.79864116952023 16.218999187948764</sp>
+        <ep>48.798641169520224 16.218999187948764</ep>
+        <b>-32.43799837589753</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="337" type="button" x="1061378.35" y="371105.05" r="0" s="53.31466293334961" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="343" type="button" x="1070290.5" y="367633.1" r="0" s="14.395973205566406" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="344" type="button" x="1053309.05" y="367632.9" r="0" s="14.395973205566406" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="345" type="shape" x="1062146.15" y="379051.95" r="177.48692263929183" s="144.25204765452364" class="line2">
+      <geom type="line">
+        <sp>-48.79864116952023 16.218999187948764</sp>
+        <ep>48.798641169520224 16.218999187948764</ep>
+        <b>-32.43799837589753</b>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="355" type="shape" x="892543.65" y="365610.25" r="0" s="107.75560760498047" class="poly3">
+      <geom type="circle">
+        <r>20</r>
+      </geom>
+    </object>
+    <object id="356" type="shape" x="1070292.05" y="367633.95" r="0" s="48.63799285888672" class="poly3">
+      <geom type="circle">
+        <r>61.275</r>
+      </geom>
+    </object>
+    <object id="357" type="shape" x="1053305.4" y="367632.65" r="0" s="134.17825317382813" class="poly3">
+      <geom type="circle">
+        <r>20</r>
+      </geom>
+    </object>
+    <object id="366" type="shape" x="907089.4" y="365610.25" r="0" s="107.75560760498047" class="poly3">
+      <geom type="circle">
+        <r>20</r>
+      </geom>
+    </object>
+    <object id="367" type="label" x="306612.4" y="372239.35" r="5.855574509984417" s="565.4680658289026" class="strong">
+      <textfield>
+        <x>-151.25</x>
+        <y>-15.75</y>
+        <text><![CDATA[Principaux objectifs atteints]]></text>
+        <annotations>r0-29 { color: #437314; }
+r0-29 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="368" type="label" x="165063.15" y="339201.4" r="-6.272487122509317" s="565.4681022268371" class="strong">
+      <textfield>
+        <x>-144.9</x>
+        <y>-15.75</y>
+        <text><![CDATA[Certains points non traités]]></text>
+        <annotations>r0-27 { color: #437314; }
+r0-27 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="370" type="label" x="223404.85" y="288418.75" r="0" s="565.4681396484375" class="strong">
+      <textfield>
+        <x>-197.55</x>
+        <y>-15.75</y>
+        <text><![CDATA[Enrichissement personnel de chacun]]></text>
+        <annotations>r0-35 { color: #437314; }
+r0-35 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="371" type="label" x="337169.75" y="330825.1" r="8.866914975056831" s="565.4680930976043" class="strong">
+      <textfield>
+        <x>-121.7</x>
+        <y>-15.75</y>
+        <text><![CDATA[Très bonne expérience]]></text>
+        <annotations>r0-21 { color: #437314; }
+r0-21 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="373" type="button" x="308007.15" y="473499.15" r="0" s="0.41565632820129395">
+      <type>invisible</type>
+      <size>
+        <w>1305.667409780335</w>
+        <h>759.528125</h>
+      </size>
+    </object>
+    <object id="372" type="label" x="307987.5" y="473510.55" r="0" s="0.8727297782897949" class="strong">
+      <textfield>
+        <x>-125.6</x>
+        <y>-84.35</y>
+        <text><![CDATA[M. FONTENAS           login : fontenae         mdp : matriceM. BRUNET-MANQUAT         login : brunetmf         mdp : macintosh]]></text>
+        <annotations>r0-14 { align: left; }
+r14-40 { align: left; }
+r40-63 { align: left; }
+r63-81 { align: left; }
+r81-107 { align: left; }
+r107-131 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="374" type="label" x="307988.95" y="473397.2" r="0" s="1.60995614528656" class="head">
+      <textfield>
+        <x>-98.3</x>
+        <y>-15.45</y>
+        <text><![CDATA[Vos identifiants]]></text>
+        <annotations>r0-16 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="246" type="button" x="882254.9" y="-108150.45" r="0" s="0.37800464034080505">
+      <type>invisible</type>
+      <size>
+        <w>807.7562326869806</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="275" type="shape" x="881965.65" y="-108152.8" r="0" s="0.35601523518562317" class="line3">
+      <geom type="arrow">
+        <sp>-321.45961433204366 0</sp>
+        <ep>321.45961433204366 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="292" type="label" x="882250.65" y="-108232.35" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-27.75</x>
+        <y>-15.45</y>
+        <text><![CDATA[Plan]]></text>
+        <annotations>r0-4 { color: #322c69; }
+r0-4 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="239" type="label" x="308030.05" y="474103.9" r="0" s="1.0204081535339355" class="body">
+      <textfield>
+        <x>-151.4</x>
+        <y>-112.8</y>
+        <text><![CDATA[Elève         login : parrenof         mdp : eleveAdministrateur         login : vassoim         mdp : administrateur]]></text>
+        <annotations>r0-123 { color: #194a99; }
+r1-7 { align: left; }
+r7-33 { align: left; }
+r33-54 { align: left; }
+r54-69 { align: left; }
+r69-94 { align: left; }
+r94-123 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="273" type="button" x="308008.4" y="474088.9" r="0" s="0.41565632820129395">
+      <type>invisible</type>
+      <size>
+        <w>1305.667409780335</w>
+        <h>759.528125</h>
+      </size>
+    </object>
+    <object id="307" type="label" x="308009.75" y="473986.95" r="0" s="1.60995614528656" class="head">
+      <textfield>
+        <x>-116</x>
+        <y>-15.45</y>
+        <text><![CDATA[Autres identifiants]]></text>
+        <annotations>r0-19 { align: left; }</annotations>
+      </textfield>
+    </object>
+    <object id="306" type="label" x="882269.4" y="-107246.4" r="0" s="1.7396423816680908" class="head">
+      <textfield>
+        <x>-76</x>
+        <y>-15.45</y>
+        <text><![CDATA[Évènements]]></text>
+        <annotations>r0-10 { color: #322c69; }
+r0-10 { align: left; }</annotations>
+      </textfield>
+    </object>
+  </zui-table>
+  <path>
+    <o>49</o>
+    <o>48</o>
+    <o>64</o>
+    <o>146</o>
+    <o>149</o>
+    <o>152</o>
+    <o>150</o>
+    <o>153</o>
+    <o>151</o>
+    <o>157</o>
+    <o>69</o>
+    <o>4</o>
+    <o>264</o>
+    <o>262</o>
+    <o>303</o>
+    <o>259</o>
+    <o>315</o>
+    <o>329</o>
+    <o>35</o>
+    <o>5</o>
+    <o>53</o>
+    <o>341</o>
+    <o>348</o>
+    <o>322</o>
+    <o>323</o>
+    <o>359</o>
+    <o>202</o>
+    <o>78</o>
+    <o>81</o>
+    <o>83</o>
+    <o>98</o>
+    <o>246</o>
+    <o>99</o>
+    <o>187</o>
+    <o>102</o>
+    <o>105</o>
+    <o>191</o>
+    <o>108</o>
+    <o>111</o>
+    <o>90</o>
+    <o>13</o>
+    <o>72</o>
+    <o>129</o>
+    <o>100</o>
+    <o>168</o>
+    <o>114</o>
+    <o>143</o>
+    <o>116</o>
+    <o>120</o>
+    <o>164</o>
+    <o>196</o>
+    <o>232</o>
+    <o>22</o>
+    <o>25</o>
+    <o>183</o>
+    <o>398</o>
+    <o>240</o>
+    <o>364</o>
+    <o>373</o>
+    <o>273</o>
+    <o>7</o>
+    <o>147</o>
+  </path>
+  <style type="text/css"><![CDATA[
+@font-face
+{
+	src: url('Crial-Black.swf');
+	fontFamily: head;
+}
+
+@font-face
+{
+	src: url('Nunito.swf');
+	fontFamily: body;
+}
+
+@font-face
+{
+	src: url('Fontin.swf');
+	fontFamily: strong;
+}
+
+ZLabel
+{
+	padding: 1.2;
+}
+
+ZLabel.head
+{
+	fontFamily: head;
+	color: #965432;
+}
+
+.line5
+{
+	gradEndColor: #965432;
+	gradStartColor: #965432;
+	color: #965432;
+}
+
+.poly5
+{
+	borderColor: #965432;
+}
+
+ZLabel.strong
+{
+	fontFamily: strong;
+	color: #194a99;
+}
+
+.line1
+{
+	gradEndColor: #194a99;
+	gradStartColor: #194a99;
+	color: #194a99;
+}
+
+.poly1
+{
+	borderColor: #194a99;
+}
+
+ZLabel.body
+{
+	fontFamily: body;
+	color: #000;
+}
+
+Background
+{
+	gradStart: #fff;
+	gradEnd: #fff;
+}
+
+Grid
+{
+	color: #ccc;
+}
+
+ZFrame.circle
+{
+	borderColor: #e0e6e8;
+	gradEndColor: #7a8082;
+	borderThickness: 0;
+	gradStartColor: #7a8082;
+}
+
+.line4
+{
+	gradEndColor: #7a8082;
+	gradStartColor: #7a8082;
+	color: #7a8082;
+}
+
+.poly4
+{
+	borderColor: #7a8082;
+}
+
+ZFrame.bracket
+{
+	borderColor: #fff;
+	gradEndColor: #c5c3c3;
+	borderThickness: 0;
+	gradStartColor: #c5c3c3;
+}
+
+.line2
+{
+	gradEndColor: #c5c3c3;
+	gradStartColor: #c5c3c3;
+	color: #c5c3c3;
+}
+
+.poly2
+{
+	borderColor: #c5c3c3;
+}
+
+ZFrame.roundrect
+{
+	borderColor: #fff;
+	gradEndColor: #c5c3c3;
+	borderThickness: 0;
+	gradStartColor: #c5c3c3;
+}
+
+ZPoly
+{
+	radius: 0;
+	gradEndAlpha: 0.7;
+	borderAlpha: 1;
+	gradStartAlpha: 0.6;
+	thickness: 100;
+	lockTintAlpha: 0.6;
+}
+
+ZCircle
+{
+	radius: 0;
+	borderAlpha: 1;
+	lockTintAlpha: 0.6;
+	thickness: 100;
+}
+
+ZArrow
+{
+	borderColor: #6596e5;
+	gradEndColor: #194a99;
+	borderThickness: 0;
+	gradStartColor: #194a99;
+}
+
+.line3
+{
+	gradEndColor: #194a99;
+	gradStartColor: #194a99;
+	color: #194a99;
+}
+
+.poly3
+{
+	borderColor: #194a99;
+}
+
+ZLine
+{
+	color: #194a99;
+}
+
+ZCurveLine
+{
+	color: #194a99;
+}
+
+ZMarker
+{
+	color: #00e1ff;
+}
+
+ZVideo
+{
+	padding: 1.2;
+}
+
+]]></style>
+  <hash>9cae72866ce22ed17392e6f2490013a6</hash>
+  <sync>
+    <oid>UNKNOWN</oid>
+    <hash>UNKNOWN</hash>
+  </sync>
+  <config>d47KwO+oYB2/XgAbC6UAW2XXsdtHYjsgqA==</config>
+</zuiprezi>

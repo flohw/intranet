@@ -1,0 +1,29 @@
+ELEVE (landrisd, dodoletombeur)
+
+	notes
+	evenements	
+	stages
+	modules
+
+PROF (brunetmf, macintosh)
+
+	ajout notes
+	modules (edition)
+	stage (edition)
+	events
+	absences
+	groupes
+	annuaire
+	plan
+	messagerie
+	pages statiques (edition)
+	documents (ajout modules) (laurilly, prof)
+	mes documents
+
+ADMIN (vassoim, vassoilm2)
+
+	ajout compte
+	créer type module
+	créer module
+	gestion du compte
+	annuaire

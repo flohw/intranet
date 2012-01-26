@@ -1,3 +1,0 @@
-- Faire des tests sur TOUTES les vues
-- Le Prezi de présentation
-- Le rapport du projet
