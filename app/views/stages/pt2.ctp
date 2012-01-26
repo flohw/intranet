@@ -29,7 +29,7 @@
 								$nom = $d['DocumentsStage']['nom'];
 								echo(    '<tr>
 							        		<td>'.$d['DocumentsStage']['nom'].'</td>
-									<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'PT2A', $nom)) .'</td>
+									<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'PT2A', $nom), array('class' => 'btn small info')) .'</td>
 									</tr>');
 							endforeach;
 						?>
@@ -113,7 +113,7 @@
 								$nom = $d['DocumentsStage']['nom'];
 								echo(    '<tr>
 							        		<td>'.$d['DocumentsStage']['nom'].'</td>
-									<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'PT2A-rapports', $nom)) .'</td>
+									<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'PT2A-rapports', $nom), array('class' => 'btn small info')) .'</td>
 									</tr>');
 							endforeach;
 						?>

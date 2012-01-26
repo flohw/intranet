@@ -247,7 +247,7 @@
 							$nom = $d['DocumentsStage']['nom'];
 							echo(    '<tr>
 						        		<td>'.$d['DocumentsStage']['nom'].'</td>
-								<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'stages-utiles', $nom)) .'</td>
+								<td>'.$this->Html->link('Visualiser', array('controller' => 'files', 'action' => 'stages-utiles', $nom), array('class' => 'btn small info')) .'</td>
 								</tr>');
 						endforeach;
 					?>

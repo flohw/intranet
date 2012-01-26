@@ -95,7 +95,7 @@
 <?php endif; ?>
 <!-- Liste des évènements -->
 	<div id="liste" <?php echo ($this->action == 'index' AND !isset($this->data)) ? 'class="active"' : null; ?>>
-		<table id="sort" class="zebra-striped">
+		<table id="sort" class="zebra-striped condensed-table">
 			<thead>
 				<tr>
 					<th class="id">ID</th>
