@@ -10,8 +10,8 @@
 	<?php
 		if (!empty($doc) AND sizeof($doc) > 1):
 		foreach ($doc as $k => $d): if (is_array($d)): ?>
-
-		<div class="dropfile" data-folder="modules/<?php echo $mod; ?>" data-value="<?php echo $d['nom']; ?>" data-id="<?php echo $d['id']; ?>">
+		<?php $class = ($this->Session->read('Auth.Personne.id') == $d['personne_id'] OR $this->Session->read('Auth.Personne.statut_id') >= $statutsID['admin']) ? 'droping' : null; ?>
+		<div class="dropfile <?php echo $class; ?>" data-folder="modules/<?php echo $mod; ?>" data-value="<?php echo $d['nom']; ?>" data-id="<?php echo $d['id']; ?>">
 			<span class="infoFichier"><?php echo $d['nom']; ?></span>
 			<a href="#delete">
 			<?php if ($this->Session->read('Auth.Personne.id') == $d['personne_id']
@@ -33,7 +33,7 @@
 		endif;
 	?>
 	
-	<div class="dropfile" data-folder="modules/<?php echo $mod; ?>" data-module="<?php echo $doc['module_id']; ?>"></div>
+	<div class="dropfile droping" data-folder="modules/<?php echo $mod; ?>" data-module="<?php echo $doc['module_id']; ?>"></div>
 </div>
 <?php endforeach; // fin pour le module ?>
 
@@ -43,7 +43,7 @@ jQuery(function($){
 		$(this).append('<h5>* Formats pris en charge : Pdf, Word, Excel, Open Office, Jpeg, Png, Gif</h5>');
 	});
 	
-	$('.dropfile').dropfile({
+	$('.droping').dropfile({
 		script: '<?php echo $this->Html->url(array('action' => 'upload')); ?>',
 		image: '<?php echo '/'.IMAGES_URL.'/delete.png'; ?>',
 	});
