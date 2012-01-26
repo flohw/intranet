@@ -77,7 +77,7 @@ class DocumentsController extends AppController
 	{
 		$d = array_merge(array('typesImages' => $this->typesImages), array('typesPDF' => $this->typesPDF),
 						array('typesWord' => $this->typesWord), array('typesExcel' => $this->typesExcel));
-		$d['docs'] = $this->Document->findMyDocuments($this->Auth->user('id'));
+		$d['docs'] = $this->Document->findDocuments($this->Auth->user('id'));
 		$d['modules'] = $this->Module->findModules($this->Auth->user('id'));
 		$i = $first = 0;
 		foreach ($d['modules'] as $idm => $m) {
@@ -86,7 +86,6 @@ class DocumentsController extends AppController
 				$d['select'] = $id;
 		}
 		$d['select'] = (isset($d['select'])) ? $d['select'] : $first;
-			
 		
 		$this->set($d);
 	}

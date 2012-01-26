@@ -76,9 +76,9 @@ class Document extends AppModel {
 		return $r;
 	}
 	
-	public function findMyDocuments ($id)
+	public function findDocuments ($id)
 	{
-		$docs = $this->find('all', array('conditions' => array('personne_id' => $id), 'recursive' => 0));
+		$docs = $this->find('all', array('recursive' => 0));
 		$modules = $this->Module->findModules($id);
 		$r = array();
 		foreach ($modules as $idModule => $m)
@@ -93,6 +93,7 @@ class Document extends AppModel {
 				}
 			}
 		}
+		
 		return $r;
 	}
 }
