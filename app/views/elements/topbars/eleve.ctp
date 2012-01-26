@@ -53,7 +53,7 @@
 		                ?>
                     </a>
                     <ul class="menu-dropdown">
-                        <li><?php echo $this->Html->link("Emploi du Temps", array('controller' => 'timetable', 'action' => 'maintenance')); ?></li>
+                    <li><?php echo $this->Html->link('Emploi du temps', 'http://www-ade.iut2.upmf-grenoble.fr/ade/custom/modules/plannings/direct_planning.jsp?resources='.$ressource.'&weeks='.(date('W')+17).'&showTree='.((is_null($ressource)) ? "true" : "false").'&showPianoDays=true&login=WebINFO&password=MPINFO&projectId=10&displayConfName=Vue_Web_INFO_Etudiant&showOptions=false&showPianoWeeks=true&days=0,1,2,3,4,5'); ?></li>
                          <li><?php
                         	$link = 'Mes Notifications';
                         	if ($notifs['total'] > 0)
