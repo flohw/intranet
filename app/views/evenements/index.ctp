@@ -118,8 +118,8 @@
 					<td class="id"><?php echo $e['id']; ?></td>
 					<td>
 						<?php
-							$deb = substr($e['date_debut'], 0, 10);
-							$fin = substr($e['date_fin'], 0, 10);
+							$deb = substr($e['date_debut'], 0, 16);
+							$fin = substr($e['date_fin'], 0, 16);
 							if ($deb <= date('Y-m-d H:i') AND $fin >= date('Y-m-d H:i'))
 								echo '<span class="label success">Aujourd\'hui</span>';
 							elseif ($fin < date('Y-m-d H:i'))
